@@ -1,7 +1,15 @@
 <li @class(['nav-item', 'dropdown' => count($link->children) > 0, 'dropdown-submenu' => !$isRoot, 'dropend' => !$isRoot]) >
     <a
         @class(['nav-link' => $isRoot, 'dropdown-toggle' => count($link->children) > 0, 'dropdown-item' => !$isRoot])
-        href="#"
+        href="
+            @if($link->page)
+                {{ route('display-page', ['slug' => $link->page->slug]) }}
+            @elseif($link->route)
+                {{ route($link->route) }}
+            @else
+                javascript:void(0)
+            @endif
+        "
         @if(count($link->children) > 0) data-bs-toggle="dropdown" @endif
     >
         {{ $link->title }}

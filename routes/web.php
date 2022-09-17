@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\PublicWebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.welcome');
 });
+
+// za dinamicke stranice koje se prave preko WYSIWYG
+Route::get('page/{slug}', [PublicWebsiteController::class, 'displayPage'])->name('display-page');
 
 Route::get('/home', function () {
     if (session('status')) {
@@ -89,6 +93,5 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 
 // test CMS
 Route::get('hidrologija/mapa-stanica', function (){
-
-})
-    ->name('hidrologija.mapa-stanica');
+    return "Ovdje prikazati konkretan sadrzaj stranice koji ne moze preko WYSIWYG";
+})->name('hidrologija.mapa-stanica');

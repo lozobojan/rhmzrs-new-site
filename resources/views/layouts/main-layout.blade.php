@@ -129,7 +129,7 @@
         </header>
         <!-- /header -->
         <section class="video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-50">
-            <video poster="./assets/img/photos/movie2.jpg" src="./assets/media/sky.mp4" autoplay loop playsinline muted></video>
+            <video poster="{{ asset('assets/img/photos/movie2.jpg') }}" src="{{ asset('assets/media/sky.mp4') }}" autoplay loop playsinline muted></video>
             <div class="video-content">
                 <div class="container text-center">
                     <div class="row">
@@ -161,7 +161,7 @@
             <div class="row gy-6 gy-lg-0">
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
-                        <img class="mb-4" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
+                        <img class="mb-4" src="{{ asset('assets/img/logo-light.png') }}" srcset="{{ asset('assets/img/logo-light@2x.png') }} 2x" alt="" />
                         <p class="mb-4">© 2022 Sandbox. <br class="d-none d-lg-block" />All rights reserved.</p>
                         <nav class="nav social social-white">
                             <a href="#"><i class="uil uil-twitter"></i></a>
@@ -240,8 +240,8 @@
         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
     </svg>
 </div>
-<script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/theme.js"></script>
+<script src="{{ asset('assets/js/plugins.js') }}"></script>
+<script src="{{ asset('assets/js/theme.js') }}"></script>
 </body>
 
 </html>
