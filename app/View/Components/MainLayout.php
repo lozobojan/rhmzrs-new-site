@@ -25,7 +25,7 @@ class MainLayout extends Component
     public function render()
     {
         return view('layouts.main-layout', [
-            'links' => Link::query()->whereNull('parent_id')
+            'links' => Link::query()->whereNull('parent_id')->get()
         ]);
     }
 }

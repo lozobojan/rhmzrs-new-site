@@ -34,7 +34,12 @@
                         </div>
                         <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                             <ul class="navbar-nav">
-                                @recursiveNav($links)
+                                @foreach($links as $link)
+
+                                    <x-navbar.link is-root="1" :link="$link"></x-navbar.link>
+
+                                @endforeach
+
                             </ul>
 
                             <!-- /.navbar-nav -->
