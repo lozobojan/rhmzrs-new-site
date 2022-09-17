@@ -8,11 +8,11 @@
     <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
     <meta name="author" content="elemis">
     <title>Sandbox - Modern & Multipurpose Bootstrap 5 Template</title>
-    <link rel="shortcut icon" href="@assets(img/favicon.png)">
-    <link rel="stylesheet" href="@assets(css/plugins.css)">
-    <link rel="stylesheet" href="@assets(css/style.css)">
-    <link rel="stylesheet" href="@assets(css/colors/purple.css)">
-    <link rel="preload" href="@assets(css/fonts/urbanist.css)" as="style" onload="this.rel='stylesheet'">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/colors/purple.css') }}">
+    <link rel="preload" href="{{ asset('assets/css/fonts/urbanist.css') }}" as="style" onload="this.rel='stylesheet'">
 </head>
 
 <body>
@@ -23,8 +23,8 @@
                 <div class="container flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
                         <a href="/">
-                            <img class="logo-dark" src="@assets(img/brands/logo-header-small.png)" srcset="./assets/img/logo-dark@2x.png 2x" alt="" />
-                            <img class="logo-light" src="@assets(img/brands/logo-header-small.png)" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
+                            <img class="logo-dark" src="{{ asset('assets/img/brands/logo-header-small.png') }}" srcset="{{ asset('assets/img/logo-dark@2x.png') }} 2x" alt="" />
+                            <img class="logo-light" src="{{ asset('assets/img/brands/logo-header-small.png') }}" srcset="{{ asset('assets/img/logo-light@2x.png') }} 2x" alt="" />
                         </a>
                     </div>
                     <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -173,7 +173,7 @@
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-lg-8 col-xl-6 text-center text-white mx-auto">
-                            <img src="@assets(img/brands/logo-header.png)" class="w-100 mt-12" alt="">
+                            <img src="{{ asset('assets/img/brands/logo-header.png') }}" class="w-100 mt-12" alt="">
                         </div>
                         <!-- /column -->
                     </div>
