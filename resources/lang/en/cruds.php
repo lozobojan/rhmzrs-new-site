@@ -74,6 +74,8 @@ return [
         'title_singular' => 'Link',
         'fields'         => [
             'id'                => 'ID',
+            'title'                => 'Title',
+            'title_helper'                => ' ',
             'id_helper'         => ' ',
             'slug'              => 'Slug',
             'slug_helper'       => ' ',

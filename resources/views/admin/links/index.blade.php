@@ -26,6 +26,9 @@
                             {{ trans('cruds.link.fields.id') }}
                         </th>
                         <th>
+                            {{ trans('cruds.link.fields.title') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.link.fields.slug') }}
                         </th>
                         <th>
@@ -49,6 +52,9 @@
                     </tr>
                     <tr>
                         <td>
+                        </td>
+                        <td>
+                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -91,6 +97,9 @@
                             </td>
                             <td>
                                 {{ $link->id ?? '' }}
+                            </td>
+                            <td>
+                                {{ $link->title ?? '' }}
                             </td>
                             <td>
                                 {{ $link->slug ?? '' }}
@@ -189,7 +198,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

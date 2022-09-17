@@ -21,6 +21,7 @@ class Link extends Model
     ];
 
     protected $fillable = [
+        'title',
         'slug',
         'route',
         'page_id',
@@ -48,5 +49,9 @@ class Link extends Model
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
+    }
+
+    public function children(){
+        return $this->hasMany(Link::class, 'parent_id');
     }
 }

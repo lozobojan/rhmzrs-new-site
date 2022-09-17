@@ -25,6 +25,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.link.fields.title') }}
+                        </th>
+                        <td>
+                            {{ $link->title }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.link.fields.slug') }}
                         </th>
                         <td>

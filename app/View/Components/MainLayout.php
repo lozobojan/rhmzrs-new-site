@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Link;
 use Illuminate\View\Component;
 
 class MainLayout extends Component
@@ -23,6 +24,8 @@ class MainLayout extends Component
      */
     public function render()
     {
-        return view('layouts.main-layout');
+        return view('layouts.main-layout', [
+            'links' => Link::query()->whereNull('parent_id')
+        ]);
     }
 }
