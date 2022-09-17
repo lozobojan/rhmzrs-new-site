@@ -23,6 +23,6 @@ class MainLayout extends Component
      */
     public function render()
     {
-        return view('layout.main-layout');
+        return view('layouts.main-layout');
     }
 }
