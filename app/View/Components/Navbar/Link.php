@@ -7,8 +7,8 @@ use App\Models\Link as LinkModel;
 
 class Link extends Component
 {
-    private LinkModel $link;
-    private bool $isRoot;
+    public LinkModel $link;
+    public bool $isRoot;
     /**
      * Create a new component instance.
      *
@@ -27,9 +27,6 @@ class Link extends Component
      */
     public function render()
     {
-        return view('components.navbar.link', [
-            'link' => $this->link,
-            'isRoot' => $this->isRoot,
-        ]);
+        return view('components.navbar.link');
     }
 }
