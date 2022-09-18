@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.pages.update", [$page->id]) }}" enctype="multipart/form-data">
+        <form method="page" action="{{ route("admin.pages.update", [$page->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">
@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="html_content">{{ trans('cruds.page.fields.html_content') }}</label>
-                <input class="form-control {{ $errors->has('html_content') ? 'is-invalid' : '' }}" type="text" name="html_content" id="html_content" value="{{ old('html_content', $page->html_content) }}">
+                <textarea class="form-control ckeditor {{ $errors->has('html_content') ? 'is-invalid' : '' }}" name="html_content" id="html_content">{!! old('html_content', $page->html_content) !!}</textarea>
                 @if($errors->has('html_content'))
                     <span class="text-danger">{{ $errors->first('html_content') }}</span>
                 @endif
@@ -45,4 +45,70 @@
 
 
 
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            function SimpleUploadAdapter(editor) {
+                editor.plugins.get('FileRepository').createUploadAdapter = function(loader) {
+                    return {
+                        upload: function() {
+                            return loader.file
+                                .then(function (file) {
+                                    return new Promise(function(resolve, reject) {
+                                        // Init request
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open('page', '{{ route('admin.pages.storeCKEditorImages') }}', true);
+                                        xhr.setRequestHeader('x-csrf-token', window._token);
+                                        xhr.setRequestHeader('Accept', 'application/json');
+                                        xhr.responseType = 'json';
+
+                                        // Init listeners
+                                        var genericErrorText = `Couldn't upload file: ${ file.name }.`;
+                                        xhr.addEventListener('error', function() { reject(genericErrorText) });
+                                        xhr.addEventListener('abort', function() { reject() });
+                                        xhr.addEventListener('load', function() {
+                                            var response = xhr.response;
+
+                                            if (!response || xhr.status !== 201) {
+                                                return reject(response && response.message ? `${genericErrorText}\n${xhr.status} ${response.message}` : `${genericErrorText}\n ${xhr.status} ${xhr.statusText}`);
+                                            }
+
+                                            $('form').append('<input type="hidden" name="ck-media[]" value="' + response.id + '">');
+
+                                            resolve({ default: response.url });
+                                        });
+
+                                        if (xhr.upload) {
+                                            xhr.upload.addEventListener('progress', function(e) {
+                                                if (e.lengthComputable) {
+                                                    loader.uploadTotal = e.total;
+                                                    loader.uploaded = e.loaded;
+                                                }
+                                            });
+                                        }
+
+                                        // Send request
+                                        var data = new FormData();
+                                        data.append('upload', file);
+                                        data.append('crud_id', '{{ $page->id ?? 0 }}');
+                                        xhr.send(data);
+                                    });
+                                })
+                        }
+                    };
+                }
+            }
+
+            var allEditors = document.querySelectorAll('.ckeditor');
+            for (var i = 0; i < allEditors.length; ++i) {
+                ClassicEditor.create(
+                    allEditors[i], {
+                        extraPlugins: [SimpleUploadAdapter]
+                    }
+                );
+            }
+        });
+    </script>
 @endsection

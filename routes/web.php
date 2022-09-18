@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Page
     Route::delete('pages/destroy', 'PageController@massDestroy')->name('pages.massDestroy');
+    Route::post('pages/media', 'PageController@storeMedia')->name('pages.storeMedia');
+    Route::post('pages/ckmedia', 'PageController@storeCKEditorImages')->name('pages.storeCKEditorImages');
     Route::resource('pages', 'PageController');
 
     // Post

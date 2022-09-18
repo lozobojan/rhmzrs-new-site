@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyPageRequest;
 use App\Http\Requests\StorePageRequest;
 use App\Http\Requests\UpdatePageRequest;
@@ -13,6 +14,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class PageController extends Controller
 {
+    use MediaUploadingTrait;
+
     public function index()
     {
         abort_if(Gate::denies('page_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -73,5 +76,17 @@ class PageController extends Controller
         Page::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function storeCKEditorImages(Request $request)
+    {
+        abort_if(Gate::denies('post_create') && Gate::denies('post_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $model         = new Page();
+        $model->id     = $request->input('crud_id', 0);
+        $model->exists = true;
+        $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
+
+        return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }
 }
