@@ -97,3 +97,10 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 Route::get('hidrologija/mapa-stanica', function (){
     return "Ovdje prikazati konkretan sadrzaj stranice koji ne moze preko WYSIWYG";
 })->name('hidrologija.mapa-stanica');
+
+Route::get('uslovi-koriscenja', function (){
+    return view('pages.terms');
+})->name('terms');
+Route::get('pristup-informacijama', function (){
+    return view('pages.information-access');
+})->name('information-access');
