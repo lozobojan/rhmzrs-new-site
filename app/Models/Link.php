@@ -54,4 +54,11 @@ class Link extends Model
     public function children(){
         return $this->hasMany(Link::class, 'parent_id');
     }
+
+    public function getHrefAttribute(): string
+    {
+        if($this->page) return route('display-page', ['slug' => $this->page->slug]);
+        else if($this->route) return route($this->route);
+        else return "javascript:void(0)";
+    }
 }

@@ -12,4 +12,8 @@ class PublicWebsiteController extends Controller
             'page' => Page::query()->where('slug', $slug)->firstOrFail()
         ]);
     }
+
+    public function hidrologijaPage(){
+
+    }
 }
