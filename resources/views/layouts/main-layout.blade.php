@@ -26,9 +26,9 @@
                     <div class="navbar-brand w-100">
                         <a href="/">
                             <img class="logo-dark" src="{{ asset('assets/img/brands/logo-header-small.png') }}"
-                                 srcset="{{ asset('assets/img/logo-dark@2x.png') }} 2x" alt=""/>
+                                 srcset="{{ asset('assets/img/brands/logo-header-small.png') }}" alt=""/>
                             <img class="logo-light" src="{{ asset('assets/img/brands/logo-header-small.png') }}"
-                                 srcset="{{ asset('assets/img/logo-light@2x.png') }} 2x" alt=""/>
+                                 srcset="{{ asset('assets/img/brands/logo-header-small.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">

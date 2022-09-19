@@ -104,3 +104,4 @@ Route::get('uslovi-koriscenja', function (){
 Route::get('pristup-informacijama', function (){
     return view('pages.information-access');
 })->name('information-access');
+Route::get('javni-konkursi', [\App\Http\Controllers\WebsiteController::class, 'publicCompetitions'])->name('public-competitions');
