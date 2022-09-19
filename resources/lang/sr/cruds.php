@@ -137,6 +137,7 @@ return [
     ],
     'publicCompetition' => [
         'title'          => 'Јавни конкурс',
+        'description'          => 'Опис',
         'title_singular' => 'Јавни конкурс',
         'fields'         => [
             'id'                  => 'ID',
@@ -144,6 +145,8 @@ return [
             'html_content'        => 'ХТМЛ Садржај',
             'html_content_helper' => ' ',
             'title'               => 'Наслов',
+            'description'          => 'Опис',
+            'description_helper'          => '',
             'title_helper'        => ' ',
             'attachments'         => 'Прилози/Фајлови',
             'attachments_helper'  => ' ',

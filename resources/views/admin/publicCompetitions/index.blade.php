@@ -29,6 +29,9 @@
                             {{ trans('cruds.publicCompetition.fields.title') }}
                         </th>
                         <th>
+                            {{ trans('cruds.publicCompetition.fields.description') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.publicCompetition.fields.attachments') }}
                         </th>
                         <th>
@@ -56,6 +59,7 @@
                         <td>
                         </td>
                         <td>
+                        </td>     <td>
                         </td>
                         <td>
                             <select class="search">
@@ -82,6 +86,9 @@
                             </td>
                             <td>
                                 {{ $publicCompetition->title ?? '' }}
+                            </td>
+                            <td>
+                                {{ $publicCompetition->description ?? '' }}
                             </td>
                             <td>
                                 @foreach($publicCompetition->attachments as $key => $media)
@@ -178,7 +185,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

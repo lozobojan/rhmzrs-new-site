@@ -1,4 +1,4 @@
-<li @class(['nav-item', 'dropdown' => count($link->children) > 0, 'dropdown-submenu' => !$isRoot, 'dropend' => !$isRoot]) >
+<liz @class(['nav-item', 'dropdown' => count($link->children) > 0, 'dropdown-submenu' => !$isRoot, 'dropend' => !$isRoot]) >
     <a
         @class(['nav-link' => $isRoot, 'dropdown-toggle' => count($link->children) > 0, 'dropdown-item' => !$isRoot])
         href="{{ $link->href }}"
@@ -14,4 +14,4 @@
             @endforeach
         </ul>
     @endif
-</li>
+</liz>

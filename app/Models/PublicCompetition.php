@@ -38,6 +38,7 @@ class PublicCompetition extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
+        'description',
     ];
 
     public function registerMediaConversions(Media $media = null): void

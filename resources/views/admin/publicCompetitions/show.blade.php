@@ -41,6 +41,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.publicCompetition.fields.description') }}
+                        </th>
+                        <td>
+                            {{ $publicCompetition->description }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.publicCompetition.fields.attachments') }}
                         </th>
                         <td>

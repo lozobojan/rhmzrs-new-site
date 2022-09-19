@@ -7,17 +7,17 @@
                 <div class="col-lg-12 col-xl-12 col-xxl-12x">
 
                     {{-- TODO: razmisliti o ovom prikazu bez escape-ovanja, nije bas bezbjedno --}}
-                    <h1 class="fs-32 text-uppercase text-line text-primary mb-3">Јавни конкурси</h1>
+                    <h1 class="fs-32 text-uppercase text-line text-primary mb-3">	Јавне набавке</h1>
 
                     <section id="snippet-2" class="wrapper bg-light wrapper-border">
                         <div class="container pb-13 pb-md-14">
 
                             <!-- /.row -->
                             <div class="row">
-                                @foreach($publicCompetitions as $item)
+                                @foreach($publicPurchases as $item)
                                     <div class="col-xl-10 mx-auto">
 
-                                        <x-list-item :item="$item" type="javni-konkursi"></x-list-item>
+                                        <x-list-item :item="$item" type="javne-nabavke"></x-list-item>
                                         <!-- /column -->
                                     </div>
                                 @endforeach

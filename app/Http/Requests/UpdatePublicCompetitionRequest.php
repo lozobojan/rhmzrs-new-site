@@ -21,6 +21,10 @@ class UpdatePublicCompetitionRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'description' => [
+                'string',
+                'nullable',
+            ],
             'attachments' => [
                 'array',
                 'required',

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/colors/purple.css') }}">
     <link rel="preload" href="{{ asset('assets/css/fonts/urbanist.css') }}" as="style" onload="this.rel='stylesheet'">
+
+    {{ $additionalCss ?? '' }}
 </head>
 
 <body>
@@ -38,7 +40,7 @@
                                     aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav" id="navbar">
                                 @foreach($links as $link)
 
                                     <x-navbar.link is-root="1" :link="$link"></x-navbar.link>
@@ -47,21 +49,6 @@
 
                             </ul>
 
-                            <!-- /.navbar-nav -->
-                            <div class="offcanvas-footer d-lg-none">
-                                <div>
-                                    <a href="mailto:first.last@email.com" class="link-inverse">info@email.com</a>
-                                    <br/> 00 (123) 456 78 90 <br/>
-                                    <nav class="nav social social-white mt-4">
-                                        <a href="#"><i class="uil uil-twitter"></i></a>
-                                        <a href="#"><i class="uil uil-facebook-f"></i></a>
-                                        <a href="#"><i class="uil uil-dribbble"></i></a>
-                                        <a href="#"><i class="uil uil-instagram"></i></a>
-                                        <a href="#"><i class="uil uil-youtube"></i></a>
-                                    </nav>
-                                    <!-- /.social -->
-                                </div>
-                            </div>
                             <!-- /.offcanvas-footer -->
                         </div>
                         <!-- /.offcanvas-body -->

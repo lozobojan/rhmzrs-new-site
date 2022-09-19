@@ -27,6 +27,14 @@
                 <span class="help-block">{{ trans('cruds.publicCompetition.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="description">{{ trans('cruds.publicCompetition.fields.description') }}</label>
+                <input class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" type="text" name="description" id="description" value="{{ old('description', $publicCompetition->description) }}">
+                @if($errors->has('description'))
+                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.publicCompetition.fields.title_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="attachments">{{ trans('cruds.publicCompetition.fields.attachments') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('attachments') ? 'is-invalid' : '' }}" id="attachments-dropzone">
                 </div>

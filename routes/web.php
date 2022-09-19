@@ -104,4 +104,18 @@ Route::get('uslovi-koriscenja', function (){
 Route::get('pristup-informacijama', function (){
     return view('pages.information-access');
 })->name('information-access');
+
+// Public competition
 Route::get('javni-konkursi', [\App\Http\Controllers\WebsiteController::class, 'publicCompetitions'])->name('public-competitions');
+Route::get('javni-konkursi/{public_competition}', [\App\Http\Controllers\WebsiteController::class, 'publicCompetition'])->name('public-competition');
+
+// Media download
+Route::get('download/{media}', [\App\Http\Controllers\WebsiteController::class, 'downloadMedia'])->name('download-media');
+
+// Public purchases
+Route::get('javne-nabavke', [\App\Http\Controllers\WebsiteController::class, 'publicPurchases'])->name('public-purchases');
+Route::get('javne-nabavke/{public_purchase}', [\App\Http\Controllers\WebsiteController::class, 'publicPurchase'])->name('public-purchase');
+
+Route::get('kontakt', [\App\Http\Controllers\WebsiteController::class, 'contact'])->name('contact');
+
+
