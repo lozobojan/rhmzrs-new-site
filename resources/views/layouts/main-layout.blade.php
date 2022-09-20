@@ -61,13 +61,14 @@
                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item w-auto"><a href="#" title="Arabic"
-                                                                        class="d-flex align-items-center gap-2 dropdown-item"><img
+                                                                   class="d-flex align-items-center gap-2 dropdown-item"><img
                                                 data-gt-lazy-src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/ar.png"
                                                 height="16" width="16" alt="ar"
                                                 src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/ar.png">
                                             Arabic</a></li>
                                     <li class="nav-item w-auto"><a href="#"
-                                                                        title="Chinese (Simplified)" class="d-flex align-items-center gap-2 dropdown-item"><img
+                                                                   title="Chinese (Simplified)"
+                                                                   class="d-flex align-items-center gap-2 dropdown-item"><img
                                                 data-gt-lazy-src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/zh-CN.png"
                                                 height="16" width="16" alt="zh-CN"
                                                 src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/zh-CN.png">
@@ -118,24 +119,48 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="bg-dark text-inverse">
-        <div class="container py-13 py-md-15">
+        <div class="container pt-13 pt-md-13 pb-8 pb-md-10">
+            <div class="row gy-6 gy-lg-0 pb-6">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="#" class="btn btn-primary rounded mb-0 text-nowrap w-100"
+                       style="height: 80px">Анкета</a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="#" class="btn btn-primary rounded mb-0 text-nowrap w-100" style="height: 80px; background-color: #00a7bd; border-color:#00a7bd ">
+                        <img src="{{ asset('assets/img/down-arrow.png') }}" class="me-2"alt=""> <span class="ml-4"> Захтјев
+                        за подацима </span>
+                       </a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <a href="http://apk.vladars.net/index.php?institucija=25" class="btn btn-white rounded mb-0 text-nowrap w-100 p-0" style="height: 80px">
+                        <img src="{{ asset('assets/img/306x100.png') }}" class="h-100" alt="">
+                    </a>
+{{--                    <a href="http://apk.vladars.net/index.php?institucija=25" class="w-100"><img class="w-100"--}}
+{{--                                                                                                 height="100"--}}
+{{--                                                                                                 src="https://rhmzrs.com/wp-content/uploads/2018/09/306x100.jpg"--}}
+{{--                                                                                                 class="rounded-pill image wp-image-814  attachment-full size-full"--}}
+{{--                                                                                                 alt="" loading="lazy"--}}
+{{--                                                                                                 style="max-width: 100%; height: auto;"></a>--}}
+                </div>
+            </div>
             <div class="row gy-6 gy-lg-0">
                 <div class="col-md-4 col-lg-4">
                     <div class="widget">
-                        <img class="mb-4 w-75" src="{{ asset('assets/img/brands/logo-header.png') }}"
-                             srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
-                        <p class="mb-4"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ ЗАВОД
+
+                        <p><strong>Републички хидрометеоролошки завод</strong><br>Пут бањалучког одреда бб<br>78000 Бања
+                            Лука<br>Република Српска<br>Босна и Херцеговина<br><strong>Поштански претинац: 147</strong>
                         </p>
                     </div>
                     <!-- /.widget -->
                 </div>
                 <!-- /column -->
                 <div class="col-md-4 col-lg-4">
-                    <p>Републикa Српскa<br>
-                        Влада Републике Српске<br>
-                        Министарство пољопривреде,<br>
-                        шумарства и водопривреде<br>
-                        <strong>Републички хидрометеоролошки завод</strong></p>
+                    <p><strong>Централа:</strong> +387 51/ 433-522<br><strong>Факс:</strong>
+                        +387 51/ 433-521<br><strong>Директор:</strong> 051 460-852<br><strong>Сеизмологија:</strong>&nbsp;051
+                        463-467<br><strong>Метеорологија:</strong> 051 461-681; 051
+                        346-490<br><strong>Хидрологија:</strong> 051 315-538<br><strong>Заштита
+                            ж. средине:</strong> 051 346-494<br><strong>Сабирни центар:</strong>
+                        051 307-943 (тел/фаx)</p>
                     <!-- /.widget -->
                 </div>
                 <!-- /column -->
@@ -149,9 +174,18 @@
                     </div>
                     <!-- /.widget -->
                 </div>
+
                 <!-- /column -->
             </div>
             <!--/.row -->
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center gap-2">
+                <img class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
+                     srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
+                <p class="mb-4"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ ЗАВОД
+                </p>
+            </div>
         </div>
         <!-- /.container -->
     </footer>

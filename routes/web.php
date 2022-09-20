@@ -117,5 +117,6 @@ Route::get('javne-nabavke', [\App\Http\Controllers\WebsiteController::class, 'pu
 Route::get('javne-nabavke/{public_purchase}', [\App\Http\Controllers\WebsiteController::class, 'publicPurchase'])->name('public-purchase');
 
 Route::get('kontakt', [\App\Http\Controllers\WebsiteController::class, 'contact'])->name('contact');
+Route::post('kontakt', [\App\Http\Controllers\WebsiteController::class, 'saveContact'])->name('contact.post');
 
 
