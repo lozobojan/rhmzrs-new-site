@@ -31,9 +31,9 @@
                         <th>
                             {{ trans('cruds.page.fields.slug') }}
                         </th>
-                        <th>
-                            {{ trans('cruds.page.fields.html_content') }}
-                        </th>
+{{--                        <th>--}}
+{{--                            {{ trans('cruds.page.fields.html_content') }}--}}
+{{--                        </th>--}}
                         <th>
                             &nbsp;
                         </th>
@@ -50,9 +50,9 @@
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
-                        <td>
-                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                        </td>
+{{--                        <td>--}}
+{{--                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                        </td>--}}
                         <td>
                         </td>
                     </tr>
@@ -72,9 +72,9 @@
                             <td>
                                 {{ $page->slug ?? '' }}
                             </td>
-                            <td>
-                                {{ $page->html_content ?? '' }}
-                            </td>
+{{--                            <td>--}}
+{{--                                {{ $page->html_content ?? '' }}--}}
+{{--                            </td>--}}
                             <td>
                                 @can('page_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.pages.show', $page->id) }}">
