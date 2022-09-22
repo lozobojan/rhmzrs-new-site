@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
-use App\Http\Requests\MassDestroyPublicCompetitionRequest;
-use App\Http\Requests\StorePublicCompetitionRequest;
-use App\Http\Requests\UpdatePublicCompetitionRequest;
+use App\Http\Requests\MassDestroyDocumentAndRegulationRequest;
+use App\Http\Requests\StoreDocumentAndRegulationRequest;
+use App\Http\Requests\UpdateDocumentAndRegulationRequest;
 use App\Models\Page;
 use App\Models\PublicCompetition;
 use Gate;
@@ -38,7 +38,7 @@ class PublicCompetitionController extends Controller
         return view('admin.publicCompetitions.create', compact('pages'));
     }
 
-    public function store(StorePublicCompetitionRequest $request)
+    public function store(StoreDocumentAndRegulationRequest $request)
     {
         $publicCompetition = PublicCompetition::create($request->all());
 
@@ -64,7 +64,7 @@ class PublicCompetitionController extends Controller
         return view('admin.publicCompetitions.edit', compact('pages', 'publicCompetition'));
     }
 
-    public function update(UpdatePublicCompetitionRequest $request, PublicCompetition $publicCompetition)
+    public function update(UpdateDocumentAndRegulationRequest $request, PublicCompetition $publicCompetition)
     {
         $publicCompetition->update($request->all());
 
@@ -103,7 +103,7 @@ class PublicCompetitionController extends Controller
         return back();
     }
 
-    public function massDestroy(MassDestroyPublicCompetitionRequest $request)
+    public function massDestroy(MassDestroyDocumentAndRegulationRequest $request)
     {
         PublicCompetition::whereIn('id', request('ids'))->delete();
 
