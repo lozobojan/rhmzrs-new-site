@@ -262,6 +262,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 63,
                 'title' => 'profile_password_edit',
             ],
+            [
+                'id'    => 64,
+                'title' => 'document_and_regulation_create',
+            ],
+            [
+                'id'    => 65,
+                'title' => 'document_and_regulation_edit',
+            ],
+            [
+                'id'    => 66,
+                'title' => 'document_and_regulation_show',
+            ],
+            [
+                'id'    => 67,
+                'title' => 'document_and_regulation_delete',
+            ],
+            [
+                'id'    => 68,
+                'title' => 'document_and_regulation_access',
+            ],
         ];
 
         Permission::insert($permissions);

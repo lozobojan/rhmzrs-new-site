@@ -57,6 +57,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('public-competitions/ckmedia', 'PublicCompetitionController@storeCKEditorImages')->name('public-competitions.storeCKEditorImages');
     Route::resource('public-competitions', 'PublicCompetitionController');
 
+    // Document And Regulation
+    Route::delete('document-and-regulations/destroy', 'DocumentAndRegulationController@massDestroy')->name('document-and-regulations.massDestroy');
+    Route::post('document-and-regulations/media', 'DocumentAndRegulationController@storeMedia')->name('document-and-regulations.storeMedia');
+    Route::post('document-and-regulations/ckmedia', 'DocumentAndRegulationController@storeCKEditorImages')->name('document-and-regulations.storeCKEditorImages');
+    Route::resource('document-and-regulations', 'DocumentAndRegulationController');
+
     // Public Purchase
     Route::delete('public-purchases/destroy', 'PublicPurchaseController@massDestroy')->name('public-purchases.massDestroy');
     Route::post('public-purchases/media', 'PublicPurchaseController@storeMedia')->name('public-purchases.storeMedia');
