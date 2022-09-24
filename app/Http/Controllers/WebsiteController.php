@@ -23,7 +23,7 @@ class WebsiteController extends Controller
 
     public function downloadMedia(Media $media)
     {
-        $media->increment('download_count', 1);
+        $media->download_count = $media->download_count + 1;
         $media->save();
         return response()->download($media->getPath(), $media->file_name);
     }
