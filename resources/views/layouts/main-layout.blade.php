@@ -24,7 +24,7 @@
     <div class="content-wrapper">
         <header class="wrapper">
             <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-dark">
-                <div class="container flex-lg-row flex-nowrap align-items-center">
+                <div class="container-fluid flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
                         <a href="/">
                             <img class="logo-dark" src="{{ asset('assets/img/brands/logo-header-small.png') }}"
@@ -35,7 +35,8 @@
                     </div>
                     <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                         <div class="offcanvas-header d-lg-none">
-                            <h3 class="text-white fs-30 mb-0">Sandbox</h3>
+                            <h3 class="text-white fs-30 mb-0">                            <img class="logo-dark" src="{{ asset('assets/img/brands/logo-header-small.png') }}"alt=""/>
+                            </h3>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                         </div>
@@ -180,10 +181,10 @@
             <!--/.row -->
         </div>
         <div class="row">
-            <div class="col-12 d-flex justify-content-center align-items-center gap-2">
-                <img class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
+            <div class="col-12 d-flex justify-content-center align-items-center gap-2 flex-column flex-md-row">
+                <img class="mb-4 h-12"  src="{{ asset('assets/img/brands/logo-header.png') }}"
                      srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
-                <p class="mb-4"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ ЗАВОД
+                <p class="mb-4 text-center"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ ЗАВОД
                 </p>
             </div>
         </div>

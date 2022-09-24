@@ -4,7 +4,7 @@
             <div class="row">
 
 
-                <div class="col-lg-9 col-xl-8 col-xxl-7">
+                <div class="col-lg-12 col-xl-12 col-xxl-12">
 
                     {{-- TODO: razmisliti o ovom prikazu bez escape-ovanja, nije bas bezbjedno --}}
                     <h1 class="fs-32 text-uppercase text-line text-primary mb-3">{{ $page->title }}</h1>
