@@ -20,7 +20,8 @@ return new class extends Migration {
         'bulletin', // Bliten
         'report',
         'paper',    // Radovi
-        'pollutant_map',    // MOPL u WP / Mapa zagadjivaca
+        'pollutant_map',    // MOPL u WP / Mapa zagadjivaca,
+        'project',
       ])
         ->after('title')
         ->default('post');
