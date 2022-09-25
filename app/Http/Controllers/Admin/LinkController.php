@@ -18,8 +18,7 @@ class LinkController extends Controller
     {
         abort_if(Gate::denies('link_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $links = Link::get();
-
+        $links = Link::query()->whereNull('parent_id')->orderBy('created_at')->get();
         $pages = Page::get();
 
         return view('admin.links.index', compact('links', 'pages'));
