@@ -23,9 +23,6 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.link.fields.id') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.link.fields.title') }}
                         </th>
                         <th>
@@ -38,23 +35,11 @@
                             {{ trans('cruds.link.fields.page') }}
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.slug') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.link.fields.parent') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.link.fields.route') }}
-                        </th>
-                        <th>
                             &nbsp;
                         </th>
                     </tr>
                     <tr>
                         <td>
-                        </td>
-                        <td>
-                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -75,18 +60,6 @@
                         </td>
                         <td>
                         </td>
-                        <td>
-                            <select class="search">
-                                <option value>{{ trans('global.all') }}</option>
-                                @foreach($links as $key => $item)
-                                    <option value="{{ $item->slug }}">{{ $item->slug }}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,9 +67,6 @@
                         <tr data-entry-id="{{ $link->id }}">
                             <td>
 
-                            </td>
-                            <td>
-                                {{ $link->id ?? '' }}
                             </td>
                             <td>
                                 {{ $link->title ?? '' }}
@@ -109,15 +79,6 @@
                             </td>
                             <td>
                                 {{ $link->page->title ?? '' }}
-                            </td>
-                            <td>
-                                {{ $link->page->slug ?? '' }}
-                            </td>
-                            <td>
-                                {{ $link->parent->slug ?? '' }}
-                            </td>
-                            <td>
-                                {{ $link->parent->route ?? '' }}
                             </td>
                             <td>
                                 @can('link_show')
