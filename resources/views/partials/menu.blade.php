@@ -170,7 +170,7 @@
                             @can('questionnaire_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.questionnaires.index") }}" class="nav-link {{ request()->is("admin/questionnaires") || request()->is("admin/questionnaires/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-question">
+                                        <i class="fa-fw nav-icon fas fa-poll">
 
                                         </i>
                                         <p>
