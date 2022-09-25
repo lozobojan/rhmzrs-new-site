@@ -38,9 +38,6 @@
                             {{ trans('cruds.publicPurchase.fields.page') }}
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.slug') }}
-                        </th>
-                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -64,8 +61,6 @@
                                     <option value="{{ $item->title }}">{{ $item->title }}</option>
                                 @endforeach
                             </select>
-                        </td>
-                        <td>
                         </td>
                         <td>
                         </td>
@@ -95,9 +90,6 @@
                             </td>
                             <td>
                                 {{ $publicPurchase->page->title ?? '' }}
-                            </td>
-                            <td>
-                                {{ $publicPurchase->page->slug ?? '' }}
                             </td>
                             <td>
                                 @can('public_purchase_show')
@@ -178,7 +170,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false
