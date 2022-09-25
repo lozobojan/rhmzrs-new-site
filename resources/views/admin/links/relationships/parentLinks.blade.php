@@ -40,9 +40,6 @@
                                 {{ trans('cruds.link.fields.parent') }}
                             </th>
                             <th>
-                                {{ trans('cruds.link.fields.route') }}
-                            </th>
-                            <th>
                                 &nbsp;
                             </th>
                         </tr>
@@ -70,9 +67,6 @@
                                 </td>
                                 <td>
                                     {{ $link->parent->slug ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $link->parent->route ?? '' }}
                                 </td>
                                 <td>
                                     @can('link_show')
@@ -150,7 +144,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

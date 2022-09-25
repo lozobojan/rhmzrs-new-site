@@ -60,7 +60,7 @@
                             {{ trans('cruds.link.fields.parent') }}
                         </th>
                         <td>
-                            {{ $link->parent->slug ?? '' }}
+                            {{ $link->parent->slug ?? '/' }}
                         </td>
                     </tr>
                 </tbody>
