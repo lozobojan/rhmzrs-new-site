@@ -8,19 +8,20 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        if (config('custom_properties.use_custom_dump')) {
+        $this->call([
+            PermissionsTableSeeder::class,
+            RolesTableSeeder::class,
+            PermissionRoleTableSeeder::class,
+            UsersTableSeeder::class,
+            RoleUserTableSeeder::class,
+            UpdateDocumentAndRegulationPermissionsSeeder::class
+        ]);
+
+        if(config('custom_properties.use_custom_dump')){
             $this->call([
-                CustomSQLDumpSeeder::class,
-                UpdateDocumentAndRegulationPermissionsSeeder::class,
-            ]);
-        } else {
-            $this->call([
-                PermissionsTableSeeder::class,
-                RolesTableSeeder::class,
-                PermissionRoleTableSeeder::class,
-                UsersTableSeeder::class,
-                RoleUserTableSeeder::class,
+                CustomSQLDumpSeeder::class
             ]);
         }
+
     }
 }
