@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DocumentAndRegulation;
 use App\Models\PublicCompetition;
 use App\Models\PublicPurchase;
 use Illuminate\Http\Request;
@@ -35,16 +36,26 @@ class WebsiteController extends Controller
         return view('pages.public-purchases', compact('publicPurchases'));
     }
 
-
     public function publicPurchase(PublicPurchase $publicPurchase)
     {
         return view('pages.public-purchase', compact('publicPurchase'));
+    }
+    public function documents()
+    {
+        $documents = DocumentAndRegulation::paginate(10);
+        return view('pages.document-and-regulations', compact('documents'));
+    }
+
+    public function document(DocumentAndRegulation $documentAndRegulation)
+    {
+        return view('pages.document-and-regulation', compact('documentAndRegulation'));
     }
 
     public function contact()
     {
         return view('pages.contact');
     }
+
     public function saveContact(Request $request)
     {
         return $request->all();

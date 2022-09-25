@@ -7,14 +7,25 @@ use Illuminate\View\Component;
 
 class MainLayout extends Component
 {
+    public $meta;
+    public $metaTitle;
+    public $metaDescription;
+    public $metaKeywords;
+    public $metaImage;
+    public $metaUrl;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($meta = null)
     {
-        //
+        $this->meta = $meta;
+        $this->metaTitle = $meta['title'] ?? config('app.name');
+        $this->metaDescription = $meta['description'] ?? config('app.name');
+        $this->metaKeywords = $meta['keywords'] ?? 'rhmzrs';
+        $this->metaImage = $meta['image'] ?? asset('assets/img/meta-og.png');
+        $this->metaUrl = $meta['url'] ?? config('app.url');
     }
 
     /**

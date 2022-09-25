@@ -4,17 +4,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
-    <meta name="keywords"
-          content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
-    <meta name="author" content="elemis">
-    <title>Републички хидрометеоролошки завод Републике Српске</title>
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/colors/purple.css') }}">
     <link rel="preload" href="{{ asset('assets/css/fonts/urbanist.css') }}" as="style" onload="this.rel='stylesheet'">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
+    <meta name='keywords' content='{{ $metaKeywords }}'/>
+
+    <!-- Primary Meta Tags -->
+    <title>{{ $metaTitle }}</title>
+    <meta name="title" content="{{ $metaTitle }}">
+    <meta name="description" content="{{ $metaDescription }}">
+    <meta property="og:locale" content="sr_RS"/>
+    <link rel="canonical" href="{{ $metaUrl }}"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ $metaUrl }}">
+    <meta property="og:title" content="{{ $metaTitle }}">
+    <meta property="og:description" content="{{ $metaDescription }}">
+    <meta property="og:image" content="{{ $metaImage }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ $metaUrl }}">
+    <meta property="twitter:title" content="{{ $metaTitle }}">
+    <meta property="twitter:description" content="{{ $metaDescription }}">
+    <meta property="twitter:image" content="{{ $metaImage }}">
 
     {{ $additionalCss ?? '' }}
 </head>
@@ -23,7 +44,7 @@
 <div class="page-frame bg-pale-primary">
     <div class="content-wrapper">
         <header class="wrapper">
-            <nav class="navbar navbar-expand-lg classic transparent position-absolute navbar-dark">
+            <nav class="navbar navbar-expand-xxl classic transparent position-absolute navbar-dark">
                 <div class="container-fluid flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
                         <a href="/">
@@ -34,8 +55,10 @@
                         </a>
                     </div>
                     <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-                        <div class="offcanvas-header d-lg-none">
-                            <h3 class="text-white fs-30 mb-0">                            <img class="logo-dark" src="{{ asset('assets/img/brands/logo-header-small.png') }}"alt=""/>
+                        <div class="offcanvas-header d-xxl-none">
+                            <h3 class="text-white fs-30 mb-0"><img class=""
+                                                                   src="{{ asset('assets/img/brands/logo-header-small.png') }}"
+                                                                   alt=""/>
                             </h3>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
@@ -76,7 +99,7 @@
                                             Chinese (Simplified)</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item d-lg-none">
+                            <li class="nav-item d-xxl-none">
                                 <button class="hamburger offcanvas-nav-btn"><span></span></button>
                             </li>
                         </ul>
@@ -127,21 +150,23 @@
                        style="height: 80px">Анкета</a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="#" class="btn btn-primary rounded mb-0 text-nowrap w-100" style="height: 80px; background-color: #00a7bd; border-color:#00a7bd ">
-                        <img src="{{ asset('assets/img/down-arrow.png') }}" class="me-2"alt=""> <span class="ml-4"> Захтјев
+                    <a href="#" class="btn btn-primary rounded mb-0 text-nowrap w-100"
+                       style="height: 80px; background-color: #00a7bd; border-color:#00a7bd ">
+                        <img src="{{ asset('assets/img/down-arrow.png') }}" class="me-2" alt=""> <span class="ml-4"> Захтјев
                         за подацима </span>
-                       </a>
+                    </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="http://apk.vladars.net/index.php?institucija=25" class="btn btn-white rounded mb-0 text-nowrap w-100 p-0" style="height: 80px">
+                    <a href="http://apk.vladars.net/index.php?institucija=25"
+                       class="btn btn-white rounded mb-0 text-nowrap w-100 p-0" style="height: 80px">
                         <img src="{{ asset('assets/img/306x100.png') }}" class="h-100" alt="">
                     </a>
-{{--                    <a href="http://apk.vladars.net/index.php?institucija=25" class="w-100"><img class="w-100"--}}
-{{--                                                                                                 height="100"--}}
-{{--                                                                                                 src="https://rhmzrs.com/wp-content/uploads/2018/09/306x100.jpg"--}}
-{{--                                                                                                 class="rounded-pill image wp-image-814  attachment-full size-full"--}}
-{{--                                                                                                 alt="" loading="lazy"--}}
-{{--                                                                                                 style="max-width: 100%; height: auto;"></a>--}}
+                    {{--                    <a href="http://apk.vladars.net/index.php?institucija=25" class="w-100"><img class="w-100"--}}
+                    {{--                                                                                                 height="100"--}}
+                    {{--                                                                                                 src="https://rhmzrs.com/wp-content/uploads/2018/09/306x100.jpg"--}}
+                    {{--                                                                                                 class="rounded-pill image wp-image-814  attachment-full size-full"--}}
+                    {{--                                                                                                 alt="" loading="lazy"--}}
+                    {{--                                                                                                 style="max-width: 100%; height: auto;"></a>--}}
                 </div>
             </div>
             <div class="row gy-6 gy-lg-0">
@@ -156,12 +181,16 @@
                 </div>
                 <!-- /column -->
                 <div class="col-md-4 col-lg-4">
-                    <p><strong>Централа:</strong> +387 51/ 433-522<br><strong>Факс:</strong>
-                        +387 51/ 433-521<br><strong>Директор:</strong> 051 460-852<br><strong>Сеизмологија:</strong>&nbsp;051
-                        463-467<br><strong>Метеорологија:</strong> 051 461-681; 051
-                        346-490<br><strong>Хидрологија:</strong> 051 315-538<br><strong>Заштита
-                            ж. средине:</strong> 051 346-494<br><strong>Сабирни центар:</strong>
-                        051 307-943 (тел/фаx)</p>
+                    <p>
+                        <strong>Централа:</strong><a href="tel:+387 51/ 433-522">+387 51/ 433-522</a><br>
+                        <strong>Факс:</strong><a href="tel:+387 51/ 433-521">+387 51/ 433-521</a><br>
+                        <strong>Директор:</strong><a href="tel:051 460-852">051 460-852</a><br>
+                        <strong>Сеизмологија:</strong><a href="tel:051 463-467">051 463-467</a><br>
+                        <strong>Метеорологија:</strong> <a href="tel:051 461-681">051 461-681</a>; <a href="tel:051 346-490">051 346-490</a><br>
+                        <strong>Хидрологија:</strong> <a href="tel:051 315-538">051 315-538</a><br>
+                        <strong>Заштита ж. средине:</strong> <a href="tel:051 346-494">051 346-494</a><br>
+                        <strong>Сабирни центар:</strong><a href="tel:051 307-943">051 307-943</a> (тел/фаx)
+                    </p>
                     <!-- /.widget -->
                 </div>
                 <!-- /column -->
@@ -182,9 +211,10 @@
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center gap-2 flex-column flex-md-row">
-                <img class="mb-4 h-12"  src="{{ asset('assets/img/brands/logo-header.png') }}"
+                <img class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
                      srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
-                <p class="mb-4 text-center"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ ЗАВОД
+                <p class="mb-4 text-center"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ
+                    ЗАВОД
                 </p>
             </div>
         </div>

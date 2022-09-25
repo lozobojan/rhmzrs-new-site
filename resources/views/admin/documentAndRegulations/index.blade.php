@@ -29,9 +29,6 @@
                             {{ trans('cruds.documentAndRegulation.fields.title') }}
                         </th>
                         <th>
-                            {{ trans('cruds.documentAndRegulation.fields.page') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.page.fields.slug') }}
                         </th>
                         <th>
@@ -50,20 +47,8 @@
                         <td>
                         </td>
                         <td>
-                        </td>     <td>
                         </td>
-                        <td>
-                            <select class="search">
-                                <option value>{{ trans('global.all') }}</option>
-                                @foreach($pages as $key => $item)
-                                    <option value="{{ $item->title }}">{{ $item->title }}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -84,12 +69,6 @@
                                         {{ trans('global.view_file') }}
                                     </a>
                                 @endforeach
-                            </td>
-                            <td>
-                                {{ $documentAndRegulation->page->title ?? '' }}
-                            </td>
-                            <td>
-                                {{ $documentAndRegulation->page->slug ?? '' }}
                             </td>
                             <td>
                                 @can('public_competition_show')

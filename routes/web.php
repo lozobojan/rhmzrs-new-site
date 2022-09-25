@@ -122,6 +122,10 @@ Route::get('download/{media}', [\App\Http\Controllers\WebsiteController::class, 
 Route::get('javne-nabavke', [\App\Http\Controllers\WebsiteController::class, 'publicPurchases'])->name('public-purchases');
 Route::get('javne-nabavke/{public_purchase}', [\App\Http\Controllers\WebsiteController::class, 'publicPurchase'])->name('public-purchase');
 
+// Public purchases
+Route::get('dokumenti-i-propisi', [\App\Http\Controllers\WebsiteController::class, 'documents'])->name('document-and-regulations');
+Route::get('dokumenti-i-propisi/{document_and_regulation}', [\App\Http\Controllers\WebsiteController::class, 'document'])->name('document-and-regulations.view');
+
 Route::get('kontakt', [\App\Http\Controllers\WebsiteController::class, 'contact'])->name('contact');
 Route::post('kontakt', [\App\Http\Controllers\WebsiteController::class, 'saveContact'])->name('contact.post');
 

@@ -22,11 +22,9 @@ class DocumentAndRegulationController extends Controller
     {
         abort_if(Gate::denies('document_and_regulation_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $documentAndRegulations = DocumentAndRegulation::with(['page', 'media'])->get();
+        $documentAndRegulations = DocumentAndRegulation::with(['media'])->get();
 
-        $pages = Page::get();
-
-        return view('admin.documentAndRegulations.index', compact('pages', 'documentAndRegulations'));
+        return view('admin.documentAndRegulations.index', compact('documentAndRegulations'));
     }
 
     public function create()
@@ -89,7 +87,6 @@ class DocumentAndRegulationController extends Controller
     {
         abort_if(Gate::denies('document_and_regulation_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $documentAndRegulation->load('page');
 
         return view('admin.documentAndRegulations.show', compact('documentAndRegulation'));
     }

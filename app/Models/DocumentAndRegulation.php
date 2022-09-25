@@ -6,10 +6,11 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class DocumentAndRegulation extends Model
+class DocumentAndRegulation extends Model implements HasMedia
 {
     use SoftDeletes;
     use InteractsWithMedia;
@@ -29,7 +30,6 @@ class DocumentAndRegulation extends Model
 
     protected $fillable = [
         'title',
-        'page_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -46,8 +46,4 @@ class DocumentAndRegulation extends Model
         return $this->getMedia('attachments');
     }
 
-    public function page()
-    {
-        return $this->belongsTo(Page::class, 'page_id');
-    }
 }

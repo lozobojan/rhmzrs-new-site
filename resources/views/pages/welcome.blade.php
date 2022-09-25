@@ -1,4 +1,13 @@
-<x-main-layout>
+@php
+    $meta = [
+        "title"                 => "Почетна - Републички хидрометеоролошки завод",
+        "description"           => "Почетна - Републички хидрометеоролошки завод",
+        "keywords"              => "rhmzrs",
+        "image"                 => asset('assets/img/meta-og.png'),
+        "url"                   => Request::url(),
+    ];
+@endphp
+<x-main-layout :meta="$meta">
     <section class="wrapper bg-light angled">
         <div class="container py-14 py-md-16">
             <div class="row">

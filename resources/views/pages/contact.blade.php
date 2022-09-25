@@ -57,12 +57,16 @@
                                         </div>
                                         <div>
                                             <h5 class="mb-1">Телефони</h5>
-                                            <p><strong>Централа:</strong> +387 51/ 433-522<br><strong>Факс:</strong>
-                                                +387 51/ 433-521<br><strong>Директор:</strong> 051 460-852<br><strong>Сеизмологија:</strong>&nbsp;051
-                                                463-467<br><strong>Метеорологија:</strong> 051 461-681; 051
-                                                346-490<br><strong>Хидрологија:</strong> 051 315-538<br><strong>Заштита
-                                                    ж. средине:</strong> 051 346-494<br><strong>Сабирни центар:</strong>
-                                                051 307-943 (тел/фаx)</p>
+                                            <p>
+                                                <strong>Централа:</strong><a href="tel:+387 51/ 433-522">+387 51/ 433-522</a><br>
+                                                <strong>Факс:</strong><a href="tel:+387 51/ 433-521">+387 51/ 433-521</a><br>
+                                                <strong>Директор:</strong><a href="tel:051 460-852">051 460-852</a><br>
+                                                <strong>Сеизмологија:</strong><a href="tel:051 463-467">051 463-467</a><br>
+                                                <strong>Метеорологија:</strong> <a href="tel:051 461-681">051 461-681</a>; <a href="tel:051 346-490">051 346-490</a><br>
+                                                <strong>Хидрологија:</strong> <a href="tel:051 315-538">051 315-538</a><br>
+                                                <strong>Заштита ж. средине:</strong> <a href="tel:051 346-494">051 346-494</a><br>
+                                                <strong>Сабирни центар:</strong><a href="tel:051 307-943">051 307-943</a> (тел/фаx)
+                                            </p>
                                         </div>
                                     </div>
                                     <!--/div -->

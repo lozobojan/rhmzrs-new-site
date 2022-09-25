@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.public-competitions.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("admin.document-and-regulations.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">{{ trans('cruds.documentAndRegulation.fields.title') }}</label>
@@ -25,18 +25,6 @@
                     <span class="text-danger">{{ $errors->first('attachments') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.documentAndRegulation.fields.attachments_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="page_id">{{ trans('cruds.documentAndRegulation.fields.page') }}</label>
-                <select class="form-control select2 {{ $errors->has('page') ? 'is-invalid' : '' }}" name="page_id" id="page_id" required>
-                    @foreach($pages as $id => $entry)
-                        <option value="{{ $id }}" {{ old('page_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('page'))
-                    <span class="text-danger">{{ $errors->first('page') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.documentAndRegulation.fields.page_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
@@ -63,7 +51,7 @@
               return new Promise(function(resolve, reject) {
                 // Init request
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', '{{ route('admin.public-competitions.storeCKEditorImages') }}', true);
+                xhr.open('POST', '{{ route('admin.document-and-regulations.storeCKEditorImages') }}', true);
                 xhr.setRequestHeader('x-csrf-token', window._token);
                 xhr.setRequestHeader('Accept', 'application/json');
                 xhr.responseType = 'json';
@@ -119,7 +107,7 @@
 <script>
     var uploadedAttachmentsMap = {}
 Dropzone.options.attachmentsDropzone = {
-    url: '{{ route('admin.public-competitions.storeMedia') }}',
+    url: '{{ route('admin.document-and-regulations.storeMedia') }}',
     maxFilesize: 5, // MB
     addRemoveLinks: true,
     headers: {

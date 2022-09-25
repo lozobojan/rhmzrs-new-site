@@ -43,14 +43,7 @@
                             @endforeach
                         </td>
                     </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.documentAndRegulation.fields.page') }}
-                        </th>
-                        <td>
-                            {{ $documentAndRegulation->page->title ?? '' }}
-                        </td>
-                    </tr>
+
                 </tbody>
             </table>
             <div class="form-group">

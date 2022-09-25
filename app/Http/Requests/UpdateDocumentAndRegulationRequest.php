@@ -28,10 +28,6 @@ class UpdateDocumentAndRegulationRequest extends FormRequest
             'attachments.*' => [
                 'required',
             ],
-            'page_id' => [
-                'required',
-                'integer',
-            ],
         ];
     }
 }
