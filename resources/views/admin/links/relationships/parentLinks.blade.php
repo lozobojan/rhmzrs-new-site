@@ -34,9 +34,6 @@
                                 {{ trans('cruds.link.fields.page') }}
                             </th>
                             <th>
-                                {{ trans('cruds.page.fields.slug') }}
-                            </th>
-                            <th>
                                 {{ trans('cruds.link.fields.parent') }}
                             </th>
                             <th>
@@ -61,9 +58,6 @@
                                 </td>
                                 <td>
                                     {{ $link->page->title ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $link->page->slug ?? '' }}
                                 </td>
                                 <td>
                                     {{ $link->parent->slug ?? '' }}
