@@ -86,7 +86,7 @@
                             @can('link_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.links.index") }}" class="nav-link {{ request()->is("admin/links") || request()->is("admin/links/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-link">
 
                                         </i>
                                         <p>
@@ -98,7 +98,7 @@
                             @can('page_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.pages.index") }}" class="nav-link {{ request()->is("admin/pages") || request()->is("admin/pages/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-book">
 
                                         </i>
                                         <p>
@@ -110,7 +110,7 @@
                             @can('post_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.posts.index") }}" class="nav-link {{ request()->is("admin/posts") || request()->is("admin/posts/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-bullhorn">
 
                                         </i>
                                         <p>
@@ -122,7 +122,7 @@
                             @can('public_competition_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.public-competitions.index") }}" class="nav-link {{ request()->is("admin/public-competitions") || request()->is("admin/public-competitions/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-gavel">
 
                                         </i>
                                         <p>
@@ -134,7 +134,7 @@
                             @can('public_purchase_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.public-purchases.index") }}" class="nav-link {{ request()->is("admin/public-purchases") || request()->is("admin/public-purchases/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-shopping-cart">
 
                                         </i>
                                         <p>
@@ -146,7 +146,7 @@
                             @can('document_and_regulation_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.document-and-regulations.index") }}" class="nav-link {{ request()->is("admin/document-and-regulations") || request()->is("admin/document-and-regulations/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-scroll">
 
                                         </i>
                                         <p>
@@ -158,7 +158,7 @@
                             @can('project_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.projects.index") }}" class="nav-link {{ request()->is("admin/projects") || request()->is("admin/projects/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-project-diagram">
 
                                         </i>
                                         <p>
@@ -170,7 +170,7 @@
                             @can('questionnaire_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.questionnaires.index") }}" class="nav-link {{ request()->is("admin/questionnaires") || request()->is("admin/questionnaires/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-question">
 
                                         </i>
                                         <p>
@@ -182,7 +182,7 @@
                             @can('question_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.questions.index") }}" class="nav-link {{ request()->is("admin/questions") || request()->is("admin/questions/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-question">
 
                                         </i>
                                         <p>
@@ -194,7 +194,7 @@
                             @can('answer_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.answers.index") }}" class="nav-link {{ request()->is("admin/answers") || request()->is("admin/answers/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
+                                        <i class="fa-fw nav-icon fas fa-info">
 
                                         </i>
                                         <p>
