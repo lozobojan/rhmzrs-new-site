@@ -15,7 +15,7 @@ class CustomSQLDumpSeeder extends Seeder
      */
     public function run()
     {
-        $sqlFiles = ['links', 'pages'];
+        $sqlFiles = ['pages', 'links'];
 
         foreach ($sqlFiles as $file) {
             $path = base_path("sql_dumps/$file.sql");
