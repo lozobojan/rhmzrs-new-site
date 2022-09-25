@@ -41,9 +41,6 @@
                             {{ trans('cruds.publicCompetition.fields.page') }}
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.slug') }}
-                        </th>
-                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -68,8 +65,6 @@
                                     <option value="{{ $item->title }}">{{ $item->title }}</option>
                                 @endforeach
                             </select>
-                        </td>
-                        <td>
                         </td>
                         <td>
                         </td>
@@ -102,9 +97,6 @@
                             </td>
                             <td>
                                 {{ $publicCompetition->page->title ?? '' }}
-                            </td>
-                            <td>
-                                {{ $publicCompetition->page->slug ?? '' }}
                             </td>
                             <td>
                                 @can('public_competition_show')
