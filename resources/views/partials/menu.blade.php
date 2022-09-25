@@ -131,18 +131,6 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('document_and_regulation_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.document-and-regulations.index") }}" class="nav-link {{ request()->is("admin/document-and-regulations") || request()->is("admin/document-and-regulations/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.documentAndRegulation.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
                             @can('public_purchase_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.public-purchases.index") }}" class="nav-link {{ request()->is("admin/public-purchases") || request()->is("admin/public-purchases/*") ? "active" : "" }}">
@@ -151,6 +139,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.publicPurchase.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('document_and_regulation_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.document-and-regulations.index") }}" class="nav-link {{ request()->is("admin/document-and-regulations") || request()->is("admin/document-and-regulations/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-cogs">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.documentAndRegulation.title') }}
                                         </p>
                                     </a>
                                 </li>
