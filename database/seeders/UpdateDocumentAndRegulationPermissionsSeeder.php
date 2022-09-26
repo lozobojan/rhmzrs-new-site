@@ -42,7 +42,6 @@ class UpdateDocumentAndRegulationPermissionsSeeder extends Seeder
                 'permission_id' => $documentAndRegulationPermission->id
             ];
         }
-        dump($documentAndRegulationPermissions);
         PermissionRole::query()->insert($permissionRole);
     }
 }

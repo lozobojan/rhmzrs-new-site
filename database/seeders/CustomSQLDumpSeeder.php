@@ -15,8 +15,12 @@ class CustomSQLDumpSeeder extends Seeder
      */
     public function run()
     {
-        $path = base_path('sql_dumps/rhmzrs.sql');
-        $sql = file_get_contents($path);
-        DB::unprepared($sql);
+        $sqlFiles = ['pages', 'links'];
+
+        foreach ($sqlFiles as $file) {
+            $path = base_path("sql_dumps/$file.sql");
+            $sql = file_get_contents($path);
+            DB::unprepared($sql);
+        }
     }
 }

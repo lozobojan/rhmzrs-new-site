@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateProjectsTable extends Migration
 {
-    public function up()
+    public static function up()
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');

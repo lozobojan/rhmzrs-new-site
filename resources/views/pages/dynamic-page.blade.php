@@ -13,6 +13,12 @@
                 </div>
                 <!-- /column -->
 
+                @if($page->pagePosts)
+                    @foreach($page->pagePosts as $post)
+                        <p>{{ $post->title }}</p>
+                    @endforeach
+                @endif
+
             </div>
             <!-- /.row -->
         </div>
