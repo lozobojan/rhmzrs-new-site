@@ -241,4 +241,107 @@ class ImportDataMapper
         }
         return $newData;
     }
+
+    public function mapMeteoStationData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapPressureData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                'pressure' => $data['pritisak'] ?? null,
+                'period' => $data['termin'] ?? null,
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapSeismicStatitionData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapCurrentTemperatureData(array $fileData, mixed $maxBatchVersion)
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                'current_temperature' => $data['TrenutnaTemp'] ?? null,
+                'period' => $data['termin'] ?? null,
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapWindData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                'wind_speed' => $data['brzinaVjetra'],
+                'lat_direction' => $data['latSmjer'],
+                'cir_direction' => $data['cirSmjer'],
+                'period' => $data['termin'],
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
 }

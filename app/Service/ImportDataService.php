@@ -6,6 +6,7 @@ use App\Mapper\ImportDataMapper;
 use App\Models\AcceleroStation;
 use App\Models\AgriculturalLand;
 use App\Models\Bioprognosis;
+use App\Models\CurrentTemperature;
 use App\Models\Earthquake;
 use App\Models\EcoInformation;
 use App\Models\EcoPollutant;
@@ -13,6 +14,10 @@ use App\Models\EcoStation;
 use App\Models\HydroInformation;
 use App\Models\MeteoInformation;
 use App\Models\MeteoMap;
+use App\Models\MeteoStation;
+use App\Models\Pressure;
+use App\Models\SeismicStation;
+use App\Models\Wind;
 use Illuminate\Support\Facades\Log;
 
 class ImportDataService
@@ -106,5 +111,45 @@ class ImportDataService
         $fileData = $this->importDataMapper->mapMeteoInformationData($fileData, $maxBatchVersion);
         Log::info("Importing selected data into hydro_information table: \n", $fileData);
         MeteoInformation::query()->insert($fileData);
+    }
+
+    public function importMeteoStations(array $fileData)
+    {
+        $maxBatchVersion = MeteoStation::query()->max('batch_version') ?? 0;
+        $fileData = $this->importDataMapper->mapMeteoStationData($fileData, $maxBatchVersion);
+        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        MeteoStation::query()->insert($fileData);
+    }
+
+    public function importPressureData(array $fileData)
+    {
+        $maxBatchVersion = Pressure::query()->max('batch_version') ?? 0;
+        $fileData = $this->importDataMapper->mapPressureData($fileData, $maxBatchVersion);
+        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Pressure::query()->insert($fileData);
+    }
+
+    public function importSeismicStations(array $fileData)
+    {
+        $maxBatchVersion = SeismicStation::query()->max('batch_version') ?? 0;
+        $fileData = $this->importDataMapper->mapSeismicStatitionData($fileData, $maxBatchVersion);
+        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        SeismicStation::query()->insert($fileData);
+    }
+
+    public function importCurrentTemperatures(array $fileData)
+    {
+        $maxBatchVersion = CurrentTemperature::query()->max('batch_version') ?? 0;
+        $fileData = $this->importDataMapper->mapCurrentTemperatureData($fileData, $maxBatchVersion);
+        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        CurrentTemperature::query()->insert($fileData);
+    }
+
+    public function importWindData(array $fileData)
+    {
+        $maxBatchVersion = Wind::query()->max('batch_version') ?? 0;
+        $fileData = $this->importDataMapper->mapWindData($fileData, $maxBatchVersion);
+        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Wind::query()->insert($fileData);
     }
 }

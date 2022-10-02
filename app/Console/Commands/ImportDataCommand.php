@@ -106,6 +106,26 @@ class ImportDataCommand extends Command implements ShouldQueue
                 info("Importing MeteoPodaci.json");
                 $this->importDataService->importMeteoInformation($fileData);
                 break;
+            case "MeteoStanice.json":
+                info("Importing MeteoStanice.json");
+                $this->importDataService->importMeteoStations($fileData);
+                break;
+            case "pritisak.json":
+                info("Importing pritisak.json");
+                $this->importDataService->importPressureData($fileData);
+                break;
+            case "SeizmoStanice.json":
+                info("Importing SeizmoStanice.json");
+                $this->importDataService->importSeismicStations($fileData);
+                break;
+            case "temperatureTrenutne.json":
+                info("Importing temperatureTrenutne.json");
+                $this->importDataService->importCurrentTemperatures($fileData);
+                break;
+            case "vjetar.json":
+                info("Importing vjetar.json");
+                $this->importDataService->importWindData($fileData);
+                break;
             default:
                 info("None filename type matched.");
                 break;

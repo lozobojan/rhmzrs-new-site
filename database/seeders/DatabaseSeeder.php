@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
             PermissionRoleTableSeeder::class,
             UsersTableSeeder::class,
             RoleUserTableSeeder::class,
-            UpdateDocumentAndRegulationPermissionsSeeder::class
+            UpdateDocumentAndRegulationPermissionsSeeder::class,
+            ImportDataSeeder::class
         ]);
 
         if(config('custom_properties.use_custom_dump')){
