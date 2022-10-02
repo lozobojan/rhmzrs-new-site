@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('earthquakes', function (Blueprint $table) {
             $table->id();
+            $table->string('batch_version');
             $table->enum('earthquake_type', ['AUTOMATIC', 'FINAL'])->nullable();;
             $table->enum('publish_status', ['DRAFT', 'PUBLISHED']);
             $table->string('earthquake_date')->nullable();

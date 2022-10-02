@@ -19,11 +19,11 @@ class ScanForFilesCommand extends Command
             $nameOfFile = explode('/', $file);
 
             match ($nameOfFile[1]) { // todo: make string in match and run command after that, add delete (settings or .env)
-//                'AgroZemljiste.json' => Artisan::call('parse ' . $nameOfFile[1] . ' TemperatureZemljista ' . 'App\\\\Models\\\\Import\\\\AgroZemljiste'),
-//                'AkceleroStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' AkceleroStanice ' . 'App\\\\Models\\\\Import\\\\AkceleroStanice'),
-//                'Bioprognoza.json' => Artisan::call('parse ' . $nameOfFile[1] . ' BioPrognoza ' . 'App\\\\Models\\\\Import\\\\Bioprognoza'),
-////                'EkoPodaci20220330120000.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoPodaci ' . 'App\\\\Models\\\\Import\\\\EkoPodaci20220330120000'),
-//                'EkoStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoStanice ' . 'App\\\\Models\\\\Import\\\\EkoStanice'),
+                'AgroZemljiste.json' => Artisan::call('parse ' . $nameOfFile[1] . ' TemperatureZemljista'),
+                'AkceleroStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' AkceleroStanice'),
+                'Bioprognoza.json' => Artisan::call('parse ' . $nameOfFile[1] . ' BioPrognoza'),
+                'EkoPodaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoPodaci'),
+                'EkoStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoStanice'),
 //                'ekoZagadjivaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoZagadjivaci ' . 'App\\\\Models\\\\Import\\\\EkoZagadjivaci'),
 //                'HidroPodaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' HidroPodaci ' . 'App\\\\Models\\\\Import\\\\HidroPodaci'),
 //                'HidroStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' HidroStanice ' . 'App\\\\Models\\\\Import\\\\HidroStanice'),
@@ -34,7 +34,7 @@ class ScanForFilesCommand extends Command
 //                'SeizmoStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' SeizmoStanice ' . 'App\\\\Models\\\\Import\\\\SeizmoStanice'),
 //                'temperatureTrenutne.json' => Artisan::call('parse ' . $nameOfFile[1] . ' TemperatureTrenutne ' . 'App\\\\Models\\\\Import\\\\TemperatureTrenutne'),
 //                'vjetar.json' => Artisan::call('parse ' . $nameOfFile[1] . ' Vjetar ' . 'App\\\\Models\\\\Import\\\\Vjetar'),
-                'zemljotresi.json' => Artisan::call('parse ' . $nameOfFile[1] . ' Zemljotresi ' . 'App\\\\Models\\\\Import\\\\Zemljotresi'),
+                'zemljotresi.json' => Artisan::call('parse ' . $nameOfFile[1] . ' Zemljotresi'),
                 default => info('No command for parsing: ' . $nameOfFile[1])
             };
         }

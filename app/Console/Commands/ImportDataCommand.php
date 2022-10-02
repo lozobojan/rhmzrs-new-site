@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Import\ImportData;
 use App\Service\ImportDataService;
 use Exception;
 use Illuminate\Console\Command;
@@ -12,7 +11,7 @@ use Symfony\Component\Console\Command\Command as CommandResponse;
 
 class ImportDataCommand extends Command implements ShouldQueue
 {
-    protected $signature = 'parse {filename} {arrayKey} {type}';
+    protected $signature = 'parse {filename} {arrayKey}';
     protected $description = 'Parse .json files';
 
     private ImportDataService $importDataService;
@@ -70,6 +69,26 @@ class ImportDataCommand extends Command implements ShouldQueue
             case "zemljotresi.json":
                 info("Importing zemljotresi.json");
                 $this->importDataService->importEarthquakeData($fileData);
+                break;
+            case "AgroZemljiste.json":
+                info("Importing AgroZemljiste.json");
+                $this->importDataService->importAgriculturalLand($fileData);
+                break;
+            case "AkceleroStanice.json":
+                info("Importing AkceleroStanice.json");
+                $this->importDataService->importAcceleroStations($fileData);
+                break;
+            case "Bioprognoza.json":
+                info("Importing Bioprognoza.json");
+                $this->importDataService->importBioprogonses($fileData);
+                break;
+            case "EkoPodaci.json":
+                info("Importing EkoPodaci.json");
+                $this->importDataService->importEcoInformation($fileData);
+                break;
+            case "EkoStanice.json":
+                info("Importing EkoStanice.json");
+                $this->importDataService->importEcoStations($fileData);
                 break;
             default:
                 info("None filename type matched.");
