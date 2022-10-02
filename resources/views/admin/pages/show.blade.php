@@ -64,11 +64,6 @@
     </div>
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="#page_projects" role="tab" data-toggle="tab">
-                {{ trans('cruds.project.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="#page_public_purchases" role="tab" data-toggle="tab">
                 {{ trans('cruds.publicPurchase.title') }}
             </a>
@@ -90,9 +85,6 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="page_projects">
-            @includeIf('admin.pages.relationships.pageProjects', ['projects' => $page->pageProjects])
-        </div>
         <div class="tab-pane" role="tabpanel" id="page_public_purchases">
             @includeIf('admin.pages.relationships.pagePublicPurchases', ['publicPurchases' => $page->pagePublicPurchases])
         </div>

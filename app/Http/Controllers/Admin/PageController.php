@@ -57,7 +57,7 @@ class PageController extends Controller
     {
         abort_if(Gate::denies('page_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $page->load('pageProjects', 'pagePublicPurchases', 'pagePublicCompetitions', 'pagePosts', 'pageLinks');
+        $page->load( 'pagePublicPurchases', 'pagePublicCompetitions', 'pagePosts', 'pageLinks');
 
         return view('admin.pages.show', compact('page'));
     }
