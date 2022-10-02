@@ -143,4 +143,102 @@ class ImportDataMapper
         }
         return $newData;
     }
+
+    public function mapEcoPollutantData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapHydroInformationData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                'absolute_min' => $data['apsMin'] ?? null,
+                'absolute_min_date' => $data['apsMinDatum'] ?? null,
+                'absolute_max' => $data['apsMax'] ?? null,
+                'absolute_max_date' => $data['apsMaxDatum'] ?? null,
+                'regular_elevation' => $data['kotaRedovne'] ?? null,
+                'irregular_elevation' => $data['kotaVanredne'] ?? null,
+                'about' => $data['opis'] ?? null,
+                'period' => $data['termin'] ?? null,
+                'water_level' => $data['vodostaj'] ?? null,
+                'temperature' => $data['temperatura'] ?? null,
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapMeteoMapData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                'temperature' => $data['temperatura'] ?? null,
+                'pressure' => $data['pritisak'],
+                'wind_speed' => $data['brzVjetra'],
+                'lat_direction' => $data['latSmjer'],
+                'cir_direction' => $data['cirSmjer'],
+                'marker' => $data['marker'],
+                'period' => $data['termin'],
+                'rainfall' => $data['kolicinaPadavine'],
+                'snow' => $data['snijeg'],
+                'min_temp' => $data['minTemp'],
+                'max_temp' => $data['maxTemp'],
+                "description" => $data["desc"] ?? null,
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
+
+    public function mapMeteoInformationData(array $fileData, mixed $maxBatchVersion): array
+    {
+        $newData = [];
+        foreach ($fileData as $data) {
+            $newData[] = [
+                'batch_version' => $maxBatchVersion + 1,
+                "station_id" => $data["StationID"] ?? null,
+                "station_name" => $data["StationName"] ?? null,
+                "alt" => $data["alt"] ?? null,
+                "lng" => $data["lon"] ?? null,
+                "lat" => $data["lat"] ?? null,
+                "description" => $data["desc"] ?? null,
+                'marker' => $data['marker'],
+                "created_at" => now(),
+                "updated_at" => now(),
+            ];
+        }
+        return $newData;
+    }
 }
