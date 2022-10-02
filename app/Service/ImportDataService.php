@@ -101,7 +101,7 @@ class ImportDataService
     {
         $maxBatchVersion = MeteoMap::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapMeteoMapData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into meteo_maps table: \n", $fileData);
         MeteoMap::query()->insert($fileData);
     }
 
@@ -109,7 +109,7 @@ class ImportDataService
     {
         $maxBatchVersion = MeteoInformation::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapMeteoInformationData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into meteo_information table: \n", $fileData);
         MeteoInformation::query()->insert($fileData);
     }
 
@@ -117,7 +117,7 @@ class ImportDataService
     {
         $maxBatchVersion = MeteoStation::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapMeteoStationData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into meteo_stations table: \n", $fileData);
         MeteoStation::query()->insert($fileData);
     }
 
@@ -125,7 +125,7 @@ class ImportDataService
     {
         $maxBatchVersion = Pressure::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapPressureData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into pressures table: \n", $fileData);
         Pressure::query()->insert($fileData);
     }
 
@@ -133,7 +133,7 @@ class ImportDataService
     {
         $maxBatchVersion = SeismicStation::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapSeismicStatitionData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into seismic_stations table: \n", $fileData);
         SeismicStation::query()->insert($fileData);
     }
 
@@ -141,7 +141,7 @@ class ImportDataService
     {
         $maxBatchVersion = CurrentTemperature::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapCurrentTemperatureData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into current_temperatures table: \n", $fileData);
         CurrentTemperature::query()->insert($fileData);
     }
 
@@ -149,7 +149,7 @@ class ImportDataService
     {
         $maxBatchVersion = Wind::query()->max('batch_version') ?? 0;
         $fileData = $this->importDataMapper->mapWindData($fileData, $maxBatchVersion);
-        Log::info("Importing selected data into hydro_information table: \n", $fileData);
+        Log::info("Importing selected data into winds table: \n", $fileData);
         Wind::query()->insert($fileData);
     }
 }
