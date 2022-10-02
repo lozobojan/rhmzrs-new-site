@@ -19,22 +19,22 @@ class ScanForFilesCommand extends Command
             $nameOfFile = explode('/', $file);
 
             match ($nameOfFile[1]) {
-                'AgroZemljiste.json' => Artisan::call('parse ' . $nameOfFile[1] . ' TemperatureZemljista'),
-                'AkceleroStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' AkceleroStanice'),
-                'Bioprognoza.json' => Artisan::call('parse ' . $nameOfFile[1] . ' BioPrognoza'),
-                'EkoPodaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoPodaci'),
-                'EkoStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoStanice'),
-                'ekoZagadjivaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' EkoZagadjivaci'),
-                'HidroPodaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' HidroPodaci'),
-                'HidroStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' HidroStanice'),
-                'MeteoMapa.json' => Artisan::call('parse ' . $nameOfFile[1] . ' MeteoMapaGlavna'),
-                'MeteoPodaci.json' => Artisan::call('parse ' . $nameOfFile[1] . ' MeteoPodaci'),
-                'MeteoStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' MeteoStanice'),
-                'pritisak.json' => Artisan::call('parse ' . $nameOfFile[1] . ' Pritisak'),
-                'SeizmoStanice.json' => Artisan::call('parse ' . $nameOfFile[1] . ' SeizmoStanice'),
-                'temperatureTrenutne.json' => Artisan::call('parse ' . $nameOfFile[1] . ' TemperatureTrenutne'),
-                'vjetar.json' => Artisan::call('parse ' . $nameOfFile[1] . ' Vjetar'),
-                'zemljotresi.json' => Artisan::call('parse ' . $nameOfFile[1] . ' Zemljotresi'),
+                'AgroZemljiste.json' => Artisan::call("parse {$nameOfFile[1]} TemperatureZemljista"),
+                'AkceleroStanice.json' => Artisan::call("parse {$nameOfFile[1]} AkceleroStanice"),
+                'Bioprognoza.json' => Artisan::call("parse {$nameOfFile[1]} BioPrognoza"),
+                'EkoPodaci.json' => Artisan::call("parse {$nameOfFile[1]} EkoPodaci"),
+                'EkoStanice.json' => Artisan::call("parse {$nameOfFile[1]} EkoStanice"),
+                'ekoZagadjivaci.json' => Artisan::call("parse {$nameOfFile[1]} EkoZagadjivaci"),
+                'HidroPodaci.json' => Artisan::call("parse {$nameOfFile[1]} HidroPodaci"),
+                'HidroStanice.json' => Artisan::call("parse {$nameOfFile[1]} HidroStanice"),
+                'MeteoMapa.json' => Artisan::call("parse {$nameOfFile[1]} MeteoMapaGlavna"),
+                'MeteoPodaci.json' => Artisan::call("parse {$nameOfFile[1]} MeteoPodaci"),
+                'MeteoStanice.json' => Artisan::call("parse {$nameOfFile[1]} MeteoStanice"),
+                'pritisak.json' => Artisan::call("parse {$nameOfFile[1]} Pritisak"),
+                'SeizmoStanice.json' => Artisan::call("parse {$nameOfFile[1]} SeizmoStanice"),
+                'temperatureTrenutne.json' => Artisan::call("parse {$nameOfFile[1]} TemperatureTrenutne"),
+                'vjetar.json' => Artisan::call("parse {$nameOfFile[1]} Vjetar"),
+                'zemljotresi.json' => Artisan::call("parse {$nameOfFile[1]} Zemljotresi"),
                 default => info('No command for parsing: ' . $nameOfFile[1])
             };
         }

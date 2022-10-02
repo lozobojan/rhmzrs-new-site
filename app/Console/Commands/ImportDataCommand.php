@@ -64,7 +64,6 @@ class ImportDataCommand extends Command implements ShouldQueue
 
     private function upsertFileToDbAndDelete(array $fileData): void
     {
-        // todo add all file types
         switch ($this->argument('filename')) {
             case "zemljotresi.json":
                 info("Importing zemljotresi.json");
