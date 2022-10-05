@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages.welcome');
+    return view('pages.welcome', compact([
+        []
+    ]));
 });
 
 // za dinamicke stranice koje se prave preko WYSIWYG
@@ -100,14 +102,14 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 });
 
 // test CMS
-Route::get('hidrologija/mapa-stanica', function (){
-    return "Ovdje prikazati konkretan sadrzaj stranice koji ne moze preko WYSIWYG";
+Route::get('hidrologija/mapa-stanica', function () {
+    return view('pages.hidrologija.mapa-stanica');
 })->name('hidrologija.mapa-stanica');
 
-Route::get('uslovi-koriscenja', function (){
+Route::get('uslovi-koriscenja', function () {
     return view('pages.terms');
 })->name('terms');
-Route::get('pristup-informacijama', function (){
+Route::get('pristup-informacijama', function () {
     return view('pages.information-access');
 })->name('information-access');
 

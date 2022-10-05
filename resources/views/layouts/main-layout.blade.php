@@ -38,6 +38,7 @@
     <meta property="twitter:image" content="{{ $metaImage }}">
 
     {{ $additionalCss ?? '' }}
+
 </head>
 
 <body>
@@ -229,6 +230,7 @@
 </div>
 <script src="{{ asset('assets/js/plugins.js') }}"></script>
 <script src="{{ asset('assets/js/theme.js') }}"></script>
+{{ $additionalJs ?? '' }}
 </body>
 
 </html>

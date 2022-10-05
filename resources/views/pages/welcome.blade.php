@@ -8,11 +8,63 @@
     ];
 @endphp
 <x-main-layout :meta="$meta">
+    <x-slot name="additionalJs">
+        <style>
+            #map {
+                height: 800px;
+                width: 100%;
+            }
+            #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div{
+                display: none!important;
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+              integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+              crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+                integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+                crossorigin=""></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            var map = L.map('map').setView([51.505, -0.09], 13);
+
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            axios.get("https://63386acb937ea77bfdbfc811.mockapi.io/prognoza").then(rs => {
+                rs.data.forEach(item => {
+                    L.marker(
+                        [item.lat, item.long],
+                        {
+                            icon: L.icon({
+                                iconUrl: item.icon,
+
+                                iconSize:     [40, 40], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [4, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            })
+                        }
+
+                    ).addTo(map)
+                        .bindPopup(item.desc)
+                        .openPopup();
+                })
+
+
+            })
+
+        </script>
+    </x-slot>
     <section class="wrapper bg-light angled">
         <div class="container py-14 py-md-16">
             <div class="row">
                 <div class="col-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11714.576362230699!2d18.96212075!3d42.7747318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662984325285!5m2!1sen!2s" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div id="map" class="map"></div>
+                    {{--                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11714.576362230699!2d18.96212075!3d42.7747318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662984325285!5m2!1sen!2s" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                 </div>
                 <div class="col-lg-9 col-md-6 col-sm-12">
                     <div class="row">
