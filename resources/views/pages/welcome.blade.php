@@ -10,6 +10,63 @@
 <x-main-layout :meta="$meta">
     <x-slot name="additionalJs">
         <style>
+            .lds-ripple {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
+            }
+            .lds-ripple div {
+                position: absolute;
+                border: 4px solid #fff;
+                opacity: 1;
+                border-radius: 50%;
+                animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+            }
+            .lds-ripple div:nth-child(2) {
+                animation-delay: -0.5s;
+            }
+            @keyframes lds-ripple {
+                0% {
+                    top: 36px;
+                    left: 36px;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                }
+                4.9% {
+                    top: 36px;
+                    left: 36px;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                }
+                5% {
+                    top: 36px;
+                    left: 36px;
+                    width: 0;
+                    height: 0;
+                    opacity: 1;
+                }
+                100% {
+                    top: 0px;
+                    left: 0px;
+                    width: 72px;
+                    height: 72px;
+                    opacity: 0;
+                }
+            }
+
+            .loader {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: #00000066;
+                z-index: 1001;
+                display: grid;
+                place-items: center;
+            }
+
             #map {
                 height: 800px;
                 width: 100%;
@@ -18,52 +75,46 @@
                 display: none!important;
             }
         </style>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
-              integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-              crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
-                integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
-                crossorigin=""></script>
+        <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
+        <script src="{{asset('leaflet/leaflet.js')}}"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            var map = L.map('map').setView([51.505, -0.09], 13);
-
-
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            axios.get("https://63386acb937ea77bfdbfc811.mockapi.io/prognoza").then(rs => {
-                rs.data.forEach(item => {
-                    L.marker(
-                        [item.lat, item.long],
-                        {
-                            icon: L.icon({
-                                iconUrl: item.icon,
-
-                                iconSize:     [40, 40], // size of the icon
-                                shadowSize:   [50, 64], // size of the shadow
-                                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-                                shadowAnchor: [4, 62],  // the same for the shadow
-                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-                            })
-                        }
-
-                    ).addTo(map)
-                        .bindPopup(item.desc)
-                        .openPopup();
-                })
-
-
-            })
-
-        </script>
+        <script src="{{asset('js/leaflet.js')}}"></script>
     </x-slot>
     <section class="wrapper bg-light angled">
         <div class="container py-14 py-md-16">
             <div class="row">
                 <div class="col-12">
+                    <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#prognoza" onClick="changeData(1)"> <img
+                                    src="{{asset('assets/img/icons/prognoza.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Прогноза</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#meteorologija" onClick="changeData(2)"> <img
+                                    src="{{asset('assets/img/icons/meteorologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Метеорологија</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#seizmologija" onClick="changeData(3)"> <img
+                                    src="{{asset('assets/img/icons/seizmologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Сеизмологија</p></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#hidrologija" onClick="changeData(4)"> <img
+                                    src="{{asset('assets/img/icons/hidrologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Хидрологија</p></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#ekologija" onClick="changeData(5)"> <img
+                                    src="{{asset('assets/img/icons/ekologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Животна средина</p></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 " style="position:relative;">
+                    <div class="loader" id="loader">
+                        <div class="lds-ripple"><div></div><div></div></div>
+                    </div>
                     <div id="map" class="map"></div>
+                    <div class="mapinfo"></div>
                     {{--                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11714.576362230699!2d18.96212075!3d42.7747318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662984325285!5m2!1sen!2s" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                 </div>
                 <div class="col-lg-9 col-md-6 col-sm-12">

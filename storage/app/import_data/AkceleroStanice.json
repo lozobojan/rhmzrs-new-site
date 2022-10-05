@@ -1,0 +1,9 @@
+{"AkceleroStanice":[
+{"Rr":"1","StationID":"BLY","StationName":"Бања Лука","KodMreze":"MN","alt":"256","lon":"17.175","lat":"44.749","Digitalizator":"Q330","Senzor":"Episenso"},
+{"Rr":"2","StationID":"VRBA","StationName":"Врба-Гацко","KodMreze":"MN","alt":"1112","lon":"18.579","lat":"43.174","Digitalizator":"Basalt","Senzor":"Episenso"},
+{"Rr":"3","StationID":"MED","StationName":"Међеђа-Омарска","KodMreze":"MN","alt":"200","lon":"16.911","lat":"44.847","Digitalizator":"Q330","Senzor":"Episenso"},
+{"Rr":"4","StationID":"NEVS","StationName":"Невесиње","KodMreze":"MN","alt":"894","lon":"18.103","lat":"43.299","Digitalizator":"Basalt","Senzor":"Episenso"},
+{"Rr":"5","StationID":"KLINJ","StationName":"Клиње-Гацко","KodMreze":"MN","alt":"1076","lon":"18.585","lat":"43.169","Digitalizator":"Basalt","Senzor":"Episenso"},
+{"Rr":"6","StationID":"BIR1","StationName":"Бирач-Зворник","KodMreze":"MN","alt":"197","lon":"19.076","lat":"44.457","Digitalizator":"Basalt","Senzor":"Episenso"},
+{"Rr":"7","StationID":"BOCA","StationName":"Бочац","KodMreze":"MN","alt":"308","lon":"17.163","lat":"44.508","Digitalizator":"Q330","Senzor":"Episenso"}
+]}

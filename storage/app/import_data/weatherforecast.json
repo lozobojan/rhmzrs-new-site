@@ -1,0 +1,760 @@
+[
+    {
+        "lokacija" : "Novi Grad",
+        "lat" : 45.05,
+        "lng" : 16.38,
+        "alt" : 134,
+        "id" : "14535",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 4,
+                "tMax" : 11,
+                "vBrzina" : 2,
+                "vSmjer" : 70,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 2,
+                "tMax" : 9,
+                "vBrzina" : 3,
+                "vSmjer" : 20,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 1,
+                "tMax" : 8,
+                "vBrzina" : 3,
+                "vSmjer" : 25,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -1,
+                "tMax" : 6,
+                "vBrzina" : 3,
+                "vSmjer" : 45,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -1,
+                "tMax" : 5,
+                "vBrzina" : 2,
+                "vSmjer" : 340,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 2,
+                "tMax" : 4,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 11,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki+sg.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Prijedor",
+        "lat" : 44.98,
+        "lng" : 16.72,
+        "alt" : 141,
+        "id" : "14536",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 4,
+                "tMax" : 12,
+                "vBrzina" : 2,
+                "vSmjer" : 330,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 2,
+                "tMax" : 9,
+                "vBrzina" : 3,
+                "vSmjer" : 10,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 1,
+                "tMax" : 8,
+                "vBrzina" : 3,
+                "vSmjer" : 20,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -2,
+                "tMax" : 6,
+                "vBrzina" : 3,
+                "vSmjer" : 60,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -1,
+                "tMax" : 5,
+                "vBrzina" : 2,
+                "vSmjer" : 335,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 1,
+                "tMax" : 2,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Gradiska",
+        "lat" : 45.15,
+        "lng" : 17.25,
+        "alt" : 102,
+        "id" : "14539",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 3,
+                "tMax" : 11,
+                "vBrzina" : 3,
+                "vSmjer" : 70,
+                "kod" : 1,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 0,
+                "tMax" : 7,
+                "vBrzina" : 3,
+                "vSmjer" : 5,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : -4,
+                "tMax" : 2,
+                "vBrzina" : 4,
+                "vSmjer" : 30,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -5,
+                "tMax" : 2,
+                "vBrzina" : 3,
+                "vSmjer" : 40,
+                "kod" : 1,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -6,
+                "tMax" : 0,
+                "vBrzina" : 2,
+                "vSmjer" : 345,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+                    {}
+                    ]
+            },
+            {
+                "lokacija" : "Banja Luka",
+                "lat" : 44.81,
+                "lng" : 17.21,
+                "alt" : 159,
+                "id" : "14542",
+                "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 3,
+                "tMax" : 13,
+                "vBrzina" : 2,
+                "vSmjer" : 320,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 1,
+                "tMax" : 11,
+                "vBrzina" : 2,
+                "vSmjer" : 350,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 0,
+                "tMax" : 10,
+                "vBrzina" : 2,
+                "vSmjer" : 340,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -2,
+                "tMax" : 7,
+                "vBrzina" : 3,
+                "vSmjer" : 70,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -1,
+                "tMax" : 6,
+                "vBrzina" : 1,
+                "vSmjer" : 325,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 2,
+                "tMax" : 5,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Doboj",
+        "lat" : 44.74,
+        "lng" : 18.09,
+        "alt" : 147,
+        "id" : "14551",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 3,
+                "tMax" : 12,
+                "vBrzina" : 3,
+                "vSmjer" : 45,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 3,
+                "tMax" : 11,
+                "vBrzina" : 3,
+                "vSmjer" : 340,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 0,
+                "tMax" : 9,
+                "vBrzina" : 2,
+                "vSmjer" : 345,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -2,
+                "tMax" : 7,
+                "vBrzina" : 2,
+                "vSmjer" : 70,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -2,
+                "tMax" : 5,
+                "vBrzina" : 2,
+                "vSmjer" : 330,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 2,
+                "tMax" : 5,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Bijeljina",
+        "lat" : 44.76,
+        "lng" : 19.20,
+        "alt" : 97,
+        "id" : "14562",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 2,
+                "tMax" : 11,
+                "vBrzina" : 4,
+                "vSmjer" : 15,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 2,
+                "tMax" : 10,
+                "vBrzina" : 3,
+                "vSmjer" : 345,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 2,
+                "tMax" : 10,
+                "vBrzina" : 2,
+                "vSmjer" : 20,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : 0,
+                "tMax" : 7,
+                "vBrzina" : 2,
+                "vSmjer" : 15,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -1,
+                "tMax" : 5,
+                "vBrzina" : 2,
+                "vSmjer" : 105,
+                "kod" : 3,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ki.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 3,
+                "tMax" : 9,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Trebinje",
+        "lat" : 42.71,
+        "lng" : 18.34,
+        "alt" : 283,
+        "id" : "14668",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 7,
+                "tMax" : 16,
+                "vBrzina" : 6,
+                "vSmjer" : 35,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 6,
+                "tMax" : 14,
+                "vBrzina" : 5,
+                "vSmjer" : 40,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 5,
+                "tMax" : 13,
+                "vBrzina" : 7,
+                "vSmjer" : 60,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : 4,
+                "tMax" : 12,
+                "vBrzina" : 7,
+                "vSmjer" : 70,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : 5,
+                "tMax" : 9,
+                "vBrzina" : 5,
+                "vSmjer" : 50,
+                "kod" : 3,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ki.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 8,
+                "tMax" : 14,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Derventa",
+        "lat" : 45.00,
+        "lng" : 17.91,
+        "alt" : 113,
+        "id" : "14550",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 5,
+                "tMax" : 12,
+                "vBrzina" : 3,
+                "vSmjer" : 50,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 2,
+                "tMax" : 10,
+                "vBrzina" : 3,
+                "vSmjer" : 350,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : 1,
+                "tMax" : 9,
+                "vBrzina" : 3,
+                "vSmjer" : 5,
+                "kod" : 7,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -1,
+                "tMax" : 7,
+                "vBrzina" : 2,
+                "vSmjer" : 60,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -1,
+                "tMax" : 6,
+                "vBrzina" : 2,
+                "vSmjer" : 345,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 2,
+                "tMax" : 5,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Srbac",
+        "lat" : 45.10,
+        "lng" : 17.52,
+        "alt" : 102,
+        "id" : "14538",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : 3,
+                "tMax" : 11,
+                "vBrzina" : 3,
+                "vSmjer" : 65,
+                "kod" : 1,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : 0,
+                "tMax" : 7,
+                "vBrzina" : 4,
+                "vSmjer" : 25,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : -4,
+                "tMax" : 2,
+                "vBrzina" : 4,
+                "vSmjer" : 30,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -4,
+                "tMax" : 2,
+                "vBrzina" : 2,
+                "vSmjer" : 40,
+                "kod" : 1,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -6,
+                "tMax" : 1,
+                "vBrzina" : 2,
+                "vSmjer" : 350,
+                "kod" : 8,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+sg.png"
+            },
+
+            {}
+        ]
+    },
+
+    {
+        "lokacija" : "Cemerno",
+        "lat" : 43.25,
+        "lng" : 18.61,
+        "alt" : 1304,
+        "id" : "14656",
+        "prognoza" : [
+
+            {
+                "datum" : "15.11.2018.",
+                "dan" : "0",
+                "tMin" : -2,
+                "tMax" : 5,
+                "vBrzina" : 5,
+                "vSmjer" : 20,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "16.11.2018.",
+                "dan" : "1",
+                "tMin" : -4,
+                "tMax" : 5,
+                "vBrzina" : 3,
+                "vSmjer" : 355,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "17.11.2018.",
+                "dan" : "2",
+                "tMin" : -5,
+                "tMax" : 5,
+                "vBrzina" : 5,
+                "vSmjer" : 60,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "18.11.2018.",
+                "dan" : "3",
+                "tMin" : -6,
+                "tMax" : 2,
+                "vBrzina" : 5,
+                "vSmjer" : 70,
+                "kod" : 2,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/su+ob.png"
+            },
+
+            {
+                "datum" : "19.11.2018.",
+                "dan" : "4",
+                "tMin" : -5,
+                "tMax" : 2,
+                "vBrzina" : 4,
+                "vSmjer" : 40,
+                "kod" : 10,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/sg.png"
+            },
+
+            {
+                "datum" : "20.11.2018.",
+                "dan" : "5",
+                "tMin" : 1,
+                "tMax" : 5,
+                "vBrzina" : 0,
+                "vSmjer" : 0,
+                "kod" : 4,
+                "pojave" : "/assets/components/met_Prognoza/img/alt/ki.png"
+            },
+
+            {}
+        ]
+    },
+
+    {}
+]

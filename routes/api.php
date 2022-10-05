@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\DataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('earthquakes', [DataController::class, 'getEarthquakes']);
+Route::get('meteo-maps', [DataController::class, 'getMeteoMaps']);
+Route::get('hydro-information', [DataController::class, 'getHydroInformation']);
+Route::get('eco-information', [DataController::class, 'getEcoInformation']);

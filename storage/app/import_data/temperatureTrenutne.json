@@ -1,0 +1,20 @@
+{"TemperatureTrenutne":[
+{"StationID":"14538","StationName":"Србац","lon":"17.52167","lat":"45.10417","alt":"102.00","TrenutnaTemp":"12.1","termin":"30.3.2022 11:00","desc":"1215.png"},
+{"StationID":"14659","StationName":"Калиновик","lon":"18.4463806","lat":"43.5045722","alt":"1070.00","TrenutnaTemp":"8.4","termin":"30.3.2022 11:00","desc":"0610.png"},
+{"StationID":"14545","StationName":"Мркоњић Град","lon":"17.08361","lat":"44.41861","alt":"575.00","TrenutnaTemp":"12.8","termin":"30.3.2022 11:00","desc":"1215.png"},
+{"StationID":"14547","StationName":"Шипово","lon":"17.084722","lat":"44.288611","alt":"458.00","TrenutnaTemp":"10.4","termin":"30.3.2022 11:00","desc":"1012.png"},
+{"StationID":"14665","StationName":"Фоча","lon":"18.785278","lat":"43.517222","alt":"412.00","TrenutnaTemp":"9.8","termin":"30.3.2022 11:00","desc":"0610.png"},
+{"StationID":"14663","StationName":"Рудо","lon":"19.36972","lat":"43.61833","alt":"413.00","TrenutnaTemp":"11","termin":"30.3.2022 11:00","desc":"1012.png"},
+{"StationID":"14563","StationName":"Зворник","lon":"19.15","lat":"44.433333","alt":"146.00","TrenutnaTemp":"12.8","termin":"30.3.2022 11:00","desc":"1215.png"},
+{"StationID":"14535","StationName":"Нови Град","lon":"16.38444","lat":"45.05056","alt":"134.00","TrenutnaTemp":"12.4","termin":"30.3.2022 11:00","desc":"1215.png"},
+{"StationID":"14564","StationName":"Сребреница","lon":"19.3","lat":"44.0833","alt":"377.00","TrenutnaTemp":"15","termin":"30.3.2022 11:00","desc":"1215.png"},
+{"StationID":"14658","StationName":"Соколац","lon":"18.78917","lat":"43.92611","alt":"913.00","TrenutnaTemp":"11.9","termin":"30.3.2022 11:00","desc":"1012.png"},
+{"StationID":"14542","StationName":"Бањалука","lon":"17.21278","lat":"44.80806","alt":"153.00","TrenutnaTemp":"17.9","termin":"30.3.2022 11:00","desc":"1518.png"},
+{"StationID":"14551","StationName":"Добој","lon":"18.095","lat":"44.73861","alt":"147.00","TrenutnaTemp":"18.3","termin":"30.3.2022 11:00","desc":"1822.png"},
+{"StationID":"14562","StationName":"Бијељина","lon":"19.20111","lat":"44.75611","alt":"97.00","TrenutnaTemp":"17.6","termin":"30.3.2022 11:00","desc":"1518.png"},
+{"StationID":"14655","StationName":"Гацко","lon":"18.515833","lat":"43.174167","alt":"947.00","TrenutnaTemp":"9.6","termin":"30.3.2022 11:00","desc":"0610.png"},
+{"StationID":"14565","StationName":"Хан Пијесак","lon":"18.95167","lat":"44.08833","alt":"1138.00","TrenutnaTemp":"8.6","termin":"30.3.2022 11:00","desc":"0610.png"},
+{"StationID":"14668","StationName":"Требиње","lon":"18.344287","lat":"42.713946","alt":"300.00","TrenutnaTemp":"15","termin":"30.3.2022 11:00","desc":"1215.png"},
+{"StationID":"14536","StationName":"Приједор","lon":"16.72111","lat":"44.97556","alt":"141.00","TrenutnaTemp":"11.2","termin":"30.3.2022 11:00","desc":"1012.png"},
+{"StationID":"14656","StationName":"Чемерно","lon":"18.61222","lat":"43.25444","alt":"1304.00","TrenutnaTemp":"7.6","termin":"30.3.2022 11:00","desc":"0610.png"}
+]}

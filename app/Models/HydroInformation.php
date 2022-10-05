@@ -10,4 +10,23 @@ class HydroInformation extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    protected $appends = ['icon'];
+
+    public function getIconAttribute()
+    {
+        return asset('assets/img/icons/hidro.png');
+    }
+
+    public function getDescriptionAttribute()
+    {
+        return "
+            <div class=''>
+                <div class='card-body'>
+                    <h5 class='card-title'>{$this->attributes['station_name']}</h5>
+                    <p class='card-text'>{$this->attributes['description']}</p>
+                </div>
+            </div>
+        ";
+    }
 }

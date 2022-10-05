@@ -1,0 +1,22 @@
+{
+  "MeteoPodaci": [
+    {
+      "StationID": "14542",
+      "StationName": "Бања Лука",
+      "alt": "153",
+      "lon": "17.21278",
+      "lat": "44.808006",
+      "desc": "<p>Отт аутоматска метеоролошка станица</p><p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/temperatura.php?id=14542'>Температура:4.5 &#8451;</a></p><p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/pritisak.php?id=14542'>Притисак:1001.2 hPa</a></p>\r\n<p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/brzinaVjetra.php?id=14542'>Брз.Вјетра:2.0 m/s</a></p><p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/smjerVjetra.php?id=14542'>Смјер Вјетра:ССЗ (NNW)</a></p><p>Снијег: 22 cm</p><p>Падавине: 2.4 l/m2 </p><p>Видљивост: 10 km</p>",
+      "marker": "magla_nev_nebo_43_45_47_49/dan/22.png"
+    },
+    {
+      "StationID": "0000101115",
+      "StationName": "Крупа на Врбасу",
+      "alt": "null",
+      "lon": "17.14394099",
+      "lat": "44.61511606",
+      "desc": "<p>Отт аутоматска метеоролошка станица Крупа на Врбасу</p><p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/temperatura.php?id=0000101115'>Температура:2.3 &#8451;</a></p><p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/pritisak.php?id=0000101115'>Притисак:998.7 hPa</a></p>\r\n<p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/brzinaVjetra.php?id=0000101115'>Брз.Вјетра:4.0 m/s</a></p><p><a href='http://hidrometeo.3stepsict.com/jQPlot/dist/examples/smjerVjetra.php?id=0000101115'>Смјер Вјетра:ССЗ (NNW)</a></p><p>Падавине: 2.4 l/m &#xb2; </p>",
+      "marker": "null"
+    }
+  ]
+}

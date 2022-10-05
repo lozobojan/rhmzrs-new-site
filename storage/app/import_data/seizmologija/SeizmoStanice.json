@@ -1,0 +1,15 @@
+{"SeizmoStanice":[
+{"StationId":"PRJ","StationName":"Приједор","alt":"141","lon":"16.70372","lat":"44.97898","desc":"Дигитализатор: Q 330;Сеизмометри: SS-1;Тип:sp"},
+{"StationId":"BLY","StationName":"Бања Лука","alt":"256","lon":"17.17554","lat":"44.74885","desc":"Дигитализатор: Q 330;Сеизмометри: STS-2;Тип:bb"},
+{"StationId":"DOB","StationName":"Добој","alt":"147","lon":"18.095","lat":"44.7381","desc":"Дигитализатор: Wavw24/1;Сеизмометри: SM-2;Тип:sp"},
+{"StationId":"HAPS","StationName":"Хан Пијесак","alt":"1199","lon":"18.950703","lat":"44.087278","desc":"Дигитализатор: Smart24;Сеизмометри: KS2000;Тип:bb"},
+{"StationId":"TREB","StationName":"Требиње","alt":"275","lon":"18.45961","lat":"42.72371","desc":"Дигитализатор: Q 330;Сеизмометри: SS-1;Тип:sp"},
+{"StationId":"MGRS","StationName":"Мркоњић Град","alt":"560","lon":"17.084","lat":"44.417","desc":"Дигитализатор: Lennartz M24;Сеизмометри:LE-3D Lite;Тип:sp"},
+{"StationId":"RUDO","StationName":"Рудо","alt":"413","lon":"19.317","lat":"43.6128","desc":"Дигитализатор: Wave24;Сеизмометри: SM-2;Тип:sp"},
+{"StationId":"BLJ","StationName":"Бијељина","alt":"97","lon":"19.193","lat":"44.754","desc":"Дигитализатор: Wave24;Сеизмометри: SM-2;Тип:sp"},
+{"StationId":"SRKY","StationName":"Српски Купрес","alt":"1130","lon":"17.165","lat":"44.068","desc":"Дигитализатор: Altus K2;Сеизмометри: SS-1;Тип:sp"},
+{"StationId":"KALIN","StationName":"Калиновик","alt":"1071","lon":"18.4462","lat":"43.5022","desc":"Дигитализатор: Wave 24;Сеизмометри: S5S;Тип:sp"},
+{"StationId":"KNYS","StationName":"Крупа на Уни","alt":"320","lon":"16.32","lat":"44.8909","desc":"Дигитализатор: Smart24;Сеизмометри: KS2000;Тип:bb"},
+{"StationId":"SLATY","StationName":"Слатина","alt":"206","lon":"17.2996","lat":"44.826","desc":"Дигитализатор: Wave 24;Сеизмометри: SS-1;Тип:sp"}
+]}
+

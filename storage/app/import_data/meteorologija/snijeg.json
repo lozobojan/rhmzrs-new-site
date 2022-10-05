@@ -1,0 +1,21 @@
+{"Snijeg":[
+{"StationID":"14542","name":"Бањалука","lat":"44.80806","lon":"17.21278","alt":"153.00","datum":"2019-01-29","snijeg":"9","marker":"10cm.jpg"},
+{"StationID":"14562","name":"Бијељина","lat":"44.75611","lon":"19.20111","alt":"97.00","datum":"2019-01-29","snijeg":"5","marker":"5cm.jpg"},
+{"StationID":"14656","name":"Чемерно","lat":"43.25444","lon":"18.61222","alt":"1304.00","datum":"2019-01-29","snijeg":"63","marker":"100cm.jpg"},
+{"StationID":"14659","name":"Калиновик","lat":"43.5045722","lon":"18.4463806","alt":"1070.00","datum":"2019-01-29","snijeg":"27","marker":"50cm.jpg"},
+{"StationID":"14551","name":"Добој","lat":"44.73861","lon":"18.095","alt":"147.00","datum":"2019-01-29","snijeg":"10","marker":"10cm.jpg"},
+{"StationID":"14530","name":"Дринић","lat":"44.51083","lon":"16.46722","alt":"730.00","datum":"2019-01-29","snijeg":"18","marker":"20cm.jpg"},
+{"StationID":"14655","name":"Гацко","lat":"43.174167","lon":"18.515833","alt":"947.00","datum":"2019-01-29","snijeg":"3","marker":"5cm.jpg"},
+{"StationID":"14565","name":"Хан Пијесак","lat":"44.08833","lon":"18.95167","alt":"1138.00","datum":"2019-01-29","snijeg":"71","marker":"100cm.jpg"},
+{"StationID":"14534","name":"Мраковица","lat":"45.011944","lon":"16.915","alt":"766.00","datum":"2019-01-29","snijeg":"49","marker":"50cm.jpg"},
+{"StationID":"14545","name":"Мркоњић Град","lat":"44.41861","lon":"17.08361","alt":"575.00","datum":"2019-01-29","snijeg":"36","marker":"50cm.jpg"},
+{"StationID":"14535","name":"Нови Град","lat":"45.05056","lon":"16.38444","alt":"134.00","datum":"2019-01-29","snijeg":"5","marker":"5cm.jpg"},
+{"StationID":"14536","name":"Приједор","lat":"44.97556","lon":"16.72111","alt":"141.00","datum":"2019-01-29","snijeg":"1","marker":"5cm.jpg"},
+{"StationID":"14531","name":"Рибник","lat":"44.40667","lon":"16.815","alt":"305.00","datum":"2019-01-29","snijeg":"13","marker":"20cm.jpg"},
+{"StationID":"14663","name":"Рудо","lat":"43.61833","lon":"19.36972","alt":"413.00","datum":"2019-01-29","snijeg":"5","marker":"5cm.jpg"},
+{"StationID":"14658","name":"Соколац","lat":"43.92611","lon":"18.78917","alt":"913.00","datum":"2019-01-29","snijeg":"18","marker":"20cm.jpg"},
+{"StationID":"14538","name":"Србац","lat":"45.10417","lon":"17.52167","alt":"102.00","datum":"2019-01-29","snijeg":"3","marker":"5cm.jpg"},
+{"StationID":"14564","name":"Сребреница","lat":"44.0833","lon":"19.3","alt":"377.00","datum":"2019-01-29","snijeg":"21","marker":"50cm.jpg"},
+{"StationID":"14662","name":"Вишеград","lat":"43.79639","lon":"19.295","alt":"416.00","datum":"2019-01-29","snijeg":"3","marker":"5cm.jpg"},
+{"StationID":"14547","name":"Шипово","lat":"44.288611","lon":"17.084722","alt":"458.00","datum":"2019-01-29","snijeg":"17","marker":"20cm.jpg"}
+]}

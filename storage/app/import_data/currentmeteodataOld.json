@@ -1,0 +1,19 @@
+[
+   {  
+      "synop_id": "145422892018800",
+      "br_stanice": "14542",
+      "naziv_stanice": "\u0411\u0430\u045a\u0430 \u041b\u0443\u043a\u0430",
+      "termin": "28.09.2018 10:00",
+      "temperatura": 8.8,
+      "pritisak": "1004,2 mBar",
+      "brzina_vjetra": "1 m\/s",
+      "smjer_vjetra": "SW",
+      "vidljivost": "25,0km",
+      "oblacnost": "0",
+      "slika": "ikone\/bez_pojava\/dan\/32.png",
+      "bb_termin": "7\/24\/2014 8:58:48",
+      "bb_temperatura": "20.6",
+      "bb_vidljivost": "20",
+      "bb_pojave": "ikone\/bez_pojava\/dan\/34.png"
+   }
+]

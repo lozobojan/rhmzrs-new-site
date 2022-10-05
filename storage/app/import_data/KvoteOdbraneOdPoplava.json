@@ -1,0 +1,100 @@
+[
+	{
+		"StationName": "Делибашино Село",
+		"river": "Врбас",
+		"normally": 300,
+		"extraordinary": 370,
+		"lowest": "22 - 09.06.1977",
+		"highest": "816 - 16.05.2014"
+	},
+
+	{
+		"StationName": "Нови Град - низв.",
+		"river": "Уна",
+		"normally": 450,
+		"extraordinary": 510,
+		"lowest": "-59 - 04.10.2011",
+		"highest": "576 - 09.10.1955"
+	},
+
+	{
+		"StationName": "Козарска Дубица",
+		"river": "Уна",
+		"normally": 380,
+		"extraordinary": 430,
+		"lowest": "-134 - 13.09.1988",
+		"highest": "530 - 18.01.1970"
+	},
+
+	{
+		"StationName": "Приједор",
+		"river": "Сана",
+		"normally": 420,
+		"extraordinary": 460,
+		"lowest": "-19 - 31.08.2008",
+		"highest": "543 - 17.05.2014"
+	},
+
+	{
+		"StationName": "Градишка",
+		"river": "Сава",
+		"normally": 700,
+		"extraordinary": 730,
+		"lowest": "-99 - 29.08.2003",
+		"highest": "855 - 19.03.1974"
+	},
+
+	{
+		"StationName": "Србац",
+		"river": "Сава",
+		"normally": 860,
+		"extraordinary": 940,
+		"lowest": "-230 - 10.10.1997",
+		"highest": "1024 - 31.10.1974"
+	},
+
+	{
+		"StationName": "Брод",
+		"river": "Сава",
+		"normally": 730,
+		"extraordinary": 800,
+		"lowest": "-26",
+		"highest": "883"
+	},
+
+	{
+		"StationName": "Пача",
+		"river": "Сава",
+		"normally": 650,
+		"extraordinary": 750,
+		"lowest": "-82",
+		"highest": "856"
+	},
+
+	{
+		"StationName": "Добој",
+		"river": "Босна",
+		"normally": 300,
+		"extraordinary": 450,
+		"lowest": "-161 - 30.08.2012",
+		"highest": "721 - 15.05.2014"
+	},
+
+	{
+		"StationName": "Модрича",
+		"river": "Босна",
+		"normally": 300,
+		"extraordinary": 400,
+		"lowest": "-18 - 27.08.1985",
+		"highest": "550 - 14.05.1965"
+	},
+
+	{
+		"StationName": "Фоча - низв.",
+		"river": "Дрина",
+		"normally": 300,
+		"extraordinary": 350,
+		"lowest": "1 - 27.08.2000",
+		"highest": "632 - 02.12.2010"
+	}
+]
