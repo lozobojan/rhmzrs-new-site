@@ -28,6 +28,7 @@ class CustomSQLDumpSeeder extends Seeder
         foreach ($sqlFiles as $file) {
             $path = base_path("sql_dumps/$file.sql");
             $sql = file_get_contents($path);
+            $sql = str_replace("INSERT INTO rhmzrs.", "INSERT INTO ", $sql);
             DB::unprepared($sql);
         }
     }
