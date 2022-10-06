@@ -132,3 +132,4 @@ Route::get('kontakt', [\App\Http\Controllers\WebsiteController::class, 'contact'
 Route::post('kontakt', [\App\Http\Controllers\WebsiteController::class, 'saveContact'])->name('contact.post');
 
 
+Route::get('post/{post}', [\App\Http\Controllers\WebsiteController::class, 'post'])->name('post.view');

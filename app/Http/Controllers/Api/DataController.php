@@ -42,4 +42,13 @@ class DataController extends Controller
         // Return the eco information as JSON
         return response()->json($ecoInformation);
     }
+
+    // Get all meteo stations from the database
+    public function getMeteoStations(): \Illuminate\Http\JsonResponse
+    {
+        // Get all meteo stations from the database
+        $meteoStations = \App\Models\MeteoStation::all();
+        // Return the meteo stations as JSON
+        return response()->json($meteoStations);
+    }
 }

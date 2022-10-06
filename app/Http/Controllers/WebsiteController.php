@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DocumentAndRegulation;
+use App\Models\Post;
 use App\Models\PublicCompetition;
 use App\Models\PublicPurchase;
 use Illuminate\Http\Request;
@@ -59,6 +60,11 @@ class WebsiteController extends Controller
     public function saveContact(Request $request)
     {
         return $request->all();
+    }
+
+    public function post(Post $post)
+    {
+        return view('pages.post', compact('post'));
     }
 
 

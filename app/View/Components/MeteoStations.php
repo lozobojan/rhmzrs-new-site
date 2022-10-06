@@ -4,23 +4,16 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Article extends Component
+class MeteoStations extends Component
 {
-
-    public $simple;
-    public $article;
-    public $subtext;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($article, $simple = false, $subtext = false)
+    public function __construct()
     {
-        $this->article = $article;
-        $this->simple = $simple;
-        $this->subtext = $subtext;
+        //
     }
 
     /**
@@ -30,6 +23,6 @@ class Article extends Component
      */
     public function render()
     {
-        return view('components.article');
+        return view('components.meteo-stations');
     }
 }

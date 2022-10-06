@@ -9,7 +9,8 @@ class PublicWebsiteController extends Controller
 {
     public function displayPage(string $slug){
         return view('pages.dynamic-page', [
-            'page' => Page::query()->where('slug', $slug)->firstOrFail()
+            'page' => Page::query()->where('slug', $slug)->firstOrFail(),
+            'slug' => $slug
         ]);
     }
 

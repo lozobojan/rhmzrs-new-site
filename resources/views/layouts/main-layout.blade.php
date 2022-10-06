@@ -39,13 +39,26 @@
 
     {{ $additionalCss ?? '' }}
 
+    <style>
+        @media print{
+            .card {
+                -webkit-box-shadow: none;
+                -moz-box-shadow:    none;
+                box-shadow:         none!important;
+            }
+            .blog-single {
+                margin-top: 1rem!important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 <div class="page-frame bg-pale-primary">
     <div class="content-wrapper">
-        <header class="wrapper">
-            <nav class="navbar navbar-expand-xxl classic transparent position-absolute navbar-dark">
+        <header class="wrapper d-print-none">
+            <nav class="navbar navbar-expand-xxl classic transparent position-absolute navbar-dark d-print-none">
                 <div class="container-fluid flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
                         <a href="/">
@@ -114,7 +127,7 @@
             <!-- /.offcanvas -->
         </header>
         <!-- /header -->
-        <section class="video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-50">
+        <section class="video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-50 d-print-none">
             <video poster="{{ asset('assets/img/photos/movie2.jpg') }}" src="{{ asset('assets/media/sky.mp4') }}"
                    autoplay loop playsinline muted></video>
             <div class="video-content">
@@ -143,7 +156,7 @@
         {{ $slot }}
     </div>
     <!-- /.content-wrapper -->
-    <footer class="bg-dark text-inverse">
+    <footer class="bg-dark text-inverse d-print-none">
         <div class="container pt-13 pt-md-13 pb-8 pb-md-10">
             <div class="row gy-6 gy-lg-0 pb-6">
                 <div class="col-lg-4 col-md-6 col-sm-12">
