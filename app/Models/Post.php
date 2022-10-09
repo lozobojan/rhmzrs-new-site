@@ -20,6 +20,7 @@ class Post extends Model implements HasMedia
 
     protected $appends = [
         'cover_photo',
+        'attachments',
     ];
 
     protected $dates = [
@@ -53,6 +54,11 @@ class Post extends Model implements HasMedia
         }
 
         return $file;
+    }
+
+    public function getAttachmentsAttribute()
+    {
+        return $this->getMedia('attachments');
     }
 
     public function page()

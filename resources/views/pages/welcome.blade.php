@@ -133,7 +133,7 @@
                             <div class="swiper-wrapper">
                                 @for($i = 0; $i < 6; $i++)
                                     <div class="swiper-slide">
-                                        <x-article :article="['title' => 'Test article title']"></x-article>
+                                        <x-article :article="['title' => 'Test article title', 'id' => 1, 'created_at' => '12/12/2000']"></x-article>
                                         <!-- /article -->
                                     </div>
                                 @endfor

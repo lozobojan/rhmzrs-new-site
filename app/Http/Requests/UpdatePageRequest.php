@@ -23,6 +23,13 @@ class UpdatePageRequest extends FormRequest
                 'max:255',
                 'required',
             ],
+            'attachments' => [
+                'array',
+                'nullable',
+            ],
+            'attachments.*' => [
+                'nullable',
+            ],
             'slug' => [
                 'string',
                 'min:1',

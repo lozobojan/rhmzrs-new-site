@@ -24,7 +24,19 @@ const config = {
 
 document.addEventListener('DOMContentLoaded', function () {
     let map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
-
+    $('#example').DataTable({
+        ajax: {
+            dataSrc: '',
+            url: config.API.meteoStations,
+        },
+        "columns": [
+            { "data": "station_name" },
+            { "data": "description_alt" }
+        ],
+        "language": {
+            "url": "../js/Datatable/Serbian.json"
+        }
+    });
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -35,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     axios.get(`${config.API.meteoStations}`).then(rs => {
         data = rs.data;
         data.forEach(item => {
-            console.log(item.lat, item.lng)
             let marker = L.marker(
                 [item.lat, item.lng],
                 {

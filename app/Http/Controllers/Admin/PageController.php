@@ -35,6 +35,15 @@ class PageController extends Controller
     public function store(StorePageRequest $request)
     {
         $page = Page::create($request->all());
+        foreach ($request->input('attachments', []) as  $key => $file) {
+            if (!array_key_exists($key, $request->descriptions)) {
+                $descriptions[$key] = '';
+            }
+            $description = $descriptions[$key];
+            $page->addMedia(storage_path('tmp/uploads/' . basename($file)))
+                ->withCustomProperties(['description' => $description])
+                ->toMediaCollection('attachments');
+        }
 
         return redirect()->route('admin.pages.index');
     }
@@ -50,6 +59,27 @@ class PageController extends Controller
     {
         $page->update($request->all());
 
+        if (count($page->attachments) > 0) {
+            foreach ($page->attachments as $media) {
+                if (!in_array($media->file_name, $request->input('attachments', []))) {
+                    $media->delete();
+                }
+            }
+        }
+        $media = $page->attachments->pluck('file_name')->toArray();
+        $descriptions = $request->descriptions;
+        foreach ($request->input('attachments', []) as $key => $file) {
+            if (count($media) === 0 || !in_array($file, $media)) {
+                if (!array_key_exists($key, $request->descriptions)) {
+                    $descriptions[$key] = '';
+                }
+                $description = $descriptions[$key];
+                $page->addMedia(storage_path('tmp/uploads/' . basename($file)))
+                    ->withCustomProperties(['description' => $description])
+                    ->toMediaCollection('attachments');
+            }
+        }
+
         return redirect()->route('admin.pages.index');
     }
 
@@ -57,7 +87,7 @@ class PageController extends Controller
     {
         abort_if(Gate::denies('page_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $page->load( 'pagePublicPurchases', 'pagePublicCompetitions', 'pagePosts', 'pageLinks');
+        $page->load('pagePublicPurchases', 'pagePublicCompetitions', 'pagePosts', 'pageLinks');
 
         return view('admin.pages.show', compact('page'));
     }
@@ -82,10 +112,10 @@ class PageController extends Controller
     {
         abort_if(Gate::denies('post_create') && Gate::denies('post_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $model         = new Page();
-        $model->id     = $request->input('crud_id', 0);
+        $model = new Page();
+        $model->id = $request->input('crud_id', 0);
         $model->exists = true;
-        $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
+        $media = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
     }

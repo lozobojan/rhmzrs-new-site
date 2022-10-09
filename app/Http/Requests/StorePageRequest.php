@@ -30,6 +30,10 @@ class StorePageRequest extends FormRequest
                 'required',
                 'unique:pages',
             ],
+            'attachments' => [
+                'array',
+                'nullable',
+            ],
             'html_content' => [
                 'string',
                 'nullable',

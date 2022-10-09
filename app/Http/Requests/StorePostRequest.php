@@ -21,6 +21,10 @@ class StorePostRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'attachments' => [
+                'array',
+                'nullable',
+            ],
             'page_id' => [
                 'required',
                 'integer',

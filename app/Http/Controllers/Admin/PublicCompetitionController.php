@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
-class PublicCompetitionController extends Controller
+class
+PublicCompetitionController extends Controller
 {
     use MediaUploadingTrait;
 

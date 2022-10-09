@@ -21,6 +21,10 @@ class UpdatePostRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'attachments' => [
+                'array',
+                'required',
+            ],
             'page_id' => [
                 'required',
                 'integer',

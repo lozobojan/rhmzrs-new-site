@@ -51,4 +51,22 @@ class DataController extends Controller
         // Return the meteo stations as JSON
         return response()->json($meteoStations);
     }
+
+    // Get all accelero stations from the database
+    public function getAcceleroStations(): \Illuminate\Http\JsonResponse
+    {
+        // Get all accelero stations from the database
+        $acceleroStations = \App\Models\AcceleroStation::all();
+        // Return the accelero stations as JSON
+        return response()->json($acceleroStations);
+    }
+
+    // Get all seismic stations from the database
+    public function getSeismicStations(): \Illuminate\Http\JsonResponse
+    {
+        // Get all seismic stations from the database
+        $seismicStations = \App\Models\SeismicStation::all();
+        // Return the seismic stations as JSON
+        return response()->json($seismicStations);
+    }
 }
