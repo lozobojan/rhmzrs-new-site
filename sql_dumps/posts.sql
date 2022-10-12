@@ -3422,3 +3422,4 @@ INSERT INTO rhmzrs.posts (id, html_content, title, type, thumbnail_url, metadata
 <p align="JUSTIFY">
 
 </p>', 'Земљотрес у региону Берковића', 'post', '', null, '2022-09-01 14:48:58', null, null, 14, 29793);
+
