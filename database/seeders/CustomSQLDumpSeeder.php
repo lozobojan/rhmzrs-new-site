@@ -19,7 +19,6 @@ class CustomSQLDumpSeeder extends Seeder
           'pages',
           'links',
           'posts',
-          'projects',
           'public_competitions',
           'public_purchases',
           'media',

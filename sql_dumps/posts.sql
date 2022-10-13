@@ -782,13 +782,13 @@ INSERT INTO rhmzrs.posts (id, html_content, title, type, thumbnail_url, metadata
 <p align="JUSTIFY"><span style="font-size: medium">Земљотрес овог интензитета не може изазвати штете на објектима, а становништво га у епицентралној зони може осјетити.</span></p>', 'Земљотрес код Фоче (Челебићи)', 'post', '', null, '2021-01-09 12:20:44', null, null, 14, 19593);
 INSERT INTO rhmzrs.posts (id, html_content, title, type, thumbnail_url, metadata, created_at, updated_at, deleted_at, page_id, id_old) VALUES (723, 'Протекла 2020. је четврта најтоплија година у Републици Српској од 1950. надаље. Слична декада претходној била је давна 1854-1863.
 
-На годишњем нивоу, средње термичке прилике су биле <em>изузетно изнад нормале</em><strong>;
+На годишњем нивоу, средње термичке прилике су биле <em>изузетно изнад нормале</em><strong>; 
 
 хладну сезону окт2019-март2020 као и, климатолошку јесен, септембар-новембар 2020 обиљежило је <em>неуобичајено топло време</em></strong> са температуром изузетно изнад нормале.
 
 
 
-
+ 
 
 
 
@@ -3767,4 +3767,3 @@ INSERT INTO rhmzrs.posts (id, html_content, title, type, thumbnail_url, metadata
 <p align="JUSTIFY">
 
 </p>', 'Земљотрес у региону Берковића', 'post', '', null, '2022-09-01 14:48:58', null, null, 14, 29793);
-

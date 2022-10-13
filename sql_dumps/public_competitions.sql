@@ -1,3 +1,2 @@
 INSERT INTO rhmzrs.public_competitions (id, html_content, title, date, created_at, updated_at, deleted_at, page_id, description) VALUES (1, null, '10/01/2019', '2019-01-10', '2022-10-05 17:47:44', '2022-10-05 17:47:44', null, 25, 'Образац број 1');
 INSERT INTO rhmzrs.public_competitions (id, html_content, title, date, created_at, updated_at, deleted_at, page_id, description) VALUES (2, null, 'Образац број 2', '2020-06-21', '2022-10-05 17:54:47', '2022-10-05 17:54:47', null, 25, null);
-
