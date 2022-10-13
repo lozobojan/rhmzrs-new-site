@@ -76,6 +76,8 @@
             }
         </style>
         <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
+        <script src="{{asset('js/Datatable/jQuery-3.6.0/jquery-3.6.0.min.js')}}"></script>
+
         <script src="{{asset('leaflet/leaflet.js')}}"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

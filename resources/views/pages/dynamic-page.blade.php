@@ -1,4 +1,13 @@
-<x-main-layout>
+@php
+    $meta = [
+        "title"                 => "РХМЗРС - ". $page->title,
+        "description"           => "РХМЗРС - ". $page->title,
+        "keywords"              => "rhmzrs РХМЗРС - Документи и прописи",
+        "image"                 => asset('assets/img/meta-og.png'),
+        "url"                   => Request::url(),
+    ];
+@endphp
+<x-main-layout :meta="$meta">
     <x-slot name="additionalCss">
         <style>
             figure img {
@@ -169,6 +178,19 @@
             .bg-primary-light {
                 background-color: #e9eaf8 !important;
             }
+
+            table {
+                width: 100%;
+                /*border: 2px solid #ddd;*/
+                padding: 5px;
+            }
+            table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            table td {
+                padding: 5px;
+                text-align: left;
+            }
         </style>
     </x-slot>
     <section class="wrapper bg-light angled">
@@ -243,6 +265,12 @@
                 @endif
                 @if($slug == 'registar-postrojenja-i-zagadivaca-mapa-zagadjivaca')
                     <x-eco-pollutants></x-eco-pollutants>
+                @endif
+                @if($slug == 'hidrologija-mapa-stanica')
+                    <x-hydro-stations></x-hydro-stations>
+                @endif
+                @if($slug == 'hidrologija-podaci')
+                    <x-hydro-stations></x-hydro-stations>
                 @endif
 
                 @if($page->pagePosts)
