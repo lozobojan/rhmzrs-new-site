@@ -24,6 +24,27 @@ const config = {
 
 document.addEventListener('DOMContentLoaded', function () {
     let map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
+    map.scrollWheelZoom.disable();
+
+    $("#map").bind('mousewheel DOMMouseScroll', function (event) {
+        event.stopPropagation();
+        if (event.ctrlKey == true) {
+            event.preventDefault();
+            map.scrollWheelZoom.enable();
+            $('#map').removeClass('map-scroll');
+            setTimeout(function(){
+                map.scrollWheelZoom.disable();
+            }, 1000);
+        } else {
+            map.scrollWheelZoom.disable();
+            $('#map').addClass('map-scroll');
+        }
+
+    });
+
+    $(window).bind('mousewheel DOMMouseScroll', function (event) {
+        $('#map').removeClass('map-scroll');
+    })
     $('#example').DataTable({
         ajax: {
             dataSrc: '',

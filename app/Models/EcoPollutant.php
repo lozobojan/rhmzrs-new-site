@@ -10,4 +10,10 @@ class EcoPollutant extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $appends = ['icon'];
+
+    public function getIconAttribute()
+    {
+        return asset('assets/img/icons/marker-icon.png');
+    }
 }

@@ -23,6 +23,7 @@ Route::get('earthquakes', [DataController::class, 'getEarthquakes']);
 Route::get('meteo-maps', [DataController::class, 'getMeteoMaps']);
 Route::get('hydro-information', [DataController::class, 'getHydroInformation']);
 Route::get('eco-information', [DataController::class, 'getEcoInformation']);
+Route::get('eco-pollutants', [DataController::class, 'getEcoPollutants']);
 Route::get('meteo-stations', [DataController::class, 'getMeteoStations']);
 Route::get('accelero-stations', [DataController::class, 'getAcceleroStations']);
 Route::get('seismic-stations', [DataController::class, 'getSeismicStations']);

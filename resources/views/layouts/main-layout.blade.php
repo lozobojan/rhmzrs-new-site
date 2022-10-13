@@ -50,6 +50,26 @@
                 margin-top: 1rem!important;
             }
         }
+        .map-scroll:before {
+            content: 'Use ctrl + scroll to zoom the map';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+            font-size: 34px;
+            color: white;
+        }
+        .map-scroll:after {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            content: '';
+            background: #00000061;
+            z-index: 999;
+        }
     </style>
 
 </head>

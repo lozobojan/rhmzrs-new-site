@@ -1,7 +1,7 @@
 let timestampAPI = Date.now();
 const config = {
     API: {
-        meteoStations: '../api/seismic-stations',
+        ecoInformation: '../api/eco-information',
     },
     MAP: {
         element: 'map',
@@ -23,7 +23,10 @@ const config = {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    let map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
+    let map = L.map(config.MAP.element, {
+        gestureHandling: true,
+    }).setView(config.MAP.latLng, config.MAP.zoomLevel);
+    //disable default scroll
     map.scrollWheelZoom.disable();
 
     $("#map").bind('mousewheel DOMMouseScroll', function (event) {
@@ -45,26 +48,27 @@ document.addEventListener('DOMContentLoaded', function () {
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
         $('#map').removeClass('map-scroll');
     })
-    // $('#example').DataTable({
-    //     ajax: {
-    //         dataSrc: '',
-    //         url: config.API.meteoStations,
-    //     },
-    //     "columns": [
-    //         { "data": "station_id" },
-    //         { "data": "station_name" },
-    //         { "data": "station_id" },
-    //         { "data": "network_code" },
-    //         { "data": "lat" },
-    //         { "data": "lng" },
-    //         { "data": "alt" },
-    //         { "data": "digitizer" },
-    //         { "data": "sensor" },
-    //     ],
-    //     "language": {
-    //         "url": "../js/Datatable/Serbian.json"
-    //     }
-    // });
+    $('#example').DataTable({
+        ajax: {
+            dataSrc: '',
+            url: config.API.ecoInformation,
+        },
+        "columns": [
+            { "data": "station_name" },
+            { "data": "o3" },
+            { "data": "co" },
+            { "data": "so2" },
+            { "data": "no" },
+            { "data": "no2" },
+            { "data": "nox" },
+            { "data": "pm10" },
+            { "data": "pm25" },
+            { "data": "description" },
+        ],
+        "language": {
+            "url": "../js/Datatable/Serbian.json"
+        }
+    });
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let data = [];
     let markerArr = [];
 
-    axios.get(`${config.API.meteoStations}`).then(rs => {
+    axios.get(`${config.API.ecoInformation}`).then(rs => {
         data = rs.data;
         data.forEach(item => {
             let marker = L.marker(

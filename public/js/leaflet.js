@@ -33,6 +33,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
 
+map.scrollWheelZoom.disable();
+
+$("#map").bind('mousewheel DOMMouseScroll', function (event) {
+    event.stopPropagation();
+    if (event.ctrlKey == true) {
+        event.preventDefault();
+        map.scrollWheelZoom.enable();
+        $('#map').removeClass('map-scroll');
+        setTimeout(function(){
+            map.scrollWheelZoom.disable();
+        }, 1000);
+    } else {
+        map.scrollWheelZoom.disable();
+        $('#map').addClass('map-scroll');
+    }
+
+});
+
+$(window).bind('mousewheel DOMMouseScroll', function (event) {
+    $('#map').removeClass('map-scroll');
+})
+
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

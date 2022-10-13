@@ -43,6 +43,15 @@ class DataController extends Controller
         return response()->json($ecoInformation);
     }
 
+    // Get all eco pollutants from the database
+    public function getEcoPollutants(): \Illuminate\Http\JsonResponse
+    {
+        // Get all eco pollutants from the database
+        $ecoPollutants = \App\Models\EcoPollutant::all();
+        // Return the eco pollutants as JSON
+        return response()->json($ecoPollutants);
+    }
+
     // Get all meteo stations from the database
     public function getMeteoStations(): \Illuminate\Http\JsonResponse
     {

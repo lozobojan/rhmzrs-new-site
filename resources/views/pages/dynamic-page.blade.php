@@ -238,6 +238,12 @@
                 @if($slug == 'seizmologija-zemljotresi')
                     <x-earthquakes></x-earthquakes>
                 @endif
+                @if($slug == 'kvalitet-vazduha-trenutni-podaci' || $slug == 'kvalitet-vazduha-mapa-mjernih-stanica')
+                    <x-air-quality></x-air-quality>
+                @endif
+                @if($slug == 'registar-postrojenja-i-zagadivaca-mapa-zagadjivaca')
+                    <x-eco-pollutants></x-eco-pollutants>
+                @endif
 
                 @if($page->pagePosts)
                     @foreach($page->pagePosts as $post)
