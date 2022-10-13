@@ -10,6 +10,15 @@
    ];
 @endphp
 <x-main-layout :meta="$meta">
+    <x-slot name="additionalCss">
+        <style>
+            .post-content img {
+                width: auto;
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </x-slot>
     <section class="wrapper bg-soft-primary d-print-none">
         <div class="container pt-10 pb-19 pt-md-14 pb-md-20 text-center">
             <div class="row">
