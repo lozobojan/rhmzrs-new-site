@@ -1,4 +1,4 @@
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (2, '', null, '2022-09-19 09:18:08', '2022-09-20 15:23:05', null, null, null, 'Почетна');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (2, '', 'home-screen', '2022-09-19 09:18:08', '2022-09-20 15:23:05', null, null, null, 'Почетна');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (3, 'o-zavodu', null, '2022-09-19 09:20:09', '2022-09-20 14:46:23', null, null, null, 'О заводу');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (4, 'meteorologija', null, '2022-09-19 09:20:36', '2022-09-20 14:46:23', null, null, null, 'Метеорологија');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (5, 'seizmologija', null, '2022-09-19 09:20:53', '2022-09-20 14:46:24', null, null, null, 'Сеизмологија');
