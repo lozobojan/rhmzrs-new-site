@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('pages.welcome', compact([
         []
     ]));
-});
+})->name('home-screen');
 
 // za dinamicke stranice koje se prave preko WYSIWYG
 Route::get('page/{slug}', [PublicWebsiteController::class, 'displayPage'])->name('display-page');
