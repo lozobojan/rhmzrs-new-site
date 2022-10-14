@@ -9,6 +9,20 @@
     <div class="card-body">
         <form method="POST" action="{{ route("admin.posts.store") }}" enctype="multipart/form-data">
             @csrf
+
+            <div class="form-group">
+                <label class="required" for="type">{{ trans('cruds.post.fields.type') }}</label>
+                <select class="form-control select2 {{ $errors->has('type') ? 'is-invalid' : '' }}" name="type" id="type" required>
+                    @foreach(\App\Models\Post::TYPES as $type)
+                        <option value="{{ $type }}" {{ old('type') == $type ? 'selected' : '' }}>{{ trans("cruds.post.fields.types.{$type}") }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('type'))
+                    <span class="text-danger">{{ $errors->first('type') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.post.fields.page_helper') }}</span>
+            </div>
+
             <div class="form-group">
                 <label for="html_content">{{ trans('cruds.post.fields.html_content') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('html_content') ? 'is-invalid' : '' }}" name="html_content" id="html_content">{!! old('html_content') !!}</textarea>

@@ -133,6 +133,17 @@ return [
             'deleted_at_helper'   => ' ',
             'page'                => 'Страна',
             'page_helper'         => ' ',
+            'type'         => 'Тип објаве',
+            'types'         => [
+                'post' => 'Објава',
+                'static' => 'Статична страна',   // Zakucane stranice / WYSIWYG
+                'alert' => 'Упозорење',
+                'bulletin'  => 'Билтен', // Bliten
+                'report'  => 'Извјештај',
+                'paper'  => 'Рад',    // Radovi
+                'pollutant_map'  => 'Мапа загађивача',    // MOPL u WP / Mapa zagadjivaca,
+                'project'  => 'Пројекат',
+            ],
         ],
     ],
     'publicCompetition' => [

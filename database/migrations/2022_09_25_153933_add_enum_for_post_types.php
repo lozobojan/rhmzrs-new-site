@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,16 +14,7 @@ return new class extends Migration {
   public function up()
   {
     Schema::table('posts', function (Blueprint $table) {
-      $table->enum('type', [
-        'post',
-        'static',   // Zakucane stranice / WYSIWYG
-        'alert',
-        'bulletin', // Bliten
-        'report',
-        'paper',    // Radovi
-        'pollutant_map',    // MOPL u WP / Mapa zagadjivaca,
-        'project',
-      ])
+      $table->enum('type', Post::TYPES)
         ->after('title')
         ->default('post');
 

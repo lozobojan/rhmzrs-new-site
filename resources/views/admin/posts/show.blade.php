@@ -25,6 +25,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans("cruds.post.fields.type") }}
+                        </th>
+                        <td>
+                            {{ trans("cruds.post.fields.types.{$post->type}") }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.post.fields.html_content') }}
                         </th>
                         <td>

@@ -17,6 +17,16 @@ class Post extends Model implements HasMedia
     use HasFactory;
 
     public $table = 'posts';
+    const TYPES = [
+        'post',
+        'static',   // Zakucane stranice / WYSIWYG
+        'alert',
+        'bulletin', // Bliten
+        'report',
+        'paper',    // Radovi
+        'pollutant_map',    // MOPL u WP / Mapa zagadjivaca,
+        'project',
+    ];
 
     protected $appends = [
         'cover_photo',
