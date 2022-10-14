@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use \DateTimeInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,7 +17,14 @@ class Project extends Model implements HasMedia
     use InteractsWithMedia;
     use HasFactory;
 
-    public $table = 'projects';
+    public $table = 'posts';
+
+    protected static function booted()
+    {
+        static::addGlobalScope('projects', function (Builder $builder) {
+            $builder->where('type', '=', 'project');
+        });
+    }
 
     protected $appends = [
         'cover_photo',
