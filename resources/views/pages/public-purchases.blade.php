@@ -34,7 +34,7 @@
                                                     {{--            <li class="post-comments"><a href="#"><i class="uil uil-file-alt fs-15"></i>Coding</a></li>--}}
                                                 </ul>
                                             </div>
-                                            <div class="read-more" style="position: absolute; top: 50%; right: 0; transform: translate(-10%, -50%)">
+                                            <div class="read-more d-none d-md-block" style="position: absolute; top: 50%; right: 0; transform: translate(-10%, -50%)">
                                                 <a href="/javne-nabavke/{{$item->id}}" class="btn btn- btn-outline-primary rounded-pill">Прочитај више ></a>
                                             </div>
                                         </article>

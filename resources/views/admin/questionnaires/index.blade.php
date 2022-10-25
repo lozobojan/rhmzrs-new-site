@@ -29,12 +29,16 @@
                             {{ trans('cruds.questionnaire.fields.title') }}
                         </th>
                         <th>
+                            {{ trans('cruds.questionnaire.fields.link') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
                     <tr>
                         <td>
                         </td>
+                        <td></td>
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
@@ -56,6 +60,9 @@
                             </td>
                             <td>
                                 {{ $questionnaire->title ?? '' }}
+                            </td>
+                            <td>
+                                {{ $questionnaire->link ?? '' }}
                             </td>
                             <td>
                                 @can('questionnaire_show')
@@ -136,7 +143,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

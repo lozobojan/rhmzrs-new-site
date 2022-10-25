@@ -47,41 +47,35 @@
     Мрежа сеизмолошких станица  Републике Српске састоји се од 9  дигиталних аутоматских станица од којих су три  са широкопојасним сензором (Бањалука, Хан Пијесак и Мраковица)  а остале су краткопериодичне. Сензори на свим станицама су трокомпонентни што значи да се регистрација земљотреса врши у вертикалном и два хоризонтална правца сјевер-југ и исток-запад. Прикупљање и обрада података се врши у Бањој Луци а са свих станица је обезбијеђен пренос података у реалном времену. Просторни распоред станица је приказан на мапи а детаљни подаци о свакој локацији и инсталисаној опреми у табели.
 
 
+    <br>
+    <br>
 
+        <table id="example" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+        <tr role="row">
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="No.: activate to sort column ascending" style="width: 22px;">No.
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Станица: activate to sort column descending" style="width: 56px;" aria-sort="ascending">
+                Станица
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Код Станице: activate to sort column ascending" style="width: 56px;">Код Станице
+            </th>
 
-    {{--    <table id="example" class="table table-bordered table-striped" style="width:100%">--}}
-{{--        <thead>--}}
-{{--        <tr role="row">--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="No.: activate to sort column ascending" style="width: 22px;">No.--}}
-{{--            </th>--}}
-{{--            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Станица: activate to sort column descending" style="width: 56px;" aria-sort="ascending">--}}
-{{--                Станица--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Код Станице: activate to sort column ascending" style="width: 56px;">Код Станице--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Код Мреже: activate to sort column ascending" style="width: 48px;">Код Мреже--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Лат.: activate to sort column ascending" style="width: 29px;">Лат.--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Лон.: activate to sort column ascending" style="width: 30px;">Лон.--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Алт.: activate to sort column ascending" style="width: 29px;">Алт.--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Дигитализатор: activate to sort column ascending" style="width: 100px;">Дигитализатор--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Сензор: activate to sort column ascending" style="width: 48px;">Сензор--}}
-{{--            </th>--}}
-{{--        </tr>--}}
-{{--        </thead>--}}
-{{--    </table>--}}
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Лат.: activate to sort column ascending" style="width: 29px;">Лат.
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Лон.: activate to sort column ascending" style="width: 30px;">Лон.
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Алт.: activate to sort column ascending" style="width: 29px;">Алт.
+            </th>
+
+        </tr>
+        </thead>
+    </table>
 
 </div>

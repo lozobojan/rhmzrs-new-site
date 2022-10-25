@@ -31,8 +31,8 @@ class Earthquake extends Model
             <div class=''>
                 <div class='card-body'>
                     <h5 class='card-title'>{$this->attributes['place']}</h5>
-                    <p class='card-text'>Magnitude: {$this->attributes['magnitude']}</p>
-                    <p class='card-text'>Time: {$this->attributes['earthquake_date']} {$this->attributes['earthquake_time']}</p>
+                    <p class='card-text'>Магнитуда: {$this->attributes['magnitude']}</p>
+                    <p class='card-text'>време: {$this->attributes['earthquake_date']} {$this->attributes['earthquake_time']}</p>
                 </div>
             </div>
         ";

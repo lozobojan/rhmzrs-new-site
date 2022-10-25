@@ -1,18 +1,7 @@
-@php
-    $meta = [
-        "title"                 => "РХМЗРС - ". $page->title,
-        "description"           => "РХМЗРС - ". $page->title,
-        "keywords"              => "rhmzrs РХМЗРС - Документи и прописи",
-        "image"                 => asset('assets/img/meta-og.png'),
-        "url"                   => Request::url(),
-    ];
-@endphp
-<x-main-layout :meta="$meta">
+<x-main-layout>
     <x-slot name="additionalCss">
         <style>
-            figure img {
-                width: auto!important;
-            }
+            @charset "utf-8";
             /*! fileicon.css v0.1.1 | MIT License | github.com/picturepan2/fileicon.css */
             /* fileicon.basic */
             .file-icon {
@@ -179,115 +168,27 @@
                 background-color: #e9eaf8 !important;
             }
 
-            table {
-                width: 100%;
-                /*border: 2px solid #ddd;*/
-                padding: 5px;
-            }
-            table tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-            table td {
-                padding: 5px;
-                text-align: left;
-            }
 
-            /*Add small screens media query*/
-
-
-            #example_wrapper {
-                max-width: 100%;
-                width: 100%;
-                overflow: scroll;
-            }
         </style>
     </x-slot>
+
     <section class="wrapper bg-light angled">
         <div class="container py-14 py-md-16">
             <div class="row">
 
 
-                <div class="col-lg-12 col-xl-12 col-xxl-12">
+                <div class="col-lg-12 col-xl-12 col-xxl-12x">
 
                     {{-- TODO: razmisliti o ovom prikazu bez escape-ovanja, nije bas bezbjedno --}}
-                    <h1 class="fs-32 text-uppercase text-line text-primary mb-3">{{ $page->title }}</h1>
-                    {!! $page->html_content !!}
+                    <h1 class="fs-32 text-uppercase text-line text-primary mb-3">{{ $questionnaire->title }}</h1>
+
+                    <br>
+
+                    <iframe src="{{$questionnaire->link}}" class="w-100" style="overflow:hidden;height:900px;width:100%" height="100%" width="100%" frameborder="0"></iframe>
 
 
-                    @if(count($page->attachments))
-                        <br>
-                        <x-section-separator text="Прилози" simple></x-section-separator>
-                        <table class="table align-middle mb-0 bg-white table-bordered">
-                            <thead class="bg-primary-light">
-                            <tr>
-                                <th>Датотека</th>
-                                {{--                            <th>Објашњење</th>--}}
-                                <th>Објашњење</th>
-                                <th>Величина датотеке</th>
-                                <th>Преузимање</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @php
-                            $attachments = $page->attachments->reverse();
-                            @endphp
-                            @foreach($attachments as $key => $media)
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
-                                                <div class="file-icon file-icon-md"
-                                                     data-type="{{ last(explode('.',$media->file_name)) }}"></div>
-                                                <p class="fw-bold"
-                                                   style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td>{{ $media->custom_properties['description'] }}</td>
-                                    <td>{{ $media->human_readable_size }}</td>
-                                    <td>
-                                        {{ $media->download_count }}
-                                    </td>
-                                </tr>
-
-                            @endforeach
-                            </tbody>
-                        </table>
-                    @endif
                 </div>
                 <!-- /column -->
-
-                @if($slug == 'mreza-meteoroloskih-stanica')
-                    <x-meteo-stations></x-meteo-stations>
-                @endif
-                @if($slug == 'seizmologija-akcelerometarska-mreza')
-                    <x-accelero-stations></x-accelero-stations>
-                @endif
-                @if($slug == 'seizmologija-stanice')
-                    <x-seismic-stations></x-seismic-stations>
-                @endif
-                @if($slug == 'seizmologija-zemljotresi')
-                    <x-earthquakes></x-earthquakes>
-                @endif
-                @if($slug == 'kvalitet-vazduha-trenutni-podaci' || $slug == 'kvalitet-vazduha-mapa-mjernih-stanica')
-                    <x-air-quality></x-air-quality>
-                @endif
-                @if($slug == 'registar-postrojenja-i-zagadivaca-mapa-zagadjivaca')
-                    <x-eco-pollutants></x-eco-pollutants>
-                @endif
-                @if($slug == 'hidrologija-mapa-stanica')
-                    <x-hydro-stations></x-hydro-stations>
-                @endif
-                @if($slug == 'hidrologija-podaci')
-                    <x-hydro-stations></x-hydro-stations>
-                @endif
-
-                @if($page->pagePosts)
-                    @foreach($page->pagePosts as $post)
-                        <x-article :simple="true" :subtext="true" :article="$post"></x-article>
-{{--                        <p>{{ $post->title }}</p>--}}
-                    @endforeach
-                @endif
 
             </div>
             <!-- /.row -->

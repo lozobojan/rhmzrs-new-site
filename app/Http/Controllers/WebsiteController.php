@@ -6,6 +6,7 @@ use App\Models\DocumentAndRegulation;
 use App\Models\Post;
 use App\Models\PublicCompetition;
 use App\Models\PublicPurchase;
+use App\Models\Questionnaire;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
@@ -66,6 +67,19 @@ class WebsiteController extends Controller
     {
         return view('pages.post', compact('post'));
     }
+
+    // Routes for questionnaires
+    public function questionnaires()
+    {
+        $questionnaires = Questionnaire::paginate(10);
+        return view('pages.questionnaires', compact('questionnaires'));
+    }
+
+public function questionnaire(Questionnaire $questionnaire)
+    {
+        return view('pages.questionnaire', compact('questionnaire'));
+    }
+
 
 
 }

@@ -23,6 +23,10 @@ class StoreQuestionnaireRequest extends FormRequest
                 'max:255',
                 'required',
             ],
+            'link' => [
+                'string',
+                'required',
+            ],
         ];
     }
 }

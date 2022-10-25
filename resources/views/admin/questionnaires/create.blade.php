@@ -18,6 +18,14 @@
                 <span class="help-block">{{ trans('cruds.questionnaire.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="title">{{ trans('cruds.questionnaire.fields.link') }}</label>
+                <input class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" type="text" name="link" id="link" value="{{ old('link', '') }}" required>
+                @if($errors->has('link'))
+                    <span class="text-danger">{{ $errors->first('link') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.questionnaire.fields.title_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="description">{{ trans('cruds.questionnaire.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description') !!}</textarea>
                 @if($errors->has('description'))

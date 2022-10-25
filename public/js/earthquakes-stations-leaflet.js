@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
             dataSrc: '',
             url: config.API.meteoStations,
         },
+        responsive: true,
+
         "columns": [
             { "data": "earthquake_date" },
             { "data": "municipality" },

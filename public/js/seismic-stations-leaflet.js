@@ -45,26 +45,26 @@ document.addEventListener('DOMContentLoaded', function () {
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
         $('#map').removeClass('map-scroll');
     })
-    // $('#example').DataTable({
-    //     ajax: {
-    //         dataSrc: '',
-    //         url: config.API.meteoStations,
-    //     },
-    //     "columns": [
-    //         { "data": "station_id" },
-    //         { "data": "station_name" },
-    //         { "data": "station_id" },
-    //         { "data": "network_code" },
-    //         { "data": "lat" },
-    //         { "data": "lng" },
-    //         { "data": "alt" },
-    //         { "data": "digitizer" },
-    //         { "data": "sensor" },
-    //     ],
-    //     "language": {
-    //         "url": "../js/Datatable/Serbian.json"
-    //     }
-    // });
+    $('#example').DataTable({
+        ajax: {
+            dataSrc: '',
+            url: config.API.meteoStations,
+        },
+        "columns": [
+            { "data": "station_id" },
+            { "data": "station_name" },
+            { "data": "station_id" },
+            // { "data": "network_code" },
+            { "data": "lat" },
+            { "data": "lng" },
+            { "data": "alt" },
+            // { "data": "digitizer" },
+            // { "data": "sensor" },
+        ],
+        "language": {
+            "url": "../js/Datatable/Serbian.json"
+        }
+    });
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

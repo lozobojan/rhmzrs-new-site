@@ -133,3 +133,8 @@ Route::post('kontakt', [\App\Http\Controllers\WebsiteController::class, 'saveCon
 
 
 Route::get('post/{post}', [\App\Http\Controllers\WebsiteController::class, 'post'])->name('post.view');
+
+
+// Routes for questionnaires
+Route::get('ankete', [\App\Http\Controllers\WebsiteController::class, 'questionnaires'])->name('questionnaires');
+Route::get('ankete/{questionnaire}', [\App\Http\Controllers\WebsiteController::class, 'questionnaire'])->name('questionnaire.view');

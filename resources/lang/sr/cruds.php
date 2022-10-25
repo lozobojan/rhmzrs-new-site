@@ -255,6 +255,8 @@ return [
             'updated_at_helper'  => ' ',
             'deleted_at'         => 'Избрисано',
             'deleted_at_helper'  => ' ',
+            'link'              => 'Линк',
+            'link_helper'       => 'Embed линк',
         ],
     ],
     'question' => [
