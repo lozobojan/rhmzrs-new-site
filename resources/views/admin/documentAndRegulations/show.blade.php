@@ -33,6 +33,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.documentAndRegulation.fields.description') }}
+                        </th>
+                        <td>
+                            {{ $documentAndRegulation->description }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.documentAndRegulation.fields.attachments') }}
                         </th>
                         <td>
