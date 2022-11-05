@@ -18,6 +18,14 @@
                 <span class="help-block">{{ trans('cruds.documentAndRegulation.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="title">{{ trans('cruds.documentAndRegulation.fields.description') }}</label>
+                <textarea rows="3" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{{ old('description', '') }}</textarea>
+                @if($errors->has('description'))
+                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.documentAndRegulation.fields.description_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="attachments">{{ trans('cruds.documentAndRegulation.fields.attachments') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('attachments') ? 'is-invalid' : '' }}" id="attachments-dropzone">
                 </div>

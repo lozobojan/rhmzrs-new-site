@@ -29,6 +29,9 @@
                             {{ trans('cruds.documentAndRegulation.fields.title') }}
                         </th>
                         <th>
+                            {{ trans('cruds.documentAndRegulation.fields.description') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.page.fields.slug') }}
                         </th>
                         <th>
@@ -37,6 +40,9 @@
                     </tr>
                     <tr>
                         <td>
+                        </td>
+                        <td>
+                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -62,6 +68,9 @@
                             </td>
                             <td>
                                 {{ $documentAndRegulation->title ?? '' }}
+                            </td>
+                            <td>
+                                {{ $documentAndRegulation->description_trimmed ?? '' }}
                             </td>
                             <td>
                                 @foreach($documentAndRegulation->attachments as $key => $media)

@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.public-competitions.update", [$documentAndRegulation->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("admin.document-and-regulations.update", [$documentAndRegulation->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">
@@ -17,6 +17,14 @@
                     <span class="text-danger">{{ $errors->first('title') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.documentAndRegulation.fields.title_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="title">{{ trans('cruds.documentAndRegulation.fields.description') }}</label>
+                <textarea rows="3" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{{ old('title', $documentAndRegulation->description) }}</textarea>
+                @if($errors->has('description'))
+                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.documentAndRegulation.fields.description_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="attachments">{{ trans('cruds.documentAndRegulation.fields.attachments') }}</label>

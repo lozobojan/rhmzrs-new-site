@@ -57,7 +57,7 @@ class DocumentAndRegulationController extends Controller
 
         $pages = Page::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $documentAndRegulation->load('page');
+        // $documentAndRegulation->load('page');
 
         return view('admin.documentAndRegulations.edit', compact('pages', 'documentAndRegulation'));
     }

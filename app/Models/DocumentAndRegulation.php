@@ -30,6 +30,7 @@ class DocumentAndRegulation extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'description',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -44,6 +45,12 @@ class DocumentAndRegulation extends Model implements HasMedia
     public function getAttachmentsAttribute()
     {
         return $this->getMedia('attachments');
+    }
+
+    public function getDescriptionTrimmedAttribute(){
+        return strlen($this->attributes['description'] > 20)
+            ? substr($this->attributes['description'], 0, 20)."..."
+            : $this->attributes['description'];
     }
 
 }
