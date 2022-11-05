@@ -51,6 +51,7 @@ return [
     'year'                           => 'Year',
     'yes'                            => 'Yes',
     'youAreLoggedIn'                 => 'You are logged in!',
+    'welcomeAdminMessage'            => 'Here you can manage all the content of the RHMZRS website. Pick an item from left menu and start editing.',
     'yourAccountNeedsAdminApproval'  => 'Your accounts needs an administrator approval in order to log in',
     'submit'                         => 'Submit',
     'relatedData'                    => 'Related Data',

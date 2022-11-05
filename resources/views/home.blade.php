@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    Dashboard
+                    {{ __('global.dashboard') }}
                 </div>
 
                 <div class="card-body">
@@ -14,8 +14,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    {{ __('global.youAreLoggedIn') }}
+                    <p class="mt-3">
+                        {{ __('global.welcomeAdminMessage') }}
+                    </p>
                 </div>
             </div>
         </div>

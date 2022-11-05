@@ -79,7 +79,7 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.0.0-alpha
+                <b>Version</b> -alpha
             </div>
             <strong> &copy;</strong> {{ trans('global.allRightsReserved') }}
         </footer>
@@ -223,7 +223,7 @@
     </script>
     <script>
         /*!
-     * AdminLTE v3.0.0-alpha.2 (https://adminlte.io)
+     * AdminLTE v-alpha.2 (https://adminlte.io)
      * Copyright 2014-2018 Abdullah Almsaeed <abdullah@almsaeedstudio.com>
      * Licensed under MIT (https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE)
      */
