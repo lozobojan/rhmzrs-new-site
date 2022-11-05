@@ -282,6 +282,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 68,
                 'title' => 'document_and_regulation_access',
             ],
+            [
+                'id'    => 69,
+                'title' => 'river_basin_access',
+            ],
+            [
+                'id'    => 70,
+                'title' => 'river_basin_create',
+            ],
+            [
+                'id'    => 71,
+                'title' => 'river_basin_show',
+            ],
+            [
+                'id'    => 72,
+                'title' => 'river_basin_delete',
+            ],
+            [
+                'id'    => 73,
+                'title' => 'river_basin_edit',
+            ],
         ];
 
         Permission::insert($permissions);

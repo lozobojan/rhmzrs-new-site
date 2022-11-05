@@ -90,6 +90,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Answer
     Route::delete('answers/destroy', 'AnswerController@massDestroy')->name('answers.massDestroy');
     Route::resource('answers', 'AnswerController');
+
+    // River Basin
+    Route::delete('river-basins/destroy', 'RiverBasinController@massDestroy')->name('river-basins.massDestroy');
+    Route::post('river-basins/media', 'RiverBasinController@storeMedia')->name('river-basins.storeMedia');
+    Route::post('river-basins/ckmedia', 'RiverBasinController@storeCKEditorImages')->name('river-basins.storeCKEditorImages');
+    Route::resource('river-basins', 'RiverBasinController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
