@@ -96,6 +96,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('river-basins/media', 'RiverBasinController@storeMedia')->name('river-basins.storeMedia');
     Route::post('river-basins/ckmedia', 'RiverBasinController@storeCKEditorImages')->name('river-basins.storeCKEditorImages');
     Route::resource('river-basins', 'RiverBasinController');
+
+    // Flood Defense Point
+    Route::delete('flood-defense-points/destroy', 'FloodDefensePointController@massDestroy')->name('flood-defense-points.massDestroy');
+    Route::resource('flood-defense-points', 'FloodDefensePointController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

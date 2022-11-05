@@ -42,6 +42,11 @@ class RiverBasin extends Model implements HasMedia
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
+    public function riverBasinFloodDefensePoints()
+    {
+        return $this->hasMany(FloodDefensePoint::class, 'river_basin_id');
+    }
+
     public function getPhotoAttribute()
     {
         $file = $this->getMedia('photo')->last();

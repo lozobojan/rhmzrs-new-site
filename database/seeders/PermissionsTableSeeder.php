@@ -302,6 +302,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 73,
                 'title' => 'river_basin_edit',
             ],
+            [
+                'id'    => 74,
+                'title' => 'flood_defense_point_access',
+            ],
+            [
+                'id'    => 75,
+                'title' => 'flood_defense_point_create',
+            ],
+            [
+                'id'    => 76,
+                'title' => 'flood_defense_point_show',
+            ],
+            [
+                'id'    => 77,
+                'title' => 'flood_defense_point_delete',
+            ],
+            [
+                'id'    => 78,
+                'title' => 'flood_defense_point_edit',
+            ],
         ];
 
         Permission::insert($permissions);

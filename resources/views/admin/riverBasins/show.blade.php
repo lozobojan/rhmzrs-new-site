@@ -62,6 +62,22 @@
     </div>
 </div>
 
-
+<div class="card">
+    <div class="card-header">
+        {{ trans('global.relatedData') }}
+    </div>
+    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="#river_basin_flood_defense_points" role="tab" data-toggle="tab">
+                {{ trans('cruds.floodDefensePoint.title') }}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" role="tabpanel" id="river_basin_flood_defense_points">
+            @includeIf('admin.riverBasins.relationships.riverBasinFloodDefensePoints', ['floodDefensePoints' => $riverBasin->riverBasinFloodDefensePoints])
+        </div>
+    </div>
+</div>
 
 @endsection
