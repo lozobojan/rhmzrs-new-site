@@ -104,6 +104,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Gas Emission
     Route::delete('gas-emissions/destroy', 'GasEmissionController@massDestroy')->name('gas-emissions.massDestroy');
     Route::resource('gas-emissions', 'GasEmissionController');
+
+    // Earthquake
+    Route::delete('earthquakes/destroy', 'EarthquakeController@massDestroy')->name('earthquakes.massDestroy');
+    Route::resource('earthquakes', 'EarthquakeController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

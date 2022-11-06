@@ -342,6 +342,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 83,
                 'title' => 'gas_emission_access',
             ],
+            [
+                'id'    => 84,
+                'title' => 'earthquake_create',
+            ],
+            [
+                'id'    => 85,
+                'title' => 'earthquake_edit',
+            ],
+            [
+                'id'    => 86,
+                'title' => 'earthquake_show',
+            ],
+            [
+                'id'    => 87,
+                'title' => 'earthquake_delete',
+            ],
+            [
+                'id'    => 88,
+                'title' => 'earthquake_access',
+            ],
         ];
 
         Permission::insert($permissions);
