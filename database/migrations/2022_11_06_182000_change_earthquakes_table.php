@@ -28,7 +28,7 @@ return new class extends Migration
     {
         Schema::table('earthquakes', function (Blueprint $table) {
             $table->string('batch_version')->change();
-            $table->dropColumn('description');
+            $table->dropColumn('generated_description');
         });
     }
 };
