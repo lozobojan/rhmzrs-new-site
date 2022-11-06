@@ -322,6 +322,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 78,
                 'title' => 'flood_defense_point_edit',
             ],
+            [
+                'id'    => 79,
+                'title' => 'gas_emission_create',
+            ],
+            [
+                'id'    => 80,
+                'title' => 'gas_emission_edit',
+            ],
+            [
+                'id'    => 81,
+                'title' => 'gas_emission_show',
+            ],
+            [
+                'id'    => 82,
+                'title' => 'gas_emission_delete',
+            ],
+            [
+                'id'    => 83,
+                'title' => 'gas_emission_access',
+            ],
         ];
 
         Permission::insert($permissions);

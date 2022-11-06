@@ -100,6 +100,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Flood Defense Point
     Route::delete('flood-defense-points/destroy', 'FloodDefensePointController@massDestroy')->name('flood-defense-points.massDestroy');
     Route::resource('flood-defense-points', 'FloodDefensePointController');
+
+    // Gas Emission
+    Route::delete('gas-emissions/destroy', 'GasEmissionController@massDestroy')->name('gas-emissions.massDestroy');
+    Route::resource('gas-emissions', 'GasEmissionController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
