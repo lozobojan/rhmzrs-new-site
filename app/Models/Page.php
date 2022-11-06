@@ -17,6 +17,7 @@ class Page extends Model implements HasMedia
     use InteractsWithMedia;
 
     public $table = 'pages';
+    const SEISMOLOGY_NEWS = 23;
 
     protected $dates = [
         'created_at',

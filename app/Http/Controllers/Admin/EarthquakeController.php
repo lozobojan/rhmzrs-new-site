@@ -7,12 +7,16 @@ use App\Http\Requests\MassDestroyEarthquakeRequest;
 use App\Http\Requests\StoreEarthquakeRequest;
 use App\Http\Requests\UpdateEarthquakeRequest;
 use App\Models\Earthquake;
+use App\Service\EarthquakeService;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class EarthquakeController extends Controller
 {
+
+    public function __construct(public EarthquakeService $earthquakeService){}
+
     public function index()
     {
         abort_if(Gate::denies('earthquake_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -32,6 +36,7 @@ class EarthquakeController extends Controller
     public function store(StoreEarthquakeRequest $request)
     {
         $earthquake = Earthquake::create($request->all());
+        $this->earthquakeService->generateDraftPost($earthquake);
 
         return redirect()->route('admin.earthquakes.index');
     }
