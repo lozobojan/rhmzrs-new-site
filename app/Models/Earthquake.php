@@ -55,7 +55,7 @@ class Earthquake extends Model
     // get icon attribute
     public function getIconAttribute()
     {
-        if ($this->attributes['magnitude'] > 3) {
+        if ($this->attributes['earthquake_type'] === 'AUTOMATIC') {
             return asset('assets/img/icons/earthquake2.png');
         }
         return asset('assets/img/icons/earthquake.png');

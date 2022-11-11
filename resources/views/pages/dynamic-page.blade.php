@@ -281,6 +281,12 @@
                 @if($slug == 'hidrologija-podaci')
                     <x-hydro-stations></x-hydro-stations>
                 @endif
+                @if($slug == 'rijecni-slivovi')
+                    <x-river-basins></x-river-basins>
+                @endif
+                @if($slug == 'kote-odbrane-od-poplava')
+                    <x-kote></x-kote>
+                @endif
 
                 @if($page->pagePosts)
                     @foreach($page->pagePosts as $post)

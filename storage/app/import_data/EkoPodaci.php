@@ -19,25 +19,25 @@ $prethodni_sat2 = date('YmdH', strtotime("-1 hour")) . "0000";
 // ciscenje fajlova koji nam ne trebaju zadnih 48h
 
 for($i=0; $i<48; $i++) {
-	
+
 	$sat = date('YmdH', strtotime("-{$i} hour")) . "0000";
 	$csv_stari = "sumarni_eksterno" . $sat . ".csv";
 	$json_stari = "EkoPodaci" . $sat . ".json";
 	if(is_file($csv_stari)){
 		//echo $csv_stari;
 		unlink($csv_stari);
-		
-		
+
+
 	}
-	
+
 	if(is_file($json_stari)){
 		//echo $csv_stari;
 		unlink($json_stari);
-		
-		
+
+
 	}
 
-	
+
 }
 
 
@@ -130,6 +130,7 @@ function createStation(
 
     if (!is_file("sumarni_eksterno" . $treuntni_sat . ".csv")) {
         $data = file_get_contents("http://emir:Yh~oQ7f5NEk1@185.141.191.203/lampa/croncomp.php?id={$treuntni_sat}");
+        var_dump($data);
         file_put_contents("sumarni_eksterno" . $treuntni_sat . ".csv", $data);
     }
 
@@ -180,7 +181,7 @@ if (is_file("EkoPodaci" . $treuntni_sat . ".json")) {
             if ($k > 4) {
                 $data = explode("\t", $line);
 				//var_dump($data);
-			
+
 				$parsiranoExterni2["BanjaLuka"][$data[3]] = $data[6];
             }
             $k++;
@@ -195,8 +196,8 @@ if (is_file("EkoPodaci" . $treuntni_sat . ".json")) {
 
 
     $prijedorData = json_decode(file_get_contents("EkoPodaci.json"));
-	
-	
+
+
 	if(isset($prijedorData->EkoPodaci['0']) )
 		array_push($podaci['EkoPodaci'], $prijedorData->EkoPodaci['0']);
 

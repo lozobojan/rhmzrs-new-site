@@ -28,6 +28,24 @@
     <script src="{{asset('leaflet/leaflet.js')}}"></script>
     <script src="{{asset('js/Datatable/jQuery-3.6.0/jquery-3.6.0.min.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('js/Datatable/datatables.min.css') }}"/>
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+    <link href="{{asset('js/lightbox/css/framer.css')}}" rel="stylesheet" />
+    <script src="{{asset('js/lightbox/js/framer.js')}}"></script>
+    <script>
+        function test() {
+                // delay 1 second
+                setTimeout(function() {
+                    // do something
+                    document.querySelector('iframe').src = document.querySelector('iframe').src;
+
+                }, 1000);
+                // alert('test');
+        };
+
+    </script>
 
     <script type="text/javascript" src="{{ asset('js/Datatable/datatables.min.js') }}"></script>
 
@@ -37,7 +55,9 @@
     <div id="map"></div>
 
     <br>
-
+{{--    <a href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" type="text/html" data-framer="iframe-1">LinkText</a>--}}
+    <a href="http://81.93.72.16/dist/examples/ahsModricaVodostaj.php" data-framer="iframe-1">Image #1</a>
+    <a href="http://81.93.72.16/dist/examples/ahsModricaVodostaj.php" data-framer="iframe-2">Image #1</a>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">

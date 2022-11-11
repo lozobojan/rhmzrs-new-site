@@ -24,7 +24,7 @@ class HydroInformation extends Model
             <div class=''>
                 <div class='card-body'>
                     <h5 class='card-title'>{$this->attributes['station_name']}</h5>
-                    <p class='card-text'>{$this->attributes['description']}</p>
+                    <p class='card-text'>". str_replace('<a ', '<a onclick='.'test()'. ' data-framer='.'iframe-'. rand(1,10000) .' ', $this->attributes['description']) ."</p>
                 </div>
             </div>
         ";

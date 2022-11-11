@@ -40,16 +40,18 @@
     {{ $additionalCss ?? '' }}
 
     <style>
-        @media print{
+        @media print {
             .card {
                 -webkit-box-shadow: none;
-                -moz-box-shadow:    none;
-                box-shadow:         none!important;
+                -moz-box-shadow: none;
+                box-shadow: none !important;
             }
+
             .blog-single {
-                margin-top: 1rem!important;
+                margin-top: 1rem !important;
             }
         }
+
         .map-scroll:before {
             content: 'Use ctrl + scroll to zoom the map';
             position: absolute;
@@ -60,6 +62,7 @@
             font-size: 34px;
             color: white;
         }
+
         .map-scroll:after {
             position: absolute;
             left: 0;
@@ -70,8 +73,9 @@
             background: #00000061;
             z-index: 999;
         }
+
         body > div.Uc2NEf > div:nth-child(3) > div:nth-child(2) > div.I3zNcc.yF4pU {
-            display: none!important;
+            display: none !important;
         }
     </style>
 
@@ -116,26 +120,124 @@
                     </div>
                     <!-- /.navbar-collapse -->
                     <div class="navbar-other w-100 d-flex ms-auto">
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
-                            <li class="nav-item dropdown language-select text-uppercase">
-                                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button"
-                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item w-auto"><a href="#" title="Arabic"
-                                                                   class="d-flex align-items-center gap-2 dropdown-item"><img
-                                                data-gt-lazy-src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/ar.png"
-                                                height="16" width="16" alt="ar"
-                                                src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/ar.png">
-                                            Arabic</a></li>
-                                    <li class="nav-item w-auto"><a href="#"
-                                                                   title="Chinese (Simplified)"
-                                                                   class="d-flex align-items-center gap-2 dropdown-item"><img
-                                                data-gt-lazy-src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/zh-CN.png"
-                                                height="16" width="16" alt="zh-CN"
-                                                src="//rhmzrs.com/wp-content/plugins/gtranslate/flags/16/zh-CN.png">
-                                            Chinese (Simplified)</a></li>
-                                </ul>
-                            </li>
+                        <script src="{{asset('js/Datatable/jQuery-3.6.0/jquery-3.6.0.min.js')}}"></script>
+                        <div id="topbar-search" class="topbar-widget">
+
+                            <style type="text/css">
+                                #goog-gt-tt {
+                                    display: none !important;
+                                }
+
+                                .goog-te-banner-frame {
+                                    display: none !important;
+                                }
+
+                                .goog-te-menu-value:hover {
+                                    text-decoration: none !important;
+                                }
+
+                                .goog-text-highlight {
+                                    background-color: transparent !important;
+                                    box-shadow: none !important;
+                                }
+
+                                body {
+                                    top: 0 !important;
+                                }
+
+                                #google_translate_element2 {
+                                    display: none !important;
+                                }
+                            </style>
+                            <div id="google_translate_element2">
+                            </div>
+                            <script type="text/javascript">
+                                function googleTranslateElementInit2() {
+                                    new google.translate.TranslateElement({
+                                        pageLanguage: 'sr',
+                                        autoDisplay: false
+                                    }, 'google_translate_element2');
+                                }
+                            </script>
+                            <script type="text/javascript"
+                                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+                            <script type="text/javascript">
+                                function GTranslateGetCurrentLang() {
+                                    var keyValue = document['cookie'].match('(^|;) ?googtrans=([^;]*)(;|$)');
+                                    return keyValue ? keyValue[2].split('/')[2] : null;
+                                }
+
+                                function GTranslateFireEvent(element, event) {
+                                    try {
+                                        if (document.createEventObject) {
+                                            var evt = document.createEventObject();
+                                            element.fireEvent('on' + event, evt)
+                                        } else {
+                                            var evt = document.createEvent('HTMLEvents');
+                                            evt.initEvent(event, true, true);
+                                            element.dispatchEvent(evt)
+                                        }
+                                    } catch (e) {
+                                    }
+                                }
+
+                                function doGTranslate(lang_pair) {
+                                    if (lang_pair.value) lang_pair = lang_pair.value;
+                                    if (lang_pair == '') return;
+                                    var lang = lang_pair.split('|')[1];
+                                    if (GTranslateGetCurrentLang() == null && lang == lang_pair.split('|')[0]) return;
+                                    var teCombo;
+                                    var sel = document.getElementsByTagName('select');
+                                    for (var i = 0; i < sel.length; i++) if (/goog-te-combo/.test(sel[i].className)) {
+                                        teCombo = sel[i];
+                                        break;
+                                    }
+                                    if (document.getElementById('google_translate_element2') == null || document.getElementById('google_translate_element2').innerHTML.length === 0 || teCombo.length == 0 || teCombo.innerHTML.length == 0) {
+                                        setTimeout(function () {
+                                            doGTranslate(lang_pair)
+                                        }, 500)
+                                    } else {
+                                        teCombo.value = lang;
+                                        GTranslateFireEvent(teCombo, 'change');
+                                        GTranslateFireEvent(teCombo, 'change')
+                                    }
+                                }
+
+                                if (GTranslateGetCurrentLang() != null) jQuery(document).ready(function () {
+
+                                    var lang_html = jQuery('div.switcher div.option').find('img[alt="' + GTranslateGetCurrentLang() + '"]').parent().html();
+                                    if (typeof lang_html != 'undefined') jQuery('div.switcher div.selected a').html(lang_html.replace('data-gt-lazy-', ''));
+                                });
+
+
+                            </script>
+                        </div>
+
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto notranslate">
+                            <select class="form-select notranslate" id="jezici" aria-label="Default select example">
+                                <option value="sr|ar">Arabic</option>
+                                <option value="sr|zh-CN">Chinese (Simplified)</option>
+                                <option value="sr|en">English</option>
+                                <option value="sr|fr">French</option>
+                                <option value="sr|de">German</option>
+                                <option value="sr|el">Greek</option>
+                                <option value="sr|it">Italian</option>
+                                <option value="sr|pt">Portuguese</option>
+                                <option value="sr|ru">Russian</option>
+                                <option value="sr|sr">Serbian</option>
+                                <option value="sr|es">Spanish</option>
+                            </select>
+                            <script>
+                                document.querySelector('#jezici').addEventListener('change', function () {
+                                    doGTranslate(this.value);
+                                });
+                                if (GTranslateGetCurrentLang() != null) jQuery(document).ready(function () {
+                                    // alert('sr|' + GTranslateGetCurrentLang())
+                                    // $('#jezici').val('sr|' + GTranslateGetCurrentLang());
+                                    $("#jezici option[value='sr|"+ GTranslateGetCurrentLang() +"']").prop("selected", true)
+                                });
+                            </script>
                             <li class="nav-item d-xxl-none">
                                 <button class="hamburger offcanvas-nav-btn"><span></span></button>
                             </li>
@@ -187,7 +289,8 @@
                        style="height: 80px">Анкета</a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="{{asset('assets/Zahtjev-za-podacima.doc')}}" class="btn btn-primary rounded mb-0 text-nowrap w-100"
+                    <a href="{{asset('assets/Zahtjev-za-podacima.doc')}}"
+                       class="btn btn-primary rounded mb-0 text-nowrap w-100"
                        style="height: 80px; background-color: #00a7bd; border-color:#00a7bd ">
                         <img src="{{ asset('assets/img/down-arrow.png') }}" class="me-2" alt=""> <span class="ml-4"> Захтјев
                         за подацима </span>
@@ -223,7 +326,8 @@
                         <strong>Факс:</strong><a href="tel:+387 51/ 433-521">+387 51/ 433-521</a><br>
                         <strong>Директор:</strong><a href="tel:051 460-852">051 460-852</a><br>
                         <strong>Сеизмологија:</strong><a href="tel:051 463-467">051 463-467</a><br>
-                        <strong>Метеорологија:</strong> <a href="tel:051 461-681">051 461-681</a>; <a href="tel:051 346-490">051 346-490</a><br>
+                        <strong>Метеорологија:</strong> <a href="tel:051 461-681">051 461-681</a>; <a
+                            href="tel:051 346-490">051 346-490</a><br>
                         <strong>Хидрологија:</strong> <a href="tel:051 315-538">051 315-538</a><br>
                         <strong>Заштита ж. средине:</strong> <a href="tel:051 346-494">051 346-494</a><br>
                         <strong>Сабирни центар:</strong><a href="tel:051 307-943">051 307-943</a> (тел/фаx)

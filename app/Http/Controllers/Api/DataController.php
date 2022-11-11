@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 class DataController extends Controller
 {
     // getEarthquakes method to get all earthquakes from the database
-    public function getEarthquakes(): \Illuminate\Http\JsonResponse
+    public function getEarthquakes(Request $request): \Illuminate\Http\JsonResponse
     {
+
         // Get all earthquakes from the database
-        $earthquakes = \App\Models\Earthquake::published();
+        $earthquakes = \App\Models\Earthquake::query()
+            ->when($request->type, function ($query) use ($request) {
+                return $query->where('earthquake_type', '=', $request->type);
+            })->
+        published();
         // Return the earthquakes as JSON
         return response()->json($earthquakes);
     }
@@ -77,5 +82,14 @@ class DataController extends Controller
         $seismicStations = \App\Models\SeismicStation::all();
         // Return the seismic stations as JSON
         return response()->json($seismicStations);
+    }
+
+    // Get all flood defense points from the database
+    public function getFloodDefensePoints(): \Illuminate\Http\JsonResponse
+    {
+        // Get all flood defense points from the database
+        $floodDefensePoints = \App\Models\FloodDefensePoint::with('river_basin')->get();
+        // Return the flood defense points as JSON
+        return response()->json($floodDefensePoints);
     }
 }

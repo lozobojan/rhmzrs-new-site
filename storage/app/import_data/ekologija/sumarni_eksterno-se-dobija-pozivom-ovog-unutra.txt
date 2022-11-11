@@ -1,0 +1,1 @@
+$data = file_get_contents("http://emir:Yh~oQ7f5NEk1@185.141.191.203/lampa/croncomp.php?id={$treuntni_sat}");

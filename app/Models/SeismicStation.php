@@ -25,7 +25,7 @@ class SeismicStation extends Model
             <div class=''>
                 <div class='card-body'>
                     <h5 class='card-title'>{$this->attributes['station_name']}</h5>
-                    <p class='card-text'>{$this->attributes['description']}</p>
+                    <p class='card-text'>". str_replace(';', '<br>', $this->attributes['description']) ."</p>
                 </div>
             </div>
         ";

@@ -27,3 +27,5 @@ Route::get('eco-pollutants', [DataController::class, 'getEcoPollutants']);
 Route::get('meteo-stations', [DataController::class, 'getMeteoStations']);
 Route::get('accelero-stations', [DataController::class, 'getAcceleroStations']);
 Route::get('seismic-stations', [DataController::class, 'getSeismicStations']);
+// Flood defense points
+Route::get('flood-defense-points', [DataController::class, 'getFloodDefensePoints']);

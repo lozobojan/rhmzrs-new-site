@@ -45,13 +45,21 @@
 
     <br>
 
-
+    <div class="flex flex-row">
+            <button class="btn btn-primary" onclick="execute()">Прикажи све zemljotrese</button>
+            <button class="btn btn-primary" onclick="execute('AUTOMATIC')">Прикажи automatske</button>
+            <button class="btn btn-primary" onclick="execute('FINAL')">Прикажи obradjene</button>
+    </div>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Термин: activate to sort column descending" style="width: 55px;">
                 Термин
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Термин: activate to sort column descending" style="width: 55px;">
+                Tip
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Регион: activate to sort column ascending" style="width: 53px;">Регион

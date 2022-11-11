@@ -20,10 +20,22 @@ const config = {
         }
     }
 };
-
+var map;
 
 document.addEventListener('DOMContentLoaded', function () {
-    let map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
+    map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
+
+    execute();
+});
+
+
+function execute(type = ''){
+    if (type != ''){
+        map.off();
+        map.remove();
+        map = L.map(config.MAP.element).setView(config.MAP.latLng, config.MAP.zoomLevel);
+
+    }
     map.scrollWheelZoom.disable();
 
     $("#map").bind('mousewheel DOMMouseScroll', function (event) {
@@ -46,14 +58,16 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#map').removeClass('map-scroll');
     })
     $('#example').DataTable({
+        destroy : true,
         ajax: {
             dataSrc: '',
-            url: config.API.meteoStations,
+            url: `${config.API.meteoStations}?type=${type}`,
         },
         responsive: true,
 
         "columns": [
             { "data": "earthquake_date" },
+            { "data": "earthquake_type" },
             { "data": "municipality" },
             { "data": "magnitude" },
             { "data": "description" },
@@ -69,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let data = [];
     let markerArr = [];
 
-    axios.get(`${config.API.meteoStations}`).then(rs => {
+    axios.get(`${config.API.meteoStations}?type=${type}`).then(rs => {
         data = rs.data;
         data.forEach(item => {
             let marker = L.marker(
@@ -85,7 +99,4 @@ document.addEventListener('DOMContentLoaded', function () {
             markerArr.push(marker);
         })
     })
-});
-
-
-
+}
