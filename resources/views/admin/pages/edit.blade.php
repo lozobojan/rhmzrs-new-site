@@ -137,14 +137,14 @@
                                     return new Promise(function(resolve, reject) {
                                         // Init request
                                         var xhr = new XMLHttpRequest();
-                                        xhr.open('page', '{{ route('admin.pages.storeCKEditorImages') }}', true);
+                                        xhr.open('POST', '{{ route('admin.pages.storeCKEditorImages') }}', true);
                                         xhr.setRequestHeader('x-csrf-token', window._token);
                                         xhr.setRequestHeader('Accept', 'application/json');
                                         xhr.responseType = 'json';
 
                                         // Init listeners
                                         var genericErrorText = `Couldn't upload file: ${ file.name }.`;
-                                        xhr.addEventListener('error', function() { reject(genericErrorText) });
+                                        xhr.addEventListener('error', function(error) {reject(genericErrorText)});
                                         xhr.addEventListener('abort', function() { reject() });
                                         xhr.addEventListener('load', function() {
                                             var response = xhr.response;
