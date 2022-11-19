@@ -23,7 +23,8 @@ class CustomSQLDumpSeeder extends Seeder
           'public_purchases',
           'media',
           'river_basins',
-          'flood_defense_points'
+          'flood_defense_points',
+            'gasses'
         ];
 
         foreach ($sqlFiles as $file) {
