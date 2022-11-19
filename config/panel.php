@@ -6,5 +6,6 @@ return [
     'primary_language'    => 'sr',
     'available_languages' => [
         'en' => 'English',
+        'sr' => 'Српски',
     ],
 ];

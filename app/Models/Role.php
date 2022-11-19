@@ -12,6 +12,8 @@ class Role extends Model
     use SoftDeletes;
     use HasFactory;
 
+    const ADMIN = 1;
+
     public $table = 'roles';
 
     protected $dates = [

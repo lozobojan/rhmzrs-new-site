@@ -46,9 +46,9 @@
     <br>
 
     <div class="flex flex-row">
-            <button class="btn btn-primary" onclick="execute()">Прикажи све zemljotrese</button>
-            <button class="btn btn-primary" onclick="execute('AUTOMATIC')">Прикажи automatske</button>
-            <button class="btn btn-primary" onclick="execute('FINAL')">Прикажи obradjene</button>
+            <button class="btn btn-primary" onclick="execute()">Прикажи све земљотресе</button>
+            <button class="btn btn-primary" onclick="execute('AUTOMATIC')">Прикажи аутоматске</button>
+            <button class="btn btn-primary" onclick="execute('FINAL')">Прикажи обрађене</button>
     </div>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>

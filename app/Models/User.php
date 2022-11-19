@@ -79,4 +79,9 @@ class User extends Authenticatable
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->roles()->where('id','=', Role::ADMIN)->count() > 0;
+    }
 }
