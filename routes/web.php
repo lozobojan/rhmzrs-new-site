@@ -4,11 +4,7 @@ use App\Http\Controllers\PublicWebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.welcome', compact([
-        []
-    ]));
-})->name('home-screen');
+Route::get('/', 'WebsiteController@index')->name('home-screen');
 
 // za dinamicke stranice koje se prave preko WYSIWYG
 Route::get('page/{slug}', [PublicWebsiteController::class, 'displayPage'])->name('display-page');

@@ -129,22 +129,19 @@
                         <!-- /column -->
                     </div>
                     <!-- /.row -->
-                    <div class="swiper-container blog grid-view mb-10" data-margin="30" data-dots="true"
-                         data-items-xl="3" data-items-md="2" data-items-xs="1">
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                @for($i = 0; $i < 6; $i++)
-                                    <div class="swiper-slide">
-                                        <x-article :article="['title' => 'Test article title', 'id' => 1, 'created_at' => '12/12/2000']"></x-article>
+                    <div class="container mb-10">
+                        <div class="row">
+                                @foreach($posts as $post)
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <x-article :article="$post" :simple="$post['cover_photo'] === null"></x-article>
                                         <!-- /article -->
                                     </div>
-                                @endfor
+                                @endforeach
                                 <!--/.swiper-slide -->
 
                                 <!--/.swiper-slide -->
 
                                 <!--/.swiper-slide -->
-                            </div>
                             <!-- /.swiper-wrapper -->
                         </div>
                         <!-- /.swiper -->

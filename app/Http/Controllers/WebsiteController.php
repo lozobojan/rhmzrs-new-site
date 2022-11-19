@@ -42,6 +42,7 @@ class WebsiteController extends Controller
     {
         return view('pages.public-purchase', compact('publicPurchase'));
     }
+
     public function documents()
     {
         $documents = DocumentAndRegulation::paginate(10);
@@ -75,11 +76,16 @@ class WebsiteController extends Controller
         return view('pages.questionnaires', compact('questionnaires'));
     }
 
-public function questionnaire(Questionnaire $questionnaire)
+    public function questionnaire(Questionnaire $questionnaire)
     {
         return view('pages.questionnaire', compact('questionnaire'));
     }
 
-
+    public function index(){
+        // Get latest posts
+        $posts = Post::latest()->take(15)->get();
+        // return pages.welcome with posts
+        return view('pages.welcome', compact('posts'));
+    }
 
 }

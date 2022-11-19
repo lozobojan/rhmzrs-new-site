@@ -1,7 +1,6 @@
 <article class="border-2 p-4 rounded-3 shadow mb-5">
     @if(!$simple)
-        <figure class="overlay overlay-1 hover-scale rounded mb-6"><a href="#"> <img src="./assets/img/photos/b4.jpg"
-                                                                                     alt=""/></a>
+        <figure class="overlay overlay-1 hover-scale rounded mb-6"><a href="#"> {{$article['cover_photo']}}</a>
             <figcaption>
                 <h5 class="from-top mb-0">Read More</h5>
             </figcaption>
