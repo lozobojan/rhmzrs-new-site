@@ -12,8 +12,8 @@
             @csrf
             <div class="form-group">
                 <div class="form-check {{ $errors->has('active') ? 'is-invalid' : '' }}">
-                    <input class="form-check-input" type="checkbox" name="active" id="active" value="1" {{ $alert->active || old('active', 0) === 1 ? 'checked' : '' }} required>
-                    <label class="required form-check-label" for="active">{{ trans('cruds.alert.fields.active') }}</label>
+                    <input class="form-check-input" type="checkbox" name="active" id="active" value="1" {{ $alert->active || old('active', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="active">{{ trans('cruds.alert.fields.active') }}</label>
                 </div>
                 @if($errors->has('active'))
                     <span class="text-danger">{{ $errors->first('active') }}</span>

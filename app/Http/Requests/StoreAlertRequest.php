@@ -18,7 +18,7 @@ class StoreAlertRequest extends FormRequest
     {
         return [
             'active' => [
-                'required',
+                'optional',
             ],
             'title' => [
                 'string',
