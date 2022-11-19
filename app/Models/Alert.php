@@ -6,15 +6,17 @@ use \DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Role extends Model
+class Alert extends Model implements HasMedia
 {
     use SoftDeletes;
+    use InteractsWithMedia;
     use HasFactory;
 
-    const ADMIN = 1;
-
-    public $table = 'roles';
+    public $table = 'alerts';
 
     protected $dates = [
         'created_at',
@@ -23,15 +25,18 @@ class Role extends Model
     ];
 
     protected $fillable = [
+        'active',
         'title',
+        'description',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    public function permissions()
+    public function registerMediaConversions(Media $media = null): void
     {
-        return $this->belongsToMany(Permission::class);
+        $this->addMediaConversion('thumb')->fit('crop', 50, 50);
+        $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
     protected function serializeDate(DateTimeInterface $date)
