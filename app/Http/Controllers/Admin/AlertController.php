@@ -36,6 +36,7 @@ class AlertController extends Controller
     public function store(StoreAlertRequest $request)
     {
         $alert = Alert::create($request->all());
+        $this->deactivateOthers($request, $alert);
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $alert->id]);
@@ -54,6 +55,7 @@ class AlertController extends Controller
     public function update(UpdateAlertRequest $request, Alert $alert)
     {
         $alert->update($request->all());
+        $this->deactivateOthers($request, $alert);
 
         return redirect()->route('admin.alerts.index');
     }
@@ -91,5 +93,13 @@ class AlertController extends Controller
         $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
+    }
+
+    public function deactivateOthers($request, $alert){
+        if($request->has('active') && $request->active){
+            Alert::query()->whereNot('id', $alert->id)->update([
+                'active' => 0
+            ]);
+        }
     }
 }
