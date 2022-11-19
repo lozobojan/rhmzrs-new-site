@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Alert;
 use App\Models\Link;
 use Illuminate\View\Component;
 
@@ -13,6 +14,7 @@ class MainLayout extends Component
     public $metaKeywords;
     public $metaImage;
     public $metaUrl;
+    public $alert;
     /**
      * Create a new component instance.
      *
@@ -26,6 +28,7 @@ class MainLayout extends Component
         $this->metaKeywords = $meta['keywords'] ?? 'rhmzrs';
         $this->metaImage = $meta['image'] ?? asset('assets/img/meta-og.png');
         $this->metaUrl = $meta['url'] ?? config('app.url');
+        $this->alert = Alert::query()->where('active', 1)->first();
     }
 
     /**

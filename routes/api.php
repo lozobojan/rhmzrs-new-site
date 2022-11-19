@@ -29,3 +29,4 @@ Route::get('accelero-stations', [DataController::class, 'getAcceleroStations']);
 Route::get('seismic-stations', [DataController::class, 'getSeismicStations']);
 // Flood defense points
 Route::get('flood-defense-points', [DataController::class, 'getFloodDefensePoints']);
+Route::get('ecology-data', [DataController::class, 'getEcologyData']);

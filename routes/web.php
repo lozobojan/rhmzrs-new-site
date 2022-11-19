@@ -4,11 +4,7 @@ use App\Http\Controllers\PublicWebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.welcome', compact([
-        []
-    ]));
-})->name('home-screen');
+Route::get('/', 'WebsiteController@index')->name('home-screen');
 
 // za dinamicke stranice koje se prave preko WYSIWYG
 Route::get('page/{slug}', [PublicWebsiteController::class, 'displayPage'])->name('display-page');
@@ -157,6 +153,7 @@ Route::post('kontakt', [\App\Http\Controllers\WebsiteController::class, 'saveCon
 
 
 Route::get('post/{post}', [\App\Http\Controllers\WebsiteController::class, 'post'])->name('post.view');
+Route::get('alert/{alert}', [\App\Http\Controllers\WebsiteController::class, 'alert'])->name('alert.view');
 
 
 // Routes for questionnaires

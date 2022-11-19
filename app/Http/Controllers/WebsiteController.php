@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alert;
 use App\Models\DocumentAndRegulation;
 use App\Models\Post;
 use App\Models\PublicCompetition;
@@ -42,6 +43,7 @@ class WebsiteController extends Controller
     {
         return view('pages.public-purchase', compact('publicPurchase'));
     }
+
     public function documents()
     {
         $documents = DocumentAndRegulation::paginate(10);
@@ -68,6 +70,11 @@ class WebsiteController extends Controller
         return view('pages.post', compact('post'));
     }
 
+    public function alert(Alert $alert)
+    {
+        return view('pages.alert', compact('alert'));
+    }
+
     // Routes for questionnaires
     public function questionnaires()
     {
@@ -75,11 +82,16 @@ class WebsiteController extends Controller
         return view('pages.questionnaires', compact('questionnaires'));
     }
 
-public function questionnaire(Questionnaire $questionnaire)
+    public function questionnaire(Questionnaire $questionnaire)
     {
         return view('pages.questionnaire', compact('questionnaire'));
     }
 
-
+    public function index(){
+        // Get latest posts
+        $posts = Post::latest()->take(15)->get();
+        // return pages.welcome with posts
+        return view('pages.welcome', compact('posts'));
+    }
 
 }

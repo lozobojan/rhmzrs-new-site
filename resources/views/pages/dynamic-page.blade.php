@@ -287,6 +287,10 @@
                 @if($slug == 'kote-odbrane-od-poplava')
                     <x-kote></x-kote>
                 @endif
+                @if($slug == 'ekologija-javno-dostupni-podaci')
+                    <x-public-data-ecology></x-public-data-ecology>
+                @endif
+
 
                 @if($page->pagePosts)
                     @foreach($page->pagePosts as $post)
