@@ -268,6 +268,18 @@
             </div>
             <!-- /.content-overlay -->
         </section>
+
+        @if($alert)
+            <style>
+                .text-white > p{
+                    color: #fff !important;
+                }
+            </style>
+        <section class="w-100 py-5 bg-danger">
+            <a class="text-white text-center d-block font-weight-bold h1" href="alert/{{$alert->id}}">{{ $alert->title }}</a>
+            <div class="text-white text-center" style="color: white!important; font-size: 20px">{!! (strlen($alert->description) > 400) ? substr($alert->description,0,400).'...' : $alert->description !!}</div>
+        </section>
+        @endif
         <!-- /section -->
         {{--        <section class="wrapper bg-light">--}}
         {{--            <div class="container py-15 py-md-17">--}}

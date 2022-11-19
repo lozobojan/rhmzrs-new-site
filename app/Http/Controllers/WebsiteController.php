@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alert;
 use App\Models\DocumentAndRegulation;
 use App\Models\Post;
 use App\Models\PublicCompetition;
@@ -67,6 +68,11 @@ class WebsiteController extends Controller
     public function post(Post $post)
     {
         return view('pages.post', compact('post'));
+    }
+
+    public function alert(Alert $alert)
+    {
+        return view('pages.alert', compact('alert'));
     }
 
     // Routes for questionnaires

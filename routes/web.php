@@ -153,6 +153,7 @@ Route::post('kontakt', [\App\Http\Controllers\WebsiteController::class, 'saveCon
 
 
 Route::get('post/{post}', [\App\Http\Controllers\WebsiteController::class, 'post'])->name('post.view');
+Route::get('alert/{alert}', [\App\Http\Controllers\WebsiteController::class, 'alert'])->name('alert.view');
 
 
 // Routes for questionnaires
