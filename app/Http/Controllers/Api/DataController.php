@@ -92,4 +92,21 @@ class DataController extends Controller
         // Return the flood defense points as JSON
         return response()->json($floodDefensePoints);
     }
+
+    // Get all ecology data from the database
+    public function getEcologyData(): \Illuminate\Http\JsonResponse
+    {
+        // Get all ecology data from the database
+        $gasses = [];
+        $ecologyData = \App\Models\GasEmission::query()
+            ->groupBy('year', 'gas')
+            ->selectRaw('sum(value) as value, gas, year')
+            ->get();
+        foreach ($ecologyData as $data) {
+            $gasses[$data->year][] = $data;
+        }
+
+        // Return the ecology data as JSON
+        return response()->json($gasses);
+    }
 }
