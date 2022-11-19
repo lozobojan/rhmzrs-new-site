@@ -362,6 +362,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 88,
                 'title' => 'earthquake_access',
             ],
+            [
+                'id'    => 89,
+                'title' => 'alert_create',
+            ],
+            [
+                'id'    => 90,
+                'title' => 'alert_edit',
+            ],
+            [
+                'id'    => 91,
+                'title' => 'alert_show',
+            ],
+            [
+                'id'    => 92,
+                'title' => 'alert_delete',
+            ],
+            [
+                'id'    => 93,
+                'title' => 'alert_access',
+            ],
         ];
 
         Permission::insert($permissions);

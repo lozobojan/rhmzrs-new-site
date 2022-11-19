@@ -72,8 +72,8 @@
                     </li>
                 @endcan
                 @can('content_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/links*") ? "menu-open" : "" }} {{ request()->is("admin/pages*") ? "menu-open" : "" }} {{ request()->is("admin/gas-emissions*") ? "menu-open" : "" }} {{ request()->is("admin/earthquakes*") ? "menu-open" : "" }} {{ request()->is("admin/posts*") ? "menu-open" : "" }} {{ request()->is("admin/public-competitions*") ? "menu-open" : "" }} {{ request()->is("admin/river-basins*") ? "menu-open" : "" }} {{ request()->is("admin/flood-defense-points*") ? "menu-open" : "" }} {{ request()->is("admin/public-purchases*") ? "menu-open" : "" }} {{ request()->is("admin/projects*") ? "menu-open" : "" }} {{ request()->is("admin/questionnaires*") ? "menu-open" : "" }} {{ request()->is("admin/questions*") ? "menu-open" : "" }} {{ request()->is("admin/answers*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/links*") ? "active" : "" }} {{ request()->is("admin/pages*") ? "active" : "" }} {{ request()->is("admin/gas-emissions*") ? "active" : "" }} {{ request()->is("admin/earthquakes*") ? "active" : "" }} {{ request()->is("admin/posts*") ? "active" : "" }} {{ request()->is("admin/public-competitions*") ? "active" : "" }} {{ request()->is("admin/public-purchases*") ? "active" : "" }} {{ request()->is("admin/river-basins*") ? "active" : "" }} {{ request()->is("admin/flood-defense-points*") ? "active" : "" }} {{ request()->is("admin/projects*") ? "active" : "" }} {{ request()->is("admin/questionnaires*") ? "active" : "" }} {{ request()->is("admin/questions*") ? "active" : "" }} {{ request()->is("admin/answers*") ? "active" : "" }}" href="#">
+                    <li class="nav-item has-treeview {{ request()->is("admin/links*") ? "menu-open" : "" }} {{ request()->is("admin/pages*") ? "menu-open" : "" }} {{ request()->is("admin/gas-emissions*") ? "menu-open" : "" }} {{ request()->is("admin/earthquakes*") ? "menu-open" : "" }} {{ request()->is("admin/posts*") ? "menu-open" : "" }} {{ request()->is("admin/public-competitions*") ? "menu-open" : "" }} {{ request()->is("admin/river-basins*") ? "menu-open" : "" }} {{ request()->is("admin/flood-defense-points*") ? "menu-open" : "" }} {{ request()->is("admin/public-purchases*") ? "menu-open" : "" }} {{ request()->is("admin/projects*") ? "menu-open" : "" }} {{ request()->is("admin/questionnaires*") ? "menu-open" : "" }} {{ request()->is("admin/questions*") ? "menu-open" : "" }} {{ request()->is("admin/answers*") ? "menu-open" : "" }}{{ request()->is("admin/alerts*") ? "menu-open" : "" }}" >
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/links*") ? "active" : "" }} {{ request()->is("admin/pages*") ? "active" : "" }} {{ request()->is("admin/gas-emissions*") ? "active" : "" }} {{ request()->is("admin/earthquakes*") ? "active" : "" }} {{ request()->is("admin/posts*") ? "active" : "" }} {{ request()->is("admin/public-competitions*") ? "active" : "" }} {{ request()->is("admin/public-purchases*") ? "active" : "" }} {{ request()->is("admin/river-basins*") ? "active" : "" }} {{ request()->is("admin/flood-defense-points*") ? "active" : "" }} {{ request()->is("admin/projects*") ? "active" : "" }} {{ request()->is("admin/questionnaires*") ? "active" : "" }} {{ request()->is("admin/questions*") ? "active" : "" }} {{ request()->is("admin/answers*") ? "active" : "" }} {{ request()->is("admin/alerts*") ? "active" : "" }}" href="#">
                             <i class="fa-fw nav-icon fas fa-cogs">
 
                             </i>
@@ -115,6 +115,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.post.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('alert_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.alerts.index") }}" class="nav-link {{ request()->is("admin/alerts") || request()->is("admin/alerts/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-bell">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.alert.title') }}
                                         </p>
                                     </a>
                                 </li>

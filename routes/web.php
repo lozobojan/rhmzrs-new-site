@@ -108,6 +108,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Earthquake
     Route::delete('earthquakes/destroy', 'EarthquakeController@massDestroy')->name('earthquakes.massDestroy');
     Route::resource('earthquakes', 'EarthquakeController');
+
+    // Alert
+    Route::delete('alerts/destroy', 'AlertController@massDestroy')->name('alerts.massDestroy');
+    Route::post('alerts/media', 'AlertController@storeMedia')->name('alerts.storeMedia');
+    Route::post('alerts/ckmedia', 'AlertController@storeCKEditorImages')->name('alerts.storeCKEditorImages');
+    Route::resource('alerts', 'AlertController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
