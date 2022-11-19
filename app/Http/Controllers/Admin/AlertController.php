@@ -42,6 +42,9 @@ class AlertController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $alert->id]);
         }
 
+        if(!$request->has('active')){
+            $alert->update(['active' => 0]);
+        }
         return redirect()->route('admin.alerts.index');
     }
 
@@ -56,6 +59,10 @@ class AlertController extends Controller
     {
         $alert->update($request->all());
         $this->deactivateOthers($request, $alert);
+
+        if(!$request->has('active')){
+            $alert->update(['active' => 0]);
+        }
 
         return redirect()->route('admin.alerts.index');
     }
