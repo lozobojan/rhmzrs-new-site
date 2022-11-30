@@ -30,3 +30,7 @@ Route::get('seismic-stations', [DataController::class, 'getSeismicStations']);
 // Flood defense points
 Route::get('flood-defense-points', [DataController::class, 'getFloodDefensePoints']);
 Route::get('ecology-data', [DataController::class, 'getEcologyData']);
+Route::get('current-temperatures', [DataController::class, 'getCurrentTemperatures']);
+Route::get('pressures', [DataController::class, 'getPressures']);
+Route::get('wind', [DataController::class, 'getWind']);
+Route::get('bio-prognoses', [DataController::class, 'getBioPrognoses']);

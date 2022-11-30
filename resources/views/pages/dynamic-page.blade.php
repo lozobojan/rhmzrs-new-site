@@ -290,6 +290,21 @@
                 @if($slug == 'ekologija-javno-dostupni-podaci')
                     <x-public-data-ecology></x-public-data-ecology>
                 @endif
+                @if($slug == 'meteorologija-aktuelni-podaci')
+                    <x-meteo-current-data></x-meteo-current-data>
+                @endif
+                @if($slug == 'meteorologija-trenutne-temperature')
+                    <x-current-temperatures></x-current-temperatures>
+                @endif
+                @if($slug == 'meteorologija-pritisak')
+                    <x-preasures></x-preasures>
+                @endif
+                @if($slug == 'meteorologija-vjetar')
+                    <x-wind></x-wind>
+                @endif
+                @if($slug == 'meteorologija-bioprognoza')
+                    <x-bio-prognoses></x-bio-prognoses>
+                @endif
 
 
                 @if($page->pagePosts)
