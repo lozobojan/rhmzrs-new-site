@@ -109,4 +109,40 @@ class DataController extends Controller
         // Return the ecology data as JSON
         return response()->json($gasses);
     }
+
+    // Get current temperature from the database
+    public function getCurrentTemperatures(): \Illuminate\Http\JsonResponse
+    {
+        // Get current temperature from the database
+        $currentTemperature = \App\Models\CurrentTemperature::all();
+        // Return the current temperature as JSON
+        return response()->json($currentTemperature);
+    }
+
+    // Get all pressure data from the database
+    public function getPressures(): \Illuminate\Http\JsonResponse
+    {
+        // Get all pressure data from the database
+        $pressureData = \App\Models\Pressure::all();
+        // Return the pressure data as JSON
+        return response()->json($pressureData);
+    }
+
+    // Get all wind data from the database
+    public function getWind(): \Illuminate\Http\JsonResponse
+    {
+        // Get all wind data from the database
+        $windData = \App\Models\Wind::all();
+        // Return the wind data as JSON
+        return response()->json($windData);
+    }
+
+    // get all bio prognoses from the database
+    public function getBioPrognoses(): \Illuminate\Http\JsonResponse
+    {
+        // Get all bio prognoses from the database
+        $bioPrognoses = \App\Models\Bioprognosis::all();
+        // Return the bio prognoses as JSON
+        return response()->json($bioPrognoses);
+    }
 }

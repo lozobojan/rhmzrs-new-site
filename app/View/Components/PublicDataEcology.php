@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Http\Request;
 use Illuminate\View\Component;
 
 class PublicDataEcology extends Component
@@ -13,11 +14,16 @@ class PublicDataEcology extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         $years = [];
         $gasses = [];
+        $type = [$request->type];
+        if ($type[0] == 'all'){
+            $type = ['direct', 'indirect'];
+        }
         $ecologyData = \App\Models\GasEmission::query()
+            ->whereIn('type', $type)
             ->groupBy('year', 'gas')
             ->selectRaw('sum(value) as value, gas, year')
             ->get();

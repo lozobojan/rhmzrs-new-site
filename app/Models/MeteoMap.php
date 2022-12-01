@@ -9,11 +9,16 @@ class MeteoMap extends Model
 {
     use HasFactory;
 
-    protected $appends = ['icon'];
+    protected $appends = ['icon', 'image'];
 
     public function getIconAttribute()
     {
         return asset('assets/img/icons/'.$this->marker);
+    }
+
+    public function getImageAttribute()
+    {
+        return "<img src='".asset('assets/img/icons/'.$this->marker)."' alt=''>";
     }
 
     public function getDescriptionAttribute()

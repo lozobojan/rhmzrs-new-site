@@ -48,27 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
         $('#map').removeClass('map-scroll');
     })
-    // $('#example').DataTable({
-    //     ajax: {
-    //         dataSrc: '',
-    //         url: config.API.ecoInformation,
-    //     },
-    //     "columns": [
-    //         { "data": "station_name" },
-    //         { "data": "o3" },
-    //         { "data": "co" },
-    //         { "data": "so2" },
-    //         { "data": "no" },
-    //         { "data": "no2" },
-    //         { "data": "nox" },
-    //         { "data": "pm10" },
-    //         { "data": "pm25" },
-    //         { "data": "description" },
-    //     ],
-    //     "language": {
-    //         "url": "../js/Datatable/Serbian.json"
-    //     }
-    // });
+    $('#example').DataTable({
+        ajax: {
+            dataSrc: '',
+            url: config.API.ecoInformation,
+        },
+        "columns": [
+            { "data": "station_name" },
+            { "data": "lat" },
+            { "data": "lng" },
+        ],
+        "language": {
+            "url": "../js/Datatable/Serbian.json"
+        }
+    });
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
