@@ -16,6 +16,11 @@
 
     <br>
     {{--    <a href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" type="text/html" data-framer="iframe-1">LinkText</a>--}}
+    <div class="flex flex-row">
+        <a class="btn btn-primary" href="?type=all">Прикажи све гасове </a>
+        <a class="btn btn-primary" href="?type=direct">Прикажи директне гасове </a>
+        <a class="btn btn-primary" href="?type=indirect">Прикажи индиректне  гасове </a>
+    </div>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">

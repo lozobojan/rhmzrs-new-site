@@ -51,21 +51,21 @@
 
     <br>
 
-{{--    <table id="example" class="table table-bordered table-striped" style="width:100%">--}}
-{{--        <thead>--}}
-{{--        <tr role="row">--}}
-{{--            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">--}}
-{{--                Станица--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="О3: activate to sort column ascending" style="width: 35px;">lat--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="CO: activate to sort column ascending" style="width: 59px;">lng--}}
-{{--            </th>--}}
-{{--        </tr>--}}
-{{--        </thead>--}}
-{{--    </table>--}}
+    <table id="example" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
+                Станица
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="О3: activate to sort column ascending" style="width: 35px;">lat
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="CO: activate to sort column ascending" style="width: 59px;">lng
+            </th>
+        </tr>
+        </thead>
+    </table>
 
 </div>
