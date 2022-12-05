@@ -179,6 +179,18 @@
                                     </a>
                                 </li>
                             @endcan
+                                @can('seismic-station_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.seismic-station.index") }}" class="nav-link {{ request()->is("admin/seismic-station") || request()->is("admin/seismic-station/*") ? "active" : "" }}">
+                                            <i class="fa-fw nav-icon fas fa-exclamation">
+
+                                            </i>
+                                            <p>
+                                                {{ trans('cruds.seismic-station.title') }}
+                                            </p>
+                                        </a>
+                                    </li>
+                                @endcan
                             @can('public_competition_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.public-competitions.index") }}" class="nav-link {{ request()->is("admin/public-competitions") || request()->is("admin/public-competitions/*") ? "active" : "" }}">

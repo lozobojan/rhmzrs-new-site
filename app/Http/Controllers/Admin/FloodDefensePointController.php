@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyFloodDefensePointRequest;
 use App\Http\Requests\StoreFloodDefensePointRequest;
 use App\Http\Requests\UpdateFloodDefensePointRequest;
+use App\Imports\FloodDefensePointsImport;
 use App\Models\FloodDefensePoint;
 use App\Models\RiverBasin;
 use Gate;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
 
 class FloodDefensePointController extends Controller
@@ -80,5 +82,17 @@ class FloodDefensePointController extends Controller
         FloodDefensePoint::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    // Import data from excel file
+    public function import(Request $request)
+    {
+        // Validate the excel file
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx,csv'
+        ]);
+        Excel::import(new FloodDefensePointsImport(), $request->file('file')->store('temp'));
+
+        return redirect()->route('admin.flood-defense-points.index')->with('success', 'Data imported successfully.');
     }
 }

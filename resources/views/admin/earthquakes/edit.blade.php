@@ -70,7 +70,7 @@
             </div>
             <div class="form-group">
                 <label for="lng">{{ trans('cruds.earthquake.fields.long') }}</label>
-                <input class="form-control {{ $errors->has('lng') ? 'is-invalid' : '' }}" type="text" name="lng" id="lng" value="{{ old('lng', $earthquake->long) }}">
+                <input class="form-control {{ $errors->has('lng') ? 'is-invalid' : '' }}" type="text" name="lng" id="lng" value="{{ old('lng', $earthquake->lng) }}">
                 @if($errors->has('lng'))
                     <span class="text-danger">{{ $errors->first('lng') }}</span>
                 @endif

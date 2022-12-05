@@ -3,11 +3,11 @@
 @can('flood_defense_point_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.flood-defense-points.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.floodDefensePoint.title_singular') }}
+            <a class="btn btn-success" href="{{ route('admin.seismic-station.create') }}">
+                {{ trans('global.add') }} {{ trans('cruds.seismicStation.title_singular') }}
             </a>
             <div class="mt-3 d-flex border-2 border-white bg-white">
-                <form action="{{ route('admin.flood-defense-points.import') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.seismic-station.import') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-1">
 
@@ -26,7 +26,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.floodDefensePoint.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.seismicStation.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -38,28 +38,19 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.id') }}
+                            {{ trans('cruds.seismicStation.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.ordinal_number') }}
+                            {{ trans('cruds.seismicStation.fields.station_name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.place') }}
+                            {{ trans('cruds.seismicStation.fields.lat') }}
                         </th>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.river_basin') }}
+                            {{ trans('cruds.seismicStation.fields.lng') }}
                         </th>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.ordinary_value') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.floodDefensePoint.fields.extraordinary_value') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.floodDefensePoint.fields.nnv') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.floodDefensePoint.fields.vvv') }}
+                            {{ trans('cruds.seismicStation.fields.alt') }}
                         </th>
                         <th>
                             &nbsp;
@@ -67,50 +58,41 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($floodDefensePoints as $key => $floodDefensePoint)
-                        <tr data-entry-id="{{ $floodDefensePoint->id }}">
+                    @foreach($seismicStations as $key => $seismicStation)
+                        <tr data-entry-id="{{ $seismicStation->id }}">
                             <td>
 
                             </td>
                             <td>
-                                {{ $floodDefensePoint->id ?? '' }}
+                                {{ $seismicStation->id ?? '' }}
                             </td>
                             <td>
-                                {{ $floodDefensePoint->ordinal_number ?? '' }}
+                                {{ $seismicStation->station_name ?? '' }}
                             </td>
                             <td>
-                                {{ $floodDefensePoint->place ?? '' }}
+                                {{ $seismicStation->lat ?? '' }}
                             </td>
                             <td>
-                                {{ $floodDefensePoint->river_basin->title ?? '' }}
+                                {{ $seismicStation->lng ?? '' }}
                             </td>
                             <td>
-                                {{ $floodDefensePoint->ordinary_value ?? '' }}
+                                {{ $seismicStation->alt ?? '' }}
                             </td>
                             <td>
-                                {{ $floodDefensePoint->extraordinary_value ?? '' }}
-                            </td>
-                            <td>
-                                {{ $floodDefensePoint->nnv ?? '' }}
-                            </td>
-                            <td>
-                                {{ $floodDefensePoint->vvv ?? '' }}
-                            </td>
-                            <td>
-                                @can('flood_defense_point_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.flood-defense-points.show', $floodDefensePoint->id) }}">
+                                @can('seismic-station_show')
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.seismic-station.show', $seismicStation->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('flood_defense_point_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.flood-defense-points.edit', $floodDefensePoint->id) }}">
+                                @can('seismic-station_edit')
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.seismic-station.edit', $seismicStation->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('flood_defense_point_delete')
-                                    <form action="{{ route('admin.flood-defense-points.destroy', $floodDefensePoint->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                @can('seismic-station_delete')
+                                    <form action="{{ route('admin.seismic-station.destroy', $seismicStation->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -135,11 +117,11 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('flood_defense_point_delete')
+@can('seismic-station_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.flood-defense-points.massDestroy') }}",
+    url: "{{ route('admin.seismic-station.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
