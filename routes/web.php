@@ -96,6 +96,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Flood Defense Point
     Route::delete('flood-defense-points/destroy', 'FloodDefensePointController@massDestroy')->name('flood-defense-points.massDestroy');
     Route::resource('flood-defense-points', 'FloodDefensePointController');
+    Route::post('flood-defense-points/import', 'FloodDefensePointController@import')->name('flood-defense-points.import');
+
 
     // Gas Emission
     Route::delete('gas-emissions/destroy', 'GasEmissionController@massDestroy')->name('gas-emissions.massDestroy');
@@ -104,6 +106,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Earthquake
     Route::delete('earthquakes/destroy', 'EarthquakeController@massDestroy')->name('earthquakes.massDestroy');
     Route::resource('earthquakes', 'EarthquakeController');
+    Route::post('earthquakes/import', 'EarthquakeController@import')->name('earthquakes.import');
 
     // Alert
     Route::delete('alerts/destroy', 'AlertController@massDestroy')->name('alerts.massDestroy');

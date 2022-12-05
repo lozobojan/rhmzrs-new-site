@@ -78,7 +78,7 @@ class Earthquake extends Model
     // Get all earthquakes which publish status is not draft
     public function scopePublished($query)
     {
-        return $query->where('publish_status', '=', 'DRAFT')->get();
+        return $query->where('publish_status', '!=', 'DRAFT')->get();
     }
 
     public function getEarthquakeDateAttribute($value)

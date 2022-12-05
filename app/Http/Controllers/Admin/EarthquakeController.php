@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyEarthquakeRequest;
 use App\Http\Requests\StoreEarthquakeRequest;
 use App\Http\Requests\UpdateEarthquakeRequest;
+use App\Imports\EarthquakesImport;
 use App\Models\Earthquake;
 use App\Service\EarthquakeService;
 use Gate;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Response;
 
 class EarthquakeController extends Controller
@@ -76,5 +78,17 @@ class EarthquakeController extends Controller
         Earthquake::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    // Import data from excel file
+    public function import(Request $request)
+    {
+        // Validate the excel file
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx,csv'
+        ]);
+        Excel::import(new EarthquakesImport, $request->file('file')->store('temp'));
+
+        return redirect()->route('admin.earthquakes.index')->with('success', 'Data imported successfully.');
     }
 }

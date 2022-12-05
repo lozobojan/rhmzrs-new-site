@@ -323,6 +323,7 @@ return [
     'leave'                          => '',
     'calendar'                       => '',
     'messenger'                      => '',
+    'import'                        => 'Import',
 ];
 
 
