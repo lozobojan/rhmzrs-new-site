@@ -108,6 +108,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('earthquakes', 'EarthquakeController');
     Route::post('earthquakes/import', 'EarthquakeController@import')->name('earthquakes.import');
 
+    // SeismicStation
+    Route::delete('seismic-station/destroy', 'EarthquakeController@massDestroy')->name('seismic-station.massDestroy');
+    Route::resource('seismic-station', 'SeismicStationController');
+    Route::post('seismic-station/import', 'SeismicStationController@import')->name('seismic-station.import');
+    Route::post('seismic-station/media', 'SeismicStationController@storeMedia')->name('seismic-station.storeMedia');
+    Route::post('seismic-station/ckmedia', 'SeismicStationController@storeCKEditorImages')->name('seismic-station.storeCKEditorImages');
     // Alert
     Route::delete('alerts/destroy', 'AlertController@massDestroy')->name('alerts.massDestroy');
     Route::post('alerts/media', 'AlertController@storeMedia')->name('alerts.storeMedia');

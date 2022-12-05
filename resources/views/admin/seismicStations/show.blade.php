@@ -1,94 +1,94 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="card">
-    <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.floodDefensePoint.title') }}
-    </div>
+    <div class="card">
+        <div class="card-header">
+            {{ trans('global.show') }} {{ trans('cruds.seismicStation.title') }}
+        </div>
 
-    <div class="card-body">
-        <div class="form-group">
+        <div class="card-body">
             <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.flood-defense-points.index') }}">
-                    {{ trans('global.back_to_list') }}
-                </a>
-            </div>
-            <table class="table table-bordered table-striped">
-                <tbody>
+                <div class="form-group">
+                    <a class="btn btn-default" href="{{ route('admin.seismic-station.index') }}">
+                        {{ trans('global.back_to_list') }}
+                    </a>
+                </div>
+                <table class="table table-bordered table-striped">
+                    <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.id') }}
+                            {{ trans('cruds.seismicStation.fields.id') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->id }}
+                            {{ $seismicStation->id }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.ordinal_number') }}
+                            {{ trans('cruds.seismicStation.fields.batch_version') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->ordinal_number }}
+                            {{ $seismicStation->batch_version }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.place') }}
+                            {{ trans('cruds.seismicStation.fields.description') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->place }}
+                            {!! $seismicStation->description !!}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.river_basin') }}
+                            {{ trans('cruds.seismicStation.fields.station_name') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->river_basin->title ?? '' }}
+                            {{ $seismicStation->station_name }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.ordinary_value') }}
+                            {{ trans('cruds.seismicStation.fields.station_id') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->ordinary_value }}
+                            {{ $seismicStation->station_id }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.extraordinary_value') }}
+                            {{ trans('cruds.seismicStation.fields.alt') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->extraordinary_value }}
+                            {{ $seismicStation->alt }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.nnv') }}
+                            {{ trans('cruds.seismicStation.fields.lng') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->nnv }}
+                            {{ $seismicStation->lng }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.floodDefensePoint.fields.vvv') }}
+                            {{ trans('cruds.seismicStation.fields.lat') }}
                         </th>
                         <td>
-                            {{ $floodDefensePoint->vvv }}
+                            {{ $seismicStation->lat }}
                         </td>
                     </tr>
-                </tbody>
-            </table>
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.flood-defense-points.index') }}">
-                    {{ trans('global.back_to_list') }}
-                </a>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <a class="btn btn-default" href="{{ route('admin.seismic-station.index') }}">
+                        {{ trans('global.back_to_list') }}
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 

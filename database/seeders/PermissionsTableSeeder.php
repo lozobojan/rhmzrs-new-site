@@ -382,6 +382,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 93,
                 'title' => 'alert_access',
             ],
+            [
+                'id'    => 94,
+                'title' => 'seismic-station_create',
+            ],
+            [
+                'id'    => 95,
+                'title' => 'seismic-station_edit',
+            ],
+            [
+                'id'    => 96,
+                'title' => 'seismic-station_show',
+            ],
+            [
+                'id'    => 97,
+                'title' => 'seismic-station_delete',
+            ],
+            [
+                'id'    => 98,
+                'title' => 'seismic-station_access',
+            ],
         ];
 
         Permission::insert($permissions);
