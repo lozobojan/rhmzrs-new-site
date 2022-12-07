@@ -119,6 +119,54 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('alerts/media', 'AlertController@storeMedia')->name('alerts.storeMedia');
     Route::post('alerts/ckmedia', 'AlertController@storeCKEditorImages')->name('alerts.storeCKEditorImages');
     Route::resource('alerts', 'AlertController');
+
+    // Meteo Station
+    Route::delete('meteo-stations/destroy', 'MeteoStationController@massDestroy')->name('meteo-stations.massDestroy');
+    Route::post('meteo-stations/media', 'MeteoStationController@storeMedia')->name('meteo-stations.storeMedia');
+    Route::post('meteo-stations/ckmedia', 'MeteoStationController@storeCKEditorImages')->name('meteo-stations.storeCKEditorImages');
+    Route::resource('meteo-stations', 'MeteoStationController');
+    Route::post('meteo-station/import', 'MeteoStationController@import')->name('meteo-stations.import');
+
+    // Meteo Map
+    Route::delete('meteo-maps/destroy', 'MeteoMapController@massDestroy')->name('meteo-maps.massDestroy');
+    Route::post('meteo-maps/media', 'MeteoMapController@storeMedia')->name('meteo-maps.storeMedia');
+    Route::post('meteo-maps/ckmedia', 'MeteoMapController@storeCKEditorImages')->name('meteo-maps.storeCKEditorImages');
+    Route::resource('meteo-maps', 'MeteoMapController');
+
+    // Hydro Information
+    Route::delete('hydro-informations/destroy', 'HydroInformationController@massDestroy')->name('hydro-informations.massDestroy');
+    Route::post('hydro-informations/media', 'HydroInformationController@storeMedia')->name('hydro-informations.storeMedia');
+    Route::post('hydro-informations/ckmedia', 'HydroInformationController@storeCKEditorImages')->name('hydro-informations.storeCKEditorImages');
+    Route::resource('hydro-informations', 'HydroInformationController');
+
+    // Eco Station
+    Route::delete('eco-stations/destroy', 'EcoStationController@massDestroy')->name('eco-stations.massDestroy');
+    Route::post('eco-stations/media', 'EcoStationController@storeMedia')->name('eco-stations.storeMedia');
+    Route::post('eco-stations/ckmedia', 'EcoStationController@storeCKEditorImages')->name('eco-stations.storeCKEditorImages');
+    Route::post('eco-stations/parse-csv-import', 'EcoStationController@parseCsvImport')->name('eco-stations.parseCsvImport');
+    Route::post('eco-stations/process-csv-import', 'EcoStationController@processCsvImport')->name('eco-stations.processCsvImport');
+    Route::resource('eco-stations', 'EcoStationController');
+
+
+    // Wind
+    Route::delete('winds/destroy', 'WindController@massDestroy')->name('winds.massDestroy');
+    Route::post('winds/media', 'WindController@storeMedia')->name('winds.storeMedia');
+    Route::post('winds/ckmedia', 'WindController@storeCKEditorImages')->name('winds.storeCKEditorImages');
+    Route::resource('winds', 'WindController');
+
+
+    // Accelero Station
+    Route::delete('accelero-stations/destroy', 'AcceleroStationController@massDestroy')->name('accelero-stations.massDestroy');
+    Route::resource('accelero-stations', 'AcceleroStationController');
+
+    // Bio Prognosis
+    Route::delete('bio-prognosis/destroy', 'BioPrognosisController@massDestroy')->name('bio-prognosis.massDestroy');
+    Route::resource('bio-prognosis', 'BioPrognosisController');
+
+    // Current Temperature
+    Route::delete('current-temperatures/destroy', 'CurrentTemperatureController@massDestroy')->name('current-temperatures.massDestroy');
+    Route::resource('current-temperatures', 'CurrentTemperatureController');
+
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

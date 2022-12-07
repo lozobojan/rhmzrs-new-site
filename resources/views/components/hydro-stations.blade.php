@@ -56,8 +56,6 @@
 
     <br>
 {{--    <a href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" type="text/html" data-framer="iframe-1">LinkText</a>--}}
-    <a href="http://81.93.72.16/dist/examples/ahsModricaVodostaj.php" data-framer="iframe-1">Image #1</a>
-    <a href="http://81.93.72.16/dist/examples/ahsModricaVodostaj.php" data-framer="iframe-2">Image #1</a>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
