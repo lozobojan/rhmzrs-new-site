@@ -10,6 +10,7 @@ class MeteoMap extends Model
     use HasFactory;
 
     protected $appends = ['icon', 'image'];
+    protected $guarded = ['id'];
 
     public function getIconAttribute()
     {

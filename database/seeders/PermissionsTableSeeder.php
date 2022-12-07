@@ -402,6 +402,166 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 98,
                 'title' => 'seismic-station_access',
             ],
+            [
+                'id'    => 99,
+                'title' => 'meteo_station_create',
+            ],
+            [
+                'id'    => 100,
+                'title' => 'meteo_station_edit',
+            ],
+            [
+                'id'    => 101,
+                'title' => 'meteo_station_show',
+            ],
+            [
+                'id'    => 102,
+                'title' => 'meteo_station_delete',
+            ],
+            [
+                'id'    => 103,
+                'title' => 'meteo_station_access',
+            ],
+            [
+                'id'    => 104,
+                'title' => 'meteo_map_create',
+            ],
+            [
+                'id'    => 105,
+                'title' => 'meteo_map_edit',
+            ],
+            [
+                'id'    => 106,
+                'title' => 'meteo_map_show',
+            ],
+            [
+                'id'    => 107,
+                'title' => 'meteo_map_delete',
+            ],
+            [
+                'id'    => 108,
+                'title' => 'meteo_map_access',
+            ],
+            [
+                'id'    => 109,
+                'title' => 'hydro_information_create',
+            ],
+            [
+                'id'    => 110,
+                'title' => 'hydro_information_edit',
+            ],
+            [
+                'id'    => 111,
+                'title' => 'hydro_information_show',
+            ],
+            [
+                'id'    => 112,
+                'title' => 'hydro_information_delete',
+            ],
+            [
+                'id'    => 113,
+                'title' => 'hydro_information_access',
+            ],
+            [
+                'id'    => 114,
+                'title' => 'eco_station_create',
+            ],
+            [
+                'id'    => 115,
+                'title' => 'eco_station_edit',
+            ],
+            [
+                'id'    => 116,
+                'title' => 'eco_station_show',
+            ],
+            [
+                'id'    => 117,
+                'title' => 'eco_station_delete',
+            ],
+            [
+                'id'    => 118,
+                'title' => 'eco_station_access',
+            ],
+            [
+                'id'    => 119,
+                'title' => 'wind_create',
+            ],
+            [
+                'id'    => 120,
+                'title' => 'wind_edit',
+            ],
+            [
+                'id'    => 121,
+                'title' => 'wind_show',
+            ],
+            [
+                'id'    => 122,
+                'title' => 'wind_delete',
+            ],
+            [
+                'id'    => 123,
+                'title' => 'wind_access',
+            ],
+            [
+                'id'    => 124,
+                'title' => 'accelero_station_create',
+            ],
+            [
+                'id'    => 125,
+                'title' => 'accelero_station_edit',
+            ],
+            [
+                'id'    => 126,
+                'title' => 'accelero_station_show',
+            ],
+            [
+                'id'    => 127,
+                'title' => 'accelero_station_delete',
+            ],
+            [
+                'id'    => 128,
+                'title' => 'accelero_station_access',
+            ],
+            [
+                'id'    => 129,
+                'title' => 'bio_prognosi_create',
+            ],
+            [
+                'id'    => 130,
+                'title' => 'bio_prognosi_edit',
+            ],
+            [
+                'id'    => 131,
+                'title' => 'bio_prognosi_show',
+            ],
+            [
+                'id'    => 132,
+                'title' => 'bio_prognosi_delete',
+            ],
+            [
+                'id'    => 133,
+                'title' => 'bio_prognosi_access',
+            ],
+            [
+                'id'    => 134,
+                'title' => 'current_temperature_create',
+            ],
+            [
+                'id'    => 135,
+                'title' => 'current_temperature_edit',
+            ],
+            [
+                'id'    => 136,
+                'title' => 'current_temperature_show',
+            ],
+            [
+                'id'    => 137,
+                'title' => 'current_temperature_delete',
+            ],
+            [
+                'id'    => 138,
+                'title' => 'current_temperature_access',
+            ],
         ];
 
         Permission::insert($permissions);

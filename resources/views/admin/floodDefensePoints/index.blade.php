@@ -6,21 +6,10 @@
             <a class="btn btn-success" href="{{ route('admin.flood-defense-points.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.floodDefensePoint.title_singular') }}
             </a>
-            <div class="mt-3 d-flex border-2 border-white bg-white">
-                <form action="{{ route('admin.flood-defense-points.import') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-1">
-
-
-                        <input type="file" name="file" accept="csv,xls,xlsx" class="form-">
-                    </div>
-                    <div class="">
-                        <button class="btn btn-success">
-                            Import User Data
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+                {{ trans('global.app_csvImport') }}
+            </button>
+            @include('csvImport.modal', ['route' => 'admin.flood-defense-points.import'])
         </div>
     </div>
 @endcan

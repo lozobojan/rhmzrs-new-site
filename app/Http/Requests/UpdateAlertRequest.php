@@ -18,7 +18,7 @@ class UpdateAlertRequest extends FormRequest
     {
         return [
             'active' => [
-                'optional',
+                'nullable',
             ],
             'title' => [
                 'string',
