@@ -25,6 +25,8 @@ const config = {
 document.addEventListener('DOMContentLoaded', function () {
     let map = L.map(config.MAP.element, {
         gestureHandling: true,
+        minZoom: 7.9,
+        maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
     }).setView(config.MAP.latLng, config.MAP.zoomLevel);
     //disable default scroll
     map.scrollWheelZoom.disable();
