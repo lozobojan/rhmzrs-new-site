@@ -99,7 +99,11 @@ Route::get('/proxy', function (Request $request) {
                     // Handle patterns with one "../" segment
                     $absoluteUrl = rtrim(dirname($url), '/') . '/' . ltrim($relativeUrl, '/');
                 }
-                return "<{$match[1]} $attribute=\"$absoluteUrl\"";
+
+                // Build the URL for the proxy
+                $proxyUrl = url('/api/proxy?url=' . urlencode($absoluteUrl));
+
+                return "<{$match[1]} $attribute=\"$proxyUrl\"";
             }
             return $match[0];
         }, $content);
