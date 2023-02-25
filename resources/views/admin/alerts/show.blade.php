@@ -41,6 +41,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.alert.fields.level.level') }}
+                        </th>
+                        <td>
+                            {{ $alert->level_text }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.alert.fields.description') }}
                         </th>
                         <td>

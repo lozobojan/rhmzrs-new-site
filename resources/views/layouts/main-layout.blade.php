@@ -276,10 +276,29 @@
                 .text-white > p{
                     color: #fff !important;
                 }
+                .bg-level-0 {
+                    background-color: #e2f306;
+                }
+                .bg-level-0 a,div {
+                    color: #383c00 !important;
+                }
+                .bg-level-1 {
+                    background-color: #ea6f0a;
+                }
+                .bg-level-2 {
+                    background-color: #ff0000;
+                }
+
+                .bg-level-1 a,div {
+                    color: #ffffff !important;
+                }
+                .bg-level-2 a,div {
+                    color: #ffffff !important;
+                }
             </style>
-        <section class="w-100 py-5 bg-danger">
+        <section class="w-100 py-5 {{ $alert->level_class }}">
             <a class="text-white text-center d-block font-weight-bold h1" href="{{ route("alert.view", [$alert->id]) }}">{{ $alert->title }}</a>
-            <div class="text-white text-center" style="color: white!important; font-size: 20px">{!! (strlen($alert->description) > 400) ? substr($alert->description,0,400).'...' : $alert->description !!}</div>
+            <div class=" text-center" style=" font-size: 20px">{{ (strlen($alert->description) > 400) ? strip_tags(substr($alert->description,0,400).'...') : strip_tags($alert->description) }}</div>
         </section>
         @endif
         <!-- /section -->
