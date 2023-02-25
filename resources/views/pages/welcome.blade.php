@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 pt-10">
                     <div class="kad_img_upload_widget">
-                        <a href="https://www.meteoalarm.eu/index2.php?lang=cp_RS&amp;day=0&amp;AT=0&amp;country=BA"
+                        <a href="https://www.meteoalarm.org/en/"
                            target="_blank"> <img
                                 class="w-100"
                                 src="https://rhmzrs.com/wp-content/uploads/2019/06/meteoalarm-logo.png">

@@ -226,11 +226,13 @@
                                 <option value="sr|pt">Portuguese</option>
                                 <option value="sr|ru">Russian</option>
                                 <option value="sr|sr">Serbian</option>
+                                <option value="sr|sr-Latn">Serbian LATIN</option>
                                 <option value="sr|es">Spanish</option>
                             </select>
                             <script>
                                 document.querySelector('#jezici').addEventListener('change', function () {
                                     doGTranslate(this.value);
+                                    console.log(this.value)
                                 });
                                 if (GTranslateGetCurrentLang() != null) jQuery(document).ready(function () {
                                     // alert('sr|' + GTranslateGetCurrentLang())
@@ -347,12 +349,14 @@
                     <!-- /.widget -->
                 </div>
                 <!-- /column -->
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-4 col-lg-4" data-latinize>
                     <div class="widget">
                         <h4 class="widget-title text-white mb-3">Корисни линкови</h4>
                         <ul class="list-unstyled  mb-0">
                             <li><a href="/uslovi-koriscenja">Услови коришћења</a></li>
                             <li><a href="/pristup-informacijama">Приступ информацијама</a></li>
+                            <li><button onclick="doGTranslate('sr|bs')" class="notranslate">Latinica</button></li>
+                            <li><button onclick="doGTranslate('sr|sr')" class="notranslate">Cirlica</button></li>
                         </ul>
                     </div>
                     <!-- /.widget -->
@@ -364,9 +368,9 @@
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center gap-2 flex-column flex-md-row">
-                <img class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
+                <img data-latinize class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
                      srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
-                <p class="mb-4 text-center"><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ
+                <p class="mb-4 text-center" data-latinize><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ
                     ЗАВОД
                 </p>
             </div>
@@ -381,6 +385,7 @@
     </svg>
 </div>
 <script src="{{ asset('assets/js/plugins.js') }}"></script>
+<script src="{{ asset('assets/js/latinization.js') }}"></script>
 <script src="{{ asset('assets/js/theme.js') }}"></script>
 {{ $additionalJs ?? '' }}
 </body>
