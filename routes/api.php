@@ -76,7 +76,11 @@ Route::get('/proxy', function (Request $request) {
     try {
         $response = $client->request('GET', $url, [
             'verify' => false,
-            'curl' => [CURLOPT_SSL_VERIFYPEER => false],
+            'stream' => true,
+            'curl' => [
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_SSL_VERIFYPEER => false,
+            ],
         ]);
 
         $content = $response->getBody()->getContents();
@@ -117,6 +121,4 @@ Route::get('/proxy', function (Request $request) {
         return response()->view('errors.proxy', ['url' => $url, 'error' => $e->getMessage()]);
     }
     // If exception is thrown, return error message
-
-
 });
