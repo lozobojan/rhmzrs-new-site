@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "nox" },
             { "data": "pm10" },
             { "data": "pm25" },
-            { "data": "description" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"

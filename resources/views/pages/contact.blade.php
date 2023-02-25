@@ -1,5 +1,54 @@
 <x-main-layout>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @php
+
+        function getObfuscatedEmailAddress($email)
+        {
+            $alwaysEncode = array('.', ':', '@');
+
+            $result = '';
+
+            // Encode string using oct and hex character codes
+            for ($i = 0; $i < strlen($email); $i++) {
+                // Encode 25% of characters including several that always should be encoded
+                if (in_array($email[$i], $alwaysEncode) || mt_rand(1, 100) < 25) {
+                    if (mt_rand(0, 1)) {
+                        $result .= '&#' . ord($email[$i]) . ';';
+                    } else {
+                        $result .= '&#x' . dechex(ord($email[$i])) . ';';
+                    }
+                } else {
+                    $result .= $email[$i];
+                }
+            }
+
+            return $result;
+        }
+
+        function ob($email)
+        {
+            $new = strrev($email);
+
+            return "<span class='rev'> $new </span>";
+        }
+
+        function ob2($email)
+        {
+            $new = strrev($email);
+
+//            return "<span class='rev'> $new </span>";
+            return "<a class='rev' href='". "mailto:$email'" . ">$new</a>";
+        }
+    @endphp
+    <style>
+        .rev {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+            integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white"
              data-image-src="./assets/img/photos/bg3.jpg">
         <div class="container pt-17 pb-20 pt-md-19 pb-md-21 text-center">
@@ -58,14 +107,23 @@
                                         <div>
                                             <h5 class="mb-1">Телефони</h5>
                                             <p>
-                                                <strong>Централа:</strong><a href="tel:+387 51/ 433-522">+387 51/ 433-522</a><br>
-                                                <strong>Факс:</strong><a href="tel:+387 51/ 433-521">+387 51/ 433-521</a><br>
-                                                <strong>Директор:</strong><a href="tel:051 460-852">051 460-852</a><br>
-                                                <strong>Сеизмологија:</strong><a href="tel:051 463-467">051 463-467</a><br>
-                                                <strong>Метеорологија:</strong> <a href="tel:051 461-681">051 461-681</a>; <a href="tel:051 346-490">051 346-490</a><br>
-                                                <strong>Хидрологија:</strong> <a href="tel:051 315-538">051 315-538</a><br>
-                                                <strong>Заштита ж. средине:</strong> <a href="tel:051 346-494">051 346-494</a><br>
-                                                <strong>Сабирни центар:</strong><a href="tel:051 307-943">051 307-943</a> (тел/фаx)
+                                                <strong>Централа:</strong><a
+                                                    href="tel:+387 51/ 433-522"> {!! ob('+387 51/ 433-522') !!}</a><br>
+                                                <strong>Факс:</strong><a
+                                                    href="tel:+387 51/ 433-521"> {!! ob('+387 51/ 433-521') !!}</a><br>
+                                                <strong>Директор:</strong><a
+                                                    href="tel:051 460-852"> {!! ob('051 460-852') !!}</a><br>
+                                                <strong>Сеизмологија:</strong><a
+                                                    href="tel:051 463-467"> {!! ob('051 463-467') !!}</a><br>
+                                                <strong>Метеорологија:</strong> <a
+                                                    href="tel:051 461-681"> {!! ob('051 461-681') !!}</a>; <a
+                                                    href="tel:051 346-490">{!! ob('051 346-490') !!}</a><br>
+                                                <strong>Хидрологија:</strong> <a
+                                                    href="tel:051 315-538"> {!! ob('051 315-538') !!}</a><br>
+                                                <strong>Заштита ж. средине:</strong> <a
+                                                    href="tel:051 346-494"> {!! ob('051 346-494') !!}</a><br>
+                                                <strong>Сабирни центар:</strong><a
+                                                    href="tel:051 307-943"> {!! ob('051 307-943') !!}</a> (тел/фаx)
                                             </p>
                                         </div>
                                     </div>
@@ -77,7 +135,10 @@
                                         </div>
                                         <div>
                                             <h5 class="mb-1">Електронске адресе</h5>
-                                            <p><strong>e-mail:</strong> rhmz@teol.net<br><strong>web:</strong>
+                                            <p><strong>e-mail:</strong>
+                                                {!! ob('rhmz@teol.net') !!}
+                                                {{--                                                @obfuscate(rhmz@teol.net)--}}
+                                                <br><strong>web:</strong>
                                                 www.rhmzrs.com</p>
                                         </div>
                                     </div>
@@ -179,41 +240,39 @@
                                     href="javascript:location='mailto:\u0064\u002e\u0062\u006f\u0072\u006f\u006a\u0065\u0076\u0069\u0063\u0040\u0072\u0068\u006d\u007a\u0072\u0073\u002e\u0063\u006f\u006d';void 0">
                                     <script
                                         type="text/javascript">document.write('\u0064\u002e\u0062\u006f\u0072\u006f\u006a\u0065\u0076\u0069\u0063\u0040\u0072\u0068\u006d\u007a\u0072\u0073\u002e\u0063\u006f\u006d')</script>
-                                </a>&nbsp;, 051/460-852.
+                                </a>&nbsp;, {!! ob('051/460-852.') !!}
                             </p>
                             <p>&nbsp;</p>
                             <h4>Одјељење за правне и финансијске послове</h4>
-                            <p><strong>Бранко Шипка,</strong>&nbsp;начелник Одјељења за правне и финансијске
-                                послове;<br><a href="mailto:b.sipka@rhmzrs.com">b.sipka@rhmzrs.com</a>&nbsp;,
-                                051/433-520 факс 051/433-521.</p>
+                            <p>
+                                <strong>Бранко Шипка,</strong>&nbsp;начелник Одјељења за правне и финансијске
+                                послове;<br>{!! ob2('b.sipka@rhmzrs.com') !!}
+                                <span>{!! ob('051/433-520 faks 051/433-521') !!}</span></p>
                             <p>&nbsp;</p>
                             <h4>Сектор за метеорологију</h4>
-                            <p><strong>Игор Ковачић,</strong> Помоћник директора за метеорологију;<br><a
-                                    href="mailto:i.kovacic@rhmzrs.com">i.kovacic@rhmzrs.com</a>&nbsp;, 051/461-681.</p>
+                            <p><strong>Игор Ковачић,</strong> Помоћник директора за метеорологију;<br>{!! ob2('i.kovacic@rhmzrs.com') !!}&nbsp;, {!! ob('051/461-681') !!}.</p>
                             <h5>Одјељење за климатологију и агрометеорологију</h5>
                             <p><strong>Зоран Божовић,</strong>&nbsp;начелник Одјељења за климатологију и
-                                агрометеорологију;<br><a href="mailto:z.bozovic@rhmzrs.com">z.bozovic@rhmzrs.com</a>&nbsp;,
-                                051/433-523.<br><strong>Нада Рудан,</strong>&nbsp;руководилац Одсјека за
-                                климатологију;<br><a href="mailto:n.rudan@rhmzrs.com">n.rudan@rhmzrs.com</a> ,
-                                051/346-491.&nbsp;<br><strong>Дејан Супић,</strong>&nbsp;руководилац Одсјека за
-                                агрометеорологију;<br><a href="mailto:d.supic@rhmzrs.com">d.supic@rhmzrs.com</a> ,
-                                051/346-493.&nbsp;</p>
+                                агрометеорологију;<br>{!! ob2('z.bozovic@rhmzrs.com') !!},
+                                {!! ob('051/433-523') !!}.<br><strong>Нада Рудан,</strong>&nbsp;руководилац Одсјека за
+                                климатологију;<br>{!! ob2('n.rudan@rhmzrs.com') !!},
+                                {!! ob('051/346-491') !!}.&nbsp;<br><strong>Дејан Супић,</strong>&nbsp;руководилац Одсјека за
+                                агрометеорологију;<br>{!! ob2('d.supic@rhmzrs.com') !!} ,
+                                {!! ob('051/346-493') !!}.&nbsp;</p>
                             <p>&nbsp;</p>
                             <h4>Сектор за хидрологију и заштиту животне средине</h4>
                             <h5>Одјељење за хидрологију</h5>
-                            <p><a href="mailto:hidrologija@rhmzrs.com">hidrologija@rhmzrs.com</a> , 051/315-538.</p>
+                            <p>{!! ob2('hidrologija@rhmzrs.com') !!}, {!! ob('051/315-538') !!}.</p>
                             <h5>Одјељење за заштиту животне средине</h5>
-                            <p><strong>Ранка Радић,</strong>&nbsp;начелник Одјељења за заштиту животне средине;<br><a
-                                    href="mailto:r.radic@rhmzrs.com">r.radic@rhmzrs.com</a> , 051/346-494.</p>
+                            <p><strong>Ранка Радић,</strong>&nbsp;начелник Одјељења за заштиту животне средине;<br>{!! ob2('r.radic@rhmzrs.com') !!}, {!! ob('051/346-494') !!}.</p>
                             <p>&nbsp;</p>
                             <h4>Сектор за сеизмологију</h4>
                             <h5>Одјељење за опсерваторску сеизмологију</h5>
                             <p><strong>Сњежана Цвијић – Амулић,</strong>&nbsp;начелник Одјељења за опсерваторску
-                                сеизмологију;<br><a
-                                    href="mailto:s.cvijic-amulic@rhmzrs.com">s.cvijic-amulic@rhmzrs.com</a> ,
-                                051/463-467.</p>
+                                сеизмологију;<br>{!! ob2('s.cvijic-amulic@rhmzrs.com') !!} ,
+                                {!! ob('051/463-467') !!}.</p>
                             <h5>Одјељење за инструменталну и инжењерску сеизмологију</h5>
-                            <p>051/433-524.</p>
+                            <p>{!! ob('051/433-524') !!}.</p>
                         </div>
                     </div>
                     <!-- /form -->
