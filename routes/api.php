@@ -76,6 +76,7 @@ Route::get('/proxy', function (Request $request) {
     try {
         $response = $client->request('GET', $url, [
             'verify' => false,
+            'curl' => [CURLOPT_SSL_VERIFYPEER => false],
         ]);
 
         $content = $response->getBody()->getContents();
