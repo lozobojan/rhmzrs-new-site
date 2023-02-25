@@ -8,6 +8,14 @@
     <script src="{{asset('js/meteo-current-data.js')}}"></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
     <br>
+    <style>
+        td {
+            text-align: center; color: #0c0c0c!important;
+        }
+        td p {
+            color: #0c0c0c!important;
+        }
+    </style>
 
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>

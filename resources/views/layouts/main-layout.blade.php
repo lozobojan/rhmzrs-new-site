@@ -273,6 +273,9 @@
 
         @if($alert)
             <style>
+                 p,address {
+                    color: black;
+                }
                 .text-white > p{
                     color: #fff !important;
                 }
@@ -344,7 +347,7 @@
             </div>
             <div class="row gy-6 gy-lg-0">
                 <div class="col-md-4 col-lg-4">
-                    <div class="widget">
+                    <div class="widget text-white">
 
                         <p><strong>Републички хидрометеоролошки завод</strong><br>Пут бањалучког одреда бб<br>78000 Бања
                             Лука<br>Република Српска<br>Босна и Херцеговина<br><strong>Поштански претинац: 147</strong>
@@ -354,7 +357,7 @@
                 </div>
                 <!-- /column -->
                 <div class="col-md-4 col-lg-4">
-                    <p>
+                    <p class="text-white">
                         <strong>Централа:</strong><a href="tel:+387 51/ 433-522">+387 51/ 433-522</a><br>
                         <strong>Факс:</strong><a href="tel:+387 51/ 433-521">+387 51/ 433-521</a><br>
                         <strong>Директор:</strong><a href="tel:051 460-852">051 460-852</a><br>
@@ -368,7 +371,7 @@
                     <!-- /.widget -->
                 </div>
                 <!-- /column -->
-                <div class="col-md-4 col-lg-4" data-latinize>
+                <div class="col-md-4 col-lg-4 text-white" data-latinize>
                     <div class="widget">
                         <h4 class="widget-title text-white mb-3">Корисни линкови</h4>
                         <ul class="list-unstyled  mb-0">
@@ -385,11 +388,11 @@
             </div>
             <!--/.row -->
         </div>
-        <div class="row">
+        <div class="row text-white">
             <div class="col-12 d-flex justify-content-center align-items-center gap-2 flex-column flex-md-row">
                 <img data-latinize class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
                      srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
-                <p class="mb-4 text-center" data-latinize><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ
+                <p class="mb-4 text-center text-white" data-latinize><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ
                     ЗАВОД
                 </p>
             </div>

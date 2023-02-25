@@ -5,20 +5,25 @@
             height: 800px;
             width: 100%;
         }
-        #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div{
-            display: none!important;
+
+        #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div {
+            display: none !important;
         }
+
         #example p {
-            margin: 0!important;
+            margin: 0 !important;
         }
+
         #example_previous > a, #example_next > a {
             width: 100%;
             padding-left: 4px;
             padding-right: 4px;
         }
+
         #example_paginate > ul {
             justify-content: flex-end;
         }
+
         #example_paginate {
             width: min-content;
             float: right;
@@ -26,7 +31,6 @@
 
     </style>
     <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
-
 
 
     <script src="{{asset('leaflet/leaflet.js')}}"></script>
@@ -37,7 +41,9 @@
 
     <script type="text/javascript" src="{{ asset('js/Datatable/datatables.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+            integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{asset('js/air-quality-leaflet.js')}}"></script>
     <script></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
@@ -47,7 +53,39 @@
 
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
-        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">Станица</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="О3: activate to sort column ascending" style="width: 35px;">О3</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="CO: activate to sort column ascending" style="width: 59px;">CO</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="SО2: activate to sort column ascending" style="width: 59px;">SО2</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="NO: activate to sort column ascending" style="width: 63px;">NO</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="NO2: activate to sort column ascending" style="width: 51px;">NO2</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="NOx: activate to sort column ascending" style="width: 51px;">NOx</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="PM10: activate to sort column ascending" style="width: 38px;">PM10</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис</th></tr>
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
+                Станица
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="О3: activate to sort column ascending" style="width: 35px;">О3
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="CO: activate to sort column ascending" style="width: 59px;">CO
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="SО2: activate to sort column ascending" style="width: 59px;">SО2
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="NO: activate to sort column ascending" style="width: 63px;">NO
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="NO2: activate to sort column ascending" style="width: 51px;">NO2
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="NOx: activate to sort column ascending" style="width: 51px;">NOx
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM10: activate to sort column ascending" style="width: 38px;">PM10
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
+            </th>
+{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
+{{--            </th>--}}
+        </tr>
         </thead>
     </table>
 
