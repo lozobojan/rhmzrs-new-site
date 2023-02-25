@@ -16,6 +16,7 @@
                 width: 80px;
                 height: 80px;
             }
+
             .lds-ripple div {
                 position: absolute;
                 border: 4px solid #fff;
@@ -23,9 +24,11 @@
                 border-radius: 50%;
                 animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
             }
+
             .lds-ripple div:nth-child(2) {
                 animation-delay: -0.5s;
             }
+
             @keyframes lds-ripple {
                 0% {
                     top: 36px;
@@ -71,8 +74,9 @@
                 height: 800px;
                 width: 100%;
             }
-            #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div{
-                display: none!important;
+
+            #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div {
+                display: none !important;
             }
         </style>
         <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
@@ -80,7 +84,9 @@
 
         <script src="{{asset('leaflet/leaflet.js')}}"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+                integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="{{asset('js/leaflet.js')}}"></script>
     </x-slot>
     <section class="wrapper bg-light angled">
@@ -89,31 +95,44 @@
                 <div class="col-12">
                     <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#prognoza" onClick="changeData(1)"> <img
-                                    src="{{asset('assets/img/icons/prognoza.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Прогноза</p></a>
+                            <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#prognoza"
+                               onClick="changeData(1)"> <img
+                                    src="{{asset('assets/img/icons/prognoza.svg')}}" class="w-10 d-inline-block" alt="">
+                                <p class="mb-0 d-inline-block">Прогноза</p></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#meteorologija" onClick="changeData(2)"> <img
-                                    src="{{asset('assets/img/icons/meteorologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Метеорологија</p></a>
+                                    src="{{asset('assets/img/icons/meteorologija.svg')}}" class="w-10 d-inline-block"
+                                    alt="">
+                                <p class="mb-0 d-inline-block">Метеорологија</p></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#seizmologija" onClick="changeData(3)"> <img
-                                    src="{{asset('assets/img/icons/seizmologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Сеизмологија</p></a>
+                                    src="{{asset('assets/img/icons/seizmologija.svg')}}" class="w-10 d-inline-block"
+                                    alt="">
+                                <p class="mb-0 d-inline-block">Сеизмологија</p></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#hidrologija" onClick="changeData(4)"> <img
-                                    src="{{asset('assets/img/icons/hidrologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Хидрологија</p></a>
+                                    src="{{asset('assets/img/icons/hidrologija.svg')}}" class="w-10 d-inline-block"
+                                    alt="">
+                                <p class="mb-0 d-inline-block">Хидрологија</p></a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#ekologija" onClick="changeData(5)"> <img
-                                    src="{{asset('assets/img/icons/ekologija.svg')}}" class="w-10 d-inline-block" alt=""> <p class="mb-0 d-inline-block">Животна средина</p></a>
+                                    src="{{asset('assets/img/icons/ekologija.svg')}}" class="w-10 d-inline-block"
+                                    alt="">
+                                <p class="mb-0 d-inline-block">Животна средина</p></a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-12 " style="position:relative;">
                     <div class="loader" id="loader">
-                        <div class="lds-ripple"><div></div><div></div></div>
+                        <div class="lds-ripple">
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                     <div id="map" class="map"></div>
                     <div class="mapinfo"></div>
@@ -131,17 +150,17 @@
                     <!-- /.row -->
                     <div class="container mb-10">
                         <div class="row">
-                                @foreach($posts as $post)
-                                    <div class="col-lg-6 col-md-12 col-sm-12">
-                                        <x-article :article="$post" :simple="$post['cover_photo'] === null"></x-article>
-                                        <!-- /article -->
-                                    </div>
-                                @endforeach
-                                <!--/.swiper-slide -->
+                            @foreach($posts as $post)
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <x-article :article="$post"></x-article>
+                                    <!-- /article -->
+                                </div>
+                            @endforeach
+                            <!--/.swiper-slide -->
 
-                                <!--/.swiper-slide -->
+                            <!--/.swiper-slide -->
 
-                                <!--/.swiper-slide -->
+                            <!--/.swiper-slide -->
                             <!-- /.swiper-wrapper -->
                         </div>
                         <!-- /.swiper -->
@@ -156,6 +175,13 @@
                                 src="https://rhmzrs.com/wp-content/uploads/2019/06/meteoalarm-logo.png">
                         </a></div>
                     <x-section-separator text="Анкета" simple></x-section-separator>
+                    <div class="px-3">
+                        @foreach($questionnaires as $q)
+                            <h2 class="post-title h4 bg-white mb-3"><a class="link-dark"
+                                                              href="{{ route('questionnaire.view', $q->id) }}">{{ $q['title'] }}</a>
+                            </h2>
+                        @endforeach
+                    </div>
 
                 </div>
             </div>

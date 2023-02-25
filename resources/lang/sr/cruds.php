@@ -423,6 +423,12 @@ return [
             'updated_at_helper'  => ' ',
             'deleted_at'         => 'Обрисано',
             'deleted_at_helper'  => ' ',
+            'level' => [
+                'yellow' => 'Жуто',
+                'orange' => 'Наранџасто',
+                'red' => 'Црвено',
+                'level' => 'Ниво',
+            ]
         ],
     ],
     'seismicStation' => [

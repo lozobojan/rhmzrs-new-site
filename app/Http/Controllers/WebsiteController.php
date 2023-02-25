@@ -89,9 +89,10 @@ class WebsiteController extends Controller
 
     public function index(){
         // Get latest posts
-        $posts = Post::latest()->take(15)->get();
+        $posts = Post::latest()->take(25)->get();
+        $questionnaires = Questionnaire::latest()->take(25)->get();
         // return pages.welcome with posts
-        return view('pages.welcome', compact('posts'));
+        return view('pages.welcome', compact('posts', 'questionnaires'));
     }
 
 }

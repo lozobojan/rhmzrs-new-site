@@ -385,6 +385,12 @@ return [
             'updated_at_helper'  => ' ',
             'deleted_at'         => 'Deleted at',
             'deleted_at_helper'  => ' ',
+            'level' => [
+                'yellow' => 'Yellow',
+                'orange' => 'Orange',
+                'red' => 'Red',
+                'level' => 'Level',
+            ]
         ],
     ],
 

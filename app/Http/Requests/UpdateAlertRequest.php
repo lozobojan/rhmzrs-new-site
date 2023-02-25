@@ -26,6 +26,10 @@ class UpdateAlertRequest extends FormRequest
                 'max:255',
                 'required',
             ],
+            'level' => [
+                'required',
+                'in:0,1,2',
+            ],
         ];
     }
 }

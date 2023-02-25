@@ -49,7 +49,7 @@
                 <div class="col-lg-10 mx-auto">
                     <div class="blog single mt-n17">
                         <div class="card">
-                            <figure class="card-img-top"><img src="./assets/img/photos/b1.jpg" alt=""/></figure>
+                            <figure class="card-img-top"><img src="{{ $post->cover_photo->url }}" alt=""/></figure>
                             <div class="card-body">
 
                                 <div class="container text-center d-none d-print-block">
@@ -71,7 +71,6 @@
                                     </div>
                                     <!-- /.row -->
                                 </div>
-
 
                                 <div class="classic-view">
                                     <article class="post">

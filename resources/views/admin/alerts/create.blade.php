@@ -28,6 +28,17 @@
                 <span class="help-block">{{ trans('cruds.alert.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="page_id">{{ trans('cruds.alert.fields.level.level') }}</label>
+                <select class="form-control select2 {{ $errors->has('level') ? 'is-invalid' : '' }}" name="level" id="level" required>
+                        <option value="0">{{ trans('cruds.alert.fields.level.yellow') }}</option>
+                        <option value="1">{{ trans('cruds.alert.fields.level.orange') }}</option>
+                        <option value="2">{{ trans('cruds.alert.fields.level.red') }}</option>
+                </select>
+                @if($errors->has('level'))
+                    <span class="text-danger">{{ $errors->first('level') }}</span>
+                @endif
+            </div>
+            <div class="form-group">
                 <label for="description">{{ trans('cruds.alert.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description') !!}</textarea>
                 @if($errors->has('description'))

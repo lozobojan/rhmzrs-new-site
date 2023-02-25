@@ -32,6 +32,9 @@
                             {{ trans('cruds.alert.fields.title') }}
                         </th>
                         <th>
+                            {{ trans('cruds.alert.fields.level.level') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -51,6 +54,9 @@
                             </td>
                             <td>
                                 {{ $alert->title ?? '' }}
+                            </td>
+                            <td>
+                                {{ $alert->level_text ?? '' }}
                             </td>
                             <td>
                                 @can('alert_show')
@@ -131,7 +137,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>
