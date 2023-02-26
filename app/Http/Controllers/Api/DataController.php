@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class DataController extends Controller
 {
@@ -11,12 +12,21 @@ class DataController extends Controller
     public function getEarthquakes(Request $request): \Illuminate\Http\JsonResponse
     {
 
-        // Get all earthquakes from the database
+        // Get all earthquakes whos earthquake_date (which is in format DD.MM.YYYY) is in lasst 3 days
+
+
+
+
+
         $earthquakes = \App\Models\Earthquake::query()
             ->when($request->type, function ($query) use ($request) {
                 return $query->where('earthquake_type', '=', $request->type);
-            })->
+            })->whereRaw("STR_TO_DATE(earthquake_date, '%d.%m.%Y') BETWEEN ? AND ?", [
+                Carbon::now()->subDays(3)->toDateString(),
+                Carbon::now()->toDateString()
+            ])->
         published();
+
         // Return the earthquakes as JSON
         return response()->json($earthquakes);
     }

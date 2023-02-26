@@ -75,6 +75,19 @@ class Earthquake extends Model
         ";
     }
 
+    public function getMunicipalityAttribute()
+    {
+        return "<a href='{$this->getGoogleMapsUrl()}' target='_blank'>{$this->attributes['municipality']}</a>";
+    }
+
+    public function getGoogleMapsUrl()
+    {
+        $url_encoded = urlencode($this->attributes['municipality']);
+        return "https://www.google.com/maps/search/{$url_encoded}";
+    }
+
+
+
     // Get all earthquakes which publish status is not draft
     public function scopePublished($query)
     {

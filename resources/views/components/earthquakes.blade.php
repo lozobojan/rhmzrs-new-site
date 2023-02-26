@@ -67,9 +67,9 @@
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Магнитуда: activate to sort column ascending" style="width: 72px;">Магнитуда
             </th>
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Опис: activate to sort column ascending" style="width: 128px;">Опис
-            </th>
+{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="Опис: activate to sort column ascending" style="width: 128px;">Опис--}}
+{{--            </th>--}}
         </tr>
         </thead>
     </table>

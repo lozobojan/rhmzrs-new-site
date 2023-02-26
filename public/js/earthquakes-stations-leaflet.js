@@ -72,7 +72,7 @@ function execute(type = ''){
             { "data": "earthquake_type" },
             { "data": "municipality" },
             { "data": "magnitude" },
-            { "data": "description" },
+            // { "data": "description" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
