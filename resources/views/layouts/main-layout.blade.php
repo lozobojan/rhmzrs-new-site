@@ -89,16 +89,16 @@
                 <div class="container-fluid flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
                         <a href="/">
-                            <img class="logo-dark" src="{{ asset('assets/img/brands/logo-header-small.png') }}"
-                                 srcset="{{ asset('assets/img/brands/logo-header-small.png') }}" alt=""/>
-                            <img class="logo-light" src="{{ asset('assets/img/brands/logo-header-small.png') }}"
-                                 srcset="{{ asset('assets/img/brands/logo-header-small.png') }}" alt=""/>
+                            <img class="logo-dark" src="{{ asset('assets/img/brands/image1.png') }}"
+                                 srcset="{{ asset('assets/img/brands/image1.png') }}" alt=""/>
+                            <img class="logo-light" src="{{ asset('assets/img/brands/image1.png') }}"
+                                 srcset="{{ asset('assets/img/brands/image1.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                         <div class="offcanvas-header d-xxl-none">
                             <h3 class="text-white fs-30 mb-0"><img class=""
-                                                                   src="{{ asset('assets/img/brands/logo-header-small.png') }}"
+                                                                   src="{{ asset('assets/img/brands/image1.png') }}"
                                                                    alt=""/>
                             </h3>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -260,8 +260,8 @@
             <div class="video-content">
                 <div class="container text-center">
                     <div class="row">
-                        <div class="col-lg-8 col-xl-6 text-center text-white mx-auto">
-                            <img src="{{ asset('assets/img/brands/logo-header.png') }}" class="w-100 mt-12" alt="">
+                        <div class="col-lg-9 col-xl-6 text-center text-white mx-auto">
+                            <img src="{{ asset('assets/img/brands/headerimg.png') }}" class="w-100 mt-12" alt="">
                         </div>
                         <!-- /column -->
                     </div>
