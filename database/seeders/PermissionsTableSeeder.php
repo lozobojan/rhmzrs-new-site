@@ -582,6 +582,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 143,
                 'title' => 'eco_information_access',
             ],
+            [
+                'id'    => 144,
+                'title' => 'homepage_cards_create',
+            ],
+            [
+                'id'    => 145,
+                'title' => 'homepage_cards_edit',
+            ],
+            [
+                'id'    => 146,
+                'title' => 'homepage_cards_show',
+            ],
+            [
+                'id'    => 147,
+                'title' => 'homepage_cards_delete',
+            ],
+            [
+                'id'    => 148,
+                'title' => 'homepage_cards_access',
+            ],
         ];
 
         Permission::insert($permissions);

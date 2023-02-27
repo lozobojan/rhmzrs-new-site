@@ -14,10 +14,6 @@ class DataController extends Controller
 
         // Get all earthquakes whos earthquake_date (which is in format DD.MM.YYYY) is in lasst 3 days
 
-
-
-
-
         $earthquakes = \App\Models\Earthquake::query()
             ->when($request->type, function ($query) use ($request) {
                 return $query->where('earthquake_type', '=', $request->type);

@@ -120,6 +120,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('alerts/ckmedia', 'AlertController@storeCKEditorImages')->name('alerts.storeCKEditorImages');
     Route::resource('alerts', 'AlertController');
 
+    // Alert
+    Route::delete('homepage-cards/destroy', 'HomepageCardController@massDestroy')->name('homepage-cards.massDestroy');
+    Route::post('homepage-cards/media', 'HomepageCardController@storeMedia')->name('homepage-cards.storeMedia');
+    Route::post('homepage-cards/ckmedia', 'HomepageCardController@storeCKEditorImages')->name('homepage-cards.storeCKEditorImages');
+    Route::resource('homepage-cards', 'HomepageCardController');
+
     // Meteo Station
     Route::delete('meteo-stations/destroy', 'MeteoStationController@massDestroy')->name('meteo-stations.massDestroy');
     Route::post('meteo-stations/media', 'MeteoStationController@storeMedia')->name('meteo-stations.storeMedia');
