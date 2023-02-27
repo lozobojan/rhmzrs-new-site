@@ -50,7 +50,7 @@
     <div id="map"></div>
 
     <br>
-
+    <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Тренутни подаци</h1>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">

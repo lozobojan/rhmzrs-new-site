@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Alert;
 use App\Models\DocumentAndRegulation;
+use App\Models\Page;
 use App\Models\Post;
 use App\Models\PublicCompetition;
 use App\Models\PublicPurchase;
@@ -101,6 +102,11 @@ class WebsiteController extends Controller
         $publicPurchases = PublicPurchase::paginate(10);
         $documents = DocumentAndRegulation::paginate(10);
         return view('pages.general-jobs', compact('publicCompetitions', 'publicPurchases', 'documents'));
+    }
+    public function airControl()
+    {
+        $page = Page::query()->where('slug', 'izvjestaji')->first();
+        return view('pages.air-quality', compact('page'));
     }
 
 }
