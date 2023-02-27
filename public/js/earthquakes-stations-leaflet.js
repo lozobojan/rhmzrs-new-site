@@ -69,9 +69,11 @@ function execute(type = ''){
 
         "columns": [
             { "data": "earthquake_date" },
-            { "data": "earthquake_type" },
-            { "data": "municipality" },
+            { "data": "lat" },
+            { "data": "lng" },
+            { "data": "depth" },
             { "data": "magnitude" },
+            { "data": "municipality_new" },
             // { "data": "description" },
         ],
         "language": {

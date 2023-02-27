@@ -562,6 +562,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 138,
                 'title' => 'current_temperature_access',
             ],
+            [
+                'id'    => 139,
+                'title' => 'eco_information_create',
+            ],
+            [
+                'id'    => 140,
+                'title' => 'eco_information_edit',
+            ],
+            [
+                'id'    => 141,
+                'title' => 'eco_information_show',
+            ],
+            [
+                'id'    => 142,
+                'title' => 'eco_information_delete',
+            ],
+            [
+                'id'    => 143,
+                'title' => 'eco_information_access',
+            ],
         ];
 
         Permission::insert($permissions);

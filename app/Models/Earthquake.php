@@ -50,7 +50,7 @@ class Earthquake extends Model
     protected $guarded = ['id'];
 
     // append icon attribute if magnitude is greater than 5
-    protected $appends = ['icon', 'description'];
+    protected $appends = ['icon', 'description', 'municipality_new'];
 
     // get icon attribute
     public function getIconAttribute()
@@ -75,7 +75,7 @@ class Earthquake extends Model
         ";
     }
 
-    public function getMunicipalityAttribute()
+    public function getMunicipalityNewAttribute()
     {
         return "<a href='{$this->getGoogleMapsUrl()}' target='_blank'>{$this->attributes['municipality']}</a>";
     }

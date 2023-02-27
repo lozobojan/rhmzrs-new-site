@@ -148,6 +148,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('eco-stations', 'EcoStationController');
 
 
+    // Eco data
+    Route::resource('eco-information', 'EcoInformationController');
+    Route::post('eco-information/media', 'EcoInformationController@storeMedia')->name('eco-information.storeMedia');
+    Route::post('eco-information/ckmedia', 'EcoInformationController@storeCKEditorImages')->name('eco-information.storeCKEditorImages');
+    Route::post('eco-information/parse-csv-import', 'EcoInformationController@parseCsvImport')->name('eco-information.parseCsvImport');
+    Route::post('eco-information/process-csv-import', 'EcoInformationController@processCsvImport')->name('eco-information.processCsvImport');
+    Route::delete('eco-information/destroy', 'EcoInformationController@massDestroy')->name('eco-information.massDestroy');
+
+
     // Wind
     Route::delete('winds/destroy', 'WindController@massDestroy')->name('winds.massDestroy');
     Route::post('winds/media', 'WindController@storeMedia')->name('winds.storeMedia');
@@ -216,3 +225,8 @@ Route::get('alert/{alert}', [\App\Http\Controllers\WebsiteController::class, 'al
 // Routes for questionnaires
 Route::get('ankete', [\App\Http\Controllers\WebsiteController::class, 'questionnaires'])->name('questionnaires');
 Route::get('ankete/{questionnaire}', [\App\Http\Controllers\WebsiteController::class, 'questionnaire'])->name('questionnaire.view');
+
+
+Route::get('opsti-poslovi', [\App\Http\Controllers\WebsiteController::class, 'generalJobs'])->name('opsti-poslovi');
+Route::get('kontrola-kvaliteta-vazduha', [\App\Http\Controllers\WebsiteController::class, 'airControl'])->name('air-control');
+

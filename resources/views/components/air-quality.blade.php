@@ -49,11 +49,24 @@
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
     <div id="map"></div>
 
-    <br>
 
+    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-5"></div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+    <br>
+    <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Тренутни подаци</h1>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
+                Термин
+            </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
                 Станица
@@ -81,6 +94,9 @@
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK
             </th>
 {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
 {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}

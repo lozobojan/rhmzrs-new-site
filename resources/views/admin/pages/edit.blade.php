@@ -1,62 +1,68 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="card">
-    <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.page.title_singular') }}
-    </div>
+    <div class="card">
+        <div class="card-header">
+            {{ trans('global.edit') }} {{ trans('cruds.page.title_singular') }}
+        </div>
 
-    <div class="card-body">
-        <form method="post" action="{{ route("admin.pages.update", [$page->id]) }}" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
-            <div class="form-group">
-                <label class="required" for="title">{{ trans('cruds.page.fields.title') }}</label>
-                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $page->title) }}" required>
-                @if($errors->has('title'))
-                    <span class="text-danger">{{ $errors->first('title') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.page.fields.title_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="slug">{{ trans('cruds.page.fields.slug') }}</label>
-                <input class="form-control {{ $errors->has('slug') ? 'is-invalid' : '' }}" type="text" name="slug" id="slug" value="{{ old('slug', $page->slug) }}" required>
-                @if($errors->has('slug'))
-                    <span class="text-danger">{{ $errors->first('slug') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.page.fields.slug_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label for="html_content">{{ trans('cruds.page.fields.html_content') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('html_content') ? 'is-invalid' : '' }}" name="html_content" id="html_content">{!! old('html_content', $page->html_content) !!}</textarea>
-                @if($errors->has('html_content'))
-                    <span class="text-danger">{{ $errors->first('html_content') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.page.fields.html_content_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <label class="required" for="attachments">{{ trans('cruds.publicCompetition.fields.attachments') }}</label>
-                <div class="needsclick dropzone {{ $errors->has('attachments') ? 'is-invalid' : '' }}" id="attachments-dropzone">
+        <div class="card-body">
+            <form method="post" action="{{ route("admin.pages.update", [$page->id]) }}" enctype="multipart/form-data">
+                @method('PUT')
+                @csrf
+                <div class="form-group">
+                    <label class="required" for="title">{{ trans('cruds.page.fields.title') }}</label>
+                    <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title"
+                           id="title" value="{{ old('title', $page->title) }}" required>
+                    @if($errors->has('title'))
+                        <span class="text-danger">{{ $errors->first('title') }}</span>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.page.fields.title_helper') }}</span>
                 </div>
-                @if($errors->has('attachments'))
-                    <span class="text-danger">{{ $errors->first('attachments') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.publicCompetition.fields.attachments_helper') }}</span>
-            </div>
-            <div id="descriptions">
+                <div class="form-group">
+                    <label class="required" for="slug">{{ trans('cruds.page.fields.slug') }}</label>
+                    <input class="form-control {{ $errors->has('slug') ? 'is-invalid' : '' }}" type="text" name="slug"
+                           id="slug" value="{{ old('slug', $page->slug) }}" required>
+                    @if($errors->has('slug'))
+                        <span class="text-danger">{{ $errors->first('slug') }}</span>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.page.fields.slug_helper') }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="html_content">{{ trans('cruds.page.fields.html_content') }}</label>
+                    {{--                <textarea class="form-control ckeditor {{ $errors->has('html_content') ? 'is-invalid' : '' }}" name="html_content" id="html_content">{!! old('html_content', $page->html_content) !!}</textarea>--}}
+                    <div id="toolbar-container"></div>
+                    <div class="ckeditor">
+                        {!! $page->html_content !!}
+                    </div>
+                    @if($errors->has('html_content'))
+                        <span class="text-danger">{{ $errors->first('html_content') }}</span>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.page.fields.html_content_helper') }}</span>
+                </div>
+                <div class="form-group">
+                    <label class="required"
+                           for="attachments">{{ trans('cruds.publicCompetition.fields.attachments') }}</label>
+                    <div class="needsclick dropzone {{ $errors->has('attachments') ? 'is-invalid' : '' }}"
+                         id="attachments-dropzone">
+                    </div>
+                    @if($errors->has('attachments'))
+                        <span class="text-danger">{{ $errors->first('attachments') }}</span>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.publicCompetition.fields.attachments_helper') }}</span>
+                </div>
+                <div id="descriptions">
 
-            </div>
+                </div>
 
-            <div class="form-group">
-                <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
-                </button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <button class="btn btn-danger" type="submit">
+                        {{ trans('global.save') }}
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-
 
 @endsection
 
@@ -90,18 +96,23 @@
                 $('form').find('input[name="attachments[]"][value="' + name + '"]').remove()
             },
             init: function () {
-                this.on("sending", function(file, xhr, formData) {
+                this.on("sending", function (file, xhr, formData) {
                     let name = window.prompt(`Unesite opis za fajl ${file.name}`);
-                    if(!name){
+                    if (!name) {
                         name = "//";
                     }
-                    document.querySelector("#descriptions").insertAdjacentHTML('afterend',`<input type="hidden" name="descriptions[]" value="${name}">`);
+                    document.querySelector("#descriptions").insertAdjacentHTML('afterend', `<input type="hidden" name="descriptions[]" value="${name}">`);
                 });
 
                 @if(isset($page) && $page->attachments)
                 var files =
                     {!! json_encode($page->attachments) !!}
-                    for (var i in files) {
+                    for(
+                var i
+            in
+                files
+            )
+                {
                     var file = files[i]
                     this.options.addedfile.call(this, file)
                     file.previewElement.classList.add('dz-complete')
@@ -129,12 +140,12 @@
 
         $(document).ready(function () {
             function SimpleUploadAdapter(editor) {
-                editor.plugins.get('FileRepository').createUploadAdapter = function(loader) {
+                editor.plugins.get('FileRepository').createUploadAdapter = function (loader) {
                     return {
-                        upload: function() {
+                        upload: function () {
                             return loader.file
                                 .then(function (file) {
-                                    return new Promise(function(resolve, reject) {
+                                    return new Promise(function (resolve, reject) {
                                         // Init request
                                         var xhr = new XMLHttpRequest();
                                         xhr.open('POST', '{{ route('admin.pages.storeCKEditorImages') }}', true);
@@ -143,10 +154,14 @@
                                         xhr.responseType = 'json';
 
                                         // Init listeners
-                                        var genericErrorText = `Couldn't upload file: ${ file.name }.`;
-                                        xhr.addEventListener('error', function(error) {reject(genericErrorText)});
-                                        xhr.addEventListener('abort', function() { reject() });
-                                        xhr.addEventListener('load', function() {
+                                        var genericErrorText = `Couldn't upload file: ${file.name}.`;
+                                        xhr.addEventListener('error', function (error) {
+                                            reject(genericErrorText)
+                                        });
+                                        xhr.addEventListener('abort', function () {
+                                            reject()
+                                        });
+                                        xhr.addEventListener('load', function () {
                                             var response = xhr.response;
 
                                             if (!response || xhr.status !== 201) {
@@ -155,11 +170,11 @@
 
                                             $('form').append('<input type="hidden" name="ck-media[]" value="' + response.id + '">');
 
-                                            resolve({ default: response.url });
+                                            resolve({default: response.url});
                                         });
 
                                         if (xhr.upload) {
-                                            xhr.upload.addEventListener('progress', function(e) {
+                                            xhr.upload.addEventListener('progress', function (e) {
                                                 if (e.lengthComputable) {
                                                     loader.uploadTotal = e.total;
                                                     loader.uploaded = e.loaded;
@@ -181,11 +196,41 @@
 
             var allEditors = document.querySelectorAll('.ckeditor');
             for (var i = 0; i < allEditors.length; ++i) {
-                ClassicEditor.create(
+                DecoupledEditor.create(
                     allEditors[i], {
-                        extraPlugins: [SimpleUploadAdapter]
+                        extraPlugins: [SimpleUploadAdapter],
+                        alignment: {
+                            options: ['left', 'right']
+                        },
+                        toolbar: {
+                            items: [
+                                'findAndReplace', 'selectAll', '|',
+                                'heading', '|',
+                                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                                'bulletedList', 'numberedList', 'todoList', '|',
+                                'alignment', '|',
+                                'outdent', 'indent', '|',
+                                'undo', 'redo',
+                                '-',
+                                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                                'alignment', '|',
+                                'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                                'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                                'textPartLanguage', '|',
+                                'sourceEditing'
+                            ],
+                            shouldNotGroupWhenFull: true
+                        },
                     }
-                );
+                ).then(editor => {
+                    const toolbarContainer = document.querySelector('#toolbar-container');
+
+                    toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+                })
+                    .catch(error => {
+                        console.error(error);
+                    });
+                ;
             }
         });
     </script>

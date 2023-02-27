@@ -36,8 +36,8 @@
         {
             $new = strrev($email);
 
-//            return "<span class='rev'> $new </span>";
-            return "<a class='rev' href='". "mailto:$email'" . ">$new</a>";
+            return "<span class='rev'> $new </span>";
+//            return "<a class='rev' href='". "mailto:$email'" . ">$new</a>";
         }
     @endphp
     <style>

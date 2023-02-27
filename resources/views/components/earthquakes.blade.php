@@ -59,13 +59,20 @@
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Термин: activate to sort column descending" style="width: 55px;">
-                Tip
+                Географска ширина
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Термин: activate to sort column descending" style="width: 55px;">
+                Географска дужина
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Регион: activate to sort column ascending" style="width: 53px;">Регион
+                aria-label="Регион: activate to sort column ascending" style="width: 53px;">Дубина
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Магнитуда: activate to sort column ascending" style="width: 72px;">Магнитуда
+                aria-label="Регион: activate to sort column ascending" style="width: 53px;">Магнитуда
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Магнитуда: activate to sort column ascending" style="width: 72px;">Регион
             </th>
 {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
 {{--                aria-label="Опис: activate to sort column ascending" style="width: 128px;">Опис--}}

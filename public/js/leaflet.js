@@ -1,7 +1,7 @@
 let timestampAPI = Date.now();
 config = {
     API: {
-        weatherForecastLink: 'pointweather.json?',
+        weatherForecastLink: 'weather.json',
         meteoMaps: 'api/meteo-maps',
         ecoInformation: 'api/eco-information',
         hydroInformation: 'api/hydro-information',
@@ -29,6 +29,41 @@ config = {
 document.addEventListener('DOMContentLoaded', function () {
     changeData(1);
 });
+async function getRequest(url) {
+    let response = await fetch(url), jsonData = await response.json();
+    return jsonData;
+}
+
+function getWeatherForecastEvents() {
+    let weatherForecastButton = document.querySelector('#weatherForecast');
+    getRequest(config.API.weatherForecastLink).then(function (data) {
+        let country = data.countries.country.filter((country) => {
+            return country['@name'] == 'Bosnia';
+        });
+        window.originalWeatherForecastData = JSON.stringify(country['0'].location_id);
+        setDateButtons(country['0'].location_id);
+        addActiveClass();
+        getDateLinkAttr(window.originalWeatherForecastData);
+        filterFirstWeatherData(country['0'].location_id);
+        initMap();
+        initMap.addMarkerForWeatherForecast(country['0'].location_id);
+        initMap.addWeatherForecastInfoWindow(JSON.parse(window.originalWeatherForecastData));
+    });
+    weatherForecastButton.addEventListener('click', function () {
+        getRequest(config.API.weatherForecastLink).then(function (data) {
+            let country = data.countries.country.filter((country) => {
+                return country['@name'] == 'Bosnia';
+            });
+            setDateButtons(country['0'].location_id);
+            addActiveClass();
+            getDateLinkAttr(window.originalWeatherForecastData);
+            filterFirstWeatherData(country['0'].location_id);
+            initMap();
+            initMap.addMarkerForWeatherForecast(country['0'].location_id);
+            initMap.addWeatherForecastInfoWindow(country['0'].location_id);
+        });
+    });
+}
 
 
 let map = L.map(config.MAP.element, {
