@@ -239,6 +239,18 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('eco_information_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.eco-information.index") }}" class="nav-link {{ request()->is("admin/eco-information") || request()->is("admin/eco-information/*") ? "active" : "" }}">
+                                            <i class="fa-fw nav-icon fas fa-leaf">
+
+                                            </i>
+                                            <p>
+                                                {{ trans('cruds.ecoInformation.title') }}
+                                            </p>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('wind_access')
                                     <li class="nav-item">
                                         <a href="{{ route("admin.winds.index") }}" class="nav-link {{ request()->is("admin/winds") || request()->is("admin/winds/*") ? "active" : "" }}">

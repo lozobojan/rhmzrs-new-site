@@ -117,6 +117,7 @@ class ImportDataMapper
                 'nox' => $data['NOx'] ?? null,
                 'pm10' => $data['PM10'] ?? null,
                 'pm25' => $data['PM25'] ?? null,
+                'ik' => $data['ik'] ?? null,
                 'description' => $data['desc'] ?? null,
                 "created_at" => now(),
                 "updated_at" => now(),

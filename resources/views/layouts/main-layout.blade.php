@@ -230,8 +230,7 @@
                                 <option value="sr|it">Italian</option>
                                 <option value="sr|pt">Portuguese</option>
                                 <option value="sr|ru">Russian</option>
-                                <option value="sr|sr">Serbian</option>
-                                <option value="sr|sr-Latn">Serbian LATIN</option>
+                                <option value="sr|sr" selected>Serbian</option>
                                 <option value="sr|es">Spanish</option>
                             </select>
                             <script>

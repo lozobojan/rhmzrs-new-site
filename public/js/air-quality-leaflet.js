@@ -26,10 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let map = L.map(config.MAP.element, {
         gestureHandling: true,
         minZoom: 7.9,
-        maxBounds: L.latLngBounds(L.latLng(41.804078,14.458008), L.latLng(46.980252, 21.774902)),
+        maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
     }).setView(config.MAP.latLng, config.MAP.zoomLevel);
     //disable default scroll
     map.scrollWheelZoom.disable();
+
+    map.on('click', function(e) {
+        $('.modal').modal('hide');
+    });
 
     $("#map").bind('mousewheel DOMMouseScroll', function (event) {
         event.stopPropagation();
@@ -56,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             url: config.API.ecoInformation,
         },
         "columns": [
+            { "data": "period" },
             { "data": "station_name" },
             { "data": "o3" },
             { "data": "co" },
@@ -65,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "nox" },
             { "data": "pm10" },
             { "data": "pm25" },
+            { "data": "ik" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
@@ -86,14 +92,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     icon:
                         L.icon({
                             iconUrl: item.icon,
-                        })
+                        }),
+                    description: item.description,
                 }
             ).addTo(map)
-                .bindPopup(item.description);
+                .on('click', markerOnClick);
             markerArr.push(marker);
         })
     })
+
+    function markerOnClick(e) {
+        console.log(e)
+        var id = e.target.options.description;
+        $(".modal-content").html('This is marker ' + id);
+        $('#emptymodal').modal('show');
+    }
 });
+
 
 
 
