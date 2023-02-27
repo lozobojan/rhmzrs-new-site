@@ -809,4 +809,41 @@ return [
             'deleted_at_helper'          => ' ',
         ],
     ],
+
+    'homepageCard' => [
+        'title'          => 'Картице на почетној страни',
+        'title_singular' => 'Картица на почетној страни',
+        'fields'         => [
+            'id'                 => 'ИД',
+            'id_helper'          => ' ',
+            'active'             => 'Активно',
+            'active_helper'      => 'Чекирати ако желите да се упозорење приказује на сајту',
+            'title'              => 'Наслов',
+            'title_helper'       => ' ',
+            'description'        => 'Опис',
+            'description_helper' => ' ',
+            'link'               => 'Линк',
+            'link_helper'        => ' ',
+            'color' => [
+                'yellow' => 'Жуто',
+                'orange' => 'Наранџасто',
+                'red' => 'Црвено',
+                'green' => 'Зелено',
+                'blue' => 'Плаво',
+                'color' => 'Боја',
+            ],
+            'created_at'         => 'Креирано',
+            'created_at_helper'  => ' ',
+            'updated_at'         => 'Измијењено',
+            'updated_at_helper'  => ' ',
+            'deleted_at'         => 'Обрисано',
+            'deleted_at_helper'  => ' ',
+            'level' => [
+                'yellow' => 'Жуто',
+                'orange' => 'Наранџасто',
+                'red' => 'Црвено',
+                'level' => 'Ниво',
+            ]
+        ],
+    ],
 ];

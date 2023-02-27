@@ -68,7 +68,7 @@ function getWeatherForecastEvents() {
 
 let map = L.map(config.MAP.element, {
     minZoom: 7.9,
-    maxBounds: L.latLngBounds(L.latLng(41.804078,14.458008), L.latLng(46.980252, 21.774902)),
+    maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
 }).setView(config.MAP.latLng, config.MAP.zoomLevel);
 
 map.scrollWheelZoom.disable();
@@ -101,6 +101,7 @@ let data = [];
 
 let markerArr = [];
 
+
 function addToMap(type) {
     let loader = document.getElementById('loader');
     loader.style.display = 'grid';
@@ -119,10 +120,12 @@ function addToMap(type) {
                     icon:
                         L.icon({
                             iconUrl: item.icon,
-                        })
+                        }),
+                    description: item.description
+
                 }
             ).addTo(map)
-                .bindPopup(item.description);
+                .on('click', markerOnClick);
             markerArr.push(marker);
         })
         loader.style.display = 'none';
@@ -130,7 +133,12 @@ function addToMap(type) {
 
 }
 
-
+function markerOnClick(e) {
+    console.log(e)
+    var id = e.target.options.description;
+    $(".modal-content").html('This is marker ' + id);
+    $('#emptymodal').modal('show');
+}
 // changeData function to fetch data from api and update the leaflet map
 function changeData(type) {
     switch (type) {

@@ -251,6 +251,18 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('homepage_cards_access')
+                                    <li class="nav-item">
+                                        <a href="{{ route("admin.homepage-cards.index") }}" class="nav-link {{ request()->is("admin/homepage-cards") || request()->is("admin/homepage-cards/*") ? "active" : "" }}">
+                                            <i class="fa-fw nav-icon fas fa-book">
+
+                                            </i>
+                                            <p>
+                                                {{ trans('cruds.homepageCards.title') }}
+                                            </p>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('wind_access')
                                     <li class="nav-item">
                                         <a href="{{ route("admin.winds.index") }}" class="nav-link {{ request()->is("admin/winds") || request()->is("admin/winds/*") ? "active" : "" }}">

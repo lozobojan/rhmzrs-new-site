@@ -53,7 +53,13 @@
     <script src="{{asset('js/hydro-stations-leaflet.js')}}"></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
     <div id="map"></div>
-
+    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-5"></div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
     <br>
 {{--    <a href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" type="text/html" data-framer="iframe-1">LinkText</a>--}}
     <table id="example" class="table table-bordered table-striped" style="width:100%">

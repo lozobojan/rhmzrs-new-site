@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Alert;
 use App\Models\DocumentAndRegulation;
+use App\Models\HomepageCard;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\PublicCompetition;
@@ -90,10 +91,14 @@ class WebsiteController extends Controller
 
     public function index(){
         // Get latest posts
-        $posts = Post::latest()->take(25)->get();
+        $posts = Post::latest()->take(6)->get();
+        // Get 3 latest homepage cards
+        $homepageCards = HomepageCard::latest()->take(3)->get();
+        // Get latest 5 media with pdf, doc, docx, xls, xlsx and txt extensions
+        $media = Media::query()->whereIn('mime_type', ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/plain'])->latest()->take(5)->get();
         $questionnaires = Questionnaire::latest()->take(25)->get();
         // return pages.welcome with posts
-        return view('pages.welcome', compact('posts', 'questionnaires'));
+        return view('pages.welcome', compact('posts', 'questionnaires', 'media', 'homepageCards'));
     }
 
     public function generalJobs()

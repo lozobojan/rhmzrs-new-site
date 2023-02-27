@@ -25,7 +25,7 @@ const config = {
 document.addEventListener('DOMContentLoaded', function () {
     let map = L.map(config.MAP.element, {
         minZoom: 7.9,
-        maxBounds: L.latLngBounds(L.latLng(41.804078,14.458008), L.latLng(46.980252, 21.774902)),
+        maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
     }).setView(config.MAP.latLng, config.MAP.zoomLevel);
     map.scrollWheelZoom.disable();
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let data = [];
     let markerArr = [];
 
-    axios.get(`${config.API.meteoStations}`).then(rs => {
+    axios.get(`${config.API.ecoInformation}`).then(rs => {
         data = rs.data;
         data.forEach(item => {
             let marker = L.marker(
@@ -80,13 +80,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     icon:
                         L.icon({
                             iconUrl: item.icon,
-                        })
+                        }),
+                    description: item.description,
                 }
             ).addTo(map)
-                .bindPopup(item.description);
+                .on('click', markerOnClick);
             markerArr.push(marker);
         })
     })
+
+    function markerOnClick(e) {
+        console.log(e)
+        var id = e.target.options.description;
+        $(".modal-content").html('This is marker ' + id);
+        $('#emptymodal').modal('show');
+    }
 });
 
 
