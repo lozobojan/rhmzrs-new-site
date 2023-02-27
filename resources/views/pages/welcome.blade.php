@@ -135,6 +135,13 @@
                         </div>
                     </div>
                     <div id="map" class="map"></div>
+                    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content p-5"></div>
+                            <!-- modal-content -->
+                        </div>
+                        <!-- modal-dialog -->
+                    </div>
                     <div class="mapinfo"></div>
                     {{--                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11714.576362230699!2d18.96212075!3d42.7747318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662984325285!5m2!1sen!2s" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                 </div>

@@ -42,7 +42,13 @@
     <script src="{{asset('js/seismic-stations-leaflet.js')}}"></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
     <div id="map"></div>
-
+    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-5"></div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
     <br>
     Мрежа сеизмолошких станица  Републике Српске састоји се од 9  дигиталних аутоматских станица од којих су три  са широкопојасним сензором (Бањалука, Хан Пијесак и Мраковица)  а остале су краткопериодичне. Сензори на свим станицама су трокомпонентни што значи да се регистрација земљотреса врши у вертикалном и два хоризонтална правца сјевер-југ и исток-запад. Прикупљање и обрада података се врши у Бањој Луци а са свих станица је обезбијеђен пренос података у реалном времену. Просторни распоред станица је приказан на мапи а детаљни подаци о свакој локацији и инсталисаној опреми у табели.
 
