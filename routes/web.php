@@ -216,3 +216,7 @@ Route::get('alert/{alert}', [\App\Http\Controllers\WebsiteController::class, 'al
 // Routes for questionnaires
 Route::get('ankete', [\App\Http\Controllers\WebsiteController::class, 'questionnaires'])->name('questionnaires');
 Route::get('ankete/{questionnaire}', [\App\Http\Controllers\WebsiteController::class, 'questionnaire'])->name('questionnaire.view');
+
+
+Route::get('opsti-poslovi', [\App\Http\Controllers\WebsiteController::class, 'generalJobs'])->name('opsti-poslovi');
+

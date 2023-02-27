@@ -77,6 +77,11 @@
         body > div.Uc2NEf > div:nth-child(3) > div:nth-child(2) > div.I3zNcc.yF4pU {
             display: none !important;
         }
+
+        .min-vh-30 {
+            min-height: 30vh !important;
+        }
+
     </style>
 
 </head>
@@ -254,14 +259,14 @@
             <!-- /.offcanvas -->
         </header>
         <!-- /header -->
-        <section class="video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-50 d-print-none">
+        <section class="video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-30 d-print-none">
             <video poster="{{ asset('assets/img/photos/movie2.jpg') }}" src="{{ asset('assets/media/sky.mp4') }}"
                    autoplay loop playsinline muted></video>
             <div class="video-content">
                 <div class="container text-center">
                     <div class="row">
-                        <div class="col-lg-9 col-xl-6 text-center text-white mx-auto">
-                            <img src="{{ asset('assets/img/brands/headerimg.png') }}" class="w-100 mt-12" alt="">
+                        <div class="col-lg-10 col-xl-7 text-center text-white mx-auto">
+                            <img src="{{ asset('assets/img/brands/headerlogo1.png') }}" class="w-100 mt-12" alt="">
                         </div>
                         <!-- /column -->
                     </div>
@@ -390,8 +395,8 @@
         </div>
         <div class="row text-white">
             <div class="col-12 d-flex justify-content-center align-items-center gap-2 flex-column flex-md-row">
-                <img data-latinize class="mb-4 h-12" src="{{ asset('assets/img/brands/logo-header.png') }}"
-                     srcset="{{ asset('assets/img/brands/logo-header.png') }} 2x" alt=""/>
+                <img data-latinize class="mb-4 h-12" src="{{ asset('assets/img/brands/headerlogo1.png') }}"
+                     srcset="{{ asset('assets/img/brands/headerlogo1.png') }} 2x" alt=""/>
                 <p class="mb-4 text-center text-white" data-latinize><b>© {{ now()->year }}</b> СВА ПРАВА ЗАДРЖАНА РЕПУБЛИЧКИ ХИДРОМЕТЕОРОЛОШКИ
                     ЗАВОД
                 </p>

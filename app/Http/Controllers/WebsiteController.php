@@ -95,4 +95,12 @@ class WebsiteController extends Controller
         return view('pages.welcome', compact('posts', 'questionnaires'));
     }
 
+    public function generalJobs()
+    {
+        $publicCompetitions = PublicCompetition::paginate(10);
+        $publicPurchases = PublicPurchase::paginate(10);
+        $documents = DocumentAndRegulation::paginate(10);
+        return view('pages.general-jobs', compact('publicCompetitions', 'publicPurchases', 'documents'));
+    }
+
 }
