@@ -57,6 +57,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.post.fields.cover_photo_helper') }}</span>
             </div>
+
             <div class="form-group">
                 <label class="required" for="page_id">{{ trans('cruds.post.fields.page') }}</label>
                 <select class="form-control select2 {{ $errors->has('page') ? 'is-invalid' : '' }}" name="page_id" id="page_id" required>

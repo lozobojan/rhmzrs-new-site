@@ -235,4 +235,6 @@ Route::get('ankete/{questionnaire}', [\App\Http\Controllers\WebsiteController::c
 
 Route::get('opsti-poslovi', [\App\Http\Controllers\WebsiteController::class, 'generalJobs'])->name('opsti-poslovi');
 Route::get('kontrola-kvaliteta-vazduha', [\App\Http\Controllers\WebsiteController::class, 'airControl'])->name('air-control');
+Route::get('svi-projekti', [\App\Http\Controllers\WebsiteController::class, 'allProjects'])->name('all-projects');
+Route::get('sve-aktuelnosti', [\App\Http\Controllers\WebsiteController::class, 'allActivities'])->name('all-activities');
 

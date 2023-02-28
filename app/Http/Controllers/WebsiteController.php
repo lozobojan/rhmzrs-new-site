@@ -114,4 +114,10 @@ class WebsiteController extends Controller
         return view('pages.air-quality', compact('page'));
     }
 
+    public function allProjects(Request $request)
+    {
+        $projects = Post::query()->where('type', 'project')->paginate(10);
+        return view('pages.all-projects', compact('projects'));
+    }
+
 }
