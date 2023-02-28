@@ -24,11 +24,32 @@
                 aria-label="Станица: activate to sort column ascending" style="width: 140px;">Станица
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Опис
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Термин
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Слика
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Температура
             </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Притисак
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Вјетар
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Количина падавина
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Мин. темп.
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Макс. темп.
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Висина снијега
+            </th>
+{{--            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Слика--}}
+{{--            </th>--}}
         </tr>
         </thead>
     </table>

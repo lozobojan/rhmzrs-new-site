@@ -114,4 +114,21 @@ class WebsiteController extends Controller
         return view('pages.air-quality', compact('page'));
     }
 
+    public function allProjects(Request $request)
+    {
+        $projects = Post::query()->where('type', 'project')
+            ->when($request->has('term'), fn($q) => $q->where('title', 'like', '%'.$request->term.'%'))
+            ->orderByDesc('created_at')
+            ->paginate(10);
+        return view('pages.all-projects', compact('projects'));
+    }
+    public function allActivities(Request $request)
+    {
+        $activities = Post::query()->where('type', 'post')
+            ->when($request->has('term'), fn($q) => $q->where('title', 'like', '%'.$request->term.'%'))
+            ->orderByDesc('created_at')
+            ->paginate(10);
+        return view('pages.all-activities', compact('activities'));
+    }
+
 }

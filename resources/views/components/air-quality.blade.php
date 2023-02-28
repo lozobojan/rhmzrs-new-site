@@ -24,7 +24,7 @@
             justify-content: flex-end;
         }
 
-        #example_paginate {
+        #example_paginate, #tp_paginate {
             width: min-content;
             float: right;
         }
@@ -101,6 +101,53 @@
 {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
 {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
 {{--            </th>--}}
+        </tr>
+        </thead>
+    </table>
+
+
+    <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Тренутни подаци индекс</h1>
+    <table id="tp" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
+                Термин
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
+                Станица
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="О3: activate to sort column ascending" style="width: 35px;">О3
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="CO: activate to sort column ascending" style="width: 59px;">CO
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="SО2: activate to sort column ascending" style="width: 59px;">SО2
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="NO: activate to sort column ascending" style="width: 63px;">NO
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="NO2: activate to sort column ascending" style="width: 51px;">NO2
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="NOx: activate to sort column ascending" style="width: 51px;">NOx
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM10: activate to sort column ascending" style="width: 38px;">PM10
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK
+            </th>
+            {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+            {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
+            {{--            </th>--}}
         </tr>
         </thead>
     </table>

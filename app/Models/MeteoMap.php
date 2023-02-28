@@ -9,7 +9,7 @@ class MeteoMap extends Model
 {
     use HasFactory;
 
-    protected $appends = ['icon', 'image'];
+    protected $appends = ['icon', 'image', 'wind'];
     protected $guarded = ['id'];
 
     public function getIconAttribute()
@@ -20,6 +20,36 @@ class MeteoMap extends Model
     public function getImageAttribute()
     {
         return "<img src='".asset('assets/img/icons/'.$this->marker)."' alt=''>";
+    }
+
+    public function getWindAttribute()
+    {
+        // wind in format wind_speed m/s cir_direction (lat_direction)
+        return "{$this->attributes['wind_speed']} m/s {$this->attributes['cir_direction']} ({$this->attributes['lat_direction']})";
+    }
+
+    public function getRainfallAttribute()
+    {
+        // If its null return 'N/a'
+        return $this->attributes['rainfall'] == 'null' ? 'N/a' : $this->attributes['rainfall'];
+    }
+
+    public function getMinTempAttribute()
+    {
+        // If its null return 'N/a'
+        return $this->attributes['min_temp'] == 'null' ? 'N/a' : $this->attributes['min_temp'];
+    }
+
+    public function getMaxTempAttribute()
+    {
+        // If its null return 'N/a'
+        return $this->attributes['max_temp'] == 'null' ? 'N/a' : $this->attributes['max_temp'];
+    }
+
+    public function getSnowAttribute()
+    {
+        // If its null return 'N/a'
+        return $this->attributes['snow'] == 'null' ? 'N/a' : $this->attributes['snow'];
     }
 
     public function getDescriptionAttribute()

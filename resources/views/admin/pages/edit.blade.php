@@ -35,6 +35,7 @@
                     <div class="ckeditor">
                         {!! $page->html_content !!}
                     </div>
+                    <textarea style='display:none;' name='html_content' id='editor1'></textarea>
                     @if($errors->has('html_content'))
                         <span class="text-danger">{{ $errors->first('html_content') }}</span>
                     @endif
@@ -68,7 +69,10 @@
 
 @section('scripts')
     <script>
-
+        $(document).on('submit','.submit',function(){
+            html = $(".ckeditor").html()
+            $("#editor1").val(html)
+        })
 
         var uploadedAttachmentsMap = {}
         Dropzone.options.attachmentsDropzone = {

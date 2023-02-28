@@ -11,6 +11,7 @@ use App\Models\Page;
 use App\Models\Post;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -33,7 +34,8 @@ class PostController extends Controller
     {
         abort_if(Gate::denies('post_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $pages = Page::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $pages = Page::select(DB::raw("CONCAT(title, ' - ', slug) as title, id"))->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
 
         return view('admin.posts.create', compact('pages'));
     }
@@ -57,7 +59,8 @@ class PostController extends Controller
     {
         abort_if(Gate::denies('post_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $pages = Page::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $pages = Page::select(DB::raw("CONCAT(title, ' - ', slug) as title, id"))->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
 
         $post->load('page');
 

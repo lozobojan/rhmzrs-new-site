@@ -23,7 +23,7 @@ class UpdatePostRequest extends FormRequest
             ],
             'attachments' => [
                 'array',
-                'required',
+                'nullable',
             ],
             'page_id' => [
                 'required',

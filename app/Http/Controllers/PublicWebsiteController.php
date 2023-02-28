@@ -12,6 +12,12 @@ class PublicWebsiteController extends Controller
             'x-meteo-stations' => view('components.meteo-stations')->toHtml(),
         ];
 
+        if ($slug == "pracenje-bolesti"){
+            // Redirect to http://carpo.farm/ in new tab
+            return redirect()->away('http://carpo.farm/');
+
+        }
+
         $page = Page::query()->where('slug', $slug)->firstOrFail();
 
         $text = $page->html_content;

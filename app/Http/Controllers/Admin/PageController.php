@@ -37,10 +37,13 @@ class PageController extends Controller
   {
     // TODO: Remove this
     $link = Link::query()->where('title', '=', $request->title)->first();
-    $request['slug'] = $link->slug;
+    if ($link) {
+        $request['slug'] = $link->slug;
+    }
 
     $page = Page::create($request->all());
-    $link->update(['page_id' => $page->id]);
+
+    $link?->update(['page_id' => $page->id]);
 
     $descriptions = $request->descriptions;
 

@@ -10,6 +10,7 @@ use App\Models\Link;
 use App\Models\Page;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
 class LinkController extends Controller
@@ -28,7 +29,7 @@ class LinkController extends Controller
     {
         abort_if(Gate::denies('link_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $pages = Page::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $pages = Page::select(DB::raw("CONCAT(title, ' - ', slug) as title, id"))->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $parents = Link::pluck('slug', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -46,7 +47,7 @@ class LinkController extends Controller
     {
         abort_if(Gate::denies('link_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $pages = Page::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $pages = Page::select(DB::raw("CONCAT(title, ' - ', slug) as title, id"))->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $parents = Link::pluck('slug', 'id')->prepend(trans('global.pleaseSelect'), '');
 

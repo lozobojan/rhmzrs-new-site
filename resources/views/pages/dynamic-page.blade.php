@@ -10,9 +10,14 @@
 <x-main-layout :meta="$meta">
     <x-slot name="additionalCss">
         <style>
-            figure img {
-                width: auto!important;
+            #docs_paginate {
+                width: min-content;
+                float: right;
             }
+            figure img {
+                width: auto !important;
+            }
+
             /*! fileicon.css v0.1.1 | MIT License | github.com/picturepan2/fileicon.css */
             /* fileicon.basic */
             .file-icon {
@@ -184,9 +189,11 @@
                 /*border: 2px solid #ddd;*/
                 padding: 5px;
             }
+
             table tr:nth-child(even) {
                 background-color: #f2f2f2;
             }
+
             table td {
                 padding: 5px;
                 text-align: left;
@@ -202,6 +209,21 @@
             }
         </style>
     </x-slot>
+
+
+    <script src="{{asset('js/Datatable/jQuery-3.6.0/jquery-3.6.0.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('js/Datatable/datatables.min.css') }}"/>
+
+    <script type="text/javascript" src="{{ asset('js/Datatable/datatables.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#docs').DataTable({
+                "language": {
+                    "url": "../js/Datatable/Serbian.json"
+                }
+            });
+        });
+    </script>
     <section class="wrapper bg-light angled">
         <div class="container py-14 py-md-16">
             <div class="row">
@@ -214,14 +236,14 @@
                     {!! $page->html_content !!}
 
 
+
                     @if(count($page->attachments))
                         <br>
                         <x-section-separator text="Прилози" simple></x-section-separator>
-                        <table class="table align-middle mb-0 bg-white table-bordered">
+                        <table class="table align-middle mb-0 bg-white table-bordered" id="docs">
                             <thead class="bg-primary-light">
                             <tr>
                                 <th>Датотека</th>
-                                {{--                            <th>Објашњење</th>--}}
                                 <th>Објашњење</th>
                                 <th>Величина датотеке</th>
                                 <th>Преузимање</th>
@@ -229,7 +251,7 @@
                             </thead>
                             <tbody>
                             @php
-                            $attachments = $page->attachments->reverse();
+                                $attachments = $page->attachments->reverse();
                             @endphp
                             @foreach($attachments as $key => $media)
                                 <tr>
@@ -310,7 +332,7 @@
                 @if($page->pagePosts)
                     @foreach($page->pagePosts as $post)
                         <x-article :simple="true" :subtext="true" :article="$post"></x-article>
-{{--                        <p>{{ $post->title }}</p>--}}
+                        {{--                        <p>{{ $post->title }}</p>--}}
                     @endforeach
                 @endif
 

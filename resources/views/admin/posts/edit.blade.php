@@ -52,6 +52,7 @@
             <div class="form-group">
                 <label class="required" for="page_id">{{ trans('cruds.post.fields.page') }}</label>
                 <select class="form-control select2 {{ $errors->has('page') ? 'is-invalid' : '' }}" name="page_id" id="page_id" required>
+
                     @foreach($pages as $id => $entry)
                         <option value="{{ $id }}" {{ (old('page_id') ? old('page_id') : $post->page->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                     @endforeach

@@ -77,6 +77,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    $('#tp').DataTable({
+        ajax: {
+            dataSrc: 'EkoPodaci',
+            url: '/data/EkoPodaci.json',
+        },
+        "columns": [
+            { "data": "termin" },
+            { "data": "StationName" },
+            { "data": "O3" },
+            { "data": "CO" },
+            { "data": "SO2" },
+            { "data": "NO" },
+            { "data": "NO2" },
+            { "data": "NOx" },
+            { "data": "PM10" },
+            { "data": "PM25" },
+            // { "data": "ik" },
+        ],
+        "language": {
+            "url": "../js/Datatable/Serbian.json"
+        }
+    });
+
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
