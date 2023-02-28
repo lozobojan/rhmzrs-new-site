@@ -309,8 +309,8 @@
 
 
 var ajaxurl = "https:\/\/rhmzrs.com\/wp-admin\/admin-ajax.php";
-var hidrometeo_assets = "http:\/\/localhost:8000\/wp-content\/plugins\/hidrometeo\/public\/assets\/";
-var hidrometeo_feeds = "http:\/\/localhost:8000\/data\/feeds\/";
+var hidrometeo_assets = ".\/wp-content\/plugins\/hidrometeo\/public\/assets\/";
+var hidrometeo_feeds = ".\/data\/feeds\/";
 
 var mainWeatherLocation = hidrometeo_feeds;
 var timestampAPI = Date.now();
