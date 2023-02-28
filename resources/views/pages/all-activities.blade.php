@@ -1,8 +1,8 @@
 @php
     $meta = [
-        "title"                 => "РХМЗРС - Сви пројекти",
-        "description"           => "РХМЗРС -  Сви пројекти",
-        "keywords"              => "rhmzrs РХМЗРС - Документи и прописи",
+        "title"                 => "РХМЗРС - Све актуелности",
+        "description"           => "РХМЗРС -  Све актуелности",
+        "keywords"              => "rhmzrs РХМЗРС - Све актуелности",
         "image"                 => asset('assets/img/meta-og.png'),
         "url"                   => Request::url(),
     ];
@@ -21,9 +21,9 @@
                 <div class="col-lg-12 col-xl-12 col-xxl-12">
 
                     {{-- TODO: razmisliti o ovom prikazu bez escape-ovanja, nije bas bezbjedno --}}
-                    <h1 class="fs-32 text-uppercase text-line text-primary mb-3"> Сви пројекти </h1>
+                    <h1 class="fs-32 text-uppercase text-line text-primary mb-3"> Све актуелности </h1>
 
-                    <form method="GET" action="{{ route('all-projects') }}">
+                    <form method="GET" action="{{ route('all-activities') }}">
                         <div class="row">
                             <div class="col-sm-12 col-md-10">
                                 <div class="form-floating mb-4">
@@ -37,11 +37,12 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
                 <!-- /column -->
 
                 <div class="row">
-                    @foreach($projects as $post)
+                    @foreach($activities as $post)
                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
 
                         <x-article :subtext="true" :article="$post"></x-article>
@@ -51,7 +52,7 @@
 
                     <div class="col-12 mt-5 paginacija">
 
-                    {{ $projects->links() }}
+                    {{ $activities->links() }}
                     </div>
                 </div>
 
