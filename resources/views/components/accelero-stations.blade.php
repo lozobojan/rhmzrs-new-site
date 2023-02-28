@@ -37,6 +37,7 @@
     <div id="map"></div>
     <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
         <div class="modal-dialog" role="document">
+
             <div class="modal-content p-5"></div>
             <!-- modal-content -->
         </div>

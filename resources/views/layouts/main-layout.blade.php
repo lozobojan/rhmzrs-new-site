@@ -40,6 +40,13 @@
     {{ $additionalCss ?? '' }}
 
     <style>
+
+        @media (max-width: 576px){
+            #map {
+                height: 500px!important;
+            }
+        }
+
         @media print {
             .card {
                 -webkit-box-shadow: none;
@@ -51,6 +58,7 @@
                 margin-top: 1rem !important;
             }
         }
+
 
         .map-scroll:before {
             content: 'Use ctrl + scroll to zoom the map';
