@@ -108,7 +108,12 @@ function execute(type = ''){
     function markerOnClick(e) {
         console.log(e)
         var id = e.target.options.description;
-        $(".modal-content").html('This is marker ' + id);
+        $(".modal-content").html('<div class="modal-header p-2">\n' +
+            '                                <h5 class="modal-title modal-title"></h5>\n' +
+            '                                <button type="button" class="close" data-dismiss="modal" onclick="$(\'#emptymodal\').modal(\'hide\');" aria-label="Close">\n' +
+            '                                    <span aria-hidden="true">&times;</span>\n' +
+            '                                </button>\n' +
+            '                            </div>' + id);
         $('#emptymodal').modal('show');
     }
 }

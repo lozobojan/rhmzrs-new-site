@@ -319,14 +319,37 @@
                     .bg-green {
                         background-color: #00a65a;
                     }
+                    .mapinfo__container {
+                        border-bottom: 1px solid black;
+                        padding-bottom: 10px;
+                    }
                 </style>
-                <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
+{{--                <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">--}}
+{{--                    <div class="modal-dialog" role="document">--}}
+{{--                        <div class="modal-title"></div>--}}
+{{--                        <div class="modal-content p-5"></div>--}}
+{{--                        <!-- modal-content -->--}}
+{{--                    </div>--}}
+{{--                    <!-- modal-dialog -->--}}
+{{--                </div>--}}
+
+                <div aria-labelledby="myModalLabel" class="modal left mapinfo fade" tabindex="-1" id="emptymodal" role="dialog" tabindex="-1">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-title"></div>
-                        <div class="modal-content p-5"></div>
-                        <!-- modal-content -->
+                        <div class="modal-content">
+                            <div class="modal-header p-2">
+                                <h5 class="modal-title modal-title"></h5>
+                                <button type="button" class="close" data-dismiss="modal" onclick="$('#emptymodal').modal('hide');" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body p-5">
+                            </div>
+{{--                            <div class="modal-footer">--}}
+{{--                                <button type="button" class="btn btn-primary">Save changes</button>--}}
+{{--                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+{{--                            </div>--}}
+                        </div>
                     </div>
-                    <!-- modal-dialog -->
                 </div>
 
                 @foreach($homepageCards as $card)
@@ -398,7 +421,7 @@
                 </div>
 
 
-                <div class="col-12">
+                <div class="col-12" style="overflow: scroll">
                     @if(count($media))
                         <br>
                         <x-section-separator text="Последње датотеке" simple></x-section-separator>

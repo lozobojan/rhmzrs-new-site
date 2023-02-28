@@ -466,6 +466,8 @@ function initMap() {
     var map = L.map(config.MAP.element, {
         minZoom: 7.9,
         maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
+        dragging: false,
+        tap: false
     }).setView(config.MAP.latLng, config.MAP.zoomLevel);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
@@ -735,7 +737,7 @@ function openMapForecastWeatherWindow() {
 function contentWindowContent(data) {
     isMapinfoContainer();
     let allWeatherForecastCityData = data, city = document.querySelector('.modal-title'),
-        dataWrapper = document.querySelector('.modal-content');
+        dataWrapper = document.querySelector('.modal-body');
     // city.innerText = allWeatherForecastCityData[0].name;
     for (let i = 0; i < allWeatherForecastCityData[0].forecasts.forecast.length; i++) {
         if (Object.keys(allWeatherForecastCityData[0].forecasts.forecast[i]).length) {
@@ -932,6 +934,6 @@ function getCurrentStationNameById(stationID) {
 }
 function markerOnClick(description) {
     // console.log(description)
-    $(".modal-content").html(description);
+    $(".modal-body").html(description);
     $('#emptymodal').modal('show');
 }
