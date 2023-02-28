@@ -17,6 +17,13 @@
                 height: 80px;
             }
 
+            .btn.active, .btn:active {
+                color: #fff;
+                background-color: #747ed1;
+                border-color: #747ed1;
+                color: #fff;
+            }
+
             .lds-ripple div {
                 position: absolute;
                 border: 4px solid #fff;
@@ -74,6 +81,120 @@
                 height: 800px;
                 width: 100%;
             }
+            .nav-pills>li>a {
+                border-radius: 100px !important;
+                /* background: #ccc; */
+                border: 2px solid #3a7cd5 !important;
+                margin: 8px;
+                font-size: 18px;
+                color: #3a7cd5 !important;
+                font-weight: 700;
+            }
+
+            .nav-pills>li+li {
+                margin-left: 2px;
+            }
+            .entry-content li {
+                margin-bottom: 5px;
+            }
+            .nav-pills>li {
+                float: left;
+            }
+            .nav>li {
+                position: relative;
+                display: block;
+            }
+
+            .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+                color: #fff !important;
+                border: none !important;
+                border-radius: 100px !important;
+                background-image: -moz-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%) !important;
+                background-image: -webkit-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%)!important;
+                background-image: -ms-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%)!important;
+                font-size: 18px;
+                font-family: "Open Sans";
+                color: rgb(255, 255, 255);
+                font-weight: 700;
+                padding: 12px 15px;
+            }
+            .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+                color: #009ADE !important;
+                background-color: #fff !important;
+                border: 1px solid #009ADE !important;
+            }
+            .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+                color: #fff;
+                background-color: #428bca;
+            }
+            .nav-pills>li>a {
+                border-radius: 100px !important;
+                /* background: #ccc; */
+                border: 2px solid #3a7cd5 !important;
+                margin: 8px;
+                font-size: 18px;
+                color: #3a7cd5 !important;
+                font-weight: 700;
+            }
+            .nav-pills>li>a {
+                border-radius: 4px;
+            }
+            .nav>li>a {
+                position: relative;
+                display: block;
+                padding: 10px 15px;
+            }
+            #dateButtons {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+
+            .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+                color: #009ADE !important;
+                background-color: #fff !important;
+                border: 1px solid #009ADE !important;
+            }
+            .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+                color: #fff !important;
+                border: none !important;
+                border-radius: 100px !important;
+                background-image: -moz-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%) !important;
+                background-image: -webkit-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%)!important;
+                background-image: -ms-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%)!important;
+                font-size: 18px;
+                font-family: "Open Sans";
+                color: rgb(255, 255, 255);
+                font-weight: 700;
+                padding: 12px 15px;
+            }
+
+            .btn:hover {
+                background-image: -moz-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%) !important;
+                background-image: -webkit-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%)!important;
+                background-image: -ms-linear-gradient( -180deg, rgb(23,176,239) 0%, rgb(58,123,213) 100%)!important;
+                color: white;
+            }
+
+            .weatherLabel-text {
+                display: block;
+                width: auto;
+                height: 25px;
+                padding: 2px;
+                border-radius: 6px;
+                font-size: 1em;
+                font-weight: 400;
+                line-height: 2.1;
+                text-align: center;
+                background-image: url(../images/icons/meteo-icons/podloga.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                color: #fff;
+                opacity: .8;
+                transform: translate(-25px,1px);
+                width: 60px;
+            }
 
             #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div {
                 display: none !important;
@@ -82,7 +203,8 @@
         <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
         <script src="{{asset('js/Datatable/jQuery-3.6.0/jquery-3.6.0.min.js')}}"></script>
 
-        <script src="{{asset('leaflet/leaflet.js')}}"></script>
+        <script src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js?ver=5.8.6' id='hidrometeo-map-leaflet-js'></script>
+        <script src='{{asset('js/leaflet-markerwithlabel.js')}}' id='-main-js'></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
                 integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
@@ -93,82 +215,139 @@
         <div class="container py-14 py-md-16">
             <div class="row">
                 <div class="col-12">
-                    <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#prognoza"
-                               onClick="changeData(1)"> <img
-                                    src="{{asset('assets/img/icons/prognoza.svg')}}" class="w-10 d-inline-block" alt="">
-                                <p class="mb-0 d-inline-block">Прогноза</p></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#meteorologija" onClick="changeData(2)"> <img
-                                    src="{{asset('assets/img/icons/meteorologija.svg')}}" class="w-10 d-inline-block"
-                                    alt="">
-                                <p class="mb-0 d-inline-block">Метеорологија</p></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#seizmologija" onClick="changeData(3)"> <img
-                                    src="{{asset('assets/img/icons/seizmologija.svg')}}" class="w-10 d-inline-block"
-                                    alt="">
-                                <p class="mb-0 d-inline-block">Сеизмологија</p></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#hidrologija" onClick="changeData(4)"> <img
-                                    src="{{asset('assets/img/icons/hidrologija.svg')}}" class="w-10 d-inline-block"
-                                    alt="">
-                                <p class="mb-0 d-inline-block">Хидрологија</p></a>
-                        </li>
+{{--                    <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#prognoza"--}}
+{{--                               onClick="changeData(1)"> <img--}}
+{{--                                    src="{{asset('assets/img/icons/prognoza.svg')}}" class="w-10 d-inline-block" alt="">--}}
+{{--                                <p class="mb-0 d-inline-block">Прогноза</p></a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" data-bs-toggle="tab" href="#meteorologija" onClick="changeData(2)"> <img--}}
+{{--                                    src="{{asset('assets/img/icons/meteorologija.svg')}}" class="w-10 d-inline-block"--}}
+{{--                                    alt="">--}}
+{{--                                <p class="mb-0 d-inline-block">Метеорологија</p></a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" data-bs-toggle="tab" href="#seizmologija" onClick="changeData(3)"> <img--}}
+{{--                                    src="{{asset('assets/img/icons/seizmologija.svg')}}" class="w-10 d-inline-block"--}}
+{{--                                    alt="">--}}
+{{--                                <p class="mb-0 d-inline-block">Сеизмологија</p></a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" data-bs-toggle="tab" href="#hidrologija" onClick="changeData(4)"> <img--}}
+{{--                                    src="{{asset('assets/img/icons/hidrologija.svg')}}" class="w-10 d-inline-block"--}}
+{{--                                    alt="">--}}
+{{--                                <p class="mb-0 d-inline-block">Хидрологија</p></a>--}}
+{{--                        </li>--}}
 
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#ekologija" onClick="changeData(5)"> <img
-                                    src="{{asset('assets/img/icons/ekologija.svg')}}" class="w-10 d-inline-block"
-                                    alt="">
-                                <p class="mb-0 d-inline-block">Животна средина</p></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 " style="position:relative;">
-                    <div class="loader" id="loader">
-                        <div class="lds-ripple">
-                            <div></div>
-                            <div></div>
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" data-bs-toggle="tab" href="#ekologija" onClick="changeData(5)"> <img--}}
+{{--                                    src="{{asset('assets/img/icons/ekologija.svg')}}" class="w-10 d-inline-block"--}}
+{{--                                    alt="">--}}
+{{--                                <p class="mb-0 d-inline-block">Животна средина</p></a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+                    <div class="row control-hidrometeo-map">
+                        <div class="text-center button__container">
+                            <button type="button" class="btn btn-default active" id="weatherForecast">
+                                Прогноза
+                                <img src="{{asset('assets/img/icons/prognoza.svg')}}" style="height: 40px !important;" class="button__container--image">
+                            </button>
+                            <button type="button" class="btn btn-default" id="meteorology">
+                                Метеорологија
+                                <img src="{{asset('assets/img/icons/meteorologija.svg')}}" style="height: 40px !important;" class="button__container--image">
+                            </button>
+                            <button type="button" class="btn btn-default" id="seismology">
+                                Сеизмологија
+                                <img src="{{asset('assets/img/icons/seizmologija.svg')}}" style="height: 32px !important;margin-top: 4px;" class="button__container--image">
+                            </button>
+                            <button type="button" class="btn btn-default" id="hydrology">
+                                Хидрологија
+                                <img src="{{asset('assets/img/icons/hidrologija.svg')}}" style="height: 40px !important;" class="button__container--image">
+                            </button>
+                            <button type="button" class="btn btn-default" id="environment">
+                                Животна средина
+                                <img src="{{asset('assets/img/icons/ekologija.svg')}}" style="height: 32px !important;margin-top: 4px;" class="button__container--image">
+                            </button>
                         </div>
                     </div>
-                    <div id="map" class="map"></div>
-                    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content p-5"></div>
-                            <!-- modal-content -->
-                        </div>
-                        <!-- modal-dialog -->
-                    </div>
-                    <div class="mapinfo"></div>
-                    {{--                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11714.576362230699!2d18.96212075!3d42.7747318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662984325285!5m2!1sen!2s" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                 </div>
+                <ul class="nav nav-pills" id="dateButtons"
+                    style="margin-bottom: 0px !important;padding: 15px 0px 10px 0px;">
+
+                </ul>
+
+                <div class="row" style="padding-right: 0">
+                    <div class="text-center map__container" style="padding-right: 0">
+                        <div id="map" class="map leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; padding-right: 0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/140/92.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(417px, 102px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/140/93.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(417px, 358px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/8/139/92.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(161px, 102px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/141/92.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(673px, 102px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/139/93.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(161px, 358px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/8/141/93.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(673px, 358px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/8/140/91.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(417px, -154px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/8/140/94.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(417px, 614px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/139/91.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(161px, -154px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/141/91.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(673px, -154px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/139/94.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(161px, 614px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/141/94.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(673px, 614px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/138/92.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-95px, 102px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/8/142/92.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(929px, 102px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/8/138/93.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-95px, 358px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/142/93.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(929px, 358px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/138/91.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-95px, -154px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/142/91.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(929px, -154px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/8/138/94.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-95px, 614px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/8/142/94.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(929px, 614px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-2°C&amp;nbsp;2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 9318px, 0px); z-index: 9318;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-2°C&nbsp;2°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(327px, 112px, 0px); z-index: 112;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;2°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;3°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(389px, 130px, 0px); z-index: 130;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;3°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="1°C&amp;nbsp;5°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(485px, 86px, 0px); z-index: 86;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">1°C&nbsp;5°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;3°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(478px, 171px, 0px); z-index: 171;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;3°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 9318px, 0px); z-index: 9318;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(638px, 192px, 0px); z-index: 192;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="1°C&amp;nbsp;5°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(769px, 158px, 0px); z-index: 158;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">1°C&nbsp;5°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(840px, 187px, 0px); z-index: 187;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(858px, 431px, 0px); z-index: 431;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(644px, 564px, 0px); z-index: 564;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/8.png"><span class="weatherLabel-text">0°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="7°C&amp;nbsp;15°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(684px, 703px, 0px); z-index: 703;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/3.png"><span class="weatherLabel-text">7°C&nbsp;15°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 171px, 0px); z-index: 171;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;2°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 9318px, 0px); z-index: 9318;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="7°C&amp;nbsp;15°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 9318px, 0px); z-index: 9318;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/3.png"><span class="weatherLabel-text">7°C&nbsp;15°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;3°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(822px, 281px, 0px); z-index: 281;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;3°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="1°C&amp;nbsp;10°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 9318px, 0px); z-index: 9318;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/3.png"><span class="weatherLabel-text">1°C&nbsp;10°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;3°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(766px, 501px, 0px); z-index: 501;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;3°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(605px, 125px, 0px); z-index: 125;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-6°C&amp;nbsp;-2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(766px, 398px, 0px); z-index: 398;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/10.png"><span class="weatherLabel-text">-6°C&nbsp;-2°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-2°C&amp;nbsp;1°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(454px, 274px, 0px); z-index: 274;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/10.png"><span class="weatherLabel-text">-2°C&nbsp;1°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-2°C&amp;nbsp;1°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(858px, 350px, 0px); z-index: 350;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-2°C&nbsp;1°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="5°C&amp;nbsp;13°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(698px, 663px, 0px); z-index: 663;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/3.png"><span class="weatherLabel-text">5°C&nbsp;13°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;5°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(716px, 589px, 0px); z-index: 589;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/2.png"><span class="weatherLabel-text">0°C&nbsp;5°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="7°C&amp;nbsp;15°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(-2655px, 9318px, 0px); z-index: 9318;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/3.png"><span class="weatherLabel-text">7°C&nbsp;15°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="1°C&amp;nbsp;7°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(795px, 357px, 0px); z-index: 357;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/2.png"><span class="weatherLabel-text">1°C&nbsp;7°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;1°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(407px, 276px, 0px); z-index: 276;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/12.png"><span class="weatherLabel-text">0°C&nbsp;1°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;1°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(343px, 251px, 0px); z-index: 251;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;1°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(412px, 130px, 0px); z-index: 130;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;2°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;8°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(871px, 476px, 0px); z-index: 476;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/2.png"><span class="weatherLabel-text">0°C&nbsp;8°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-6°C&amp;nbsp;-2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(733px, 569px, 0px); z-index: 569;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/8.png"><span class="weatherLabel-text">-6°C&nbsp;-2°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-4°C&amp;nbsp;-1°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(513px, 253px, 0px); z-index: 253;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/10.png"><span class="weatherLabel-text">-4°C&nbsp;-1°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;3°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(405px, 79px, 0px); z-index: 79;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">-1°C&nbsp;3°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="-1°C&amp;nbsp;4°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(704px, 506px, 0px); z-index: 506;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/2.png"><span class="weatherLabel-text">-1°C&nbsp;4°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;6°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(804px, 431px, 0px); z-index: 431;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/2.png"><span class="weatherLabel-text">0°C&nbsp;6°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;1°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(371px, 281px, 0px); z-index: 281;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/12.png"><span class="weatherLabel-text">0°C&nbsp;1°C</span></div><div class="leaflet-marker-icon weatherLabel-parent leaflet-zoom-animated leaflet-interactive" title="0°C&amp;nbsp;2°C" tabindex="0" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(392px, 97px, 0px); z-index: 97;"><img class="weatherLabel-image" src="https://rhmzrs.com/wp-content/plugins/hidrometeo/public/assets/images/icons/meteo-icons/7.png"><span class="weatherLabel-text">0°C&nbsp;2°C</span></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(36008.4px, 23804.9px, 0px) scale(128);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div></div></div></div>
+                        <script type="text/javascript">
+                            function isIEBrowser() {
+
+                                var map = document.getElementById('map');
+                                var isIE = /Trident\/|MSIE/.test(window.navigator.userAgent)
+
+                                if (isIE) {
+                                    map.innerHTML = '<div class="ie-browser">Гоогле Мапа није у могућности да се прикаже. Молимо вас унаприједите свој интернет претраживач.</div>';
+                                }
+                            }
+
+                            isIEBrowser();
+                        </script>
+                    </div>
+                </div>
+{{--                <div class="col-12 " style="position:relative;">--}}
+{{--                    <div class="loader" id="loader">--}}
+{{--                        <div class="lds-ripple">--}}
+{{--                            <div></div>--}}
+{{--                            <div></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div id="map" class="map"></div>--}}
+{{--                    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog"--}}
+{{--                         tabindex="-1">--}}
+{{--                        <div class="modal-dialog" role="document">--}}
+{{--                            <div class="modal-content p-5"></div>--}}
+{{--                            <!-- modal-content -->--}}
+{{--                        </div>--}}
+{{--                        <!-- modal-dialog -->--}}
+{{--                    </div>--}}
+{{--                    <div class="mapinfo"></div>--}}
+{{--                    --}}{{--                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11714.576362230699!2d18.96212075!3d42.7747318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1662984325285!5m2!1sen!2s" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
+{{--                </div>--}}
                 <style>
-                    .bg-green{
+                    .bg-green {
                         background-color: #00a65a;
                     }
                 </style>
-
-@foreach($homepageCards as $card)
-                <div class="col-lg-3 col-md-6 col-sm-12 pt-10">
-                    <div class="kad_img_upload_widget p-5 text-white {{ $card->color_class }}" style="height: 151px;">
-                        <a href="{{ $card->link }}"
-                           class="text-white"
-                           target="_blank">
-                            <h6 class="text-white m-0">{{ $card->title }}</h6>
-                            <p class="m-0">{{ $card->description }}</p>
-                        </a></div>
-{{--                    <x-section-separator text="Анкета" simple></x-section-separator>--}}
-{{--                    <div class="px-3">--}}
-{{--                        @foreach($questionnaires as $q)--}}
-{{--                            <h2 class="post-title h4 bg-white mb-3"><a class="link-dark"--}}
-{{--                                                                       href="{{ route('questionnaire.view', $q->id) }}">{{ $q['title'] }}</a>--}}
-{{--                            </h2>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
+                <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-title"></div>
+                        <div class="modal-content p-5"></div>
+                        <!-- modal-content -->
+                    </div>
+                    <!-- modal-dialog -->
                 </div>
+
+                @foreach($homepageCards as $card)
+                    <div class="col-lg-3 col-md-6 col-sm-12 pt-10">
+                        <div class="kad_img_upload_widget p-5 text-white {{ $card->color_class }}"
+                             style="height: 151px;">
+                            <a href="{{ $card->link }}"
+                               class="text-white"
+                               target="_blank">
+                                <h6 class="text-white m-0">{{ $card->title }}</h6>
+                                <p class="m-0">{{ $card->description }}</p>
+                            </a></div>
+                        {{--                    <x-section-separator text="Анкета" simple></x-section-separator>--}}
+                        {{--                    <div class="px-3">--}}
+                        {{--                        @foreach($questionnaires as $q)--}}
+                        {{--                            <h2 class="post-title h4 bg-white mb-3"><a class="link-dark"--}}
+                        {{--                                                                       href="{{ route('questionnaire.view', $q->id) }}">{{ $q['title'] }}</a>--}}
+                        {{--                            </h2>--}}
+                        {{--                        @endforeach--}}
+                        {{--                    </div>--}}
+                    </div>
                 @endforeach
                 <div class="col-lg-3 col-md-6 col-sm-12 pt-10">
                     <div class="kad_img_upload_widget">
@@ -270,8 +449,9 @@
     <x-slot name="additionalCss">
         <style>
             figure img {
-                width: auto!important;
+                width: auto !important;
             }
+
             /*! fileicon.css v0.1.1 | MIT License | github.com/picturepan2/fileicon.css */
             /* fileicon.basic */
             .file-icon {
@@ -443,9 +623,11 @@
                 /*border: 2px solid #ddd;*/
                 padding: 5px;
             }
+
             table tr:nth-child(even) {
                 background-color: #f2f2f2;
             }
+
             table td {
                 padding: 5px;
                 text-align: left;
