@@ -18,11 +18,20 @@ class HomepageCard extends Model
 
     public function getColorTxtAttribute()
     {
-        return $this->attributes['color'] == 0 ? trans('cruds.homepageCard.fields.color.green') : ($this->attributes['color'] == 1 ? trans('cruds.homepageCard.fields.color.blue') : trans('cruds.homepageCard.fields.color.red'));
+
+        // if 0 return green, 1 return blue, 2 return red and 3 return orange
+
+        return $this->attributes['color'] == 0 ? trans('cruds.homepageCard.fields.color.green')
+            : ($this->attributes['color'] == 1 ? trans('cruds.homepageCard.fields.color.blue')
+            : ($this->attributes['color'] == 2 ? trans('cruds.homepageCard.fields.color.red')
+                : trans('cruds.homepageCard.fields.color.orange')));
     }
 
     public function getColorClassAttribute()
     {
-        return $this->attributes['color'] == 0 ? 'bg-green' : ($this->attributes['color'] == 1 ? 'bg-primary' : 'bg-danger');
+        return $this->attributes['color'] == 0 ? 'bg-green'
+            : ($this->attributes['color'] == 1 ? 'bg-primary'
+            : ($this->attributes['color'] == 2 ? 'bg-danger'
+                : 'bg-orange'));
     }
 }

@@ -258,7 +258,7 @@
 
                                             </i>
                                             <p>
-                                                {{ trans('cruds.homepageCards.title') }}
+                                                {{ trans('cruds.homepageCard.title') }}
                                             </p>
                                         </a>
                                     </li>

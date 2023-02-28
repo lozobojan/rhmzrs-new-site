@@ -32,6 +32,7 @@
                         <option value="0">{{ trans('cruds.homepageCard.fields.color.green') }}</option>
                         <option value="1">{{ trans('cruds.homepageCard.fields.color.blue') }}</option>
                         <option value="2">{{ trans('cruds.homepageCard.fields.color.red') }}</option>
+                        <option value="3">{{ trans('cruds.homepageCard.fields.color.orange') }}</option>
                 </select>
                 @if($errors->has('color'))
                     <span class="text-danger">{{ $errors->first('color') }}</span>
