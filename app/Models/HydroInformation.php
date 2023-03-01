@@ -11,11 +11,30 @@ class HydroInformation extends Model
 
     protected $guarded = ['id'];
 
-    protected $appends = ['icon'];
+    protected $appends = ['icon', 'tendention'];
 
     public function getIconAttribute()
     {
         return asset('assets/img/icons/hidro.png');
+    }
+
+
+    public function getTendentionAttribute()
+    {
+        $description = $this->attributes['description'];
+
+        $doc = new \DOMDocument();
+        @$doc->loadHTML('<?xml encoding="UTF-8">' . $description);
+        $links = $doc->getElementsByTagName('p');
+        return $doc->saveHTML($links->item(2));
+
+    }
+
+    public function getTemperatureAttribute()
+    {
+        // If temperature is null return null
+        return $this->attributes['temperature'] == null ? "N/a" : $this->attributes['temperature'] . "°C";
+
     }
 
     public function getDescriptionAttribute()

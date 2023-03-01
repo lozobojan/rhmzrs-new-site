@@ -55,7 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         "columns": [
             { "data": "station_name" },
-            { "data": "description" }
+            { "data": "period" },
+            { "data": "tendention", "defaultContent": "" },
+            { "data": "water_level" },
+            { "data": "temperature" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"

@@ -61,7 +61,7 @@
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Термин: activate to sort column descending" style="width: 55px;">
-                Термин
+                Хипоцентрално вријеме
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Термин: activate to sort column descending" style="width: 55px;">

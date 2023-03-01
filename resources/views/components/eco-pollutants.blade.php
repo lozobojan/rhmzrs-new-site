@@ -65,10 +65,10 @@
                 Станица
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="О3: activate to sort column ascending" style="width: 35px;">lat
+                aria-label="О3: activate to sort column ascending" style="width: 35px;">Географска ширина
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="CO: activate to sort column ascending" style="width: 59px;">lng
+                aria-label="CO: activate to sort column ascending" style="width: 59px;">Географска дужина
             </th>
         </tr>
         </thead>

@@ -65,7 +65,7 @@
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
-                Термин
+                Вријеме
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
@@ -95,9 +95,9 @@
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
             </th>
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK
-            </th>
+{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK--}}
+{{--            </th>--}}
 {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
 {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
 {{--            </th>--}}
@@ -106,13 +106,13 @@
     </table>
 
 
-    <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Тренутни подаци индекс</h1>
+    <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Индекс квалитета ваздуха</h1>
     <table id="tp" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
-                Термин
+                Вријеме
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
@@ -143,7 +143,7 @@
                 aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">Индекс
             </th>
             {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
             {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}

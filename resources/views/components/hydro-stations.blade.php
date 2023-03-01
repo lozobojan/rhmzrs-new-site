@@ -69,8 +69,20 @@
                 aria-label="Станица: activate to sort column ascending" style="width: 140px;">Станица
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Опис
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Вријеме
             </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Тенденција
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Водостај
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Температура воде
+            </th>
+{{--            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Опис--}}
+{{--            </th>--}}
         </tr>
         </thead>
     </table>
