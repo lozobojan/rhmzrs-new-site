@@ -59,9 +59,9 @@
         <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="No.: activate to sort column ascending" style="width: 22px;">No.
-            </th>
+{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="No.: activate to sort column ascending" style="width: 22px;">No.--}}
+{{--            </th>--}}
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Станица: activate to sort column descending" style="width: 56px;" aria-sort="ascending">
                 Станица

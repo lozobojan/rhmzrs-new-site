@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             url: config.API.meteoStations,
         },
         "columns": [
-            { "data": "station_id" },
+            // { "data": "station_id" },
             { "data": "station_name" },
             { "data": "station_id" },
             // { "data": "network_code" },
