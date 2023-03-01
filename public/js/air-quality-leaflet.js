@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "nox" },
             { "data": "pm10" },
             { "data": "pm25" },
-            { "data": "ik" },
+            // { "data": "ik" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"

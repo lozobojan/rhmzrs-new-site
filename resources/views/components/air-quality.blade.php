@@ -95,9 +95,9 @@
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
             </th>
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK
-            </th>
+{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK--}}
+{{--            </th>--}}
 {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
 {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
 {{--            </th>--}}
