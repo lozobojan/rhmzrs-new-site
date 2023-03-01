@@ -57,6 +57,9 @@ class Post extends Model implements HasMedia
 
     public function getDefaultPhotoAttribute()
     {
+        if (!$this->page) {
+            return asset('assets/img/placeholder.png');
+        }
         if (str_contains($this->page->slug, 'meteorologija')) {
             return asset('assets/img/meteorologija.jpg');
         }elseif (str_contains($this->page->slug, 'seizmologija')) {
