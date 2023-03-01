@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "NOx" },
             { "data": "PM10" },
             { "data": "PM25" },
-            // { "data": "ik" },
+            { "data": "ik", "defaultContent": "" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
