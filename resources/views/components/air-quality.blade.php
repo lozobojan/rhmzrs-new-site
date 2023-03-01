@@ -65,7 +65,7 @@
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
-                Термин
+                Вријеме
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
@@ -112,7 +112,7 @@
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
-                Термин
+                Вријеме
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="Станица: activate to sort column descending" style="width: 56px;">
