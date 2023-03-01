@@ -5,20 +5,25 @@
             height: 800px;
             width: 100%;
         }
-        #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div{
-            display: none!important;
+
+        #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div {
+            display: none !important;
         }
+
         #example p {
-            margin: 0!important;
+            margin: 0 !important;
         }
+
         #example_previous > a, #example_next > a {
             width: 100%;
             padding-left: 4px;
             padding-right: 4px;
         }
+
         #example_paginate > ul {
             justify-content: flex-end;
         }
+
         #example_paginate {
             width: min-content;
             float: right;
@@ -31,7 +36,9 @@
 
     <script type="text/javascript" src="{{ asset('js/Datatable/datatables.min.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+            integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{asset('js/accelero-stations-leaflet.js')}}"></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
     <div id="map"></div>
@@ -47,7 +54,36 @@
 
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
-        <tr role="row"><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="No.: activate to sort column ascending" style="width: 22px;">No.</th><th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Станица: activate to sort column descending" style="width: 56px;" aria-sort="ascending">Станица</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Код Станице: activate to sort column ascending" style="width: 56px;">Код Станице</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Код Мреже: activate to sort column ascending" style="width: 48px;">Код Мреже</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Лат.: activate to sort column ascending" style="width: 29px;">Лат.</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Лон.: activate to sort column ascending" style="width: 30px;">Лон.</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Алт.: activate to sort column ascending" style="width: 29px;">Алт.</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Дигитализатор: activate to sort column ascending" style="width: 100px;">Дигитализатор</th><th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1" aria-label="Сензор: activate to sort column ascending" style="width: 48px;">Сензор</th></tr>
+        <tr role="row">
+{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="No.: activate to sort column ascending" style="width: 22px;">No.--}}
+{{--            </th>--}}
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Станица: activate to sort column descending" style="width: 56px;" aria-sort="ascending">
+                Станица
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Код Станице: activate to sort column ascending" style="width: 56px;">Код Станице
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Код Мреже: activate to sort column ascending" style="width: 48px;">Код Мреже
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Лат.: activate to sort column ascending" style="width: 29px;">Лат.
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Лон.: activate to sort column ascending" style="width: 30px;">Лон.
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Алт.: activate to sort column ascending" style="width: 29px;">Алт.
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Дигитализатор: activate to sort column ascending" style="width: 100px;">Дигитализатор
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Сензор: activate to sort column ascending" style="width: 48px;">Сензор
+            </th>
+        </tr>
         </thead>
     </table>
 
