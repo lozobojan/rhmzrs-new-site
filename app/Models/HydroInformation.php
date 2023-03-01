@@ -23,11 +23,9 @@ class HydroInformation extends Model
     {
         $description = $this->attributes['description'];
 
-        // Find all <a> elements with an href attribute
         $doc = new \DOMDocument();
         @$doc->loadHTML('<?xml encoding="UTF-8">' . $description);
         $links = $doc->getElementsByTagName('p');
-        // Get forth <p> element and return its html
         return $doc->saveHTML($links->item(2));
 
     }
