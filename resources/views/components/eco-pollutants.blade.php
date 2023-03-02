@@ -57,6 +57,8 @@
     </div>
     <br>
 
+
+
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
@@ -73,5 +75,58 @@
         </tr>
         </thead>
     </table>
+
+
+    <div class="col-lg-12 col-xl-12 col-xxl-12 mt-5">
+
+        {{-- TODO: razmisliti o ovom prikazu bez escape-ovanja, nije bas bezbjedno --}}
+        <h1 class="fs-32 text-uppercase text-line text-primary mb-3">{{ $page->title }}</h1>
+        {!! $page->html_content !!}
+
+
+
+        @if(count($page->attachments))
+            <br>
+            <x-section-separator text="Прилози" simple></x-section-separator>
+            <table class="table align-middle mb-0 bg-white table-bordered" id="docs">
+                <thead class="bg-primary-light">
+                <tr>
+                    <th>Датотека</th>
+                    <th>Објашњење</th>
+                    <th>Величина датотеке</th>
+                    <th>Преузимање</th>
+                </tr>
+                </thead>
+                <tbody>
+                @php
+                    $attachments = $page->attachments->reverse();
+                @endphp
+                @foreach($attachments as $key => $media)
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
+                                    <div class="file-icon file-icon-md"
+                                         data-type="{{ last(explode('.',$media->file_name)) }}"></div>
+                                    <p class="fw-bold"
+                                       style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
+                                </a>
+                            </div>
+                        </td>
+                        <td>{{ $media->custom_properties['description'] }}</td>
+                        <td>{{ $media->human_readable_size }}</td>
+                        <td>
+                            {{ $media->download_count }}
+                        </td>
+                    </tr>
+
+                @endforeach
+                </tbody>
+            </table>
+        @endif
+    </div>
+
+
+
 
 </div>
