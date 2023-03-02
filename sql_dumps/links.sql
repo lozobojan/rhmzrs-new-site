@@ -12,31 +12,54 @@ INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, p
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (16, 'aktuelno-u-rhmz', null, '2022-09-19 11:22:14', '2023-02-25 15:18:14', '2023-02-25 15:18:14', 6, 3, 'Актуелно у РХМЗ');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (17, 'djelatnost-zavoda', null, '2022-09-19 11:22:36', '2022-09-20 18:06:47', null, 8, 3, 'Дјелатност завода');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (18, 'meteorolosko-bdijenje', null, '2022-09-19 11:24:39', '2023-02-28 09:45:45', '2023-02-28 09:45:45', 9, 4, 'Метеоролошко бдијење');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (19, 'mreza-meteoroloskih-stanica', null, '2022-09-19 11:25:06', '2022-09-20 18:26:39', null, 10, 4, 'Мрежа метеоролошких станица');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (20, 'mjesecne-sinopticke-analize', null, '2022-09-19 11:25:39', '2022-09-20 18:33:39', null, 11, 4, 'Мјесечне синоптичке анализе');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (21, 'klimatologija', null, '2022-09-19 11:25:52', '2022-09-20 18:36:05', null, 12, 4, 'Климатологија');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (22, 'agrometeorologija', null, '2022-09-19 11:26:27', '2022-09-20 18:37:36', null, 13, 4, 'Агрометеорологија');
+
+
+
+
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (19, 'aktuelni-podaci', null, '2022-09-19 11:31:10', '2023-02-28 09:51:46', null, 73, 4, 'Актуелни подаци');
+
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (20, 'prognoza', null, '2022-09-19 11:31:30', '2023-02-28 09:45:21', null, null, 4, 'Прогноза');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (54, 'meteo-bilteni', null, '2022-09-19 12:02:48', '2022-11-19 17:09:47', null, 70, 20, 'Метео билтени');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (55, 'upozorenja', null, '2022-09-19 12:02:48', '2022-11-19 17:20:24', null, 71, 20, 'Упозорења');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (56, 'meteoalarm', null, '2022-09-19 12:02:48', '2023-02-28 09:42:46', null, 82, 20, 'Метоаларм');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (57, 'bioprognoza', null, '2022-09-19 12:02:48', '2022-11-28 13:02:43', null, 77, 20, 'Биопрогноза');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (53, 'radarska-slika', null, '2022-09-19 11:59:43', '2023-02-28 09:47:32', null, 68, 20, 'Радарска слика');
+
+
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (21, 'mreza-meteoroloskih-stanica', null, '2022-09-19 11:25:06', '2022-09-20 18:26:39', null, 10, 4, 'Мрежа метеоролошких станица');
+
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (22, 'mjesecne-sinopticke-analize', null, '2022-09-19 11:25:39', '2022-09-20 18:33:39', null, 11, 4, 'Мјесечне синоптичке анализе');
+
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (29, 'klimatologija', null, '2022-09-19 11:25:52', '2022-09-20 18:36:05', null, 12, 4, 'Климатологија');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (30, 'mjesecni-pregledi', null, '2022-09-19 11:32:49', '2022-10-09 14:59:26', null, 28, 29, 'Мјесечни прегледи');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (31, 'dnevne-analize', null, '2022-09-19 11:33:32', '2022-10-09 14:23:53', null, 27, 29, 'Дневне анализе');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (32, 'naucni-radovi', null, '2022-09-19 11:33:55', '2022-10-09 15:23:05', null, 29, 29, 'Научни радови');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (33, 'klimatski-modeli', null, '2022-09-19 11:34:13', '2022-10-09 15:29:00', null, 30, 29, 'Климатски модели');
+
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (45, 'agrometeorologija', null, '2022-09-19 11:26:27', '2022-09-20 18:37:36', null, 13, 4, 'Агрометеорологија');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (34, 'temperature-zemljista', null, '2022-09-19 11:35:10', '2022-12-01 07:45:23', null, 78, 45, 'Температуре земљишта');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (35, 'godisnji-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 17:01:37', null, 67, 45, 'Годишњи агро - билтени');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (37, 'mjesecni-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 16:57:00', null, 66, 45, 'Мјесечни агро - билтени');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (38, 'dekadni-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 16:52:47', null, 65, 45, 'Декадни агро - билтени');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (39, 'sedmicni-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 16:47:45', null, 64, 45, 'Седмични агро - билтени');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (40, 'agro-upozorenja', null, '2022-09-19 11:53:32', '2022-11-19 16:25:54', null, 63, 45, 'Агро упозорења');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (41, 'uslovi-vlaznosti', null, '2022-09-19 11:53:32', '2022-11-19 16:24:07', null, 62, 45, 'Услови влажности');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (42, 'evapotranspiracija', null, '2022-09-19 11:53:32', '2022-11-19 16:21:18', null, 61, 45, 'Евапотранспирација');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (43, 'fenologija', null, '2022-09-19 11:53:32', '2022-09-20 14:46:24', null, null, 45, 'Фенологоија');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (44, 'pracenje-bolesti', null, '2022-09-19 11:53:32', '2022-11-19 16:19:51', null, 60, 45, 'Праћење болести');
+
+
+
+
+
+
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (23, 'meteorologija-aktuelnosti', null, '2022-09-19 11:26:45', '2023-02-28 09:04:18', '2023-02-28 09:04:18', 14, 4, 'Актуелности');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (24, 'zanimljivosti', null, '2022-09-19 11:27:04', '2023-02-28 09:04:18', '2023-02-28 09:04:18', 15, 4, 'Занимљивости');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (25, 'meteorologija-projekti', null, '2022-09-19 11:27:26', '2023-02-28 09:04:18', '2023-02-28 09:04:18', 16, 4, 'Пројекти');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (26, 'meteorologija-saradnja', null, '2022-09-19 11:28:08', '2023-02-28 08:18:32', null, 17, 3, 'Сарадња');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (28, 'aktuelni-podaci', null, '2022-09-19 11:31:10', '2023-02-28 09:51:46', null, 73, 4, 'Актуелни подаци');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (29, 'prognoza', null, '2022-09-19 11:31:30', '2023-02-28 09:45:21', null, null, 4, 'Прогноза');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (30, 'mjesecni-pregledi', null, '2022-09-19 11:32:49', '2022-10-09 14:59:26', null, 28, 21, 'Мјесечни прегледи');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (31, 'dnevne-analize', null, '2022-09-19 11:33:32', '2022-10-09 14:23:53', null, 27, 21, 'Дневне анализе');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (32, 'naucni-radovi', null, '2022-09-19 11:33:55', '2022-10-09 15:23:05', null, 29, 21, 'Научни радови');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (33, 'klimatski-modeli', null, '2022-09-19 11:34:13', '2022-10-09 15:29:00', null, 30, 21, 'Климатски модели');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (34, 'temperature-zemljista', null, '2022-09-19 11:35:10', '2022-12-01 07:45:23', null, 78, 22, 'Температуре земљишта');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (35, 'godisnji-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 17:01:37', null, 67, 22, 'Годишњи агро - билтени');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (37, 'mjesecni-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 16:57:00', null, 66, 22, 'Мјесечни агро - билтени');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (38, 'dekadni-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 16:52:47', null, 65, 22, 'Декадни агро - билтени');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (39, 'sedmicni-agro-bilteni', null, '2022-09-19 11:53:32', '2022-11-19 16:47:45', null, 64, 22, 'Седмични агро - билтени');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (40, 'agro-upozorenja', null, '2022-09-19 11:53:32', '2022-11-19 16:25:54', null, 63, 22, 'Агро упозорења');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (41, 'uslovi-vlaznosti', null, '2022-09-19 11:53:32', '2022-11-19 16:24:07', null, 62, 22, 'Услови влажности');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (42, 'evapotranspiracija', null, '2022-09-19 11:53:32', '2022-11-19 16:21:18', null, 61, 22, 'Евапотранспирација');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (43, 'fenologija', null, '2022-09-19 11:53:32', '2022-09-20 14:46:24', null, null, 22, 'Фенологоија');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (44, 'pracenje-bolesti', null, '2022-09-19 11:53:32', '2022-11-19 16:19:51', null, 60, 22, 'Праћење болести');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (45, 'meteorologija-aktuelni-podaci', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', 73, 28, 'Подаци');
+INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (28, 'meteorologija-aktuelni-podaci', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', 73, 28, 'Подаци');
+
+
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (46, 'trenutne-temperature', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', 74, 28, 'Тренутне температуре');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (47, 'ekstremne-temperature', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', null, 28, 'Екстремне температуре');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (48, 'pritisak', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', 75, 28, 'Притисак');
@@ -44,11 +67,12 @@ INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, p
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (50, 'kolicina-padavina', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', null, 28, 'Количина падавина');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (51, 'visina-snijega', null, '2022-09-19 11:59:43', '2023-02-28 09:52:09', '2023-02-28 09:52:09', null, 28, 'Висина снијега');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (52, 'satelitska-slika', null, '2022-09-19 11:59:43', '2023-02-28 09:47:21', '2023-02-28 09:47:21', 69, 28, 'Стелитска слика');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (53, 'radarska-slika', null, '2022-09-19 11:59:43', '2023-02-28 09:47:32', null, 68, 4, 'Радарска слика');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (54, 'meteo-bilteni', null, '2022-09-19 12:02:48', '2022-11-19 17:09:47', null, 70, 29, 'Метео билтени');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (55, 'upozorenja', null, '2022-09-19 12:02:48', '2022-11-19 17:20:24', null, 71, 29, 'Упозорења');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (56, 'meteoalarm', null, '2022-09-19 12:02:48', '2023-02-28 09:42:46', null, 82, 29, 'Метоаларм');
-INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (57, 'bioprognoza', null, '2022-09-19 12:02:48', '2022-11-28 13:02:43', null, 77, 29, 'Биопрогноза');
+
+
+
+
+
+
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (58, 'prognoza-uv-zracenja', null, '2022-09-19 12:02:48', '2023-02-28 09:38:11', '2023-02-28 09:38:11', null, 29, 'Прогноза УВ зрачења');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (59, 'prognoza-uslova-za-izbijanje-pozara', null, '2022-09-19 12:02:48', '2023-02-28 09:38:11', '2023-02-28 09:38:11', 72, 29, 'Прогноза услова за избијање пожара');
 INSERT INTO rhmzrs.links (id, slug, route, created_at, updated_at, deleted_at, page_id, parent_id, title) VALUES (60, 'poljski-radovi', null, '2022-09-19 12:07:26', '2022-12-01 07:47:42', null, 79, 43, 'Пољски радови');
