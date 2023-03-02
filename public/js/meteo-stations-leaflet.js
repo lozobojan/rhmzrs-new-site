@@ -56,7 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
         responsive: true,
         "columns": [
             { "data": "station_name" },
-            { "data": "description_alt" }
+            { "data": "lat" },
+            { "data": "lng" },
+            { "data": "alt" },
+            { "data": "station_type" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"

@@ -2,10 +2,12 @@
 
 namespace App\View\Components;
 
+use App\Models\Page;
 use Illuminate\View\Component;
 
 class EcoPollutants extends Component
 {
+    public $page;
     /**
      * Create a new component instance.
      *
@@ -13,7 +15,7 @@ class EcoPollutants extends Component
      */
     public function __construct()
     {
-        //
+        $this->page = Page::query()->where('slug', 'pregled-podataka')->first();
     }
 
     /**

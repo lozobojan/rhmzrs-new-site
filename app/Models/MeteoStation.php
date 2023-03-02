@@ -11,11 +11,23 @@ class MeteoStation extends Model
 
     protected $guarded = ['id'];
 
-    protected $appends = ['icon', 'description_alt'];
+    protected $appends = ['icon', 'description_alt', 'station_type'];
 
     public function getIconAttribute()
     {
         return asset('assets/img/icons/marker-icon.png');
+    }
+
+    public function getStationTypeAttribute()
+    {
+        // from description remove b tag using HTML DOM
+        $description = $this->attributes['description'];
+
+        if (str_contains($description, 'Аутоматска метеоролошка станица'))
+            return 'Аутоматска метеоролошка станица';
+        else
+            return 'Синоптичка метеоролошка станица';
+
     }
 
 

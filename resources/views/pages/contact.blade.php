@@ -236,11 +236,7 @@
                         <div class="entry-content" itemprop="mainContentOfPage" itemscope=""
                              itemtype="https://schema.org/WebPageElement">
                             <h4>ВД директор</h4>
-                            <p><strong>Дарко Боројевић,</strong><br><a
-                                    href="javascript:location='mailto:\u0064\u002e\u0062\u006f\u0072\u006f\u006a\u0065\u0076\u0069\u0063\u0040\u0072\u0068\u006d\u007a\u0072\u0073\u002e\u0063\u006f\u006d';void 0">
-                                    <script
-                                        type="text/javascript">document.write('\u0064\u002e\u0062\u006f\u0072\u006f\u006a\u0065\u0076\u0069\u0063\u0040\u0072\u0068\u006d\u007a\u0072\u0073\u002e\u0063\u006f\u006d')</script>
-                                </a>&nbsp;, {!! ob('051/460-852.') !!}
+                            <p><strong>Дарко Боројевић,</strong><br>{!! ob2('d.borojevic@rhmzrs.com') !!}&nbsp;, {!! ob('051/460-852.') !!}
                             </p>
                             <p>&nbsp;</p>
                             <h4>Одјељење за правне и финансијске послове</h4>

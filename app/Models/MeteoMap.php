@@ -30,26 +30,26 @@ class MeteoMap extends Model
 
     public function getRainfallAttribute()
     {
-        // If its null return 'N/a'
-        return $this->attributes['rainfall'] == 'null' ? 'N/a' : $this->attributes['rainfall'];
+        // If its null return '*'
+        return $this->attributes['rainfall'] == 'null' ? '*' : $this->attributes['rainfall'];
     }
 
     public function getMinTempAttribute()
     {
-        // If its null return 'N/a'
-        return $this->attributes['min_temp'] == 'null' ? 'N/a' : $this->attributes['min_temp'];
+        // If its null return '*'
+        return $this->attributes['min_temp'] == 'null' ? '*' : $this->attributes['min_temp'];
     }
 
     public function getMaxTempAttribute()
     {
-        // If its null return 'N/a'
-        return $this->attributes['max_temp'] == 'null' ? 'N/a' : $this->attributes['max_temp'];
+        // If its null return '*'
+        return $this->attributes['max_temp'] == 'null' ? '*' : $this->attributes['max_temp'];
     }
 
     public function getSnowAttribute()
     {
-        // If its null return 'N/a'
-        return $this->attributes['snow'] == 'null' ? 'N/a' : $this->attributes['snow'];
+        // If its null return '*'
+        return $this->attributes['snow'] == 'null' ? '*' : $this->attributes['snow'];
     }
 
     public function getDescriptionAttribute()

@@ -18,7 +18,12 @@ class PublicWebsiteController extends Controller
 
         }
 
-        $page = Page::query()->where('slug', $slug)->firstOrFail();
+        $page = Page::query()
+            ->where('slug', $slug)
+            ->with(['pagePosts' => function ($query) {
+                $query->orderBy('created_at', 'desc');
+            }])
+            ->firstOrFail();
 
         $text = $page->html_content;
         foreach ($replacers as $key => $value) {

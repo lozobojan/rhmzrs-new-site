@@ -16,12 +16,7 @@
 
                         <li>
                             <a class="post-title h4 text-primary underline" href="#mapa">
-                                Мапа мјерних станица
-                            </a>
-                        </li>
-                        <li>
-                            <a class="post-title h4 text-primary underline" href="#podaci">
-                                Тренутни подаци
+                                Подаци о квалитету важдуха
                             </a>
                         </li>
                         <li>
