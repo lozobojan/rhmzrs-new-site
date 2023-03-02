@@ -16,7 +16,10 @@
             color: #0c0c0c!important;
         }
     </style>
-
+    <div class="flex flex-row">
+        <a class="btn btn-primary" href="#" onclick="syn()">Синоптичке станице </a>
+        <a class="btn btn-primary" href="#" onclick="aut()">Аутоматске станице </a>
+    </div>
     <table id="example" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">
@@ -47,9 +50,9 @@
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Висина снијега
             </th>
-{{--            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Слика--}}
-{{--            </th>--}}
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Слика
+            </th>
         </tr>
         </thead>
     </table>
