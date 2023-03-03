@@ -56,5 +56,30 @@
         </tr>
         </thead>
     </table>
+    <h4 id="termin" class="py-4"></h4>
+    <table id="example2" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+        <tr role="row">
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Станица: activate to sort column ascending" style="width: 140px;">Станица
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Температура
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Притисак
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Вјетар
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Падавине
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Рел. влажност
+            </th>
+        </tr>
+        </thead>
+    </table>
 
 </div>
