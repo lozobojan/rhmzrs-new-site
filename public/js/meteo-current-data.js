@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function syn(){
+    $('#example').show();
+    $('#example2').hide();
+    $('#example2').DataTable().destroy();
 
     // Remove datatable if exists
     if ($.fn.DataTable.isDataTable('#example')) {
@@ -39,36 +42,53 @@ function syn(){
 
 function aut(){
 
+    // Hide table with id 'example'
+    $('#example').hide();
+    $('#example2').show();
+    $('#example').DataTable().destroy();
     // Remove datatable if exists
-    if ($.fn.DataTable.isDataTable('#example')) {
-        $('#example').DataTable().destroy();
+    if ($.fn.DataTable.isDataTable('#example2')) {
+        $('#example2').DataTable().destroy();
     }
 
-    $('#example').DataTable({
+    $('#example2').DataTable({
         ajax: {
-            dataSrc: 'MeteoMapaGlavna',
-            url: '../data/feeds/MeteoMapa.json',
+            dataSrc: function(data){
+                let termin = data['Вријеме'];
+                parsed = Object.keys(data).map(key => {
+                    if (key === "Вријеме") {
+                        // dont include the key
+                        return data[key];
+
+
+                    } else {
+                        return {
+                            "Станица": key,
+                            ...data[key]
+                        };
+                    }
+                });
+
+                // Remove the first element
+                parsed.shift();
+                // Set tag #termin with the value of termin
+                $('#termin').text("Термин: " + termin);
+                return parsed;
+            },
+            url: '../data/feeds/aut.json',
         },
         responsive: true,
         "columns": [
-            { "data": "StationName" },
-            { "data": "termin" },
-            { "data": "temperatura" },
-            { "data": "pritisak" },
-            { "data": "wind",
+            { "data": "Станица" },
+            { "data": "Температура" },
+            { "data": "Притисак" },
+            { "data": "Вјетар",
                 render: function(data, type, row, meta){
-                    return row.brzVjetra + ' m/s ' + row.cirSmjer + ' (' + row.latSmjer + ')';
+                    return row['Бржина Вјетра'] + ' m/s ' + row['Смјер Вјетра'];
                 }
             },
-            { "data": "kolicinaPadavine" },
-            { "data": "minTemp" },
-            { "data": "maxTemp" },
-            { "data": "snijeg" },
-            { "data": "marker",
-            render : function(data, type, row, meta){
-                return '<img src="../assets/img/icons/' + data + '" alt="image" style=""/>';
-            }
-            },
+            { "data": "Падавине" },
+            { "data": "Релативна Влажност" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
