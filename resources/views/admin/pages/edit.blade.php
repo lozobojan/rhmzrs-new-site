@@ -68,6 +68,12 @@
 @endsection
 
 @section('scripts')
+    <script src="
+https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/src/index.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sourceediting.min.css
+" rel="stylesheet">
     <script>
         $(document).on('submit','.submit',function(){
             html = $(".ckeditor").html()
@@ -202,15 +208,15 @@
             for (var i = 0; i < allEditors.length; ++i) {
                 DecoupledEditor.create(
                     allEditors[i], {
-                        extraPlugins: [SimpleUploadAdapter],
+                        extraPlugins: [SimpleUploadAdapter, SourceEditing],
                         alignment: {
                             options: ['left', 'right']
                         },
                         toolbar: {
                             items: [
                                 'findAndReplace', 'selectAll', '|',
-                                'heading', '|',
-                                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                                'heading', '|', 'sourceEditing',
+                                'bold', 'italic', 'sourceEditing','strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
                                 'bulletedList', 'numberedList', 'todoList', '|',
                                 'alignment', '|',
                                 'outdent', 'indent', '|',

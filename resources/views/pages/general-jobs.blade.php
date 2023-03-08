@@ -1,4 +1,13 @@
-<x-main-layout>
+@php
+    $meta = [
+        "title"                 => "РХМЗРС - Општи послови",
+        "description"           => "Републички хидрометеоролошки завод Републике Србије Општи послови. Јавни конкурси, јавне набавке и документи.",
+        "keywords"              => "rhmzrs контакт рхмж рхм општи послови јавни конкурси јавне набавке документи",
+        "image"                 => asset('assets/img/meta-og.png'),
+        "url"                   => Request::url(),
+    ];
+@endphp
+<x-main-layout :meta="$meta">
 
     <section class="wrapper bg-light angled">
         <div class="container py-5 py-md-5">

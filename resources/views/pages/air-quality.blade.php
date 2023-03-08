@@ -1,4 +1,13 @@
-<x-main-layout>
+@php
+    $meta = [
+        "title"                 => "РХМЗРС - Контрола квалитета ваздуха",
+        "description"           => "Контрола квалитета ваздуха у Републици Србији. Подаци о квалитету важдуха, мапа мјерних станица, извјештаји.",
+        "keywords"              => "rhmzrs контрола квалитета ваздуха подаци мапа извјештаји",
+        "image"                 => asset('assets/img/meta-og.png'),
+        "url"                   => Request::url(),
+    ];
+@endphp
+<x-main-layout :meta="$meta">
 
     <section class="wrapper bg-light angled">
         <div class="container py-5 py-md-5">
