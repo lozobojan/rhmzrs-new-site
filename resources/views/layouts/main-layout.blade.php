@@ -101,12 +101,12 @@
             <nav class="navbar navbar-expand-xxl classic transparent position-absolute navbar-dark d-print-none">
                 <div class="container-fluid flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
-                        <a href="/">
-                            <img class="logo-dark" src="{{ asset('assets/img/brands/image1.png') }}"
-                                 srcset="{{ asset('assets/img/brands/image1.png') }}" alt=""/>
-                            <img class="logo-light" src="{{ asset('assets/img/brands/image1.png') }}"
-                                 srcset="{{ asset('assets/img/brands/image1.png') }}" alt=""/>
-                        </a>
+{{--                        <a href="/">--}}
+{{--                            <img class="logo-dark" src="{{ asset('assets/img/brands/image1.png') }}"--}}
+{{--                                 srcset="{{ asset('assets/img/brands/image1.png') }}" alt=""/>--}}
+{{--                            <img class="logo-light" src="{{ asset('assets/img/brands/image1.png') }}"--}}
+{{--                                 srcset="{{ asset('assets/img/brands/image1.png') }}" alt=""/>--}}
+{{--                        </a>--}}
                     </div>
                     <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                         <div class="offcanvas-header d-xxl-none">
