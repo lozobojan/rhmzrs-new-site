@@ -208,15 +208,15 @@ https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sou
             for (var i = 0; i < allEditors.length; ++i) {
                 DecoupledEditor.create(
                     allEditors[i], {
-                        extraPlugins: [SimpleUploadAdapter, SourceEditing],
+                        extraPlugins: [SimpleUploadAdapter],
                         alignment: {
-                            options: ['left', 'right']
+                            options: ['left', 'right', 'justify', 'center']
                         },
                         toolbar: {
                             items: [
                                 'findAndReplace', 'selectAll', '|',
-                                'heading', '|', 'sourceEditing',
-                                'bold', 'italic', 'sourceEditing','strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                                'heading', '|',
+                                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
                                 'bulletedList', 'numberedList', 'todoList', '|',
                                 'alignment', '|',
                                 'outdent', 'indent', '|',
@@ -224,7 +224,7 @@ https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sou
                                 '-',
                                 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
                                 'alignment', '|',
-                                'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                                'link', 'imageUpload', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
                                 'specialCharacters', 'horizontalLine', 'pageBreak', '|',
                                 'textPartLanguage', '|',
                                 'sourceEditing'
