@@ -23,33 +23,33 @@ const config = {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    let map = L.map(config.MAP.element, {
-        gestureHandling: true,
-        minZoom: 7.9,
-        maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
-    }).setView(config.MAP.latLng, config.MAP.zoomLevel);
-    //disable default scroll
-    map.scrollWheelZoom.disable();
-
-    map.on('click', function(e) {
-        $('.modal').modal('hide');
-    });
-
-    $("#map").bind('mousewheel DOMMouseScroll', function (event) {
-        event.stopPropagation();
-        if (event.ctrlKey == true) {
-            event.preventDefault();
-            map.scrollWheelZoom.enable();
-            $('#map').removeClass('map-scroll');
-            setTimeout(function(){
-                map.scrollWheelZoom.disable();
-            }, 1000);
-        } else {
-            map.scrollWheelZoom.disable();
-            $('#map').addClass('map-scroll');
-        }
-
-    });
+    // let map = L.map(config.MAP.element, {
+    //     gestureHandling: true,
+    //     minZoom: 7.9,
+    //     maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
+    // }).setView(config.MAP.latLng, config.MAP.zoomLevel);
+    // //disable default scroll
+    // map.scrollWheelZoom.disable();
+    //
+    // map.on('click', function(e) {
+    //     $('.modal').modal('hide');
+    // });
+    //
+    // $("#map").bind('mousewheel DOMMouseScroll', function (event) {
+    //     event.stopPropagation();
+    //     if (event.ctrlKey == true) {
+    //         event.preventDefault();
+    //         map.scrollWheelZoom.enable();
+    //         $('#map').removeClass('map-scroll');
+    //         setTimeout(function(){
+    //             map.scrollWheelZoom.disable();
+    //         }, 1000);
+    //     } else {
+    //         map.scrollWheelZoom.disable();
+    //         $('#map').addClass('map-scroll');
+    //     }
+    //
+    // });
 
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
         $('#map').removeClass('map-scroll');

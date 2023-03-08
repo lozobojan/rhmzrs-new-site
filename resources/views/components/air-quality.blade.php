@@ -29,6 +29,12 @@
             float: right;
         }
 
+        #mapa > div > div > div > h1 {
+            display: none;
+        }
+        #mapa > div {
+            padding-top: 10px!important;
+        }
     </style>
     <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
 
@@ -47,16 +53,16 @@
     <script src="{{asset('js/air-quality-leaflet.js')}}"></script>
     <script></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
-    <div id="map"></div>
+{{--    <div id="map"></div>--}}
 
 
-    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content p-5"></div>
-            <!-- modal-content -->
-        </div>
-        <!-- modal-dialog -->
-    </div>
+{{--    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">--}}
+{{--        <div class="modal-dialog" role="document">--}}
+{{--            <div class="modal-content p-5"></div>--}}
+{{--            <!-- modal-content -->--}}
+{{--        </div>--}}
+{{--        <!-- modal-dialog -->--}}
+{{--    </div>--}}
 
     <br>
     <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Тренутни подаци</h1>

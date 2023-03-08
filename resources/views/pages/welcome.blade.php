@@ -323,6 +323,9 @@
                         border-bottom: 1px solid black;
                         padding-bottom: 10px;
                     }
+                    .font-weight-bold {
+                        font-weight: bold;
+                    }
                 </style>
 {{--                <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">--}}
 {{--                    <div class="modal-dialog" role="document">--}}
