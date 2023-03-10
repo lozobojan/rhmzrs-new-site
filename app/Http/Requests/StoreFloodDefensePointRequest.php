@@ -53,6 +53,10 @@ class StoreFloodDefensePointRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'kote0' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

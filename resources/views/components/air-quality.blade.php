@@ -29,6 +29,37 @@
             float: right;
         }
 
+        #mapa > div > div > div > h1 {
+            display: none;
+        }
+
+        #mapa > div {
+            padding-top: 10px !important;
+        }
+
+        .bg-class-1 {
+            background-color: #00ff00!important;
+        }
+
+        .bg-class-2 {
+            background-color: #ffff00!important;
+        }
+
+        .bg-class-3 {
+            background-color: #ff9900!important;
+        }
+
+        .bg-class-4 {
+            background-color: #ff0000!important;
+        }
+
+        .bg-class-5 {
+            background-color: #990000!important;
+        }
+        .bg-class-undefined {
+            background-color: #ffffff!important;
+            color: #60697b!important;
+        }
     </style>
     <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
 
@@ -47,16 +78,16 @@
     <script src="{{asset('js/air-quality-leaflet.js')}}"></script>
     <script></script>
     <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
-    <div id="map"></div>
+    {{--    <div id="map"></div>--}}
 
 
-    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content p-5"></div>
-            <!-- modal-content -->
-        </div>
-        <!-- modal-dialog -->
-    </div>
+    {{--    <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">--}}
+    {{--        <div class="modal-dialog" role="document">--}}
+    {{--            <div class="modal-content p-5"></div>--}}
+    {{--            <!-- modal-content -->--}}
+    {{--        </div>--}}
+    {{--        <!-- modal-dialog -->--}}
+    {{--    </div>--}}
 
     <br>
     <h1 id="podaci" class="fs-32 mt-5 text-uppercase text-line text-primary mb-3">Тренутни подаци</h1>
@@ -95,12 +126,12 @@
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
             </th>
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK--}}
-{{--            </th>--}}
-{{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
-{{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
-{{--            </th>--}}
+            {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+            {{--                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK--}}
+            {{--            </th>--}}
+            {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+            {{--                aria-label="Опис: activate to sort column ascending" style="width: 61px;">Опис--}}
+            {{--            </th>--}}
         </tr>
         </thead>
     </table>
@@ -128,13 +159,7 @@
                 aria-label="SО2: activate to sort column ascending" style="width: 59px;">SО2
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="NO: activate to sort column ascending" style="width: 63px;">NO
-            </th>
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="NO2: activate to sort column ascending" style="width: 51px;">NO2
-            </th>
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="NOx: activate to sort column ascending" style="width: 51px;">NOx
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="PM10: activate to sort column ascending" style="width: 38px;">PM10

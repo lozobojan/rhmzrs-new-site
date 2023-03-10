@@ -12,9 +12,10 @@
                 // { "data": "ordinal_number" },
                 { "data": "place" },
                 { "data": "river_basin.title" },
+                { "data": "kote0" },
                 { "data": "ordinary_value" },
                 { "data": "extraordinary_value" },
-                { "data": "extraordinary_value" },
+                { "data": "nnv" },
                 { "data": "vvv" },
             ],
             "language": {
@@ -40,6 +41,9 @@
                 aria-label="Код Станице: activate to sort column ascending" style="width: 56px;">Ријека
             </th>
 
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Лат.: activate to sort column ascending" style="width: 29px;"> Kota "0"
+            </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Лат.: activate to sort column ascending" style="width: 29px;">Редовно (cm)
             </th>

@@ -25,7 +25,12 @@
 
             <div class="form-group">
                 <label for="html_content">{{ trans('cruds.post.fields.html_content') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('html_content') ? 'is-invalid' : '' }}" name="html_content" id="html_content">{!! old('html_content') !!}</textarea>
+                <div id="toolbar-container"></div>
+                <div class="ckeditor">
+                    {!! old('html_content', '') !!}
+                </div>
+                <textarea style='display:none;' name='html_content' id='editor1'></textarea>
+
                 @if($errors->has('html_content'))
                     <span class="text-danger">{{ $errors->first('html_content') }}</span>
                 @endif
@@ -137,14 +142,44 @@
     }
   }
 
-  var allEditors = document.querySelectorAll('.ckeditor');
-  for (var i = 0; i < allEditors.length; ++i) {
-    ClassicEditor.create(
-      allEditors[i], {
-        extraPlugins: [SimpleUploadAdapter]
-      }
-    );
-  }
+        var allEditors = document.querySelectorAll('.ckeditor');
+        for (var i = 0; i < allEditors.length; ++i) {
+            DecoupledEditor.create(
+                allEditors[i], {
+                    extraPlugins: [SimpleUploadAdapter],
+                    alignment: {
+                        options: ['left', 'right', 'justify', 'center']
+                    },
+                    toolbar: {
+                        items: [
+                            'findAndReplace', 'selectAll', '|',
+                            'heading', '|',
+                            'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                            'bulletedList', 'numberedList', 'todoList', '|',
+                            'alignment', '|',
+                            'outdent', 'indent', '|',
+                            'undo', 'redo',
+                            '-',
+                            'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                            'alignment', '|',
+                            'link', 'imageUpload', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                            'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                            'textPartLanguage', '|',
+                            'sourceEditing'
+                        ],
+                        shouldNotGroupWhenFull: true
+                    },
+                }
+            ).then(editor => {
+                const toolbarContainer = document.querySelector('#toolbar-container');
+
+                toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+            ;
+        }
 });
 </script>
 

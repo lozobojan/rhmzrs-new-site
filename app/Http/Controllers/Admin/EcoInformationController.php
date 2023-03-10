@@ -8,9 +8,12 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyEcoInformationRequest;
 use App\Http\Requests\StoreEcoInformationRequest;
 use App\Http\Requests\UpdateEcoInformationRequest;
+use App\Imports\EarthquakesImport;
+use App\Imports\EcoInformationImport;
 use App\Models\EcoInformation;
 use Gate;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -92,5 +95,16 @@ class EcoInformationController extends Controller
         $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
+    }
+
+    public function import(Request $request)
+    {
+        // Validate the excel file
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx,csv'
+        ]);
+        Excel::import(new EcoInformationImport(), $request->file('file')->store('temp'));
+
+        return redirect()->route('admin.eco-information.index')->with('success', 'Data imported successfully.');
     }
 }

@@ -23,33 +23,33 @@ const config = {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    let map = L.map(config.MAP.element, {
-        gestureHandling: true,
-        minZoom: 7.9,
-        maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
-    }).setView(config.MAP.latLng, config.MAP.zoomLevel);
-    //disable default scroll
-    map.scrollWheelZoom.disable();
-
-    map.on('click', function(e) {
-        $('.modal').modal('hide');
-    });
-
-    $("#map").bind('mousewheel DOMMouseScroll', function (event) {
-        event.stopPropagation();
-        if (event.ctrlKey == true) {
-            event.preventDefault();
-            map.scrollWheelZoom.enable();
-            $('#map').removeClass('map-scroll');
-            setTimeout(function(){
-                map.scrollWheelZoom.disable();
-            }, 1000);
-        } else {
-            map.scrollWheelZoom.disable();
-            $('#map').addClass('map-scroll');
-        }
-
-    });
+    // let map = L.map(config.MAP.element, {
+    //     gestureHandling: true,
+    //     minZoom: 7.9,
+    //     maxBounds: L.latLngBounds(L.latLng(42.374778,15.31494), L.latLng(45.583290, 20.192871)),
+    // }).setView(config.MAP.latLng, config.MAP.zoomLevel);
+    // //disable default scroll
+    // map.scrollWheelZoom.disable();
+    //
+    // map.on('click', function(e) {
+    //     $('.modal').modal('hide');
+    // });
+    //
+    // $("#map").bind('mousewheel DOMMouseScroll', function (event) {
+    //     event.stopPropagation();
+    //     if (event.ctrlKey == true) {
+    //         event.preventDefault();
+    //         map.scrollWheelZoom.enable();
+    //         $('#map').removeClass('map-scroll');
+    //         setTimeout(function(){
+    //             map.scrollWheelZoom.disable();
+    //         }, 1000);
+    //     } else {
+    //         map.scrollWheelZoom.disable();
+    //         $('#map').addClass('map-scroll');
+    //     }
+    //
+    // });
 
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
         $('#map').removeClass('map-scroll');
@@ -79,21 +79,85 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#tp').DataTable({
         ajax: {
-            dataSrc: 'EkoPodaci',
+            dataSrc: 'indeks',
             url: '/data/EkoPodaci.json',
         },
         "columns": [
-            { "data": "termin" },
-            { "data": "StationName" },
-            { "data": "O3" },
-            { "data": "CO" },
-            { "data": "SO2" },
-            { "data": "NO" },
-            { "data": "NO2" },
-            { "data": "NOx" },
-            { "data": "PM10" },
-            { "data": "PM25" },
-            { "data": "ik", "defaultContent": "" },
+            { "data": "vrijeme" },
+            { "data": "stanica" },
+            { "data": "O3",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return data[0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['O3'][1]}`);
+                    $(td).addClass('text-white');
+                }
+            },
+            { "data": "CO",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return data[0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['CO'][1]}`);
+                    $(td).addClass('text-white');
+                } },
+            { "data": "SO2",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return data[0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['SO2'][1]}`);
+                    $(td).addClass('text-white');
+                } },
+            { "data": "NO2",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return data[0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['NO2'][1]}`);
+                    $(td).addClass('text-white');
+                } },
+            { "data": "PM10",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return data[0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['PM10'][1]}`);
+                    $(td).addClass('text-white');
+                } },
+            { "data": "PM2.5",
+                defaultContent: "*",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return row["PM2.5"][0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['PM2.5'][1]}`);
+                    $(td).addClass('text-white');
+                }
+            },
+            { "data": "indeks",
+                // Render first array element of data and ssecond if 1 set td class to red
+                "render": function ( data, type, row, meta ) {
+                    return row["indeks"][0];
+                },
+                // Add class to td
+                "createdCell": function (td, cellData, rowData, row, col) {
+                    $(td).addClass(`bg-class-${rowData['indeks'][1]}`);
+                    $(td).addClass('text-white');
+                } },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"

@@ -23,6 +23,9 @@
             width: min-content;
             float: right;
         }
+        #chart1 {
+            width: 100%!important;
+        }
     </style>
     <link rel="stylesheet" href="{{asset('leaflet/leaflet.css')}}"/>
     <script src="{{asset('leaflet/leaflet.js')}}"></script>
@@ -66,14 +69,14 @@
         <thead>
         <tr role="row">
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Станица: activate to sort column ascending" style="width: 140px;">Станица
+                aria-label="Станица: activate to sort column ascending" style="width: 319px;">Станица
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Вријеме
             </th>
-            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Тенденција
-            </th>
+{{--            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
+{{--                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Тенденција--}}
+{{--            </th>--}}
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Водостај
             </th>

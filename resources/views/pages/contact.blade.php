@@ -1,4 +1,13 @@
-<x-main-layout>
+@php
+    $meta = [
+        "title"                 => "РХМЗРС - Контакт",
+        "description"           => "РХМЗРС - Контакт - Републички хидрометеоролошки завод Републике Србије - Хидрометеоролошки институт Србије КОНТАКТ",
+        "keywords"              => "rhmzrs контакт рхмж рхм",
+        "image"                 => asset('assets/img/meta-og.png'),
+        "url"                   => Request::url(),
+    ];
+@endphp
+<x-main-layout :meta="$meta">
 
     @php
 

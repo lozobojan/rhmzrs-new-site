@@ -68,6 +68,12 @@
 @endsection
 
 @section('scripts')
+    <script src="
+https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/src/index.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sourceediting.min.css
+" rel="stylesheet">
     <script>
         $(document).on('submit','.submit',function(){
             html = $(".ckeditor").html()
@@ -204,7 +210,7 @@
                     allEditors[i], {
                         extraPlugins: [SimpleUploadAdapter],
                         alignment: {
-                            options: ['left', 'right']
+                            options: ['left', 'right', 'justify', 'center']
                         },
                         toolbar: {
                             items: [
@@ -218,7 +224,7 @@
                                 '-',
                                 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
                                 'alignment', '|',
-                                'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                                'link', 'imageUpload', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
                                 'specialCharacters', 'horizontalLine', 'pageBreak', '|',
                                 'textPartLanguage', '|',
                                 'sourceEditing'

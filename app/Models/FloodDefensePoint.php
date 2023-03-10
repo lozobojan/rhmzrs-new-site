@@ -27,6 +27,7 @@ class FloodDefensePoint extends Model
         'ordinary_value',
         'extraordinary_value',
         'nnv',
+        'kote0',
         'vvv',
         'created_at',
         'updated_at',

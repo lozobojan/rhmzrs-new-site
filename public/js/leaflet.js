@@ -678,11 +678,79 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
             ecologyDataMarkers[i].map_marker.on('click', function () {
                 let infoWindow = new LeafLeatGoogle.InfoWindow();
                 for (let j = 0; j < data.length; j++) {
-                    markerOnClick('<div class="hidro__info--window"><h4>' +
-                        data[i].StationName +
-                        '</h4><strong>' +
-                        data[i].desc +
-                        '</strong><div>')
+
+                    let ht =
+                        '' +
+                        '<style>\n' +
+                        '  .modal-body {\n' +
+                        '    background-color: #747ed1!important;\n' +
+                        '  }\n' +
+                        '  table tr:nth-child(even) {\n' +
+                        '    background-color: inherit;\n' +
+                        '}\n' +
+                        '  .modal-header {\n' +
+                        '    background-color: #747ed1;\n' +
+                        '}\n' +
+                        '</style>\n' +
+                        '\n' +
+                        '<div class="container-fluid bg-primary">\n' +
+                        '  <div class="row">\n' +
+                        '    <h1 class="title font-weight-bold text-white">' + data[i].StationName + '</h1>\n' +
+                        '    <h5 class="font-weight-bold text-white">' + data[i].termin + '</h5>\n' +
+                        '    <div class="w-100 bg-white mb-2" style="height: 4px"></div>\n' +
+                        '    <h5 class="font-weight-bold text-white">Индекс квалитета ваздуха</h5>\n' +
+                        '    <div class="index bg-danger">\n' +
+                        '      <h1 class="text-white font-weight-bolder display-3 mb-0 pb-0">100</h1>\n' +
+                        '      <h4 class="font-weight-bold text-white mt-0 py-0">Нездрав</h4>\n' +
+                        '    </div>\n' +
+                        '    <div class="mb-2"></div>\n' +
+                        '    <table class="px-4 py-3 text-white">\n' +
+                        '      <thead>\n' +
+                        '        <th>Полутант</th>\n' +
+                        '        <th>Сатна конц.</th>\n' +
+                        '        <th>Индекс</th>\n' +
+                        '      </thead>\n' +
+                        '      <tbody class="border-top-1">\n' +
+                        '        <tr class="border-top-1">\n' +
+                        '          <td>CO</td>\n' +
+                        '          <td>' + data[i].CO + '</td>\n' +
+                        '          <td></td>\n' +
+                        '        </tr>\n' +
+                        '          <tr>\n' +
+                        '          <td>NO2</td>\n' +
+                        '          <td>' + data[i].NO2 + '</td>\n' +
+                        '          <td></td>\n' +
+                        '        </tr>\n' +
+                        '          <tr>\n' +
+                        '          <td>O3</td>\n' +
+                        '          <td>' + data[i].O3 + '</td>\n' +
+                        '          <td></td>\n' +
+                        '        </tr>\n' +
+                        '          <tr>\n' +
+                        '          <td>PM10</td>\n' +
+                        '          <td>' + data[i].PM10 + '</td>\n' +
+                        '          <td></td>\n' +
+                        '        </tr>\n' +
+                        '          <tr>\n' +
+                        '          <td>PM25</td>\n' +
+                        '          <td>' + data[i].PM25 + '</td>\n' +
+                        '          <td></td>\n' +
+                        '        </tr>\n' +
+                        '          <tr>\n' +
+                        '          <td>SO2</td>\n' +
+                        '          <td>' + data[i].SO2 + '</td>\n' +
+                        '          <td></td>\n' +
+                        '        </tr>\n' +
+                        '      </tbody>\n' +
+                        '    </table>\n' +
+                        '    \n' +
+                        '    <div class="w-100 bg-white mb-2 mt-2" style="height: 4px"></div>\n' +
+                        '  </div>\n' +
+                        '</div>'
+
+                    markerOnClick(ht)
+
+
                     // infoWindow.setContent(ecologyDataMarkers[i], '<div class="hidro__info--window"><h4>' +
                     //     data[i].StationName +
                     //     '</h4><strong>' +

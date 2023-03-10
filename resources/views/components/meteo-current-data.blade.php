@@ -57,6 +57,7 @@
         </thead>
     </table>
     <h4 id="termin" class="py-4"></h4>
+    <p class="infoinfo">*Подаци са аутоматских станица су информативног карактера</p>
     <table id="example2" class="table table-bordered table-striped" style="width:100%">
         <thead>
         <tr role="row">

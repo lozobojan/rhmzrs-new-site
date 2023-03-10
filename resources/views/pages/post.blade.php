@@ -49,7 +49,9 @@
                 <div class="col-lg-10 mx-auto">
                     <div class="blog single mt-n17">
                         <div class="card">
+                            @if(!str_contains($post->title, 'билтен'))
                             <figure class="card-img-top"><img src="{{ $post->cover_photo->url ?? $post->default_photo }}" alt=""/></figure>
+                            @endif
                             <div class="card-body">
 
                                 <div class="container text-center d-none d-print-block">
