@@ -70,6 +70,14 @@
                 <span class="help-block">{{ trans('cruds.floodDefensePoint.fields.vvv_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="kote0">{{ trans('cruds.floodDefensePoint.fields.kote0') }}</label>
+                <input class="form-control {{ $errors->has('kote0') ? 'is-invalid' : '' }}" type="text" name="kote0" id="kote0" value="{{ old('kote0', '') }}">
+                @if($errors->has('kote0'))
+                    <span class="text-danger">{{ $errors->first('kote0') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.floodDefensePoint.fields.kote0_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

@@ -17,6 +17,7 @@ class CreateFloodDefensePointsTable extends Migration
             $table->foreignId('river_basin_id')->constrained('river_basins');
             $table->string('nnv')->nullable();
             $table->string('vvv')->nullable();
+            $table->string('kote0')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

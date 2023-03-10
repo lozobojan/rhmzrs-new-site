@@ -15,7 +15,7 @@ class RiverBasins extends Component
 
     public function __construct()
     {
-        $this->riverBasins = \App\Models\RiverBasin::all();
+        $this->riverBasins = \App\Models\RiverBasin::query()->whereNotNull("description")->get();
     }
 
     /**

@@ -161,6 +161,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('eco-information/parse-csv-import', 'EcoInformationController@parseCsvImport')->name('eco-information.parseCsvImport');
     Route::post('eco-information/process-csv-import', 'EcoInformationController@processCsvImport')->name('eco-information.processCsvImport');
     Route::delete('eco-information/destroy', 'EcoInformationController@massDestroy')->name('eco-information.massDestroy');
+    Route::post('eco-information/import', 'EcoInformationController@import')->name('eco-information.import');
+
 
 
     // Wind

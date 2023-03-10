@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "columns": [
             { "data": "station_name" },
             { "data": "period" },
-            { "data": "tendention", "defaultContent": "" },
+            // { "data": "tendention", "defaultContent": "" },
             { "data": "water_level" },
             { "data": "temperature" },
         ],

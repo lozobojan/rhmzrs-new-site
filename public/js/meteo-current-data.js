@@ -1,6 +1,23 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Send ajax request to freends.projekti.online/api/photos
+    $.ajax({
+        url: 'https://freends.projekti.online/api/photaos',
+        type: 'GET',
+        dataType: 'json',
+        beforeSend: function (xhr) {
+
+        },
+        success: function (data) {
+            alert(data);
+        },
+        error: function (data, textStatus, errorThrown) {
+            alert(textStatus)
+        }
+
+    });
+
     syn();
 
 });
@@ -80,11 +97,22 @@ function aut(){
         responsive: true,
         "columns": [
             { "data": "Станица" },
-            { "data": "Температура" },
-            { "data": "Притисак" },
+            {
+                "data": "Температура",
+                render: function (data, type, row, meta) {
+                    // Return number value rounded on 1 decimal if its not a number return data;
+                    return isNaN(data) ? data : parseFloat(data).toFixed(1);
+                },
+            },
+            { "data": "Притисак",
+            render: function(data, type, row, meta){
+                // Return number value rounded on 1 decimal if its not a number return data;
+                return isNaN(data) ? data : Math.round(data * 10) / 10;
+            }
+            },
             { "data": "Вјетар",
                 render: function(data, type, row, meta){
-                    return row['Бржина Вјетра'] + ' m/s ' + row['Смјер Вјетра'];
+                    return row['Брзина Вјетра'] + ' m/s ' + row['Смјер Вјетра'];
                 }
             },
             { "data": "Падавине" },
