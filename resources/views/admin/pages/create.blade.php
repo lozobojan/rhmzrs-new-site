@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.pages.store") }}" enctype="multipart/form-data">
+        <form method="POST" id="form" action="{{ route("admin.pages.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="required" for="title">{{ trans('cruds.page.fields.title') }}</label>
@@ -66,10 +66,11 @@
 
     <script>
 
-        $(document).on('submit','.submit',function(){
-            html = $(".ckeditor").html()
+        // On #form submit, get the HTML from the editor and set it as the value of the textarea
+        $(document).on('submit', '#form', function () {
+            let html = $(".ckeditor").html()
             $("#editor1").val(html)
-        })
+        });
         var uploadedAttachmentsMap = {}
         Dropzone.options.attachmentsDropzone = {
             url: '{{ route('admin.pages.storeMedia') }}',

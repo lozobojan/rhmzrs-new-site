@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#tp').DataTable({
         ajax: {
             dataSrc: 'indeks',
-            url: '/data/EkoPodaci.json',
+            url: '/data/feeds/EkoPodaci.json',
         },
         "columns": [
             { "data": "vrijeme" },

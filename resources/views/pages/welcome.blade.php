@@ -326,6 +326,49 @@
                     .font-weight-bold {
                         font-weight: bold;
                     }
+                    .bg-class-1 {
+                        color: #0c0c0c;
+                        background-color: #00ff00!important;
+                    }
+
+                    .bg-class-2 {
+                        background-color: #ffff00!important;
+                        color: #0c0c0c;
+                    }
+
+                    .bg-class-3 {
+                        background-color: #ff9900!important;
+                    }
+
+                    .bg-class-4 {
+                        background-color: #ff0000!important;
+                    }
+
+                    .bg-class-5 {
+                        background-color: #990000!important;
+                        color: white;
+                    }
+                    .bg-class-undefined {
+                        background-color: #ffffff!important;
+                        color: #000000 !important;
+                    }
+                    .bg-class-undefined > h1 {
+                        color: #000000 !important;
+                    }
+                    .bg-class-undefined > h4 {
+                        color: #000000 !important;
+                    }
+
+                    .indeks-icon {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
                 </style>
 {{--                <div aria-labelledby="myModalLabel" class="modal left fade" id="emptymodal" role="dialog" tabindex="-1">--}}
 {{--                    <div class="modal-dialog" role="document">--}}

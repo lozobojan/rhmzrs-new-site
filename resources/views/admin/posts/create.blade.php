@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.posts.store") }}" enctype="multipart/form-data">
+        <form method="POST" id="form" action="{{ route("admin.posts.store") }}" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -90,6 +90,11 @@
 
 @section('scripts')
 <script>
+    // On #form submit, get the HTML from the editor and set it as the value of the textarea
+    $(document).on('submit', '#form', function () {
+        let html = $(".ckeditor").html()
+        $("#editor1").val(html)
+    });
     $(document).ready(function () {
   function SimpleUploadAdapter(editor) {
     editor.plugins.get('FileRepository').createUploadAdapter = function(loader) {
