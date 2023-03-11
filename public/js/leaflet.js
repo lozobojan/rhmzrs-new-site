@@ -318,7 +318,7 @@ var config = {
     API: {
         weatherForecastLink: hidrometeo_feeds + 'pointweather.json?t=' + timestampAPI,
         meteoData: hidrometeo_feeds + 'MeteoMapa.json?t=' + timestampAPI,
-        ecologyDataLink: hidrometeo_feeds + 'EkoPodaci.php?t=' + timestampAPI,
+        ecologyDataLink: hidrometeo_feeds + 'EkoPodaci.json?t=' + timestampAPI,
         waterLevelLink: hidrometeo_feeds + 'HidroPodaci.json?t=' + timestampAPI,
         seismicEventsLink: hidrometeo_feeds + 'zemljotresi.json?t=' + timestampAPI
     },
@@ -579,6 +579,7 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
     }
 
     function addMarkerForEcologyEvent(data) {
+        console.log("data", data)
         if (data.length > 0) {
             for (let i = 0; i < data.length; i++) {
                 if (Object.keys(data[i])) {
@@ -677,6 +678,7 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
         for (let i = 0; i < ecologyDataMarkers.length; i++) {
             ecologyDataMarkers[i].map_marker.on('click', function () {
                 let infoWindow = new LeafLeatGoogle.InfoWindow();
+                let classes = ['Добар', "Умјерен", "Нездрав за осјетљиве лјуде", "Нездрав", "Веома нездрав", "Опасан", "Непознато"];
                 for (let j = 0; j < data.length; j++) {
 
                     let ht =
@@ -695,13 +697,13 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
                         '\n' +
                         '<div class="container-fluid bg-primary">\n' +
                         '  <div class="row">\n' +
-                        '    <h1 class="title font-weight-bold text-white">' + data[i].StationName + '</h1>\n' +
-                        '    <h5 class="font-weight-bold text-white">' + data[i].termin + '</h5>\n' +
+                        '    <h1 class="title font-weight-bold text-white">' + data[i].stanica + '</h1>\n' +
+                        '    <h5 class="font-weight-bold text-white">' + data[i].vrijeme + '</h5>\n' +
                         '    <div class="w-100 bg-white mb-2" style="height: 4px"></div>\n' +
                         '    <h5 class="font-weight-bold text-white">Индекс квалитета ваздуха</h5>\n' +
-                        '    <div class="index bg-danger">\n' +
-                        '      <h1 class="text-white font-weight-bolder display-3 mb-0 pb-0">100</h1>\n' +
-                        '      <h4 class="font-weight-bold text-white mt-0 py-0">Нездрав</h4>\n' +
+                        '    <div class="index bg-class-'+ data[i].indeks[1] +'">\n' +
+                        '      <h1 class=" font-weight-bolder display-3 mb-0 pb-0">' + data[i].indeks[0] +'</h1>\n' +
+                        '      <h4 class="font-weight-bold  mt-0 py-0">'+ classes[data[i].indeks[1]?? 6] +'</h4>\n' +
                         '    </div>\n' +
                         '    <div class="mb-2"></div>\n' +
                         '    <table class="px-4 py-3 text-white">\n' +
@@ -714,32 +716,32 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
                         '        <tr class="border-top-1">\n' +
                         '          <td>CO</td>\n' +
                         '          <td>' + data[i].CO + '</td>\n' +
-                        '          <td></td>\n' +
+                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["CO"][1] +'"></div></td>\n' +
                         '        </tr>\n' +
                         '          <tr>\n' +
                         '          <td>NO2</td>\n' +
                         '          <td>' + data[i].NO2 + '</td>\n' +
-                        '          <td></td>\n' +
+                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["NO2"][1] +'"></div></td>\n' +
                         '        </tr>\n' +
                         '          <tr>\n' +
                         '          <td>O3</td>\n' +
                         '          <td>' + data[i].O3 + '</td>\n' +
-                        '          <td></td>\n' +
+                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["O3"][1] +'"></div></td>\n' +
                         '        </tr>\n' +
                         '          <tr>\n' +
                         '          <td>PM10</td>\n' +
                         '          <td>' + data[i].PM10 + '</td>\n' +
-                        '          <td></td>\n' +
+                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["PM10"][1] +'"></div></td>\n' +
                         '        </tr>\n' +
                         '          <tr>\n' +
                         '          <td>PM25</td>\n' +
-                        '          <td>' + data[i].PM25 + '</td>\n' +
-                        '          <td></td>\n' +
+                        '          <td>' + data[i]["PM2.5"] + '</td>\n' +
+                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["PM2.5"][1] +'"></div></td>\n' +
                         '        </tr>\n' +
                         '          <tr>\n' +
                         '          <td>SO2</td>\n' +
                         '          <td>' + data[i].SO2 + '</td>\n' +
-                        '          <td></td>\n' +
+                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["SO2"][1] +'"></div></td>\n' +
                         '        </tr>\n' +
                         '      </tbody>\n' +
                         '    </table>\n' +
@@ -926,8 +928,8 @@ function getEcologyEvents() {
         closeInfoWindow();
         getRequest(config.API.ecologyDataLink).then(function (data) {
             initMap();
-            initMap.addMarkerForEcologyEvent(data.EkoPodaci);
-            initMap.addEcologyInfoWindow(data.EkoPodaci);
+            initMap.addMarkerForEcologyEvent(data.indeks);
+            initMap.addEcologyInfoWindow(data.indeks);
         });
     });
 }

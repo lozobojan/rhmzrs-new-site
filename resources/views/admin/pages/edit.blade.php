@@ -7,7 +7,7 @@
         </div>
 
         <div class="card-body">
-            <form method="post" action="{{ route("admin.pages.update", [$page->id]) }}" enctype="multipart/form-data">
+            <form method="post" id="form" action="{{ route("admin.pages.update", [$page->id]) }}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
@@ -75,10 +75,12 @@ https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/src/index
 https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sourceediting.min.css
 " rel="stylesheet">
     <script>
-        $(document).on('submit','.submit',function(){
-            html = $(".ckeditor").html()
+
+        // On #form submit, get the HTML from the editor and set it as the value of the textarea
+        $(document).on('submit', '#form', function () {
+            let html = $(".ckeditor").html()
             $("#editor1").val(html)
-        })
+        });
 
         var uploadedAttachmentsMap = {}
         Dropzone.options.attachmentsDropzone = {
