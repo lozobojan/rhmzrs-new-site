@@ -1,23 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Send ajax request to freends.projekti.online/api/photos
-    $.ajax({
-        url: 'https://freends.projekti.online/api/photaos',
-        type: 'GET',
-        dataType: 'json',
-        beforeSend: function (xhr) {
-
-        },
-        success: function (data) {
-            alert(data);
-        },
-        error: function (data, textStatus, errorThrown) {
-            alert(textStatus)
-        }
-
-    });
-
     syn();
 
 });
