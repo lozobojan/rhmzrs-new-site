@@ -180,7 +180,7 @@
                 display: block;
                 width: auto;
                 height: 25px;
-                padding: 2px;
+                padding: 1px;
                 border-radius: 6px;
                 font-size: 1em;
                 font-weight: 400;

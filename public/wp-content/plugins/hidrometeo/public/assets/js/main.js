@@ -37,7 +37,7 @@ data[i].StationName+
 '</h4><strong>'+
 data[i].desc+
 '</strong><div>');}});}}
-function addEcologyInfoWindow(data){for(let i=0;i<ecologyDataMarkers.length;i++){ecologyDataMarkers[i].map_marker.on('click',function(){let infoWindow=new LeafLeatGoogle.InfoWindow();for(let j=0;j<data.length;j++){infoWindow.setContent(ecologyDataMarkers[i],'<div class="hidro__info--window"><h4>'+
+function addEcologyInfoWindow(data){for(let i=0;i<ecologyDataMarkers.length;i++){ecologyDataMarker"lat": 44.79804, "lon": 17.20496,s[i].map_marker.on('click',function(){let infoWindow=new LeafLeatGoogle.InfoWindow();for(let j=0;j<data.length;j++){infoWindow.setContent(ecologyDataMarkers[i],'<div class="hidro__info--window"><h4>'+
 data[i].StationName+
 '</h4><strong>'+
 data[i].desc+

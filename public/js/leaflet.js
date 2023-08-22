@@ -505,7 +505,7 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
                             position: latLng,
                             map: map,
                             labelClass: 'weatherLabel',
-                            labelContent: `${minTemp}Â°C&nbsp;${maxTemp}Â°C`,
+                            labelContent: `${minTemp}°C\u00A0${maxTemp}°C`,
                             htmlIcon: true,
                             icon: config.MAP.iconsURL + 'meteo-icons/' + data[i].forecasts.forecast[j].symbol + '.png',
                             name: data[i].name,
@@ -540,14 +540,14 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
         if (data.length > 0) {
             for (let i = 0; i < data.length; i++) {
                 if (Object.keys(data[i])) {
-                    console.log(data);
-                    let latLng = new LeafLeatGoogle.LatLng(data[i].lat, data[i].lon);
+                    // console.log(data);
+                    let latLng = new LeafLeatGoogle.LatLng(data[i]['Lat'], data[i]['Lon']);
                     try {
                         var marker = new LeafLeatGoogle.MarkerWithLabel({
                             position: latLng,
                             map: map,
                             labelClass: 'hidrologyLabel',
-                            labelContent: data[i].StationName,
+                            labelContent: data[i]['Станица'],
                             icon: config.MAP.iconsURL + 'hidro-icons/hidro.png'
                         });
                     } catch (err) {
@@ -577,24 +577,48 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
             }
         }
     }
-
     function addMarkerForEcologyEvent(data) {
-        console.log("data", data)
-        if (data.length > 0) {
-            for (let i = 0; i < data.length; i++) {
-                if (Object.keys(data[i])) {
-                    let latLng = new LeafLeatGoogle.LatLng(data[i].lat, data[i].lon);
-                    var marker = new LeafLeatGoogle.MarkerWithLabel({
-                        position: latLng,
-                        map: map,
-                        labelClass: 'hidrologyLabel',
-                        labelContent: data[i].StationName
-                    });
-                }
+        // console.log(data)
+        if (data) {
+            for (let stationName in data) {
+                let stationData = data[stationName];
+                console.log(stationData)
+
+                // You might need to include logic to get the lat and lon from somewhere
+                let latLng = new LeafLeatGoogle.LatLng(stationData.Lat, stationData.Lon);
+
+                // You might also need to adjust how you get the index or other values
+                var marker = new LeafLeatGoogle.MarkerWithLabel({
+                    position: latLng,
+                    map: map,
+                    labelClass: 'hidrologyLabel',
+                    icon: stationData.indeks ? '/assets/img/icons/class-' + stationData.indeks[1] + '.png' : '/assets/img/icons/marker-icon.png',
+                    labelContent: stationData.stanica
+                });
+
                 ecologyDataMarkers.push(marker);
             }
         }
     }
+
+    // function addMarkerForEcologyEvent(data) {
+    //     console.log("data", data)
+    //     if (data.length > 0) {
+    //         for (let i = 0; i < data.length; i++) {
+    //             if (Object.keys(data[i])) {
+    //                 let latLng = new LeafLeatGoogle.LatLng(data[i].lat, data[i].lon);
+    //                 var marker = new LeafLeatGoogle.MarkerWithLabel({
+    //                     position: latLng,
+    //                     map: map,
+    //                     labelClass: 'hidrologyLabel',
+    //                     icon: data[i].indeks[1] ?  '/assets/img/icons/class-' + data[i].indeks[1] + '.png' : '/assets/img/icons/marker-icon.png',
+    //                     labelContent: data[i].StationName
+    //                 });
+    //             }
+    //             ecologyDataMarkers.push(marker);
+    //         }
+    //     }
+    // }
 
     function addWeatherForecastInfoWindow(data) {
         for (let i = 0; i < weatherForecastMarkers.length; i++) {
@@ -635,12 +659,14 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
     }
 
     function addHidrologyInfoWindow(data) {
+        console.log(data)
         for (let i = 0; i < hidroMarkers.length; i++) {
+            console.log(hidroMarkers[i])
             hidroMarkers[i].map_marker.on('click', function () {
                 let infoWindow = new LeafLeatGoogle.InfoWindow();
                 for (let j = 0; j < data.length; j++) {
                     markerOnClick('<div class="hidro__info--window"><h4>' +
-                        data[i].StationName +
+                        data[i]['Станица'] +
                         '</h4><strong>' +
                         data[i].desc +
                         '</strong><div>')
@@ -915,8 +941,8 @@ function getWaterLevelEvents() {
         getRequest(config.API.waterLevelLink).then(function (data) {
             window.originalWaterLevelEventData = JSON.stringify(data);
             initMap();
-            initMap.addMarkerForHidrologyEvent(data.HidroPodaci);
-            initMap.addHidrologyInfoWindow(data.HidroPodaci);
+            initMap.addMarkerForHidrologyEvent(data);
+            initMap.addHidrologyInfoWindow(data);
         });
     });
 }
@@ -946,7 +972,7 @@ function getCurrentCityWeather(cityID = 51115) {
                 ')';
             currentCityWeatherConditionsElements[1].innerText = stationname;
             currentCityWeatherConditionsElements[2].setAttribute('title', `ÐœÑ˜ÐµÑ€ÐµÐ½Ð¾ Ñƒ ${data.termin}`);
-            currentCityWeatherConditionsElements[3].innerText = `${data.temperatura} Â°C`;
+            currentCityWeatherConditionsElements[3].innerText = `${data.temperatura} °C`;
             currentCityWeatherConditionsElements[4].innerText = data.pritisak;
             currentCityWeatherConditionsElements[5].innerText = `${data.smjVje} ${data.brzVje}`;
             currentCityWeatherConditionsElements[6].innerText = data.vidljivost;

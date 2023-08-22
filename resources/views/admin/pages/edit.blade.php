@@ -119,12 +119,7 @@ https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sou
                 @if(isset($page) && $page->attachments)
                 var files =
                     {!! json_encode($page->attachments) !!}
-                    for(
-                var i
-            in
-                files
-            )
-                {
+                    for(var i in files){
                     var file = files[i]
                     this.options.addedfile.call(this, file)
                     file.previewElement.classList.add('dz-complete')
