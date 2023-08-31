@@ -18,26 +18,32 @@ function syn(){
 
     $('#example').DataTable({
         ajax: {
-            dataSrc: '',
-            url: '../api/meteo-maps',
+            dataSrc: 'MeteoMapaGlavna',
+            url: '../data/feeds/MeteoMapa.json',
         },
         responsive: true,
         "columns": [
-            { "data": "station_name" },
-            { "data": "period" },
-            { "data": "temperature" },
-            { "data": "pressure" },
-            { "data": "wind" },
-            { "data": "rainfall" },
-            { "data": "min_temp" },
-            { "data": "max_temp" },
-            { "data": "snow" },
-            { "data": "image" },
+            { "data": "StationName" },
+            { "data": "termin" },
+            { "data": "temperatura" },
+            { "data": "pritisak" },
+            { "data": "brzVjetra" },
+            { "data": "kolicinaPadavine" },
+            { "data": "minTemp" },
+            { "data": "maxTemp" },
+            { "data": "snijeg" },
+            {
+                "data": "marker",
+                "render": function(data, type, row) {
+                    return '<img src="../wp-content/plugins/hidrometeo/public/assets/images/icons/' + data + '" alt="Marker" height="42" width="42">';
+                }
+            },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
         }
     });
+
 }
 
 function aut(){
@@ -75,7 +81,7 @@ function aut(){
                 $('#termin').text("Термин: " + termin);
                 return parsed;
             },
-            url: '../data/feeds/aut.json',
+            url: '../data/feeds/MeteoMapa.json',
         },
         responsive: true,
         "columns": [
