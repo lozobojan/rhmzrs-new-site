@@ -1,7 +1,7 @@
 let timestampAPI = Date.now();
 const config = {
     API: {
-        meteoStations: '../api/hydro-information',
+        meteoStations: '../data/feeds/HidroPodaci.json?t=' + timestampAPI,
     },
     MAP: {
         element: 'map',
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
             url: config.API.meteoStations,
         },
         "columns": [
-            { "data": "station_name" },
-            { "data": "period" },
+            { "data": "Станица" },
+            { "data": "Вријеме" },
             // { "data": "tendention", "defaultContent": "" },
-            { "data": "water_level" },
-            { "data": "temperature" },
+            { "data": "Водостај" },
+            { "data": "Температура Воде" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
@@ -75,13 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
         data = rs.data;
         data.forEach(item => {
             let marker = L.marker(
-                [item.lat, item.lng],
+                [item['Lat'], item['Lon']],
                 {
                     icon:
                         L.icon({
-                            iconUrl: item.icon,
+                            iconUrl: "../assets/img/icons/hidro.png"
                         }),
-                    description: item.description,
+                    item: item,
                 }
             ).addTo(map)
                 .on('click', markerOnClick);
@@ -97,7 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
             '                                <button type="button" class="close" data-dismiss="modal" onclick="$(\'#emptymodal\').modal(\'hide\');" aria-label="Close">\n' +
             '                                    <span aria-hidden="true">&times;</span>\n' +
             '                                </button>\n' +
-            '                            </div>' + id);
+            '                            </div>' + `<h3>${e.target.options.item['Станица']}</h3>
+<p>Аутоматска хидролошка станица ${e.target.options.item['Станица']}</p>
+`);
         $('#emptymodal').modal('show');
     }
 });

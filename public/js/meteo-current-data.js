@@ -81,13 +81,13 @@ function aut(){
                 $('#termin').text("Термин: " + termin);
                 return parsed;
             },
-            url: '../data/feeds/MeteoMapa.json',
+            url: '../data/feeds/MeteoPodaci.json?t=' + new Date().getTime(),
         },
         responsive: true,
         "columns": [
             { "data": "Станица" },
             {
-                "data": "Температура",
+                "data": "Температура Ваздуха",
                 render: function (data, type, row, meta) {
                     // Return number value rounded on 1 decimal if its not a number return data;
                     return isNaN(data) ? data : parseFloat(data).toFixed(1);
@@ -104,8 +104,8 @@ function aut(){
                     return row['Брзина Вјетра'] + ' m/s ' + row['Смјер Вјетра'];
                 }
             },
-            { "data": "Падавине" },
-            { "data": "Релативна Влажност" },
+            // { "data": "Падавине" },
+            { "data": "Влажност Ваздуха" },
         ],
         "language": {
             "url": "../js/Datatable/Serbian.json"
