@@ -4,6 +4,7 @@
 /public/data/feeds
 /public/data/feeds/*
 /vendor
+/public/data/feeds/*
 .env
 .env.backup
 .phpunit.result.cache
