@@ -1,6 +1,8 @@
 /node_modules
 /public/build
 /public/hot
+/public/data/feeds
+/public/data/feeds/*
 /vendor
 .env
 .env.backup
