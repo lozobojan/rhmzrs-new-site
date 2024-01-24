@@ -91,7 +91,7 @@ class WebsiteController extends Controller
 
     public function index(){
         // Get latest posts
-        $posts = Post::latest()->take(6)->get();
+        $posts = Post::latest()->take(6)->whereNot('page_id', 70)->get();
         // Get 3 latest homepage cards
         $homepageCards = HomepageCard::all();
         // Get latest 5 media with pdf, doc, docx, xls, xlsx and txt extensions
