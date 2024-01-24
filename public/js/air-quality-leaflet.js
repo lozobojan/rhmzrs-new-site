@@ -1,7 +1,7 @@
 let timestampAPI = Date.now();
 const config = {
     API: {
-        ecoInformation: '../api/eco-information',
+        ecoInformation: '../data/feeds/EkoPodaci.json?t=' + timestampAPI,
     },
     MAP: {
         element: 'map',
@@ -56,20 +56,33 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     $('#example').DataTable({
         ajax: {
-            dataSrc: '',
             url: config.API.ecoInformation,
+            dataSrc: function(json) {
+                var trenutniData = [];
+                for (var stationName in json.trenutni) {
+                    if (json.trenutni.hasOwnProperty(stationName)) {
+                        var record = json.trenutni[stationName];
+                        record.station_name = stationName; // Add station name to the record
+                        trenutniData.push(record);
+                    }
+                }
+                return trenutniData;
+            }
         },
         "columns": [
-            { "data": "period" },
-            { "data": "station_name" },
-            { "data": "o3" },
-            { "data": "co" },
-            { "data": "so2" },
-            { "data": "no" },
-            { "data": "no2" },
-            { "data": "nox" },
-            { "data": "pm10" },
-            { "data": "pm25" },
+            { "data": "vrijeme" },
+            { "data": "stanica" },
+            { "data": "O3" },
+            { "data": "CO" },
+            { "data": "SO2" },
+            { "data": "NO" },
+            { "data": "NO2" },
+            { "data": "NOx" },
+            { "data": "PM10" },
+            {
+                "data": "PM2\\.5", // Escape dot with double backslashes
+                "defaultContent": "-" // Default content if data is missing
+            },
             // { "data": "ik" },
         ],
         "language": {
@@ -79,90 +92,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#tp').DataTable({
         ajax: {
-            dataSrc: 'indeks',
             url: '/data/feeds/EkoPodaci.json',
+            dataSrc: function(json) {
+                var indeksData = [];
+                for (var station in json.indeks) {
+                    var stationData = json.indeks[station];
+                    stationData['station'] = station; // Add the station name to the data
+                    indeksData.push(stationData);
+                }
+                return indeksData;
+            }
         },
-        "columns": [
+        columns: [
             { "data": "vrijeme" },
-            { "data": "stanica" },
-            { "data": "O3",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return data[0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['O3'][1]}`);
-                    $(td).addClass('text-white');
-                }
+            { "data": "station" }, // 'station' is the added key for the station name
+            {
+                "data": "O3",
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
             },
-            { "data": "CO",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return data[0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['CO'][1]}`);
-                    $(td).addClass('text-white');
-                } },
-            { "data": "SO2",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return data[0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['SO2'][1]}`);
-                    $(td).addClass('text-white');
-                } },
-            { "data": "NO2",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return data[0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['NO2'][1]}`);
-                    $(td).addClass('text-white');
-                } },
-            { "data": "PM10",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return data[0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['PM10'][1]}`);
-                    $(td).addClass('text-white');
-                } },
-            { "data": "PM2.5",
-                defaultContent: "*",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return row["PM2.5"][0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['PM2.5'][1]}`);
-                    $(td).addClass('text-white');
-                }
+            {
+                "data": "CO",
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
             },
-            { "data": "indeks",
-                // Render first array element of data and ssecond if 1 set td class to red
-                "render": function ( data, type, row, meta ) {
-                    return row["indeks"][0];
-                },
-                // Add class to td
-                "createdCell": function (td, cellData, rowData, row, col) {
-                    $(td).addClass(`bg-class-${rowData['indeks'][1]}`);
-                    $(td).addClass('text-white');
-                } },
+            {
+                "data": "SO2",
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
+            },
+            {
+                "data": "NO2",
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
+            },
+            {
+                "data": "PM10",
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
+            },
+            {
+                "data": "PM2\\.5", // Handle the dot notation
+                "defaultContent": "*",
+                "render": function (data) { return Array.isArray(data) ? data[0] : '*'; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
+            },
+            {
+                "data": "indeks",
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
+                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
+            }
         ],
-        "language": {
-            "url": "../js/Datatable/Serbian.json"
+        language: {
+            url: "../js/Datatable/Serbian.json"
         }
     });
+
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
