@@ -52,7 +52,7 @@
     </div>
     <br>
 
-    <table id="example" class="table table-bordered table-striped" style="width:100%">
+    <table id="example" class="table table-bordered table-striped notranslate" style="width:100%">
         <thead>
         <tr role="row">
 {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}

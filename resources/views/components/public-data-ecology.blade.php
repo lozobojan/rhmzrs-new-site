@@ -21,7 +21,7 @@
         <a class="btn btn-primary" href="?type=direct">Прикажи директне гасове </a>
         <a class="btn btn-primary" href="?type=indirect">Прикажи индиректне  гасове </a>
     </div>
-    <table id="example" class="table table-bordered table-striped" style="width:100%">
+    <table id="example" class="table table-bordered table-striped notranslate" style="width:100%">
         <thead>
         <tr role="row">
             {{--            {{ dd($gasses) }}--}}

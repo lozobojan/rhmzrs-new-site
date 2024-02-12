@@ -56,7 +56,7 @@
             <button class="btn btn-primary" onclick="execute('AUTOMATIC')">Прикажи аутоматске</button>
             <button class="btn btn-primary" onclick="execute('FINAL')">Прикажи обрађене</button>
     </div>
-    <table id="example" class="table table-bordered table-striped" style="width:100%">
+    <table id="example" class="table table-bordered table-striped notranslate" style="width:100%">
         <thead>
         <tr role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"

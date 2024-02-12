@@ -59,7 +59,8 @@ class WebsiteController extends Controller
 
     public function contact()
     {
-        return view('pages.contact');
+        $page = Page::where('slug', 'kontakt')->first();
+        return view('pages.contact', compact('page'));
     }
 
     public function saveContact(Request $request)
@@ -110,9 +111,17 @@ class WebsiteController extends Controller
     }
     public function airControl()
     {
-        $page = Page::query()->where('slug', 'izvjestaji')->first();
-        return view('pages.air-quality', compact('page'));
+        $page = Page::where('slug', 'izvjestaji')->first();
+
+        // Grupisanje priloga na osnovu 'description', gde se sve što nije M, D, ili G svrstava u 'Other'
+        $groupedAttachments = $page->attachments->groupBy(function ($item, $key) {
+            $description = strtoupper($item->custom_properties['description'] ?? '');
+            return in_array($description, ['M', 'D', 'G']) ? $description : 'Other';
+        });
+
+        return view('pages.air-quality', compact('page', 'groupedAttachments'));
     }
+
 
     public function allProjects(Request $request)
     {

@@ -356,8 +356,13 @@ async function getRequest(url) {
 
 function setDateButtons(data) {
     let dateButton, dateListItem, navigation = document.querySelector('#dateButtons');
+    if (navigation) {
+        navigation.innerHTML = "";
+        console.log("PUSHING, ", data)
+    }
     for (let i = 0; i < data[0].forecasts.forecast.length; i++) {
         if (Object.keys(data[0].forecasts.forecast[i]).length) {
+            console.log("PUSHING")
             dateListItem = document.createElement('li');
             dateListItem.setAttribute('role', 'presentation');
             dateListItem.setAttribute('class', 'nav__pills-item');

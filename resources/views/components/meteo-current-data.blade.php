@@ -20,7 +20,7 @@
         <a class="btn btn-primary" href="#" onclick="syn()">Синоптичке станице </a>
         <a class="btn btn-primary" href="#" onclick="aut()">Аутоматске станице </a>
     </div>
-    <table id="example" class="table table-bordered table-striped" style="width:100%">
+    <table id="example" class="table table-bordered table-striped notranslate" style="width:100%">
         <thead>
         <tr role="row">
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
@@ -58,7 +58,9 @@
     </table>
     <h4 id="termin" class="py-4"></h4>
     <p class="infoinfo">*Подаци са аутоматских станица су информативног карактера</p>
-    <table id="example2" class="table table-bordered table-striped" style="width:100%">
+    <p class="infoinfo">* податак се не мјери</p>
+    <p class="infoinfo">- нема података</p>
+    <table id="example2" class="table table-bordered table-striped notranslate" style="width:100%">
         <thead>
         <tr role="row">
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"

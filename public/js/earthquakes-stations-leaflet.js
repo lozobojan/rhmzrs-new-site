@@ -107,7 +107,7 @@ function execute(type = ''){
         ).addTo(map)
             .on('click', markerOnClick);
         markerArr.push(marker);
-
+2
         // }); // Close the loop if you have an array of events
     });
 

@@ -266,62 +266,155 @@
     <section id="izvjestaji" class="wrapper bg-light angled">
         <div class="container py-14 py-md-16">
             <div class="row">
-
-
                 <div class="col-lg-12 col-xl-12 col-xxl-12">
-
-                    {{-- TODO: razmisliti o ovom prikazu bez escape-ovanja, nije bas bezbjedno --}}
                     <h1 class="fs-32 text-uppercase text-line text-primary mb-3">{{ $page->title }}</h1>
-                    {!! $page->html_content !!}
-
-
-                    @if(count($page->attachments))
-                        <br>
-                        <x-section-separator text="Прилози" simple></x-section-separator>
-                        <table class="table align-middle mb-0 bg-white table-bordered">
-                            <thead class="bg-primary-light">
-                            <tr>
-                                <th>Датотека</th>
-                                {{--                            <th>Објашњење</th>--}}
-                                <th>Објашњење</th>
-                                <th>Величина датотеке</th>
-                                <th>Преузимање</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @php
-                                $attachments = $page->attachments->reverse();
-                            @endphp
-                            @foreach($attachments as $key => $media)
+                    <ul class="nav nav-tabs" id="reportTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab" aria-controls="monthly" aria-selected="true">Месечни</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="daily-tab" data-bs-toggle="tab" data-bs-target="#daily" type="button" role="tab" aria-controls="daily" aria-selected="false">Дневни</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="annual-tab" data-bs-toggle="tab" data-bs-target="#annual" type="button" role="tab" aria-controls="annual" aria-selected="false">Годишњи</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="other-tab" data-bs-toggle="tab" data-bs-target="#other" type="button" role="tab" aria-controls="other" aria-selected="false">Остало</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
+                            <!-- Tabela za Mesečne izveštaje -->
+                            <table class="table">
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
-                                                <div class="file-icon file-icon-md"
-                                                     data-type="{{ last(explode('.',$media->file_name)) }}"></div>
-                                                <p class="fw-bold"
-                                                   style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td>{{ $media->custom_properties['description'] }}</td>
-                                    <td>{{ $media->human_readable_size }}</td>
-                                    <td>
-                                        {{ $media->download_count }}
-                                    </td>
+                                    <th>Датотека</th>
+{{--                                    <th>Опис</th>--}}
+                                    <th>Величина</th>
+                                    <th>Преузимања</th>
                                 </tr>
-
-                            @endforeach
-                            </tbody>
-                        </table>
-                    @endif
+                                </thead>
+                                <tbody>
+                                @foreach($groupedAttachments['M'] ?? [] as $media)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
+                                                    <div class="file-icon file-icon-md"
+                                                         data-type="{{ last(explode('.',$media->file_name)) }}"></div>
+                                                    <p class="fw-bold"
+                                                       style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
+                                                </a>
+                                            </div>
+                                        </td>
+{{--                                        <td>{{ $media->custom_properties['description'] }}</td>--}}
+                                        <td>{{ $media->human_readable_size }}</td>
+                                        <td>{{ $media->download_count }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="daily" role="tabpanel" aria-labelledby="daily-tab">
+                            <!-- Tabela za Dnevne izveštaje -->
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Датотека</th>
+{{--                                    <th>Опис</th>--}}
+                                    <th>Величина</th>
+                                    <th>Преузимања</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($groupedAttachments['D'] ?? [] as $media)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
+                                                    <div class="file-icon file-icon-md"
+                                                         data-type="{{ last(explode('.',$media->file_name)) }}"></div>
+                                                    <p class="fw-bold"
+                                                       style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
+                                                </a>
+                                            </div>
+                                        </td>
+{{--                                        <td>{{ $media->custom_properties['description'] }}</td>--}}
+                                        <td>{{ $media->human_readable_size }}</td>
+                                        <td>{{ $media->download_count }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="annual" role="tabpanel" aria-labelledby="annual-tab">
+                            <!-- Tabela za Godišnje izveštaje -->
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Датотека</th>
+{{--                                    <th>Опис</th>--}}
+                                    <th>Величина</th>
+                                    <th>Преузимања</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($groupedAttachments['G'] ?? [] as $media)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
+                                                    <div class="file-icon file-icon-md"
+                                                         data-type="{{ last(explode('.',$media->file_name)) }}"></div>
+                                                    <p class="fw-bold"
+                                                       style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
+                                                </a>
+                                            </div>
+                                        </td>
+{{--                                        <td>{{ $media->custom_properties['description'] }}</td>--}}
+                                        <td>{{ $media->human_readable_size }}</td>
+                                        <td>{{ $media->download_count }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="annual-tab">
+                            <!-- Tabela za Godišnje izveštaje -->
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Датотека</th>
+                                    {{--                                    <th>Опис</th>--}}
+                                    <th>Величина</th>
+                                    <th>Преузимања</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($groupedAttachments['Other'] ?? [] as $media)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
+                                                    <div class="file-icon file-icon-md"
+                                                         data-type="{{ last(explode('.',$media->file_name)) }}"></div>
+                                                    <p class="fw-bold"
+                                                       style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        {{--                                        <td>{{ $media->custom_properties['description'] }}</td>--}}
+                                        <td>{{ $media->human_readable_size }}</td>
+                                        <td>{{ $media->download_count }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <!-- /column -->
-
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
     </section>
 
 

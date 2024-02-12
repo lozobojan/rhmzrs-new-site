@@ -60,7 +60,7 @@ function aut(){
     $('#example2').DataTable({
         ajax: {
             dataSrc: function(data){
-                let termin = data['Вријеме'];
+                let termin = data[0]['Вријеме'].replace('T', " ");
                 parsed = Object.keys(data).map(key => {
                     if (key === "Вријеме") {
                         // dont include the key

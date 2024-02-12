@@ -483,7 +483,7 @@
                             </thead>
                             <tbody>
                             @php
-                                $attachments = $media->reverse();
+                                $attachments = $media;
                             @endphp
                             @foreach($attachments as $key => $media)
                                 <tr>

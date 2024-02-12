@@ -137,6 +137,9 @@
                         <div id="topbar-search" class="topbar-widget">
 
                             <style type="text/css">
+                                .btn-soft-primary:focus, .btn-soft-primary:hover {
+                                    background-color: #747ed1!important;
+                                }
                                 #goog-gt-tt {
                                     display: none !important;
                                 }
@@ -221,6 +224,52 @@
                                     var lang_html = jQuery('div.switcher div.option').find('img[alt="' + GTranslateGetCurrentLang() + '"]').parent().html();
                                     if (typeof lang_html != 'undefined') jQuery('div.switcher div.selected a').html(lang_html.replace('data-gt-lazy-', ''));
                                 });
+
+
+                                const cirToLat = {
+                                    'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D',
+                                    'Ђ': 'Đ', 'Е': 'E', 'Ж': 'Ž', 'З': 'Z', 'И': 'I',
+                                    'Ј': 'J', 'К': 'K', 'Л': 'L', 'Љ': 'Lj', 'М': 'M',
+                                    'Н': 'N', 'Њ': 'Nj', 'О': 'O', 'П': 'P', 'Р': 'R',
+                                    'С': 'S', 'Т': 'T', 'Ћ': 'Ć', 'У': 'U', 'Ф': 'F',
+                                    'Х': 'H', 'Ц': 'C', 'Ч': 'Č', 'Џ': 'Dž', 'Ш': 'Š',
+                                    'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd',
+                                    'ђ': 'đ', 'е': 'e', 'ж': 'ž', 'з': 'z', 'и': 'i',
+                                    'ј': 'j', 'к': 'k', 'л': 'l', 'љ': 'lj', 'м': 'm',
+                                    'н': 'n', 'њ': 'nj', 'о': 'o', 'п': 'p', 'р': 'r',
+                                    'с': 's', 'т': 't', 'ћ': 'ć', 'у': 'u', 'ф': 'f',
+                                    'х': 'h', 'ц': 'c', 'ч': 'č', 'џ': 'dž', 'ш': 'š'
+                                };
+
+                                const latToCir = Object.fromEntries(Object.entries(cirToLat).map(([k, v]) => [v, k]));
+
+                                function replaceText(element, map) {
+                                    if (element.nodeType === 3) { // Node.TEXT_NODE
+                                        let text = element.textContent;
+                                        let newText = '';
+                                        for (let char of text) {
+                                            newText += map[char] || char;
+                                        }
+                                        element.textContent = newText;
+                                    } else if (element.nodeType === 1) { // Node.ELEMENT_NODE
+                                        element.childNodes.forEach(child => replaceText(child, map));
+                                    }
+                                }
+
+                                function toggleScript() {
+                                    const script = document.documentElement.getAttribute('lang') === 'sr' ? latToCir : cirToLat;
+                                    document.documentElement.setAttribute('lang', document.documentElement.getAttribute('lang') === 'sr' ? 'sr-Latn' : 'sr');
+
+                                    const button = document.getElementById('toggleScriptButton');
+                                    if (document.documentElement.getAttribute('lang') === 'sr') {
+                                        button.textContent = 'Latinica';
+                                    } else {
+                                        button.textContent = 'Ћирилица';
+                                    }
+
+                                    replaceText(document.body, script);
+                                }
+
 
 
                             </script>
@@ -310,6 +359,7 @@
                 .bg-level-2 a,div {
                     color: #ffffff !important;
                 }
+
             </style>
         <section class="w-100 py-5 {{ $alert->level_class }}">
             <a class="text-white text-center d-block font-weight-bold h1" href="{{ route("alert.view", [$alert->id]) }}">{{ $alert->title }}</a>
@@ -389,8 +439,13 @@
                         <ul class="list-unstyled  mb-0">
                             <li><a href="/uslovi-koriscenja">Услови коришћења</a></li>
                             <li><a href="/pristup-informacijama">Приступ информацијама</a></li>
-                            <li><button onclick="doGTranslate('sr|bs')" class="notranslate">Latinica</button></li>
-                            <li><button onclick="doGTranslate('sr|sr')" class="notranslate">Cirlica</button></li>
+                            <li>
+                                <button id="toggleScriptButton" class="btn btn-soft-primary" onclick="toggleScript()">Ћирилица</button>
+
+                            </li>
+
+{{--                            <li><button onclick="doGTranslate('sr|bs')" class="notranslate">Latinica</button></li>--}}
+{{--                            <li><button onclick="doGTranslate('sr|sr')" class="notranslate">Cirlica</button></li>--}}
                         </ul>
                     </div>
                     <!-- /.widget -->
