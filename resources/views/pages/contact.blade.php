@@ -167,10 +167,22 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
                     <h2 class="display-4 mb-3 text-center mb-10">Пошаљите нам поруку</h2>
-                    <form class="contact-form needs-validation" method="post" action="#"
-                          novalidate>
+                    <form class="contact-form needs-validatiaon" method="POST" action="{{ route('contact.send') }}" novalidate>
                         @csrf
-                        <div class="messages"></div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <div class="row gx-4">
                             <div class="col-md-6">
                                 <div class="form-floating mb-4">

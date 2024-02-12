@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormMail;
 use App\Models\Alert;
 use App\Models\DocumentAndRegulation;
 use App\Models\HomepageCard;
@@ -11,6 +12,7 @@ use App\Models\PublicCompetition;
 use App\Models\PublicPurchase;
 use App\Models\Questionnaire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class WebsiteController extends Controller
@@ -139,5 +141,22 @@ class WebsiteController extends Controller
             ->paginate(10);
         return view('pages.all-activities', compact('activities'));
     }
+
+    public function sendEmail(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        $data = $request->only(['name', 'email', 'subject', 'message']);
+
+        Mail::to('kontakt@rhmzrs.com')->send(new ContactFormMail($data));
+
+        return back()->with('success', 'Vaša poruka je poslata.');
+    }
+
 
 }

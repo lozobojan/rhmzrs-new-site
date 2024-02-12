@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PublicWebsiteController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -239,4 +240,7 @@ Route::get('opsti-poslovi', [\App\Http\Controllers\WebsiteController::class, 'ge
 Route::get('kontrola-kvaliteta-vazduha', [\App\Http\Controllers\WebsiteController::class, 'airControl'])->name('air-control');
 Route::get('svi-projekti', [\App\Http\Controllers\WebsiteController::class, 'allProjects'])->name('all-projects');
 Route::get('sve-aktuelnosti', [\App\Http\Controllers\WebsiteController::class, 'allActivities'])->name('all-activities');
+
+
+Route::post('/send-email', [WebsiteController::class, 'sendEmail'])->name('contact.send');
 
