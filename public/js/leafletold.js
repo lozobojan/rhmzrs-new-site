@@ -179,10 +179,11 @@ function initMap() {
     }
 
     function addMarkerForSeismicEvent(data) {
+        console.log("SEIZMO: ", data);
         if (data.length > 0) {
             for (let i = 0; i < data.length; i++) {
                 if (Object.keys(data[i])) {
-                    let latLng = new LeafLeatGoogle.LatLng(data[i].lat, data[i].lon);
+                    let latLng = new LeafLeatGoogle.LatLng(data[i].latitude, data[i].longitude);
                     var marker = new LeafLeatGoogle.MarkerWithLabel({
                         position: latLng,
                         map: map,

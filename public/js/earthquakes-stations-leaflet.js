@@ -60,17 +60,14 @@ function execute(type = ''){
         $('#map').removeClass('map-scroll');
     })
     $('#example').DataTable({
-        destroy : true,
+        destroy: true,
         ajax: {
-            url: `${config.API.meteoStations}?type=${type}`,
-            dataSrc: function(json) {
-                // Convert your single object into an array
-                return [json];
-            }
+            url: `${config.API.meteoStations}`, // Ensure this URL is correct
+            dataSrc: ''
+            // dataSrc not needed for direct array responses
         },
         responsive: true,
-
-        "columns": [
+        columns: [
             { "data": "datum", "title": "Earthquake Date" },
             { "data": "latitude", "title": "Latitude" },
             { "data": "longitude", "title": "Longitude" },
@@ -78,10 +75,11 @@ function execute(type = ''){
             { "data": "magnituda", "title": "Magnitude" },
             { "data": "mjesto", "title": "Location" },
         ],
-        "language": {
-            "url": "../js/Datatable/Serbian.json"
+        language: {
+            url: "../js/Datatable/Serbian.json"
         }
     });
+
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -90,24 +88,25 @@ function execute(type = ''){
     let markerArr = [];
 
     axios.get(`${config.API.meteoStations}`).then(rs => {
-        let item = rs.data; // Assuming rs.data is your JSON object
+        let items = rs.data; // Assuming rs.data is your JSON object
 
         // If your response actually contains an array of events, loop through them
         // data.forEach(item => {
+items.forEach(item => {
+    let marker = L.marker(
+        [item.latitude, item.longitude],
+        {
+            icon: L.icon({
+                iconUrl: '../assets/img/icons/earthquake2.png', // Define the icon path
+                // You can add more icon options if needed
+            }),
+            description: item.mjesto, // Use the 'mjesto' field from your JSON as the description
+        }
+    ).addTo(map)
+        .on('click', markerOnClick);
+    markerArr.push(marker);
+})
 
-        let marker = L.marker(
-            [item.latitude, item.longitude],
-            {
-                icon: L.icon({
-                    iconUrl: '../assets/img/icons/earthquake.png', // Define the icon path
-                    // You can add more icon options if needed
-                }),
-                description: item.mjesto, // Use the 'mjesto' field from your JSON as the description
-            }
-        ).addTo(map)
-            .on('click', markerOnClick);
-        markerArr.push(marker);
-2
         // }); // Close the loop if you have an array of events
     });
 

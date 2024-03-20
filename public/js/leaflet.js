@@ -320,7 +320,7 @@ var config = {
         meteoData: hidrometeo_feeds + 'MeteoMapa.json?t=' + timestampAPI,
         ecologyDataLink: hidrometeo_feeds + 'EkoPodaci.json?t=' + timestampAPI,
         waterLevelLink: hidrometeo_feeds + 'HidroPodaci.json?t=' + timestampAPI,
-        seismicEventsLink: hidrometeo_feeds + 'zemljotresi.json?t=' + timestampAPI
+        seismicEventsLink: hidrometeo_feeds + 'zemljotres.json?t=' + timestampAPI
     },
     MAP: {
         element: 'map',
@@ -527,7 +527,7 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
         if (data.length > 0) {
             for (let i = 0; i < data.length; i++) {
                 if (Object.keys(data[i])) {
-                    let latLng = new LeafLeatGoogle.LatLng(data[i].lat, data[i].lon);
+                    let latLng = new LeafLeatGoogle.LatLng(data[i].latitude, data[i].longitude);
                     var marker = new LeafLeatGoogle.MarkerWithLabel({
                         position: latLng,
                         map: map,
@@ -645,11 +645,11 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
                 let infoWindow = new LeafLeatGoogle.InfoWindow();
                 for (let j = 0; j < data.length; j++) {
                     markerOnClick('<div class="seismic__info--window"><h4>' +
-                        data[i].termin +
+                        data[i].datum +
                         ' - Земљотрес код ' +
-                        data[i].region +
+                        data[i].mjesto +
                         ' </h4><p><strong>' +
-                        data[i].desc +
+                        +
                         '</strong></p><div>')
                     // infoWindow.setContent(seismicMarkers[i], '<div class="seismic__info--window"><h4>' +
                     //     data[i].termin +
@@ -932,8 +932,8 @@ function getSeismicEvents() {
         closeInfoWindow();
         getRequest(config.API.seismicEventsLink).then(function (data) {
             initMap();
-            initMap.addMarkerForSeismicEvent(data.Zemljotresi);
-            initMap.addSeismicInfoWindow(data.Zemljotresi);
+            initMap.addMarkerForSeismicEvent(data);
+            initMap.addSeismicInfoWindow(data);
         });
     });
 }
