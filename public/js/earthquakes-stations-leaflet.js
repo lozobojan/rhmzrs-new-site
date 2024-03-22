@@ -67,6 +67,7 @@ function execute(type = ''){
             // dataSrc not needed for direct array responses
         },
         responsive: true,
+        order: [[ 0, "desc" ]],
         columns: [
             { "data": "datum", "title": "Earthquake Date" },
             { "data": "latitude", "title": "Latitude" },
