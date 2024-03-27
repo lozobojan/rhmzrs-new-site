@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         "columns": [
-            { "data": "vrijeme" },
-            { "data": "stanica" },
+            { "data": "vrijeme", "width": "160px" },
+            { "data": "stanica", "width": "100px" },
             { "data": "O3" },
             { "data": "CO" },
             { "data": "SO2" },
@@ -83,6 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 "data": "PM2\\.5", // Escape dot with double backslashes
                 "defaultContent": "-" // Default content if data is missing
             },
+            { "data": "H2S" },
+            { "data": "C6H6" },
             // { "data": "ik" },
         ],
         "language": {
@@ -104,15 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         columns: [
-            { "data": "vrijeme" },
-            { "data": "station" }, // 'station' is the added key for the station name
+            { "data": "vrijeme", "width": "130px" },
+            { "data": "station", "width": "100px" }, // 'station' is the added key for the station name
             {
                 "data": "O3",
-                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
-                "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
-            },
-            {
-                "data": "CO",
                 "render": function (data) { return Array.isArray(data) ? data[0] : data; },
                 "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
             },
@@ -134,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 "data": "PM2\\.5", // Handle the dot notation
                 "defaultContent": "*",
-                "render": function (data) { return Array.isArray(data) ? data[0] : '*'; },
+                "render": function (data) { return Array.isArray(data) ? data[0] : data; },
                 "createdCell": function (td, cellData) { $(td).addClass(`bg-class-${Array.isArray(cellData) ? cellData[1] : 'undefined'}`).addClass('text-white'); }
             },
             {

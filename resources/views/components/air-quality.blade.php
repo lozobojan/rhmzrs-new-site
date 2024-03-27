@@ -38,23 +38,38 @@
         }
 
         .bg-class-1 {
-            background-color: #00ff00!important;
+            background-color:#50F0E6!important;
+            color: black!important;
+            font-weight: bold;
         }
 
         .bg-class-2 {
-            background-color: #ffff00!important;
+            background-color:#50CCAA!important;
+            color: black!important;
+            font-weight: bold;
         }
 
         .bg-class-3 {
-            background-color: #ff9900!important;
+            background-color: #F0E641!important;
+            color: black!important;
+            font-weight: bold;
         }
 
         .bg-class-4 {
-            background-color: #ff0000!important;
+            background-color: #FF5050!important;
+            color: black!important;
+            font-weight: bold;
         }
 
         .bg-class-5 {
-            background-color: #990000!important;
+            background-color: #960005!important;
+            color: white!important;
+            font-weight: bold;
+        }
+        .bg-class-6 {
+            background-color: #7D2181!important;
+            color: white!important;
+            font-weight: bold;
         }
         .bg-class-undefined {
             background-color: #ffffff!important;
@@ -126,6 +141,12 @@
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="PM25: activate to sort column ascending" style="width: 38px;">PM25
             </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">H2S
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="PM25: activate to sort column ascending" style="width: 38px;">C6H6
+            </th>
             {{--            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"--}}
             {{--                aria-label="PM25: activate to sort column ascending" style="width: 38px;">IK--}}
             {{--            </th>--}}
@@ -151,9 +172,6 @@
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="О3: activate to sort column ascending" style="width: 35px;">О3
-            </th>
-            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
-                aria-label="CO: activate to sort column ascending" style="width: 59px;">CO
             </th>
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="SО2: activate to sort column ascending" style="width: 59px;">SО2
