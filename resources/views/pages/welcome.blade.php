@@ -196,6 +196,11 @@
                 width: 60px;
             }
 
+            .meteoalarm {
+                height: 151px!important;
+
+            }
+
             #map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div {
                 display: none !important;
             }
@@ -422,7 +427,7 @@
                     <div class="kad_img_upload_widget">
                         <a href="https://www.meteoalarm.org/en/"
                            target="_blank"> <img
-                                class="w-100"
+                                class="w-100 meteoalarm"
                                 src="{{ asset('images/meteoalarm.png') }}">
                         </a></div>
                     {{--                    <x-section-separator text="Анкета" simple></x-section-separator>--}}

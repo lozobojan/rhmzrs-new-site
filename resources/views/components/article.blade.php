@@ -1,5 +1,5 @@
 <style>
-    img {
+    figure img {
         aspect-ratio: 4/3;
         object-fit: cover;
     }
