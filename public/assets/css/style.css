@@ -47867,6 +47867,10 @@ table.shopping-cart td {
     position: relative
 }
 
+.post-content .ck {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .classic-view article .card-body {
         padding: 2rem 2.5rem 1.25rem

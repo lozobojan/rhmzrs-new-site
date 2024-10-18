@@ -69,12 +69,12 @@ function execute(type = ''){
         responsive: true,
         order: [[ 0, "desc" ]],
         columns: [
-            { "data": "datum", "title": "Earthquake Date" },
-            { "data": "latitude", "title": "Latitude" },
-            { "data": "longitude", "title": "Longitude" },
-            { "data": "dubina", "title": "Depth" },
-            { "data": "magnituda", "title": "Magnitude" },
-            { "data": "mjesto", "title": "Location" },
+            { "data": "datum"},
+            { "data": "latitude"},
+            { "data": "longitude"},
+            { "data": "dubina"},
+            { "data": "magnituda"},
+            { "data": "mjesto"},
         ],
         language: {
             url: "../js/Datatable/Serbian.json"

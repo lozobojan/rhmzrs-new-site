@@ -1,3 +1,10 @@
+<style>
+    img {
+        aspect-ratio: 4/3;
+        object-fit: cover;
+    }
+</style>
+
 <article class="border-2 p-4 rounded-3 shadow mb-5">
     @if(!$simple)
         <figure class="overlay overlay-1 hover-scale rounded mb-6"><a href="/post/{{$article['id']}}">

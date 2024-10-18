@@ -279,57 +279,74 @@
                 </div>
                 <!-- /column -->
 
-                @if($slug == 'mreza-meteoroloskih-stanica')
-                    <x-meteo-stations></x-meteo-stations>
-                @endif
-                @if($slug == 'seizmologija-akcelerometarska-mreza')
-                    <x-accelero-stations></x-accelero-stations>
-                @endif
-                @if($slug == 'seizmologija-stanice')
-                    <x-seismic-stations></x-seismic-stations>
-                @endif
-                @if($slug == 'seizmologija-zemljotresi')
-                    <x-earthquakes></x-earthquakes>
-                @endif
-                @if($slug == 'kvalitet-vazduha-trenutni-podaci' || $slug == 'kvalitet-vazduha-mapa-mjernih-stanica')
-                    <x-air-quality></x-air-quality>
-                @endif
-                @if($slug == 'registar-postrojenja-i-zagadivaca-mapa-zagadjivaca')
-                    <x-eco-pollutants></x-eco-pollutants>
-                @endif
-                @if($slug == 'hidrologija-mapa-stanica')
-                    <x-hydro-stations></x-hydro-stations>
-                @endif
-                @if($slug == 'hidrologija-podaci')
-                    <x-hydro-stations></x-hydro-stations>
-                @endif
-                @if($slug == 'rijecni-slivovi')
-                    <x-river-basins></x-river-basins>
-                @endif
-                @if($slug == 'kote-odbrane-od-poplava')
-                    <x-kote></x-kote>
-                @endif
-                @if($slug == 'ekologija-javno-dostupni-podaci')
-                    <x-public-data-ecology></x-public-data-ecology>
-                @endif
-                @if($slug == 'meteorologija-aktuelni-podaci')
-                    <x-meteo-current-data></x-meteo-current-data>
-                @endif
-                @if($slug == 'meteorologija-trenutne-temperature')
-                    <x-current-temperatures></x-current-temperatures>
-                @endif
-                @if($slug == 'meteorologija-pritisak')
-                    <x-preasures></x-preasures>
-                @endif
-                @if($slug == 'meteorologija-vjetar')
-                    <x-wind></x-wind>
-                @endif
-                @if($slug == 'meteorologija-bioprognoza')
-                    <x-bio-prognoses></x-bio-prognoses>
-                @endif
+                @switch($slug)
+                    @case('mreza-meteoroloskih-stanica')
+                        <x-meteo-stations></x-meteo-stations>
+                        @break
 
+                    @case('seizmologija-akcelerometarska-mreza')
+                        <x-accelero-stations></x-accelero-stations>
+                        @break
 
-                @if($page->pagePosts)
+                    @case('seizmologija-stanice')
+                        <x-seismic-stations></x-seismic-stations>
+                        @break
+
+                    @case('seizmologija-zemljotresi')
+                        <x-earthquakes></x-earthquakes>
+                        @break
+
+                    @case('kvalitet-vazduha-trenutni-podaci')
+                    @case('kvalitet-vazduha-mapa-mjernih-stanica')
+                        <x-air-quality></x-air-quality>
+                        @break
+
+                    @case('registar-postrojenja-i-zagadivaca-mapa-zagadjivaca')
+                        <x-eco-pollutants></x-eco-pollutants>
+                        @break
+
+                    @case('hidrologija-mapa-stanica')
+                    @case('hidrologija-podaci')
+                        <x-hydro-stations></x-hydro-stations>
+                        @break
+
+                    @case('rijecni-slivovi')
+                        <x-river-basins></x-river-basins>
+                        @break
+
+                    @case('kote-odbrane-od-poplava')
+                        <x-kote></x-kote>
+                        @break
+
+                    @case('ekologija-javno-dostupni-podaci')
+                        <x-public-data-ecology></x-public-data-ecology>
+                        @break
+
+                    @case('meteorologija-aktuelni-podaci')
+                        <x-meteo-current-data></x-meteo-current-data>
+                        @break
+
+                    @case('meteorologija-trenutne-temperature')
+                        <x-current-temperatures></x-current-temperatures>
+                        @break
+
+                    @case('meteorologija-pritisak')
+                        <x-preasures></x-preasures>
+                        @break
+
+                    @case('meteorologija-vjetar')
+                        <x-wind></x-wind>
+                        @break
+
+                    @case('meteorologija-bioprognoza')
+                        <x-bio-prognoses></x-bio-prognoses>
+                        @break
+
+                    @default
+                        {{-- fallback - none --}}
+                @endswitch
+
+            @if($page->pagePosts)
                     @foreach($page->pagePosts as $post)
                         <x-article :simple="true" :subtext="true" :article="$post"></x-article>
                         {{--                        <p>{{ $post->title }}</p>--}}

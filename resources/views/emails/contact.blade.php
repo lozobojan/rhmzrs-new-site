@@ -1,14 +1,14 @@
 @component('mail::message')
-    # Kontakt Forma Poruka
+# Kontakt Forma Poruka
 
-    Imate novu poruku sa kontakt forme.
+Imate novu poruku sa контакт форме.
 
-    **Ime:** {{ $data['name'] }}
+**Ime:** {{ $data['name'] }}
 
-    **Email:** {{ $data['email'] }}
+**Email:** {{ $data['email'] }}
 
-    **Poruka:**
+**Poruka:**
 
-    {{ $data['message'] }}
+{{ $data['message'] }}
 
 @endcomponent

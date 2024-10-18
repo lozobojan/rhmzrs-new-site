@@ -28,10 +28,10 @@ function syn(){
             { "data": "temperatura" },
             { "data": "pritisak" },
             { "data": "brzVjetra" },
-            { "data": "kolicinaPadavine" },
-            { "data": "minTemp" },
-            { "data": "maxTemp" },
-            { "data": "snijeg" },
+            { "data": "kolicinaPadavine", render: (data, type, row) => {return data === "null" ?"nan" : data} },
+            { "data": "minTemp", render: (data, type, row) => {return data === "null" ?"nan" : data} },
+            { "data": "maxTemp", render: (data, type, row) => {return data === "null" ?"nan" : data} },
+            { "data": "snijeg", render: (data, type, row) => {return data === "null" ?"nan" : data} },
             {
                 "data": "marker",
                 "render": function(data, type, row) {
@@ -86,6 +86,28 @@ function aut(){
         responsive: true,
         "columns": [
             { "data": "Станица" },
+            {
+                "data": "Вријеме",
+                render: function(data, type, row, meta) {
+                    // Check if the data matches the ISO format (yyyy-mm-ddThh:mm:ss)
+                    const isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/;
+                    if (isoDateRegex.test(data)) {
+                        // Convert ISO date format to dd.mm.yyyy hh:mm
+                        const dateObj = new Date(data);
+                        const day = ('0' + dateObj.getDate()).slice(-2);
+                        const month = ('0' + (dateObj.getMonth() + 1)).slice(-2); // Months are 0-based in JS
+                        const year = dateObj.getFullYear();
+                        const hours = ('0' + dateObj.getHours()).slice(-2);
+                        const minutes = ('0' + dateObj.getMinutes()).slice(-2);
+
+                        return `${day}.${month}.${year} ${hours}:${minutes}`;
+                    } else {
+                        // If the date doesn't match the expected format, return it as is
+
+                        return data;
+                    }
+                }
+            },
             {
                 "data": "Температура Ваздуха",
                 render: function (data, type, row, meta) {

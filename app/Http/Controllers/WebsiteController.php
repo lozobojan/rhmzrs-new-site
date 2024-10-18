@@ -62,8 +62,31 @@ class WebsiteController extends Controller
     public function contact()
     {
         $page = Page::where('slug', 'kontakt')->first();
+
+        // Obfuscate email addresses in the content
+        $page->html_content = $this->obfuscateEmails($page->html_content);
+
         return view('pages.contact', compact('page'));
     }
+
+    private function obfuscateEmails($content)
+    {
+        // Regular expression to match mailto links with email addresses
+        $emailRegex = '/<a\s+href="mailto:([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})">(.*?)<\/a>/';
+
+        // Use a callback function to replace mailto links with Base64 encoded emails
+        return preg_replace_callback($emailRegex, function ($matches) {
+            $email = $matches[1];  // The email found in the href attribute
+            $encodedEmail = base64_encode($email);  // Encode the email in Base64
+
+            // Return the obfuscated version of the mailto link
+            // Kliknite da otkrijete napisi na cirlici taj tekst
+
+            return '<a href="#" data-email="' . $encodedEmail . '" class="obfuscated-email">[Емаил сакривен - Кликните да откријете]</a>';
+        }, $content);
+    }
+
+
 
     public function saveContact(Request $request)
     {

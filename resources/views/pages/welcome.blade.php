@@ -423,7 +423,7 @@
                         <a href="https://www.meteoalarm.org/en/"
                            target="_blank"> <img
                                 class="w-100"
-                                src="https://rhmzrs.com/wp-content/uploads/2019/06/meteoalarm-logo.png">
+                                src="{{ asset('images/meteoalarm.png') }}">
                         </a></div>
                     {{--                    <x-section-separator text="Анкета" simple></x-section-separator>--}}
                     {{--                    <div class="px-3">--}}

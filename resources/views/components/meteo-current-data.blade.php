@@ -15,6 +15,14 @@
         td p {
             color: #0c0c0c!important;
         }
+
+        .legenda {
+        /*    Render small box with light gray background and some padding and round corners it has 2 p tags in t*/
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
     </style>
     <div class="flex flex-row">
         <a class="btn btn-primary" href="#" onclick="syn()">Синоптичке станице </a>
@@ -57,14 +65,19 @@
         </thead>
     </table>
     <h4 id="termin" class="py-4"></h4>
-    <p class="infoinfo">*Подаци са аутоматских станица су информативног карактера</p>
-    <p class="infoinfo">* податак се не мјери</p>
-    <p class="infoinfo">- нема података</p>
+    <p class="infoinfo">*Ови подаци су аутоматски генерисани и могу садржати одређене грешке. Молимо вас да их користите са опрезом и обратите се надлежним службама за тачне информације.</p>
+    <div class="legenda">
+        <p class="infoinfo">* податак се не мјери</p>
+        <p class="infoinfo">- нема података</p>
+    </div>
     <table id="example2" class="table table-bordered table-striped notranslate" style="width:100%">
         <thead>
         <tr role="row">
             <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Станица: activate to sort column ascending" style="width: 140px;">Станица
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Вријеме: activate to sort column ascending" style="width: 140px;">Термин
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Температура

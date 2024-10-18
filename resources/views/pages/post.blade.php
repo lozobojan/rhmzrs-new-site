@@ -17,6 +17,9 @@
                 max-width: 100%;
                 height: auto;
             }
+            .post-content .ck {
+                display: none;
+            }
         </style>
     </x-slot>
     <section class="wrapper bg-soft-primary d-print-none">
