@@ -1,4 +1,3 @@
-@component('mail::message')
 # Kontakt Forma Poruka
 
 Imate novu poruku sa контакт форме.
@@ -11,4 +10,4 @@ Imate novu poruku sa контакт форме.
 
 {{ $data['message'] }}
 
-@endcomponent
+

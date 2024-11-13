@@ -176,7 +176,7 @@ class WebsiteController extends Controller
 
         $data = $request->only(['name', 'email', 'subject', 'message']);
 
-        Mail::to('kontakt@rhmzrs.com')->send(new ContactFormMail($data));
+        Mail::to('mare.sampbn@gmail.com')->send(new ContactFormMail($data));
 
         return back()->with('success', 'Vaša poruka je poslata.');
     }
