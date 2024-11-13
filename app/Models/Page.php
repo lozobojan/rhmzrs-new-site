@@ -38,6 +38,10 @@ class Page extends Model implements HasMedia
         'deleted_at',
     ];
 
+    public function getAttachmentsUiAttribute()
+    {
+        return $this->getMedia('attachments')->sortByDesc('created_at');
+    }
     public function getAttachmentsAttribute()
     {
         return $this->getMedia('attachments');

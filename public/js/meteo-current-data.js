@@ -27,7 +27,9 @@ function syn(){
             { "data": "termin" },
             { "data": "temperatura" },
             { "data": "pritisak" },
-            { "data": "brzVjetra" },
+            // { "data": "brzVjetra", // add m/s at the end },
+            // render brzVjetra + ' m/s'
+            { "data": "brzVjetra", render: (data, type, row) => {return data === "null" ?"nan" : data + ' m/s'} },
             { "data": "kolicinaPadavine", render: (data, type, row) => {return data === "null" ?"nan" : data} },
             { "data": "minTemp", render: (data, type, row) => {return data === "null" ?"nan" : data} },
             { "data": "maxTemp", render: (data, type, row) => {return data === "null" ?"nan" : data} },
@@ -123,7 +125,7 @@ function aut(){
             },
             { "data": "Вјетар",
                 render: function(data, type, row, meta){
-                    return row['Брзина Вјетра'] + ' m/s ' + row['Смјер Вјетра'];
+                    return row['Брзина Вјетра'] != '*' ? row['Брзина Вјетра'] + ' m/s ' + row['Смјер Вјетра'] : '';
                 }
             },
             // { "data": "Падавине" },

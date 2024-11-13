@@ -20,7 +20,7 @@ class ContactFormMail extends Mailable
 
     public function build()
     {
-        return $this->markdown('emails.contact')
+        return $this->markdown('emails.contact')->to('mare.sampbn@gmil.com')
             ->with('data', $this->data)
             ->subject('Poruka sa Kontakt Forme');
     }

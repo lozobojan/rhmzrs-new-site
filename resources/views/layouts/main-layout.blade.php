@@ -383,10 +383,6 @@
         <div class="container pt-13 pt-md-13 pb-8 pb-md-10">
             <div class="row gy-6 gy-lg-0 pb-6">
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="/ankete" class="btn btn-primary rounded mb-0 text-nowrap w-100"
-                       style="height: 80px">Анкета</a>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
                     <a href="{{asset('assets/Zahtjev-za-podacima.doc')}}"
                        class="btn btn-primary rounded mb-0 text-nowrap w-100"
                        style="height: 80px; background-color: #00a7bd; border-color:#00a7bd ">
@@ -395,7 +391,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="http://apk.vladars.net/index.php?institucija=25"
+                    <a href="http://apk.vladars.rs" target="_blank"
                        class="btn btn-white rounded mb-0 text-nowrap w-100 p-0" style="height: 80px">
                         <img src="{{ asset('assets/img/306x100.png') }}" class="h-100" alt="">
                     </a>

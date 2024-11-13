@@ -67,35 +67,47 @@ class PageController extends Controller
     return view('admin.pages.edit', compact('page'));
   }
 
-  public function update(UpdatePageRequest $request, Page $page)
-  {
-    $page->update($request->all());
+    public function update(UpdatePageRequest $request, Page $page)
+    {
+        $page->update($request->all());
 
-    if (count($page->attachments) > 0) {
-      foreach ($page->attachments as $media) {
-        if (!in_array($media->file_name, $request->input('attachments', []))) {
-          $media->delete();
+        // Remove deleted files from media collection
+        if (count($page->attachments) > 0) {
+            // Remove deleted files from media collection
+            foreach ($page->attachments as $media) {
+                if (!in_array($media->file_name, $request->input('attachments', []))) {
+                    $media->delete();
+                }
+            }
+
         }
-      }
-    }
-    $media = $page->attachments->pluck('file_name')->toArray();
-    $descriptions = $request->descriptions;
-    foreach ($request->input('attachments', []) as $key => $file) {
-      if (count($media) === 0 || !in_array($file, $media)) {
-        if (!array_key_exists($key, $request->descriptions)) {
-          $descriptions[$key] = '';
+
+        $media = $page->attachments->pluck('file_name')->toArray();
+        $descriptions = $request->input('attachments_descriptions', []);
+        $existingMedia = $page->attachments->pluck('file_name')->toArray();
+
+        foreach ($request->input('attachments', []) as $file) {
+            if (!in_array($file, $existingMedia)) {
+                $description = $descriptions[$file] ?? '';
+                $page->addMedia(storage_path('tmp/uploads/' . basename($file)))
+                    ->withCustomProperties(['description' => $description])
+                    ->toMediaCollection('attachments');
+            } else {
+                // Update the description for existing media
+                $mediaItem = $page->getMedia('attachments')->firstWhere('file_name', $file);
+                if ($mediaItem && isset($descriptions[$file])) {
+                    $mediaItem->setCustomProperty('description', $descriptions[$file]);
+                    $mediaItem->save();
+                }
+            }
         }
-        $description = $descriptions[$key];
-        $page->addMedia(storage_path('tmp/uploads/' . basename($file)))
-          ->withCustomProperties(['description' => $description])
-          ->toMediaCollection('attachments');
-      }
+
+
+        return redirect()->route('admin.pages.index');
     }
 
-    return redirect()->route('admin.pages.index');
-  }
 
-  public function show(Page $page)
+    public function show(Page $page)
   {
     abort_if(Gate::denies('page_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 

@@ -94,9 +94,14 @@ https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sou
                 size: 10
             },
             success: function (file, response) {
-                $('form').append('<input type="hidden" name="attachments[]" value="' + response.name + '">')
-                uploadedAttachmentsMap[file.name] = response.name
+                // Store the filename returned by storeMedia
+                $('form').append('<input type="hidden" name="attachments[]" value="' + response.name + '">');
+
+                // Prompt for a description and add it to the form as a hidden input
+                let description = window.prompt(`Enter a description for file ${file.name}`);
+                $('form').append('<input type="hidden" name="attachments_descriptions[' + response.name + ']" value="' + description + '">');
             },
+
             removedfile: function (file) {
                 file.previewElement.remove()
                 var name = ''
@@ -109,21 +114,19 @@ https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-source-editing@36.0.1/theme/sou
             },
             init: function () {
                 this.on("sending", function (file, xhr, formData) {
-                    let name = window.prompt(`Unesite opis za fajl ${file.name}`);
-                    if (!name) {
-                        name = "//";
-                    }
-                    document.querySelector("#descriptions").insertAdjacentHTML('afterend', `<input type="hidden" name="descriptions[]" value="${name}">`);
+
                 });
 
+
+
                 @if(isset($page) && $page->attachments)
-                var files =
-                    {!! json_encode($page->attachments) !!}
-                    for(var i in files){
-                    var file = files[i]
-                    this.options.addedfile.call(this, file)
-                    file.previewElement.classList.add('dz-complete')
-                    $('form').append('<input type="hidden" name="attachments[]" value="' + file.file_name + '">')
+                var files = {!! json_encode($page->attachments) !!};
+                for (var i in files) {
+                    var file = files[i];
+                    this.options.addedfile.call(this, file);
+                    file.previewElement.classList.add('dz-complete');
+                    $('form').append('<input type="hidden" name="attachments[]" value="' + file.file_name + '">');
+                    $('form').append('<input type="hidden" name="attachments_descriptions[' + file.file_name + ']" value="' + file.custom_properties.description + '">');
                 }
                 @endif
             },

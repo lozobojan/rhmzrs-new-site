@@ -587,7 +587,7 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
         if (data) {
             for (let stationName in data) {
                 let stationData = data[stationName];
-                console.log(stationData)
+                // console.log(stationData)
 
                 // You might need to include logic to get the lat and lon from somewhere
                 let latLng = new LeafLeatGoogle.LatLng(stationData.Lat, stationData.Lon);
@@ -651,13 +651,6 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
                         ' </h4><p><strong>' +
                         +
                         '</strong></p><div>')
-                    // infoWindow.setContent(seismicMarkers[i], '<div class="seismic__info--window"><h4>' +
-                    //     data[i].termin +
-                    //     ' - Земљотрес код ' +
-                    //     data[i].region +
-                    //     ' </h4><p><strong>' +
-                    //     data[i].desc +
-                    //     '</strong></p><div>');
                 }
             });
         }
@@ -706,93 +699,93 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
     }
 
     function addEcologyInfoWindow(data) {
+        // Create a mapping of Cyrillic station names to English keys in `indeks`
+        const stationKeyMap = {};
+        Object.keys(data).forEach((key) => {
+            const stationData = data[key];
+            stationKeyMap[stationData.stanica] = key;
+        });
+
+        // Loop through each marker and set up a click event
         for (let i = 0; i < ecologyDataMarkers.length; i++) {
-            ecologyDataMarkers[i].map_marker.on('click', function () {
-                let infoWindow = new LeafLeatGoogle.InfoWindow();
-                let classes = ['Добар', "Умјерен", "Нездрав за осјетљиве лјуде", "Нездрав", "Веома нездрав", "Опасан", "Непознато"];
-                for (let j = 0; j < data.length; j++) {
+            // Ensure each marker has a map_marker and proceed
+            if (ecologyDataMarkers[i] && ecologyDataMarkers[i].map_marker) {
+                // Attach a click event to each marker
+                ecologyDataMarkers[i].map_marker.on('click', function () {
+                    console.log("Clicked Ecology Marker:", ecologyDataMarkers[i]);
 
-                    let ht =
-                        '' +
-                        '<style>\n' +
-                        '  .modal-body {\n' +
-                        '    background-color: #747ed1!important;\n' +
-                        '  }\n' +
-                        '  table tr:nth-child(even) {\n' +
-                        '    background-color: inherit;\n' +
-                        '}\n' +
-                        '  .modal-header {\n' +
-                        '    background-color: #747ed1;\n' +
-                        '}\n' +
-                        '</style>\n' +
-                        '\n' +
-                        '<div class="container-fluid bg-primary">\n' +
-                        '  <div class="row">\n' +
-                        '    <h1 class="title font-weight-bold text-white">' + data[i].stanica + '</h1>\n' +
-                        '    <h5 class="font-weight-bold text-white">' + data[i].vrijeme + '</h5>\n' +
-                        '    <div class="w-100 bg-white mb-2" style="height: 4px"></div>\n' +
-                        '    <h5 class="font-weight-bold text-white">Индекс квалитета ваздуха</h5>\n' +
-                        '    <div class="index bg-class-'+ data[i].indeks[1] +'">\n' +
-                        '      <h1 class=" font-weight-bolder display-3 mb-0 pb-0">' + data[i].indeks[0] +'</h1>\n' +
-                        '      <h4 class="font-weight-bold  mt-0 py-0">'+ classes[data[i].indeks[1]?? 6] +'</h4>\n' +
-                        '    </div>\n' +
-                        '    <div class="mb-2"></div>\n' +
-                        '    <table class="px-4 py-3 text-white">\n' +
-                        '      <thead>\n' +
-                        '        <th>Полутант</th>\n' +
-                        '        <th>Сатна конц.</th>\n' +
-                        '        <th>Индекс</th>\n' +
-                        '      </thead>\n' +
-                        '      <tbody class="border-top-1">\n' +
-                        '        <tr class="border-top-1">\n' +
-                        '          <td>CO</td>\n' +
-                        '          <td>' + data[i].CO + '</td>\n' +
-                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["CO"][1] +'"></div></td>\n' +
-                        '        </tr>\n' +
-                        '          <tr>\n' +
-                        '          <td>NO2</td>\n' +
-                        '          <td>' + data[i].NO2 + '</td>\n' +
-                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["NO2"][1] +'"></div></td>\n' +
-                        '        </tr>\n' +
-                        '          <tr>\n' +
-                        '          <td>O3</td>\n' +
-                        '          <td>' + data[i].O3 + '</td>\n' +
-                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["O3"][1] +'"></div></td>\n' +
-                        '        </tr>\n' +
-                        '          <tr>\n' +
-                        '          <td>PM10</td>\n' +
-                        '          <td>' + data[i].PM10 + '</td>\n' +
-                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["PM10"][1] +'"></div></td>\n' +
-                        '        </tr>\n' +
-                        '          <tr>\n' +
-                        '          <td>PM25</td>\n' +
-                        '          <td>' + data[i]["PM2.5"] + '</td>\n' +
-                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["PM2.5"][1] +'"></div></td>\n' +
-                        '        </tr>\n' +
-                        '          <tr>\n' +
-                        '          <td>SO2</td>\n' +
-                        '          <td>' + data[i].SO2 + '</td>\n' +
-                        '          <td> <div class="indeks-icon bg-class-'+ data[i]["SO2"][1] +'"></div></td>\n' +
-                        '        </tr>\n' +
-                        '      </tbody>\n' +
-                        '    </table>\n' +
-                        '    \n' +
-                        '    <div class="w-100 bg-white mb-2 mt-2" style="height: 4px"></div>\n' +
-                        '  </div>\n' +
-                        '</div>'
+                    // Retrieve the station name in Cyrillic from the marker's options
+                    const stationNameCyrillic = ecologyDataMarkers[i].marker.title;
+                    const stationKey = stationKeyMap[stationNameCyrillic]; // Use the map to get the English key
 
-                    markerOnClick(ht)
+                    if (stationKey && data[stationKey]) {
+                        const stationData = data[stationKey];
+                        let classes = ['Добар', "Умјерен", "Нездрав за осјетљиве лјуде", "Нездрав", "Веома нездрав", "Опасан", "Непознато"];
+                        let description = `
+                        <div class="container-fluid bg-primary">
+                            <div class="row">
+                                <h1 class="title font-weight-bold text-white">${stationData.stanica}</h1>
+                                <h5 class="font-weight-bold text-white">${stationData.vrijeme}</h5>
+                                <div class="w-100 bg-white mb-2" style="height: 4px"></div>
+                                <h5 class="font-weight-bold text-white">Индекс квалитета ваздуха</h5>
+                                <div class="index bg-class-${stationData.indeks ? stationData.indeks[1] : 6}">
+                                    <h1 class="font-weight-bolder display-3 mb-0 pb-0">${stationData.indeks ? stationData.indeks[0] : ''}</h1>
+                                    <h4 class="font-weight-bold mt-0 py-0">${classes[stationData.indeks ? stationData.indeks[1] : 6]}</h4>
+                                </div>
+                                <div class="mb-2"></div>
+                                <table class="px-4 py-3 text-white">
+                                    <thead>
+                                        <th>Полутант</th>
+                                        <th>Сатна конц.</th>
+                                        <th>Индекс</th>
+                                    </thead>
+                                    <tbody class="border-top-1">
+                    `;
 
+                        // List of pollutants to display
+                        const pollutants = ["CO", "NO2", "O3", "PM10", "PM2.5", "SO2"];
+                        pollutants.forEach((pollutant) => {
+                            const value = stationData[pollutant];
+                            if (value && Array.isArray(value)) {
+                                description += `
+                                <tr class="border-top-1">
+                                    <td>${pollutant}</td>
+                                    <td>${value[0]}</td>
+                                    <td><div class="indeks-icon bg-class-${value[1]}"></div></td>
+                                </tr>
+                            `;
+                            } else if (typeof value === 'number' || value === '-') {
+                                description += `
+                                <tr class="border-top-1">
+                                    <td>${pollutant}</td>
+                                    <td>${value}</td>
+                                    <td><div class="indeks-icon bg-class-6"></div></td>
+                                </tr>
+                            `;
+                            }
+                        });
 
-                    // infoWindow.setContent(ecologyDataMarkers[i], '<div class="hidro__info--window"><h4>' +
-                    //     data[i].StationName +
-                    //     '</h4><strong>' +
-                    //     data[i].desc +
-                    //     '</strong><div>');
-                }
-            });
+                        description += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    `;
+
+                        // Log and display the modal with the description
+                        console.log('Generated HTML for Ecology marker:', description);
+                        markerOnClick(description);
+                    } else {
+                        console.log("Data for station not found in 'indeks':", stationNameCyrillic);
+                    }
+                });
+            } else {
+                console.log("No map_marker found for ecologyDataMarker at index:", i);
+            }
         }
     }
+
+
 
     function removeAllMarkers() {
         for (let i = 0; i < weatherForecastMarkers.length; i++) {
@@ -1034,6 +1027,7 @@ function getCurrentStationNameById(stationID) {
     });
 }
 function markerOnClick(description) {
+    console.log('CLICKED MARKER', description)
     // console.log(description)
     $(".modal-body").html(description);
     $('#emptymodal').modal('show');

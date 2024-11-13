@@ -220,7 +220,8 @@
             $('#docs').DataTable({
                 "language": {
                     "url": "../js/Datatable/Serbian.json"
-                }
+                },
+                "ordering": false,
             });
         });
     </script>
@@ -237,7 +238,7 @@
 
 
 
-                    @if(count($page->attachments))
+                    @if(count($page->attachmentsUi))
                         <br>
                         <x-section-separator text="Прилози" simple></x-section-separator>
                         <table class="table align-middle mb-0 bg-white table-bordered" id="docs">
@@ -251,7 +252,7 @@
                             </thead>
                             <tbody>
                             @php
-                                $attachments = $page->attachments->reverse();
+                                $attachments = $page->attachmentsUi;
                             @endphp
                             @foreach($attachments as $key => $media)
                                 <tr>
