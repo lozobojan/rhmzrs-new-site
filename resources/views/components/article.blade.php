@@ -23,13 +23,13 @@
         <h2 class="post-title h3 mb-3"><a class="link-dark" href="/post/{{$article['id']}}">{{ $article['title'] }}</a></h2>
     </div>
     @if($simple && $subtext)
-        <div class="post-content">
-            @php
-                $notags = strip_tags($article['html_content']);
-                $subtext = substr($notags, 0, 400);
-            @endphp
-            <p>{{ $subtext }}...</p>
-        </div>
+{{--        <div class="post-content">--}}
+{{--            @php--}}
+{{--                $notags = strip_tags($article['html_content']);--}}
+{{--                $subtext = substr($notags, 0, 400);--}}
+{{--            @endphp--}}
+{{--            <p>{{ $subtext }}...</p>--}}
+{{--        </div>--}}
     @endif
     <!-- /.post-header -->
     <div class="post-footer">

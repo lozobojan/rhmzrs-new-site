@@ -237,7 +237,12 @@
                     {!! $page->html_content !!}
 
 
-
+                    @if($page->pagePosts)
+                        @foreach($page->pagePosts as $post)
+                            <x-article :simple="true" :subtext="true" :article="$post"></x-article>
+                            {{--                        <p>{{ $post->title }}</p>--}}
+                        @endforeach
+                    @endif
                     @if(count($page->attachmentsUi))
                         <br>
                         <x-section-separator text="Прилози" simple></x-section-separator>
@@ -347,12 +352,6 @@
                         {{-- fallback - none --}}
                 @endswitch
 
-            @if($page->pagePosts)
-                    @foreach($page->pagePosts as $post)
-                        <x-article :simple="true" :subtext="true" :article="$post"></x-article>
-                        {{--                        <p>{{ $post->title }}</p>--}}
-                    @endforeach
-                @endif
 
             </div>
             <!-- /.row -->

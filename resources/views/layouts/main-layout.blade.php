@@ -363,7 +363,7 @@
             </style>
         <section class="w-100 py-5 {{ $alert->level_class }}">
             <a class="text-white text-center d-block font-weight-bold h1" href="{{ route("alert.view", [$alert->id]) }}">{{ $alert->title }}</a>
-            <div class=" text-center" style=" font-size: 20px">{{ (strlen($alert->description) > 400) ? strip_tags(substr($alert->description,0,400).'...') : strip_tags($alert->description) }}</div>
+{{--            <div class=" text-center" style=" font-size: 20px">{{ (strlen($alert->description) > 400) ? strip_tags(substr($alert->description,0,400).'...') : strip_tags($alert->description) }}</div>--}}
         </section>
         @endif
         <!-- /section -->
