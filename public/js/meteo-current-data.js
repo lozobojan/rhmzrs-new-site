@@ -30,6 +30,7 @@ function syn(){
             // { "data": "brzVjetra", // add m/s at the end },
             // render brzVjetra + ' m/s'
             { "data": "brzVjetra", render: (data, type, row) => {return data === "null" ?"nan" : data + ' m/s'} },
+            { "data": "cirSmjer", render: (data, type, row) => {return data === "null" ?"nan" : data } },
             { "data": "kolicinaPadavine", render: (data, type, row) => {return data === "null" ?"nan" : data} },
             { "data": "minTemp", render: (data, type, row) => {return data === "null" ?"nan" : data} },
             { "data": "maxTemp", render: (data, type, row) => {return data === "null" ?"nan" : data} },

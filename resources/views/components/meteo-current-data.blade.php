@@ -47,6 +47,9 @@
                 aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Вјетар
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
+                aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Смјер вјетра
+            </th>
+            <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"
                 aria-label="Опис: activate to sort column descending" style="width: 319px;" aria-sort="ascending">Количина падавина
             </th>
             <th class="sorting_asc" tabindex="0" aria-controls="data-table" rowspan="1" colspan="1"

@@ -572,6 +572,7 @@ $(window).bind('mousewheel DOMMouseScroll', function (event) {
                     var marker = new LeafLeatGoogle.MarkerWithLabel({
                         position: latLng,
                         map: map,
+                        htmlIcon: true,
                         labelClass: 'meteoDataLabel',
                         labelContent: data[i].StationName,
                         icon: data[i].marker == 'null' ? config.MAP.iconsURL + 'na.png' : config.MAP.iconsURL + data[i].marker,
