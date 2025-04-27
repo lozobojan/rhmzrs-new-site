@@ -4,6 +4,7 @@
 /public/data/feeds
 /public/data/feeds/*
 /vendor
+tmp/uploads
 .env
 .env.backup
 .phpunit.result.cache
@@ -14,3 +15,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+# Ignoriši svakodnevne promjene podataka
+/public/data/feeds/*.json
+/storage/app/public/*
+/storage/tmp/uploads/*
