@@ -1,2 +1,15 @@
 {"Snijeg":[
+{"StationID":"14565","name":"Хан Пијесак","lat":"44.08833","lon":"18.95167","alt":"1138.00","datum":"2026-02-17","snijeg":"38","marker":"50cm.jpg"},
+{"StationID":"14656","name":"Чемерно","lat":"43.25444","lon":"18.61222","alt":"1304.00","datum":"2026-02-17","snijeg":"26","marker":"50cm.jpg"},
+{"StationID":"14659","name":"Калиновик","lat":"43.5045722","lon":"18.4463806","alt":"1070.00","datum":"2026-02-17","snijeg":"25","marker":"50cm.jpg"},
+{"StationID":"14658","name":"Соколац","lat":"43.92611","lon":"18.78917","alt":"913.00","datum":"2026-02-17","snijeg":"11","marker":"20cm.jpg"},
+{"StationID":"14564","name":"Сребреница","lat":"44.0833","lon":"19.3","alt":"377.00","datum":"2026-02-17","snijeg":"10","marker":"10cm.jpg"},
+{"StationID":"14534","name":"Мраковица","lat":"45.011944","lon":"16.915","alt":"766.00","datum":"2026-02-17","snijeg":"6","marker":"10cm.jpg"},
+{"StationID":"14530","name":"Дринић","lat":"44.51083","lon":"16.46722","alt":"730.00","datum":"2026-02-17","snijeg":"5","marker":"5cm.jpg"},
+{"StationID":"14531","name":"Рибник","lat":"44.40667","lon":"16.815","alt":"305.00","datum":"2026-02-17","snijeg":"5","marker":"5cm.jpg"},
+{"StationID":"14665","name":"Фоча","lat":"43.517222","lon":"18.785278","alt":"412.00","datum":"2026-02-17","snijeg":"4","marker":"5cm.jpg"},
+{"StationID":"14655","name":"Гацко","lat":"43.174167","lon":"18.515833","alt":"947.00","datum":"2026-02-17","snijeg":"4","marker":"5cm.jpg"},
+{"StationID":"14547","name":"Шипово","lat":"44.288611","lon":"17.084722","alt":"458.00","datum":"2026-02-17","snijeg":"3","marker":"5cm.jpg"},
+{"StationID":"14663","name":"Рудо","lat":"43.61833","lon":"19.36972","alt":"413.00","datum":"2026-02-17","snijeg":"2","marker":"5cm.jpg"},
+{"StationID":"14545","name":"Мркоњић Град","lat":"44.41861","lon":"17.08361","alt":"575.00","datum":"2026-02-17","snijeg":"1","marker":"5cm.jpg"}
 ]}

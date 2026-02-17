@@ -68,6 +68,131 @@
 
 
 
+    {{-- Табела индекса квалитета ваздуха --}}
+    <section class="wrapper bg-light angled">
+        <div class="container py-14 py-md-16">
+            <div class="row">
+                <div class="col-lg-12 col-xl-12 col-xxl-12">
+
+                    <h3 class="text-primary mb-4">Категорије према вриједностима индекса квалитета ваздуха за различите полутанте</h3>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th rowspan="2" class="text-start">Полутант</th>
+                                    <th colspan="6">Вриједности индекса (заснована на концентрацији полутанта µg/m³)</th>
+                                </tr>
+                                <tr>
+                                    <th><span class="badge" style="background-color:#50f0e6;color:#333;">Одличан 1</span></th>
+                                    <th><span class="badge" style="background-color:#50ccaa;color:#333;">Добар 2</span></th>
+                                    <th><span class="badge" style="background-color:#f0e641;color:#333;">Умјерен 3</span></th>
+                                    <th><span class="badge" style="background-color:#ff5050;color:#fff;">Загађен 4</span></th>
+                                    <th><span class="badge" style="background-color:#960032;color:#fff;">Врло загађен 5</span></th>
+                                    <th><span class="badge" style="background-color:#7d2181;color:#fff;">Изузетно загађен 6</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start fw-bold">Честице мање од 2.5 µm (PM<sub>2.5</sub>)</td>
+                                    <td>0–10</td>
+                                    <td>10–20</td>
+                                    <td>20–25</td>
+                                    <td>25–50</td>
+                                    <td>50–75</td>
+                                    <td>75–800</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start fw-bold">Честице мање од 10 µm (PM<sub>10</sub>)</td>
+                                    <td>0–20</td>
+                                    <td>20–40</td>
+                                    <td>40–50</td>
+                                    <td>50–100</td>
+                                    <td>100–150</td>
+                                    <td>150–1200</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start fw-bold">Азот диоксид (NO<sub>2</sub>)</td>
+                                    <td>0–40</td>
+                                    <td>40–90</td>
+                                    <td>90–120</td>
+                                    <td>120–230</td>
+                                    <td>230–340</td>
+                                    <td>340–1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start fw-bold">Озон (O<sub>3</sub>)</td>
+                                    <td>0–50</td>
+                                    <td>50–100</td>
+                                    <td>100–130</td>
+                                    <td>130–240</td>
+                                    <td>240–380</td>
+                                    <td>380–800</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-start fw-bold">Сумпор диоксид (SO<sub>2</sub>)</td>
+                                    <td>0–100</td>
+                                    <td>100–200</td>
+                                    <td>200–350</td>
+                                    <td>350–500</td>
+                                    <td>500–750</td>
+                                    <td>750–1250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-primary mb-4 mt-5">Здравствене препоруке за различите категорије индекса квалитета ваздуха</h3>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width:20%;">AQ индекс</th>
+                                    <th style="width:40%;">Генерална популација</th>
+                                    <th style="width:40%;">Осјетљива популација</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge" style="background-color:#50f0e6;color:#333;">Одличан 1</span></td>
+                                    <td>Квалитет ваздуха је добар. Уживајте у својим уобичајеним активностима на отвореном.</td>
+                                    <td>Квалитет ваздуха је добар. Уживајте у својим уобичајеним активностима на отвореном.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge" style="background-color:#50ccaa;color:#333;">Добар 2</span></td>
+                                    <td>Уживајте у својим уобичајеним активностима на отвореном.</td>
+                                    <td>Уживајте у својим уобичајеним активностима на отвореном.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge" style="background-color:#f0e641;color:#333;">Умјерен 3</span></td>
+                                    <td>Уживајте у својим уобичајеним активностима на отвореном.</td>
+                                    <td>Размотрите смањење интензивних активности на отвореном, ако осјетите симптоме.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge" style="background-color:#ff5050;color:#fff;">Загађен 4</span></td>
+                                    <td>Размислите о смањењу интензивних активности на отвореном ако примијетите симптоме попут болних очију, кашља или болног грла.</td>
+                                    <td>Размотрите смањење физичких активности, посебно на отвореном, поготово ако осјетите симптоме.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge" style="background-color:#960032;color:#fff;">Врло загађен 5</span></td>
+                                    <td>Размотрите смањење интензивних активности на отвореном ако осјећате симптоме попут болних очију, кашља или болног грла.</td>
+                                    <td>Смањите физичке активности, посебно на отвореном, поготово ако осјетите симптоме.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge" style="background-color:#7d2181;color:#fff;">Изузетно загађен 6</span></td>
+                                    <td>Смањите физичке активности на отвореном.</td>
+                                    <td>Избјегавајте физичке активности на отвореном.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <x-slot name="additionalCss">
         <style>
             figure img {
@@ -101,7 +226,6 @@
                 border-style: solid;
                 border-color: #fff #fff rgba(255, 255, 255, .35) rgba(255, 255, 255, .35);
             }
-
             .file-icon::after {
                 display: block;
                 content: attr(data-type);
@@ -252,7 +376,7 @@
                 text-align: left;
             }
 
-            /*Add small screens media query*/
+ /*Add small screens media query*/
 
 
             #example_wrapper {
@@ -294,7 +418,7 @@
                                     <th>Преузимања</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                                               <tbody>
                                 @foreach($groupedAttachments['M'] ?? [] as $media)
                                     <tr>
                                         <td>
@@ -347,38 +471,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane fade" id="annual" role="tabpanel" aria-labelledby="annual-tab">
-                            <!-- Tabela za Godišnje izveštaje -->
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Датотека</th>
-{{--                                    <th>Опис</th>--}}
-                                    <th>Величина</th>
-                                    <th>Преузимања</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($groupedAttachments['G'] ?? [] as $media)
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <a href="/download/{{$media->id}}" class="d-flex gap-1 align-items-center">
-                                                    <div class="file-icon file-icon-md"
-                                                         data-type="{{ last(explode('.',$media->file_name)) }}"></div>
-                                                    <p class="fw-bold"
-                                                       style="padding-bottom: 0!important; margin: 0!important;">{{ explode('_',$media->name)[1] }}</p>
-                                                </a>
-                                            </div>
-                                        </td>
-{{--                                        <td>{{ $media->custom_properties['description'] }}</td>--}}
-                                        <td>{{ $media->human_readable_size }}</td>
-                                        <td>{{ $media->download_count }}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+ 
                         <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="annual-tab">
                             <!-- Tabela za Godišnje izveštaje -->
                             <table class="table">
@@ -416,8 +509,6 @@
             </div>
         </div>
     </section>
-
-
 
 
 </x-main-layout>

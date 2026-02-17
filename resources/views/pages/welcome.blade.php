@@ -540,7 +540,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td>{{ $media->custom_properties['description'] }}</td>
+                                    <td>{{ $media->custom_properties['description'] ?? '' }}</td>
                                     <td>{{ $media->human_readable_size }}</td>
                                     <td>
                                         {{ $media->download_count }}
